@@ -1,0 +1,763 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		768E2115262AAB544AE6EBA9 /* Pods_EduTune.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C96D62E64AD5083F9B26A3F /* Pods_EduTune.framework */; };
+		BE14710128F5733A00726625 /* IntroCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE14710028F5733A00726625 /* IntroCVCell.swift */; };
+		BE14710328F578F300726625 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE14710228F578F300726625 /* Localizable.strings */; };
+		BE14710528F579F100726625 /* LetsInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE14710428F579F100726625 /* LetsInVC.swift */; };
+		BE14710728F57A0800726625 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE14710628F57A0800726625 /* SignupVC.swift */; };
+		BE14710928F57A1800726625 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE14710828F57A1800726625 /* LoginVC.swift */; };
+		BE14710B28F57A2900726625 /* VerificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE14710A28F57A2900726625 /* VerificationVC.swift */; };
+		BE14710D28F57A5700726625 /* UpdateProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE14710C28F57A5700726625 /* UpdateProfileVC.swift */; };
+		BE14710F28F57A8300726625 /* ForgotPassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE14710E28F57A8300726625 /* ForgotPassVC.swift */; };
+		BE14711128F57AAD00726625 /* ForgotPassVerifyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE14711028F57AAD00726625 /* ForgotPassVerifyVC.swift */; };
+		BE14711328F57AC300726625 /* CreateNewPassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE14711228F57AC300726625 /* CreateNewPassVC.swift */; };
+		BE14711528F57AE400726625 /* PassResetSuccessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE14711428F57AE400726625 /* PassResetSuccessVC.swift */; };
+		BE14711728F57C1F00726625 /* MakeToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE14711628F57C1F00726625 /* MakeToast.swift */; };
+		BE1D520C28D887F300EC151A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1D520B28D887F300EC151A /* AppDelegate.swift */; };
+		BE1D520E28D887F300EC151A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1D520D28D887F300EC151A /* SceneDelegate.swift */; };
+		BE1D521328D887F300EC151A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE1D521128D887F300EC151A /* Main.storyboard */; };
+		BE1D521528D887F400EC151A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE1D521428D887F400EC151A /* Assets.xcassets */; };
+		BE1D521828D887F400EC151A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE1D521628D887F400EC151A /* LaunchScreen.storyboard */; };
+		BE4869C728DECD14003040AD /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE4869C628DECD14003040AD /* Profile.storyboard */; };
+		BE4869C928DECD67003040AD /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE4869C828DECD67003040AD /* Home.storyboard */; };
+		BE4869CB28DECD75003040AD /* MyCourse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE4869CA28DECD75003040AD /* MyCourse.storyboard */; };
+		BE4869CD28DECD84003040AD /* Study.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE4869CC28DECD84003040AD /* Study.storyboard */; };
+		BE4869CF28DECD90003040AD /* Inbox.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE4869CE28DECD90003040AD /* Inbox.storyboard */; };
+		BE4869D128DECD99003040AD /* Other.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE4869D028DECD99003040AD /* Other.storyboard */; };
+		BE4869EC28DEF4D7003040AD /* Urbanist-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE4869DA28DEF4D7003040AD /* Urbanist-Bold.ttf */; };
+		BE4869ED28DEF4D7003040AD /* Urbanist-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE4869DB28DEF4D7003040AD /* Urbanist-Regular.ttf */; };
+		BE4869EE28DEF4D7003040AD /* Urbanist-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE4869DC28DEF4D7003040AD /* Urbanist-LightItalic.ttf */; };
+		BE4869EF28DEF4D7003040AD /* Urbanist-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE4869DD28DEF4D7003040AD /* Urbanist-ExtraLightItalic.ttf */; };
+		BE4869F028DEF4D7003040AD /* Urbanist-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE4869DE28DEF4D7003040AD /* Urbanist-ExtraBoldItalic.ttf */; };
+		BE4869F128DEF4D7003040AD /* Urbanist-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE4869DF28DEF4D7003040AD /* Urbanist-Thin.ttf */; };
+		BE4869F228DEF4D7003040AD /* Urbanist-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE4869E028DEF4D7003040AD /* Urbanist-MediumItalic.ttf */; };
+		BE4869F328DEF4D7003040AD /* Urbanist-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE4869E128DEF4D7003040AD /* Urbanist-SemiBold.ttf */; };
+		BE4869F428DEF4D7003040AD /* Urbanist-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE4869E228DEF4D7003040AD /* Urbanist-Italic.ttf */; };
+		BE4869F528DEF4D7003040AD /* Urbanist-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE4869E328DEF4D7003040AD /* Urbanist-Black.ttf */; };
+		BE4869F628DEF4D7003040AD /* Urbanist-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE4869E428DEF4D7003040AD /* Urbanist-BlackItalic.ttf */; };
+		BE4869F728DEF4D7003040AD /* Urbanist-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE4869E528DEF4D7003040AD /* Urbanist-Light.ttf */; };
+		BE4869F828DEF4D7003040AD /* Urbanist-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE4869E628DEF4D7003040AD /* Urbanist-SemiBoldItalic.ttf */; };
+		BE4869F928DEF4D7003040AD /* Urbanist-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE4869E728DEF4D7003040AD /* Urbanist-BoldItalic.ttf */; };
+		BE4869FA28DEF4D7003040AD /* Urbanist-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE4869E828DEF4D7003040AD /* Urbanist-ExtraBold.ttf */; };
+		BE4869FB28DEF4D7003040AD /* Urbanist-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE4869E928DEF4D7003040AD /* Urbanist-Medium.ttf */; };
+		BE4869FC28DEF4D7003040AD /* Urbanist-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE4869EA28DEF4D7003040AD /* Urbanist-ExtraLight.ttf */; };
+		BE4869FD28DEF4D7003040AD /* Urbanist-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE4869EB28DEF4D7003040AD /* Urbanist-ThinItalic.ttf */; };
+		BE4869FF28DEF5B8003040AD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4869FE28DEF5B8003040AD /* Extensions.swift */; };
+		BE486A0128DEF624003040AD /* RPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE486A0028DEF624003040AD /* RPicker.swift */; };
+		BE486A0328DEF62C003040AD /* FormValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE486A0228DEF62C003040AD /* FormValidation.swift */; };
+		BE486A0528DEF673003040AD /* SocialLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE486A0428DEF673003040AD /* SocialLoginVC.swift */; };
+		BE486A0728DEF698003040AD /* IntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE486A0628DEF698003040AD /* IntroVC.swift */; };
+		BE486A0928DEF6D3003040AD /* OTPTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE486A0828DEF6D3003040AD /* OTPTextView.swift */; };
+		BEE78F7228F6D30600A4B3B1 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE78F7128F6D30600A4B3B1 /* HomeVC.swift */; };
+		BEE78F7428F6D44800A4B3B1 /* DVDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE78F7328F6D44800A4B3B1 /* DVDevice.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0C96D62E64AD5083F9B26A3F /* Pods_EduTune.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EduTune.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		12A43F5A3E4339F493AD1793 /* Pods-EduTune.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTune.release.xcconfig"; path = "Target Support Files/Pods-EduTune/Pods-EduTune.release.xcconfig"; sourceTree = "<group>"; };
+		172CA9B0D970362B62617A01 /* Pods-EduTune.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTune.debug.xcconfig"; path = "Target Support Files/Pods-EduTune/Pods-EduTune.debug.xcconfig"; sourceTree = "<group>"; };
+		BE14710028F5733A00726625 /* IntroCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroCVCell.swift; sourceTree = "<group>"; };
+		BE14710228F578F300726625 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		BE14710428F579F100726625 /* LetsInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetsInVC.swift; sourceTree = "<group>"; };
+		BE14710628F57A0800726625 /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
+		BE14710828F57A1800726625 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		BE14710A28F57A2900726625 /* VerificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationVC.swift; sourceTree = "<group>"; };
+		BE14710C28F57A5700726625 /* UpdateProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileVC.swift; sourceTree = "<group>"; };
+		BE14710E28F57A8300726625 /* ForgotPassVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassVC.swift; sourceTree = "<group>"; };
+		BE14711028F57AAD00726625 /* ForgotPassVerifyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassVerifyVC.swift; sourceTree = "<group>"; };
+		BE14711228F57AC300726625 /* CreateNewPassVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewPassVC.swift; sourceTree = "<group>"; };
+		BE14711428F57AE400726625 /* PassResetSuccessVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassResetSuccessVC.swift; sourceTree = "<group>"; };
+		BE14711628F57C1F00726625 /* MakeToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeToast.swift; sourceTree = "<group>"; };
+		BE1D520828D887F300EC151A /* EduTune.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EduTune.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE1D520B28D887F300EC151A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BE1D520D28D887F300EC151A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		BE1D521228D887F300EC151A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BE1D521428D887F400EC151A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BE1D521728D887F400EC151A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BE1D521928D887F400EC151A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE4869C628DECD14003040AD /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		BE4869C828DECD67003040AD /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		BE4869CA28DECD75003040AD /* MyCourse.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyCourse.storyboard; sourceTree = "<group>"; };
+		BE4869CC28DECD84003040AD /* Study.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Study.storyboard; sourceTree = "<group>"; };
+		BE4869CE28DECD90003040AD /* Inbox.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Inbox.storyboard; sourceTree = "<group>"; };
+		BE4869D028DECD99003040AD /* Other.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Other.storyboard; sourceTree = "<group>"; };
+		BE4869DA28DEF4D7003040AD /* Urbanist-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-Bold.ttf"; sourceTree = "<group>"; };
+		BE4869DB28DEF4D7003040AD /* Urbanist-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-Regular.ttf"; sourceTree = "<group>"; };
+		BE4869DC28DEF4D7003040AD /* Urbanist-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-LightItalic.ttf"; sourceTree = "<group>"; };
+		BE4869DD28DEF4D7003040AD /* Urbanist-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		BE4869DE28DEF4D7003040AD /* Urbanist-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		BE4869DF28DEF4D7003040AD /* Urbanist-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-Thin.ttf"; sourceTree = "<group>"; };
+		BE4869E028DEF4D7003040AD /* Urbanist-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-MediumItalic.ttf"; sourceTree = "<group>"; };
+		BE4869E128DEF4D7003040AD /* Urbanist-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-SemiBold.ttf"; sourceTree = "<group>"; };
+		BE4869E228DEF4D7003040AD /* Urbanist-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-Italic.ttf"; sourceTree = "<group>"; };
+		BE4869E328DEF4D7003040AD /* Urbanist-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-Black.ttf"; sourceTree = "<group>"; };
+		BE4869E428DEF4D7003040AD /* Urbanist-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-BlackItalic.ttf"; sourceTree = "<group>"; };
+		BE4869E528DEF4D7003040AD /* Urbanist-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-Light.ttf"; sourceTree = "<group>"; };
+		BE4869E628DEF4D7003040AD /* Urbanist-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		BE4869E728DEF4D7003040AD /* Urbanist-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-BoldItalic.ttf"; sourceTree = "<group>"; };
+		BE4869E828DEF4D7003040AD /* Urbanist-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-ExtraBold.ttf"; sourceTree = "<group>"; };
+		BE4869E928DEF4D7003040AD /* Urbanist-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-Medium.ttf"; sourceTree = "<group>"; };
+		BE4869EA28DEF4D7003040AD /* Urbanist-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-ExtraLight.ttf"; sourceTree = "<group>"; };
+		BE4869EB28DEF4D7003040AD /* Urbanist-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-ThinItalic.ttf"; sourceTree = "<group>"; };
+		BE4869FE28DEF5B8003040AD /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		BE486A0028DEF624003040AD /* RPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RPicker.swift; sourceTree = "<group>"; };
+		BE486A0228DEF62C003040AD /* FormValidation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormValidation.swift; sourceTree = "<group>"; };
+		BE486A0428DEF673003040AD /* SocialLoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialLoginVC.swift; sourceTree = "<group>"; };
+		BE486A0628DEF698003040AD /* IntroVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroVC.swift; sourceTree = "<group>"; };
+		BE486A0828DEF6D3003040AD /* OTPTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPTextView.swift; sourceTree = "<group>"; };
+		BEE78F7128F6D30600A4B3B1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		BEE78F7328F6D44800A4B3B1 /* DVDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DVDevice.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BE1D520528D887F300EC151A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				768E2115262AAB544AE6EBA9 /* Pods_EduTune.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3AC52E304DD6071320C30BE6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C96D62E64AD5083F9B26A3F /* Pods_EduTune.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BE14711828F57C2400726625 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				BEE78F7328F6D44800A4B3B1 /* DVDevice.swift */,
+				BE4869FE28DEF5B8003040AD /* Extensions.swift */,
+				BE14711628F57C1F00726625 /* MakeToast.swift */,
+				BE486A0228DEF62C003040AD /* FormValidation.swift */,
+				BE486A0028DEF624003040AD /* RPicker.swift */,
+				BE486A0828DEF6D3003040AD /* OTPTextView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		BE1D51FF28D887F300EC151A = {
+			isa = PBXGroup;
+			children = (
+				BE1D520A28D887F300EC151A /* EduTune */,
+				BE1D520928D887F300EC151A /* Products */,
+				EC5ACE55AC49EBBDC88E0AB0 /* Pods */,
+				3AC52E304DD6071320C30BE6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BE1D520928D887F300EC151A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BE1D520828D887F300EC151A /* EduTune.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BE1D520A28D887F300EC151A /* EduTune */ = {
+			isa = PBXGroup;
+			children = (
+				BE1D520B28D887F300EC151A /* AppDelegate.swift */,
+				BE1D520D28D887F300EC151A /* SceneDelegate.swift */,
+				BE14711828F57C2400726625 /* Common */,
+				BE4869D928DEF4D7003040AD /* Font */,
+				BE4869D728DECDDE003040AD /* Intro */,
+				BE4869D828DECDF4003040AD /* Profile */,
+				BE4869D228DECDA8003040AD /* Home */,
+				BE4869D328DECDAF003040AD /* MyCourse */,
+				BE4869D428DECDB8003040AD /* Study */,
+				BE4869D528DECDBF003040AD /* Inbox */,
+				BE4869D628DECDC4003040AD /* Other */,
+				BE1D521428D887F400EC151A /* Assets.xcassets */,
+				BE1D521628D887F400EC151A /* LaunchScreen.storyboard */,
+				BE1D521928D887F400EC151A /* Info.plist */,
+				BE14710228F578F300726625 /* Localizable.strings */,
+			);
+			path = EduTune;
+			sourceTree = "<group>";
+		};
+		BE4869D228DECDA8003040AD /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BE4869C828DECD67003040AD /* Home.storyboard */,
+				BEE78F7028F6D2E600A4B3B1 /* Controller */,
+				BEE78F6F28F6D2E000A4B3B1 /* View */,
+				BEE78F6E28F6D2D900A4B3B1 /* Model */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BE4869D328DECDAF003040AD /* MyCourse */ = {
+			isa = PBXGroup;
+			children = (
+				BE4869CA28DECD75003040AD /* MyCourse.storyboard */,
+			);
+			path = MyCourse;
+			sourceTree = "<group>";
+		};
+		BE4869D428DECDB8003040AD /* Study */ = {
+			isa = PBXGroup;
+			children = (
+				BE4869CC28DECD84003040AD /* Study.storyboard */,
+			);
+			path = Study;
+			sourceTree = "<group>";
+		};
+		BE4869D528DECDBF003040AD /* Inbox */ = {
+			isa = PBXGroup;
+			children = (
+				BE4869CE28DECD90003040AD /* Inbox.storyboard */,
+			);
+			path = Inbox;
+			sourceTree = "<group>";
+		};
+		BE4869D628DECDC4003040AD /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				BE4869D028DECD99003040AD /* Other.storyboard */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		BE4869D728DECDDE003040AD /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				BE486A0C28DEF858003040AD /* Model */,
+				BE486A0A28DEF841003040AD /* View */,
+				BE486A0B28DEF847003040AD /* Controller */,
+				BE1D521128D887F300EC151A /* Main.storyboard */,
+			);
+			path = Intro;
+			sourceTree = "<group>";
+		};
+		BE4869D828DECDF4003040AD /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				BE486A0D28DEF85F003040AD /* Model */,
+				BE486A0F28DEF871003040AD /* View */,
+				BE486A0E28DEF867003040AD /* Controller */,
+				BE4869C628DECD14003040AD /* Profile.storyboard */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		BE4869D928DEF4D7003040AD /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				BE4869DA28DEF4D7003040AD /* Urbanist-Bold.ttf */,
+				BE4869DB28DEF4D7003040AD /* Urbanist-Regular.ttf */,
+				BE4869DC28DEF4D7003040AD /* Urbanist-LightItalic.ttf */,
+				BE4869DD28DEF4D7003040AD /* Urbanist-ExtraLightItalic.ttf */,
+				BE4869DE28DEF4D7003040AD /* Urbanist-ExtraBoldItalic.ttf */,
+				BE4869DF28DEF4D7003040AD /* Urbanist-Thin.ttf */,
+				BE4869E028DEF4D7003040AD /* Urbanist-MediumItalic.ttf */,
+				BE4869E128DEF4D7003040AD /* Urbanist-SemiBold.ttf */,
+				BE4869E228DEF4D7003040AD /* Urbanist-Italic.ttf */,
+				BE4869E328DEF4D7003040AD /* Urbanist-Black.ttf */,
+				BE4869E428DEF4D7003040AD /* Urbanist-BlackItalic.ttf */,
+				BE4869E528DEF4D7003040AD /* Urbanist-Light.ttf */,
+				BE4869E628DEF4D7003040AD /* Urbanist-SemiBoldItalic.ttf */,
+				BE4869E728DEF4D7003040AD /* Urbanist-BoldItalic.ttf */,
+				BE4869E828DEF4D7003040AD /* Urbanist-ExtraBold.ttf */,
+				BE4869E928DEF4D7003040AD /* Urbanist-Medium.ttf */,
+				BE4869EA28DEF4D7003040AD /* Urbanist-ExtraLight.ttf */,
+				BE4869EB28DEF4D7003040AD /* Urbanist-ThinItalic.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		BE486A0A28DEF841003040AD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BE14710028F5733A00726625 /* IntroCVCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BE486A0B28DEF847003040AD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BE486A0628DEF698003040AD /* IntroVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BE486A0C28DEF858003040AD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BE486A0D28DEF85F003040AD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BE486A0E28DEF867003040AD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BE486A0428DEF673003040AD /* SocialLoginVC.swift */,
+				BE14710428F579F100726625 /* LetsInVC.swift */,
+				BE14710628F57A0800726625 /* SignupVC.swift */,
+				BE14710828F57A1800726625 /* LoginVC.swift */,
+				BE14710A28F57A2900726625 /* VerificationVC.swift */,
+				BE14710C28F57A5700726625 /* UpdateProfileVC.swift */,
+				BE14710E28F57A8300726625 /* ForgotPassVC.swift */,
+				BE14711028F57AAD00726625 /* ForgotPassVerifyVC.swift */,
+				BE14711228F57AC300726625 /* CreateNewPassVC.swift */,
+				BE14711428F57AE400726625 /* PassResetSuccessVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BE486A0F28DEF871003040AD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BEE78F6E28F6D2D900A4B3B1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BEE78F6F28F6D2E000A4B3B1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BEE78F7028F6D2E600A4B3B1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BEE78F7128F6D30600A4B3B1 /* HomeVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EC5ACE55AC49EBBDC88E0AB0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				172CA9B0D970362B62617A01 /* Pods-EduTune.debug.xcconfig */,
+				12A43F5A3E4339F493AD1793 /* Pods-EduTune.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BE1D520728D887F300EC151A /* EduTune */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE1D521C28D887F400EC151A /* Build configuration list for PBXNativeTarget "EduTune" */;
+			buildPhases = (
+				88D6945C848A1914D5F4D537 /* [CP] Check Pods Manifest.lock */,
+				BE1D520428D887F300EC151A /* Sources */,
+				BE1D520528D887F300EC151A /* Frameworks */,
+				BE1D520628D887F300EC151A /* Resources */,
+				3C857365994026CC8F48BAC5 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EduTune;
+			productName = EduTune;
+			productReference = BE1D520828D887F300EC151A /* EduTune.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BE1D520028D887F300EC151A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					BE1D520728D887F300EC151A = {
+						CreatedOnToolsVersion = 14.0;
+					};
+				};
+			};
+			buildConfigurationList = BE1D520328D887F300EC151A /* Build configuration list for PBXProject "EduTune" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BE1D51FF28D887F300EC151A;
+			productRefGroup = BE1D520928D887F300EC151A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BE1D520728D887F300EC151A /* EduTune */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BE1D520628D887F300EC151A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE4869EF28DEF4D7003040AD /* Urbanist-ExtraLightItalic.ttf in Resources */,
+				BE4869F228DEF4D7003040AD /* Urbanist-MediumItalic.ttf in Resources */,
+				BE4869F428DEF4D7003040AD /* Urbanist-Italic.ttf in Resources */,
+				BE4869FB28DEF4D7003040AD /* Urbanist-Medium.ttf in Resources */,
+				BE1D521828D887F400EC151A /* LaunchScreen.storyboard in Resources */,
+				BE4869F628DEF4D7003040AD /* Urbanist-BlackItalic.ttf in Resources */,
+				BE4869EC28DEF4D7003040AD /* Urbanist-Bold.ttf in Resources */,
+				BE4869CB28DECD75003040AD /* MyCourse.storyboard in Resources */,
+				BE4869EE28DEF4D7003040AD /* Urbanist-LightItalic.ttf in Resources */,
+				BE4869D128DECD99003040AD /* Other.storyboard in Resources */,
+				BE4869F528DEF4D7003040AD /* Urbanist-Black.ttf in Resources */,
+				BE4869F928DEF4D7003040AD /* Urbanist-BoldItalic.ttf in Resources */,
+				BE4869C928DECD67003040AD /* Home.storyboard in Resources */,
+				BE4869CD28DECD84003040AD /* Study.storyboard in Resources */,
+				BE4869F328DEF4D7003040AD /* Urbanist-SemiBold.ttf in Resources */,
+				BE4869ED28DEF4D7003040AD /* Urbanist-Regular.ttf in Resources */,
+				BE4869F128DEF4D7003040AD /* Urbanist-Thin.ttf in Resources */,
+				BE14710328F578F300726625 /* Localizable.strings in Resources */,
+				BE4869F828DEF4D7003040AD /* Urbanist-SemiBoldItalic.ttf in Resources */,
+				BE1D521528D887F400EC151A /* Assets.xcassets in Resources */,
+				BE4869F728DEF4D7003040AD /* Urbanist-Light.ttf in Resources */,
+				BE4869C728DECD14003040AD /* Profile.storyboard in Resources */,
+				BE4869FA28DEF4D7003040AD /* Urbanist-ExtraBold.ttf in Resources */,
+				BE4869FC28DEF4D7003040AD /* Urbanist-ExtraLight.ttf in Resources */,
+				BE1D521328D887F300EC151A /* Main.storyboard in Resources */,
+				BE4869F028DEF4D7003040AD /* Urbanist-ExtraBoldItalic.ttf in Resources */,
+				BE4869FD28DEF4D7003040AD /* Urbanist-ThinItalic.ttf in Resources */,
+				BE4869CF28DECD90003040AD /* Inbox.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3C857365994026CC8F48BAC5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EduTune/Pods-EduTune-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EduTune/Pods-EduTune-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EduTune/Pods-EduTune-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		88D6945C848A1914D5F4D537 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EduTune-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BE1D520428D887F300EC151A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE486A0128DEF624003040AD /* RPicker.swift in Sources */,
+				BEE78F7228F6D30600A4B3B1 /* HomeVC.swift in Sources */,
+				BE14710528F579F100726625 /* LetsInVC.swift in Sources */,
+				BE14710928F57A1800726625 /* LoginVC.swift in Sources */,
+				BE14710128F5733A00726625 /* IntroCVCell.swift in Sources */,
+				BE1D520C28D887F300EC151A /* AppDelegate.swift in Sources */,
+				BE14711328F57AC300726625 /* CreateNewPassVC.swift in Sources */,
+				BE4869FF28DEF5B8003040AD /* Extensions.swift in Sources */,
+				BE14711528F57AE400726625 /* PassResetSuccessVC.swift in Sources */,
+				BE1D520E28D887F300EC151A /* SceneDelegate.swift in Sources */,
+				BE14710B28F57A2900726625 /* VerificationVC.swift in Sources */,
+				BEE78F7428F6D44800A4B3B1 /* DVDevice.swift in Sources */,
+				BE14711728F57C1F00726625 /* MakeToast.swift in Sources */,
+				BE486A0328DEF62C003040AD /* FormValidation.swift in Sources */,
+				BE14711128F57AAD00726625 /* ForgotPassVerifyVC.swift in Sources */,
+				BE14710F28F57A8300726625 /* ForgotPassVC.swift in Sources */,
+				BE486A0728DEF698003040AD /* IntroVC.swift in Sources */,
+				BE486A0528DEF673003040AD /* SocialLoginVC.swift in Sources */,
+				BE14710728F57A0800726625 /* SignupVC.swift in Sources */,
+				BE486A0928DEF6D3003040AD /* OTPTextView.swift in Sources */,
+				BE14710D28F57A5700726625 /* UpdateProfileVC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BE1D521128D887F300EC151A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE1D521228D887F300EC151A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BE1D521628D887F400EC151A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE1D521728D887F400EC151A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BE1D521A28D887F400EC151A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BE1D521B28D887F400EC151A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BE1D521D28D887F400EC151A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 172CA9B0D970362B62617A01 /* Pods-EduTune.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3ZKPWW7J5X;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EduTune/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "EduTune wants to access your camera to take profile picture or record video";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "EduTune wants to access your microphone to record video";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "EduTune wants to access your photo library to pick profile pictures or choose videos to post";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mostafizur.EduTune;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		BE1D521E28D887F400EC151A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12A43F5A3E4339F493AD1793 /* Pods-EduTune.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3ZKPWW7J5X;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EduTune/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "EduTune wants to access your camera to take profile picture or record video";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "EduTune wants to access your microphone to record video";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "EduTune wants to access your photo library to pick profile pictures or choose videos to post";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mostafizur.EduTune;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BE1D520328D887F300EC151A /* Build configuration list for PBXProject "EduTune" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE1D521A28D887F400EC151A /* Debug */,
+				BE1D521B28D887F400EC151A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE1D521C28D887F400EC151A /* Build configuration list for PBXNativeTarget "EduTune" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE1D521D28D887F400EC151A /* Debug */,
+				BE1D521E28D887F400EC151A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BE1D520028D887F300EC151A /* Project object */;
+}
