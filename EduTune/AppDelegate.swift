@@ -15,6 +15,7 @@ let GOOGLECLIENTID = "606879515005-8ie3fedl108c6vrdg4mko9keqg96bppi.apps.googleu
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var uuid: String?
 
     var topInset: CGFloat {
         return window?.safeAreaInsets.top ?? 0
@@ -24,8 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return window?.safeAreaInsets.bottom ?? 0
     }
     
-    class func shared() -> AppDelegate? {
-        return UIApplication.shared.delegate as? AppDelegate
+    class func shared() -> AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
     }
 
     func registerRemoteNotification() {

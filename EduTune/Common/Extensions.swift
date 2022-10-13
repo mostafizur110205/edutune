@@ -1082,7 +1082,7 @@ extension Date{
     func dateStringWithFormat(format: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
-        dateFormatter.locale = Locale(identifier: DataController.shared.getDateFormatterLocal())
+        dateFormatter.locale = Locale(identifier: "en_US")
         return dateFormatter.string(from: self)
     }
     
@@ -1128,7 +1128,7 @@ extension Date{
     func timeAgoDisplay() -> String {
         let formatter = RelativeDateTimeFormatter()
         formatter.unitsStyle = .full
-        formatter.locale = Locale(identifier: DataController.shared.getDateFormatterLocal())
+        formatter.locale = Locale(identifier: "en_US")
         return formatter.localizedString(for: self, relativeTo: Date())
     }
     

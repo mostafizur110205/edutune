@@ -7,32 +7,31 @@
 //
 
 import UIKit
+import SDWebImage
 
 class IntroVC: SocialLoginVC {
     
     @IBOutlet weak var pagecontrol : UIPageControl!
     @IBOutlet weak var bottomCns: NSLayoutConstraint!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var nextButton: UIButton!
+
+    var dataTuto: [OnboardData] = [OnboardData]()
     
-    
-    var dataTuto: [[String: String]] = [
-        ["image": "tuto_1", "title": "We provide the best\nlearning courses &\ngreat mentors!".localized()],
-        ["image": "tuto_1", "title": "Learn anytime and\nanywhere easily and\nconveniently".localized()],
-        ["image": "tuto_1", "title": "Let's improve your\nskills together with\nElera right now!".localized()]
-    ]
+    var currentIndex = 0
     
     override var prefersStatusBarHidden: Bool{
         return false
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle{
-        return .lightContent
+        return .default
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        bottomCns.constant = AppDelegate.shared()!.bottomInset > 0 ? 0 : 10
+        bottomCns.constant = AppDelegate.shared().bottomInset > 0 ? 0 : 10
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -47,8 +46,17 @@ class IntroVC: SocialLoginVC {
     
     
     @IBAction func onGetStartedButtonTap(_ sender: Any) {
-//        let vc : PhoneVC = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "PhoneVC") as! PhoneVC
-//        self.navigationController?.pushViewController(vc, animated: true)
+        if currentIndex == 2 {
+            if let viewC: TabBarVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarVC") as? TabBarVC {
+                UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController = viewC
+                UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.makeKeyAndVisible()
+            }
+        } else {
+            currentIndex += 1
+            self.collectionView.scrollToItem(at: IndexPath(item: currentIndex, section: 0), at: .centeredHorizontally, animated: true)
+            self.pagecontrol.currentPage = currentIndex
+            self.nextButton.setTitle(currentIndex==2 ? "Get started" : "Next", for: .normal)
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -69,7 +77,9 @@ class IntroVC: SocialLoginVC {
         if scrollView == collectionView {
             
             if let index = findCenterIndex(){
+                self.currentIndex = index
                 self.pagecontrol.currentPage = index
+                self.nextButton.setTitle(index==2 ? "Get started" : "Next", for: .normal)
             }
         }
     }
@@ -98,8 +108,8 @@ extension IntroVC: UICollectionViewDataSource, UICollectionViewDelegate, UIColle
         
         let tutoData = dataTuto[indexPath.item]
 
-        cell.titleLabel.text = tutoData["title"]
-        cell.cellImageView.image = UIImage(named: tutoData["image"] ?? "")
+        cell.titleLabel.text = tutoData.splash_name
+        cell.cellImageView.sd_setImage(with: URL(string: tutoData.image ?? "" ), placeholderImage: nil)
         
         return cell
         
