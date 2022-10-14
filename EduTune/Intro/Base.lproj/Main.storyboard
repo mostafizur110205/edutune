@@ -49,7 +49,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="m8v-xe-C55">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" name="Primary500"/>
                     </tabBar>
                     <connections>
@@ -150,7 +150,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="144" id="gcx-zd-GA6"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Urbanist-Bold" family="Urbanist" pointSize="40"/>
+                                                    <fontDescription key="fontDescription" name="Urbanist-Bold" family="Urbanist" pointSize="34"/>
                                                     <color key="textColor" name="Grey900"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>

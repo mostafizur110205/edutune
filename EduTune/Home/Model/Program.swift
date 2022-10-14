@@ -7,7 +7,7 @@
 
 import SwiftyJSON
 
-class Course: NSObject {
+class Program: NSObject {
     
     var id: Int?
     var institution_id: Int?

@@ -12,7 +12,7 @@ class HomeData: NSObject {
     var helpline: String?
     var institution: Institution?
     var popup_advertisements_v2 = [Advertisement]()
-    var program_wise_course = [Course]()
+    var program_wise_course = [Program]()
     var editors_choice = [Class]()
     var top_educators = [Teacher]()
 
@@ -20,7 +20,7 @@ class HomeData: NSObject {
         helpline = json["helpline"].string
         institution = Institution(json: json["institution"])
         popup_advertisements_v2 = json["popup_advertisements_v2"].arrayValue.map({ Advertisement(json: $0) })
-        program_wise_course = json["program_wise_course"].arrayValue.map({ Course(json: $0) })
+        program_wise_course = json["program_wise_course"].arrayValue.map({ Program(json: $0) })
         editors_choice = json["editors_choice"].arrayValue.map({ Class(json: $0) })
         top_educators = json["top_educators"].arrayValue.map({ Teacher(json: $0) })
     }

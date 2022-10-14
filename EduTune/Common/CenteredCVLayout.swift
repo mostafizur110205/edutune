@@ -15,7 +15,7 @@ class CenteredCVLayout: UICollectionViewFlowLayout {
         minimumInteritemSpacing = 0
         minimumLineSpacing = 0
         scrollDirection = .horizontal
-        sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         collectionView!.isPagingEnabled = false
     }
     

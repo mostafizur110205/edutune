@@ -59,6 +59,39 @@ class APIService: NSObject {
         }
     }
     
+    func getTopEducators(params: [String: Any], completion: @escaping ([Teacher]) -> Void) {
+        APIRequest.shared.getRequest(url: APIEndpoints.SEE_ALL, parameters: params) { (JSON, error) in
+            DispatchQueue.main.async {
+                if error == nil {
+                    if let json = JSON {
+                        if json["error"].boolValue == false {
+                            let teachers = json["data"]["top_educators"]["data"].arrayValue.map { Teacher(json: $0) }
+                            completion(teachers)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func getMostPopular(page: Int, params: [String: Any], completion: @escaping ([Class], [Program], Int, Int) -> Void) {
+        APIRequest.shared.getRequest(url: APIEndpoints.SEE_ALL+"\(page)", parameters: params) { (JSON, error) in
+            DispatchQueue.main.async {
+                if error == nil {
+                    if let json = JSON {
+                        if json["error"].boolValue == false {
+                            let courses = json["data"]["most_popular_courses"]["data"].arrayValue.map { Class(json: $0) }
+                            let programs = json["data"]["programs"].arrayValue.map { Program(json: $0) }
+                            let currentPage = json["data"]["most_popular_courses"]["current_page"].intValue
+                            let lastPage = json["data"]["most_popular_courses"]["last_page"].intValue
+                            completion(courses, programs, currentPage, lastPage)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
 //    func getSearchResult(_ queryText: String, completion: @escaping ([User], [Trend]) -> Void) {
 //        APIRequest.shared.getRequest(url: APIEndpoints.SEARCH+"\(queryText)", parameters: nil) { (JSON, error) in
 //            DispatchQueue.main.async {

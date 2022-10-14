@@ -19,9 +19,9 @@ class HomeVC: UIViewController {
     
     var homeData: HomeData?
     var categories = [String]()
-    var categoriesSelected = ["All"]
+    var categorySelected = "All"
     var allClasses = [Class]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,30 +44,54 @@ class HomeVC: UIViewController {
         APIService.shared.getHomeData { homeData in
             if let homeData = homeData {
                 self.homeData = homeData
-                self.categories = homeData.program_wise_course.map({ $0.program_name ?? "" })
-                for course in homeData.program_wise_course {
-                    self.allClasses.append(contentsOf: course.getClasses)
-                }
+                self.categories = homeData.program_wise_course.map({ $0.program_name ?? "" }).unique()
+                
                 self.categories.insert("All", at: 0)
                 
                 self.bannerCV.reloadData()
                 self.mentorsCV.reloadData()
                 self.categoryCV.reloadData()
-                self.tableView.reloadData()
+                self.filterPrograms()
             }
         }
     }
     
-    @IBAction func mentorsSeeAllButtonTap(_ sender: Any) {
+    func filterPrograms() {
+        self.allClasses.removeAll()
+        for program in homeData?.program_wise_course ?? [] {
+            self.allClasses.append(contentsOf: program.getClasses)
+        }
         
+        if categorySelected != "All" {
+            self.allClasses = self.allClasses.filter({ $0.program_name == categorySelected })
+        }
+        self.tableView.reloadData()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.tabBarController?.tabBar.isHidden = false
+
+    }
+    
+    @IBAction func mentorsSeeAllButtonTap(_ sender: Any) {
+        if let viewC: TopMentorsVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "TopMentorsVC") as? TopMentorsVC {
+            self.navigationController?.pushViewController(viewC, animated: true)
+        }
     }
     
     @IBAction func popularCoursesSeeAllButtonTap(_ sender: Any) {
-        
+        if let viewC: MostPopularCoursesVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "MostPopularCoursesVC") as? MostPopularCoursesVC {
+            self.navigationController?.pushViewController(viewC, animated: true)
+        }
     }
     
     @IBAction func onSearchButtonTap(_ sender: Any) {
-        
+        if let viewC: SearchVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "SearchVC") as? SearchVC {
+            self.navigationController?.pushViewController(viewC, animated: true)
+        }
     }
     
 }
@@ -103,12 +127,7 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollec
         } else if collectionView == categoryCV {
             guard let cell: CategoryCVCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCVCell", for: indexPath) as? CategoryCVCell else {return UICollectionViewCell()}
             let category = categories[indexPath.item]
-            
-            if let _ = categoriesSelected.firstIndex(where: { $0 == category }) {
-                cell.configure(with: category, selected: true, height: 38)
-            } else {
-                cell.configure(with: category, selected: false, height: 38)
-            }
+            cell.configure(with: category, selected: categorySelected == category, height: 38)
             return cell
         }
         
@@ -140,14 +159,9 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollec
         } else if collectionView == mentorsCV {
             
         } else if collectionView == categoryCV {
-            let category = categories[indexPath.item]
-            
-            if let index = categoriesSelected.firstIndex(where: { $0 == category }) {
-                categoriesSelected.remove(at: index)
-            } else {
-                categoriesSelected.append(category)
-            }
+            categorySelected = categories[indexPath.item]
             categoryCV.reloadData()
+            filterPrograms()
         }
         
     }
@@ -163,7 +177,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return  allClasses.count
+            return min(allClasses.count, 3)
         } else {
             return 1
         }
@@ -175,7 +189,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "CourseTVCell") as? CourseTVCell else {return UITableViewCell()}
+            guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "ClassTVCell") as? ClassTVCell else {return UITableViewCell()}
             
             let classData = allClasses[indexPath.row]
             cell.classData = classData
@@ -185,6 +199,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else if indexPath.section == 2 {
             guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "HomeHelpCell") as? HomeHelpCell else {return UITableViewCell()}
+            cell.institution = homeData?.institution
             return cell
         }
         

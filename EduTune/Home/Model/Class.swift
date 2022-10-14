@@ -25,8 +25,8 @@ class Class: NSObject {
 
     required init(json: JSON) {
         id = json["id"].int
-        current_price = json["current_price"].int
-        original_price = json["original_price"].int
+        current_price = json["current_price"].intValue
+        original_price = json["original_price"].intValue
         subject_count = json["subject_count"].int
         is_show_details = json["is_show_details"].int
         mode = json["mode"].int

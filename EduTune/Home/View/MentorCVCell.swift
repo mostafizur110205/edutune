@@ -15,7 +15,7 @@ class MentorCVCell: UICollectionViewCell {
     var teacher: Teacher? {
         didSet {
             userImageView.sd_setImage(with: URL(string: teacher?.portfolio_photo ?? "" ), placeholderImage: nil)
-            usernameLabel.text = teacher?.name
+            usernameLabel.text = teacher?.name?.components(separatedBy: " ").first
         }
     }
     
