@@ -19,6 +19,5 @@ open class APIEndpoints: NSObject {
     public static let ONBOARD_DATA: String = BASE_URL+"get-mobile-app"
     public static let HOME_PUBLIC: String = BASE_URL+"olv2/public/home"
     public static let SEE_ALL: String = BASE_URL+"olv2/see-all?page="
-
-    public static let SEARCH: String = BASE_URL+"search?query="
+    
 }

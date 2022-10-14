@@ -73,7 +73,7 @@ class HomeVC: UIViewController {
         super.viewWillAppear(animated)
         
         self.tabBarController?.tabBar.isHidden = false
-
+        
     }
     
     @IBAction func mentorsSeeAllButtonTap(_ sender: Any) {
