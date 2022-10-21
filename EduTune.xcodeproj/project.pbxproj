@@ -81,6 +81,7 @@
 		BEF8040128F8247A00CB3AE5 /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF8040028F8247A00CB3AE5 /* Program.swift */; };
 		BEF8040328F8259500CB3AE5 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF8040228F8259500CB3AE5 /* Class.swift */; };
 		BEF8040528F826A500CB3AE5 /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF8040428F826A500CB3AE5 /* Teacher.swift */; };
+		FCDE3F2F2901C8B6005DAA96 /* Garbage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCDE3F2E2901C8B6005DAA96 /* Garbage.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -162,6 +163,7 @@
 		BEF8040028F8247A00CB3AE5 /* Program.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
 		BEF8040228F8259500CB3AE5 /* Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
 		BEF8040428F826A500CB3AE5 /* Teacher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
+		FCDE3F2E2901C8B6005DAA96 /* Garbage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Garbage.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +240,7 @@
 				BE1D521628D887F400EC151A /* LaunchScreen.storyboard */,
 				BE1D521928D887F400EC151A /* Info.plist */,
 				BE14710228F578F300726625 /* Localizable.strings */,
+				FCDE3F2E2901C8B6005DAA96 /* Garbage.storyboard */,
 			);
 			path = EduTune;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				BE4869C728DECD14003040AD /* Profile.storyboard in Resources */,
 				BE4869FA28DEF4D7003040AD /* Urbanist-ExtraBold.ttf in Resources */,
 				BE4869FC28DEF4D7003040AD /* Urbanist-ExtraLight.ttf in Resources */,
+				FCDE3F2F2901C8B6005DAA96 /* Garbage.storyboard in Resources */,
 				BE1D521328D887F300EC151A /* Main.storyboard in Resources */,
 				BE4869F028DEF4D7003040AD /* Urbanist-ExtraBoldItalic.ttf in Resources */,
 				BE4869FD28DEF4D7003040AD /* Urbanist-ThinItalic.ttf in Resources */,
