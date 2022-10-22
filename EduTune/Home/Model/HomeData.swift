@@ -1,5 +1,5 @@
 //
-//  Passion.swift
+//  HomeData.swift
 //  Trendit
 //
 //  Created by Mostafizur Rahman on 2/7/22.

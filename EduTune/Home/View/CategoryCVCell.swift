@@ -10,6 +10,7 @@ import UIKit
 class CategoryCVCell: UICollectionViewCell {
    
     @IBOutlet weak var tagNameLabel: UILabel!
+    @IBOutlet weak var iconImageView: UIImageView?
 
     private var showBorderSelected: Bool = false
 

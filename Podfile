@@ -14,5 +14,7 @@ target 'EduTune' do
   pod 'SwiftyJSON'
   pod 'SkeletonView'
   pod "LetterAvatarKit"
+  pod 'SJSegmentedScrollView', '1.3.8'
+  pod 'UICollectionViewLeftAlignedLayout'
 
 end

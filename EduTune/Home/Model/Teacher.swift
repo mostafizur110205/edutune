@@ -1,5 +1,5 @@
 //
-//  Passion.swift
+//  Teacher.swift
 //  Trendit
 //
 //  Created by Mostafizur Rahman on 2/7/22.
@@ -13,6 +13,7 @@ class Teacher: NSObject {
     var designation_name: String?
     var name: String?
     var portfolio_photo: String?
+    var photo: String?
 
     required init(json: JSON) {
         id = json["id"].int
@@ -23,6 +24,11 @@ class Teacher: NSObject {
         let pic = json["portfolio_photo"].stringValue
         if !pic.isEmpty {
             portfolio_photo = APIEndpoints.S3_URL + (AppDelegate.shared().uuid ?? "") + pic
+        }
+        
+        let pic2 = json["photo"].stringValue
+        if !pic2.isEmpty {
+            photo = APIEndpoints.S3_URL + (AppDelegate.shared().uuid ?? "") + pic2
         }
 
     }

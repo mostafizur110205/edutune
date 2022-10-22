@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		768E2115262AAB544AE6EBA9 /* Pods_EduTune.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C96D62E64AD5083F9B26A3F /* Pods_EduTune.framework */; };
+		BE02837B290423DB006FCD52 /* ClassHeaderTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE02837A290423DB006FCD52 /* ClassHeaderTVCell.swift */; };
+		BE02837D290423FA006FCD52 /* ClassAboutTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE02837C290423FA006FCD52 /* ClassAboutTVCell.swift */; };
+		BE02837F2904240C006FCD52 /* ClassCertificateTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE02837E2904240C006FCD52 /* ClassCertificateTVCell.swift */; };
+		BE02838129042432006FCD52 /* ClassChecklistTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE02838029042432006FCD52 /* ClassChecklistTVCell.swift */; };
+		BE028383290439B6006FCD52 /* LessonHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE028382290439B6006FCD52 /* LessonHeaderCell.swift */; };
+		BE028385290439C4006FCD52 /* LessonTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE028384290439C4006FCD52 /* LessonTVCell.swift */; };
 		BE14710128F5733A00726625 /* IntroCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE14710028F5733A00726625 /* IntroCVCell.swift */; };
 		BE14710328F578F300726625 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE14710228F578F300726625 /* Localizable.strings */; };
 		BE14710528F579F100726625 /* LetsInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE14710428F579F100726625 /* LetsInVC.swift */; };
@@ -65,6 +71,17 @@
 		BE486A0528DEF673003040AD /* SocialLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE486A0428DEF673003040AD /* SocialLoginVC.swift */; };
 		BE486A0728DEF698003040AD /* IntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE486A0628DEF698003040AD /* IntroVC.swift */; };
 		BE486A0928DEF6D3003040AD /* OTPTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE486A0828DEF6D3003040AD /* OTPTextView.swift */; };
+		BECAFF6C290385AE00E7C8B9 /* MentorProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECAFF6B290385AE00E7C8B9 /* MentorProfileVC.swift */; };
+		BECAFF6E290385C000E7C8B9 /* ClassDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECAFF6D290385C000E7C8B9 /* ClassDetailsVC.swift */; };
+		BECAFF702903860A00E7C8B9 /* ClassDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECAFF6F2903860A00E7C8B9 /* ClassDetail.swift */; };
+		BECAFF722903876100E7C8B9 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECAFF712903876100E7C8B9 /* Review.swift */; };
+		BECAFF74290388A100E7C8B9 /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECAFF73290388A100E7C8B9 /* Feature.swift */; };
+		BECAFF76290389A200E7C8B9 /* Lecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECAFF75290389A200E7C8B9 /* Lecture.swift */; };
+		BECAFF7829038AAC00E7C8B9 /* ClassContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECAFF7729038AAC00E7C8B9 /* ClassContent.swift */; };
+		BECAFF7A29038CAD00E7C8B9 /* ClassAboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECAFF7929038CAD00E7C8B9 /* ClassAboutVC.swift */; };
+		BECAFF7C29038CC400E7C8B9 /* ClassLessonsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECAFF7B29038CC400E7C8B9 /* ClassLessonsVC.swift */; };
+		BECAFF7E29038CD400E7C8B9 /* ClassReviewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECAFF7D29038CD400E7C8B9 /* ClassReviewsVC.swift */; };
+		BECAFF8029038FDC00E7C8B9 /* ClassHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECAFF7F29038FDC00E7C8B9 /* ClassHeaderVC.swift */; };
 		BED6540928F9899200737B78 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED6540828F9899200737B78 /* SearchVC.swift */; };
 		BED6540D28F9B1E200737B78 /* MentorTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED6540C28F9B1E200737B78 /* MentorTVCell.swift */; };
 		BED6540F28F9C4DD00737B78 /* FilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED6540E28F9C4DD00737B78 /* FilterVC.swift */; };
@@ -88,6 +105,12 @@
 		0C96D62E64AD5083F9B26A3F /* Pods_EduTune.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EduTune.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		12A43F5A3E4339F493AD1793 /* Pods-EduTune.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTune.release.xcconfig"; path = "Target Support Files/Pods-EduTune/Pods-EduTune.release.xcconfig"; sourceTree = "<group>"; };
 		172CA9B0D970362B62617A01 /* Pods-EduTune.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTune.debug.xcconfig"; path = "Target Support Files/Pods-EduTune/Pods-EduTune.debug.xcconfig"; sourceTree = "<group>"; };
+		BE02837A290423DB006FCD52 /* ClassHeaderTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassHeaderTVCell.swift; sourceTree = "<group>"; };
+		BE02837C290423FA006FCD52 /* ClassAboutTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassAboutTVCell.swift; sourceTree = "<group>"; };
+		BE02837E2904240C006FCD52 /* ClassCertificateTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassCertificateTVCell.swift; sourceTree = "<group>"; };
+		BE02838029042432006FCD52 /* ClassChecklistTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassChecklistTVCell.swift; sourceTree = "<group>"; };
+		BE028382290439B6006FCD52 /* LessonHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonHeaderCell.swift; sourceTree = "<group>"; };
+		BE028384290439C4006FCD52 /* LessonTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonTVCell.swift; sourceTree = "<group>"; };
 		BE14710028F5733A00726625 /* IntroCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroCVCell.swift; sourceTree = "<group>"; };
 		BE14710228F578F300726625 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		BE14710428F579F100726625 /* LetsInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetsInVC.swift; sourceTree = "<group>"; };
@@ -147,6 +170,17 @@
 		BE486A0428DEF673003040AD /* SocialLoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialLoginVC.swift; sourceTree = "<group>"; };
 		BE486A0628DEF698003040AD /* IntroVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroVC.swift; sourceTree = "<group>"; };
 		BE486A0828DEF6D3003040AD /* OTPTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPTextView.swift; sourceTree = "<group>"; };
+		BECAFF6B290385AE00E7C8B9 /* MentorProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorProfileVC.swift; sourceTree = "<group>"; };
+		BECAFF6D290385C000E7C8B9 /* ClassDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailsVC.swift; sourceTree = "<group>"; };
+		BECAFF6F2903860A00E7C8B9 /* ClassDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassDetail.swift; sourceTree = "<group>"; };
+		BECAFF712903876100E7C8B9 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		BECAFF73290388A100E7C8B9 /* Feature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
+		BECAFF75290389A200E7C8B9 /* Lecture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lecture.swift; sourceTree = "<group>"; };
+		BECAFF7729038AAC00E7C8B9 /* ClassContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassContent.swift; sourceTree = "<group>"; };
+		BECAFF7929038CAD00E7C8B9 /* ClassAboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassAboutVC.swift; sourceTree = "<group>"; };
+		BECAFF7B29038CC400E7C8B9 /* ClassLessonsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassLessonsVC.swift; sourceTree = "<group>"; };
+		BECAFF7D29038CD400E7C8B9 /* ClassReviewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassReviewsVC.swift; sourceTree = "<group>"; };
+		BECAFF7F29038FDC00E7C8B9 /* ClassHeaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassHeaderVC.swift; sourceTree = "<group>"; };
 		BED6540828F9899200737B78 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		BED6540C28F9B1E200737B78 /* MentorTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorTVCell.swift; sourceTree = "<group>"; };
 		BED6540E28F9C4DD00737B78 /* FilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterVC.swift; sourceTree = "<group>"; };
@@ -398,6 +432,11 @@
 				BEF8040028F8247A00CB3AE5 /* Program.swift */,
 				BEF8040228F8259500CB3AE5 /* Class.swift */,
 				BEF8040428F826A500CB3AE5 /* Teacher.swift */,
+				BECAFF6F2903860A00E7C8B9 /* ClassDetail.swift */,
+				BECAFF712903876100E7C8B9 /* Review.swift */,
+				BECAFF73290388A100E7C8B9 /* Feature.swift */,
+				BECAFF75290389A200E7C8B9 /* Lecture.swift */,
+				BECAFF7729038AAC00E7C8B9 /* ClassContent.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -412,6 +451,12 @@
 				BE304D1028F84B7F0062C48A /* LoginTVCell.swift */,
 				BE304D0E28F84B660062C48A /* HomeHelpCell.swift */,
 				BED6540C28F9B1E200737B78 /* MentorTVCell.swift */,
+				BE02837A290423DB006FCD52 /* ClassHeaderTVCell.swift */,
+				BE02837C290423FA006FCD52 /* ClassAboutTVCell.swift */,
+				BE02837E2904240C006FCD52 /* ClassCertificateTVCell.swift */,
+				BE02838029042432006FCD52 /* ClassChecklistTVCell.swift */,
+				BE028382290439B6006FCD52 /* LessonHeaderCell.swift */,
+				BE028384290439C4006FCD52 /* LessonTVCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -424,6 +469,12 @@
 				BE304D0A28F8479C0062C48A /* MostPopularCoursesVC.swift */,
 				BED6540828F9899200737B78 /* SearchVC.swift */,
 				BED6540E28F9C4DD00737B78 /* FilterVC.swift */,
+				BECAFF6B290385AE00E7C8B9 /* MentorProfileVC.swift */,
+				BECAFF6D290385C000E7C8B9 /* ClassDetailsVC.swift */,
+				BECAFF7F29038FDC00E7C8B9 /* ClassHeaderVC.swift */,
+				BECAFF7929038CAD00E7C8B9 /* ClassAboutVC.swift */,
+				BECAFF7B29038CC400E7C8B9 /* ClassLessonsVC.swift */,
+				BECAFF7D29038CD400E7C8B9 /* ClassReviewsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -589,13 +640,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEF803F428F8059A00CB3AE5 /* APIEndpoints.swift in Sources */,
+				BECAFF7C29038CC400E7C8B9 /* ClassLessonsVC.swift in Sources */,
 				BE486A0128DEF624003040AD /* RPicker.swift in Sources */,
 				BEE78F7228F6D30600A4B3B1 /* HomeVC.swift in Sources */,
 				BE14710528F579F100726625 /* LetsInVC.swift in Sources */,
 				BEF8040528F826A500CB3AE5 /* Teacher.swift in Sources */,
+				BECAFF8029038FDC00E7C8B9 /* ClassHeaderVC.swift in Sources */,
+				BE02838129042432006FCD52 /* ClassChecklistTVCell.swift in Sources */,
 				BE14710928F57A1800726625 /* LoginVC.swift in Sources */,
 				BE304D1528F864530062C48A /* CenteredCVLayout.swift in Sources */,
 				BEF803FB28F8074F00CB3AE5 /* OnboardData.swift in Sources */,
+				BE028385290439C4006FCD52 /* LessonTVCell.swift in Sources */,
 				BED6540928F9899200737B78 /* SearchVC.swift in Sources */,
 				BE14710128F5733A00726625 /* IntroCVCell.swift in Sources */,
 				BEF803EA28F8029100CB3AE5 /* SplashVC.swift in Sources */,
@@ -611,12 +666,15 @@
 				BE4869FF28DEF5B8003040AD /* Extensions.swift in Sources */,
 				BE14711528F57AE400726625 /* PassResetSuccessVC.swift in Sources */,
 				BE1D520E28D887F300EC151A /* SceneDelegate.swift in Sources */,
+				BE028383290439B6006FCD52 /* LessonHeaderCell.swift in Sources */,
 				BEF803FD28F80CFA00CB3AE5 /* TabBarVC.swift in Sources */,
 				BE14710B28F57A2900726625 /* VerificationVC.swift in Sources */,
 				BEE78F7428F6D44800A4B3B1 /* DVDevice.swift in Sources */,
 				BEF8040128F8247A00CB3AE5 /* Program.swift in Sources */,
+				BECAFF6C290385AE00E7C8B9 /* MentorProfileVC.swift in Sources */,
 				BE304D0D28F84A650062C48A /* BannerCVCell.swift in Sources */,
 				BE14711728F57C1F00726625 /* MakeToast.swift in Sources */,
+				BECAFF76290389A200E7C8B9 /* Lecture.swift in Sources */,
 				BE486A0328DEF62C003040AD /* FormValidation.swift in Sources */,
 				BED6540F28F9C4DD00737B78 /* FilterVC.swift in Sources */,
 				BE14711128F57AAD00726625 /* ForgotPassVerifyVC.swift in Sources */,
@@ -624,14 +682,24 @@
 				BED6540D28F9B1E200737B78 /* MentorTVCell.swift in Sources */,
 				BE14710F28F57A8300726625 /* ForgotPassVC.swift in Sources */,
 				BE486A0728DEF698003040AD /* IntroVC.swift in Sources */,
+				BE02837D290423FA006FCD52 /* ClassAboutTVCell.swift in Sources */,
+				BECAFF702903860A00E7C8B9 /* ClassDetail.swift in Sources */,
+				BECAFF7A29038CAD00E7C8B9 /* ClassAboutVC.swift in Sources */,
 				BEF8040328F8259500CB3AE5 /* Class.swift in Sources */,
+				BECAFF6E290385C000E7C8B9 /* ClassDetailsVC.swift in Sources */,
 				BE304D0328F847190062C48A /* MentorCVCell.swift in Sources */,
 				BE486A0528DEF673003040AD /* SocialLoginVC.swift in Sources */,
+				BECAFF74290388A100E7C8B9 /* Feature.swift in Sources */,
 				BE14710728F57A0800726625 /* SignupVC.swift in Sources */,
+				BECAFF7E29038CD400E7C8B9 /* ClassReviewsVC.swift in Sources */,
+				BE02837B290423DB006FCD52 /* ClassHeaderTVCell.swift in Sources */,
+				BE02837F2904240C006FCD52 /* ClassCertificateTVCell.swift in Sources */,
 				BE486A0928DEF6D3003040AD /* OTPTextView.swift in Sources */,
+				BECAFF722903876100E7C8B9 /* Review.swift in Sources */,
 				BEF803F328F8059A00CB3AE5 /* APIService.swift in Sources */,
 				BEF803F628F8059A00CB3AE5 /* APIRequest.swift in Sources */,
 				BE14710D28F57A5700726625 /* UpdateProfileVC.swift in Sources */,
+				BECAFF7829038AAC00E7C8B9 /* ClassContent.swift in Sources */,
 				BE304D0B28F8479C0062C48A /* MostPopularCoursesVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

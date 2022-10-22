@@ -92,6 +92,41 @@ class APIService: NSObject {
         }
     }
     
+    func getCourseDetails(params: [String: Any], completion: @escaping (ClassDetail) -> Void) {
+        APIRequest.shared.getRequest(url: APIEndpoints.COURSE_DETAIL, parameters: params) { (JSON, error) in
+            DispatchQueue.main.async {
+                if error == nil {
+                    if let json = JSON {
+                        if json["error"].boolValue == false {
+                            let classDetail = ClassDetail(json: json["class"])
+                            let teachers = json["teachers"].arrayValue.map { Teacher(json: $0) }
+                            classDetail.teachers = teachers
+                            completion(classDetail)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func getMentorDetails(page: Int, params: [String: Any], completion: @escaping (Teacher, [Class], Int, Int) -> Void) {
+        APIRequest.shared.getRequest(url: APIEndpoints.MENTOR_DETAIL+"\(page)", parameters: nil) { (JSON, error) in
+            DispatchQueue.main.async {
+                if error == nil {
+                    if let json = JSON {
+                        if json["error"].boolValue == false {
+                            let teacher = Teacher(json: json["teacher_details"])
+                            let classes = json["teacher_courses"]["data"].arrayValue.map { Class(json: $0) }
+                            let currentPage = json["teacher_courses"]["current_page"].intValue
+                            let lastPage = json["teacher_courses"]["last_page"].intValue
+                            completion(teacher, classes, currentPage, lastPage)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
 //    func getSearchResult(_ queryText: String, completion: @escaping ([User], [Trend]) -> Void) {
 //        APIRequest.shared.getRequest(url: APIEndpoints.SEARCH+"\(queryText)", parameters: nil) { (JSON, error) in
 //            DispatchQueue.main.async {

@@ -208,7 +208,17 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if indexPath.section == 0 {
+            let params = ["class_id": allClasses[indexPath.row].id ?? -1]
+            APIService.shared.getCourseDetails(params: params, completion: { clsDetail in
+                if let viewC: ClassDetailsVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "ClassDetailsVC") as? ClassDetailsVC {
+                    viewC.classDetail = clsDetail
+                    self.navigationController?.pushViewController(viewC, animated: true)
+                }
+            })
+            
+           
+        }
     }
     
 }
