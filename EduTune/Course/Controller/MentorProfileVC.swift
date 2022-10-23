@@ -59,10 +59,10 @@ class MentorProfileVC: UIViewController {
             headerView.setNeedsLayout()
             headerView.layoutIfNeeded()
             
-            let detailheight = (teacher?.detail ?? "").heightOfLabel(font: UIFont.urbanist(style: .regular, ofSize: 14), width: (ScreenSize.SCREEN_WIDTH-32), numberOfLines: 0)
+            let detailHeight = (teacher?.detail ?? "").heightOfLabel(font: UIFont.urbanist(style: .regular, ofSize: 14), width: (ScreenSize.SCREEN_WIDTH-32), numberOfLines: 0)
             
             var frame = headerView.frame
-            frame.size.height = 390 + detailheight
+            frame.size.height = 390 + detailHeight
             headerView.frame = frame
             
             tableView.tableHeaderView = headerView

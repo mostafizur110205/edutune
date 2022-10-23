@@ -21,6 +21,7 @@ open class APIEndpoints: NSObject {
     public static let SEE_ALL: String = BASE_URL+"olv2/see-all?page="
     public static let COURSE_DETAIL: String = BASE_URL+"olv2/public/online-course-details"
     public static let MENTOR_DETAIL: String = BASE_URL+"olv2/mentor-details?page="
+    public static let BLOG: String = BASE_URL+"olv2/public/blog"
 
     
 }
