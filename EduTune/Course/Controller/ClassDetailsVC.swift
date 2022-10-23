@@ -21,19 +21,19 @@ class ClassDetailsVC: SJSegmentedViewController {
     var features = [Feature]()
 
     override func viewDidLoad() {
-        guard let viewC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "ClassAboutVC") as? ClassAboutVC else {return}
+        guard let viewC = UIStoryboard(name: "Course", bundle: nil).instantiateViewController(withIdentifier: "ClassAboutVC") as? ClassAboutVC else {return}
         viewC.title = "About"
         viewC.classDetail = self.classDetail
 
-        guard let viewC2 = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "ClassLessonsVC") as? ClassLessonsVC else {return}
+        guard let viewC2 = UIStoryboard(name: "Course", bundle: nil).instantiateViewController(withIdentifier: "ClassLessonsVC") as? ClassLessonsVC else {return}
         viewC2.title = "Lessons"
         viewC2.classDetail = self.classDetail
 
-        guard let viewC3 = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "ClassReviewsVC") as? ClassReviewsVC else {return}
+        guard let viewC3 = UIStoryboard(name: "Course", bundle: nil).instantiateViewController(withIdentifier: "ClassReviewsVC") as? ClassReviewsVC else {return}
         viewC3.title = "Reviews"
         viewC3.classDetail = self.classDetail
 
-        guard let headerVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "ClassHeaderVC") as? ClassHeaderVC else {return}
+        guard let headerVC = UIStoryboard(name: "Course", bundle: nil).instantiateViewController(withIdentifier: "ClassHeaderVC") as? ClassHeaderVC else {return}
         headerVC.classDetail = self.classDetail
 
         headerViewController = headerVC
@@ -41,9 +41,11 @@ class ClassDetailsVC: SJSegmentedViewController {
         
         let cvHeight = getCollectionViewHeight()
         let imageHeight = ScreenSize.SCREEN_WIDTH/1.5
+        
+        print(cvHeight)
 
         headerViewHeight = imageHeight+cvHeight+164
-        segmentViewHeight = 40
+        segmentViewHeight = 48
         segmentShadow = .light()
         selectedSegmentViewHeight = 2
         selectedSegmentViewColor = UIColor.init(hex: "335EF7", alpha: 1)
@@ -51,7 +53,7 @@ class ClassDetailsVC: SJSegmentedViewController {
         segmentTitleFont = UIFont.urbanist(style: .semiBold, ofSize: 18)
         showsHorizontalScrollIndicator = false
         showsVerticalScrollIndicator = false
-        headerViewOffsetHeight = (AppDelegate.shared().topInset)+44
+        headerViewOffsetHeight = AppDelegate.shared().topInset
         segmentBackgroundColor = .clear
         segmentedScrollViewColor = .white
         
@@ -84,7 +86,7 @@ class ClassDetailsVC: SJSegmentedViewController {
     }
     
     @IBAction func onEnrolButtonTap(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+
     }
     
 }

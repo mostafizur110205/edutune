@@ -25,7 +25,7 @@ class MentorTVCell: UITableViewCell {
     
     var teacher: Teacher? {
         didSet {
-            userImageView.sd_setImage(with: URL(string: teacher?.portfolio_photo ?? (teacher?.photo ?? "") ), placeholderImage: nil)
+            userImageView.sd_setImage(with: URL(string: teacher?.portfolio_photo ?? ""), placeholderImage: nil)
             usernameLabel.text = teacher?.name
             designationNameLabel.text = teacher?.designation_name
         }

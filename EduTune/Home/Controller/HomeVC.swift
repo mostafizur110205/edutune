@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class HomeVC: UIViewController {
     
@@ -155,9 +156,11 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollec
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if collectionView == bannerCV {
-            
+            let safariVC = SFSafariViewController(url: URL(string: homeData?.popup_advertisements_v2[indexPath.item].url ?? "")!)
+            self.present(safariVC, animated: true, completion: nil)
+            safariVC.delegate = self
         } else if collectionView == mentorsCV {
-            
+            AppDelegate.shared().openMentorProfileVC(navigationController: self.navigationController, mentor: homeData!.top_educators[indexPath.item])
         } else if collectionView == categoryCV {
             categorySelected = categories[indexPath.item]
             categoryCV.reloadData()
@@ -211,14 +214,18 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             let params = ["class_id": allClasses[indexPath.row].id ?? -1]
             APIService.shared.getCourseDetails(params: params, completion: { clsDetail in
-                if let viewC: ClassDetailsVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "ClassDetailsVC") as? ClassDetailsVC {
+                if let viewC: ClassDetailsVC = UIStoryboard(name: "Course", bundle: nil).instantiateViewController(withIdentifier: "ClassDetailsVC") as? ClassDetailsVC {
                     viewC.classDetail = clsDetail
                     self.navigationController?.pushViewController(viewC, animated: true)
                 }
             })
-            
-           
         }
     }
     
+}
+
+extension HomeVC: SFSafariViewControllerDelegate {
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        controller.dismiss(animated: true, completion: nil)
+    }
 }

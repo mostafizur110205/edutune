@@ -19,6 +19,7 @@ class Review: NSObject {
     var comment: String?
     var username: String?
     var photo: String?
+    var created_at: String?
 
     required init(json: JSON) {
         id = json["id"].int
@@ -30,7 +31,8 @@ class Review: NSObject {
 
         comment = json["comment"].string
         username = json["username"].string
-       
+        created_at = json["created_at"].string
+
         let pic = json["photo"].stringValue
         if !pic.isEmpty {
             photo = APIEndpoints.S3_URL + (AppDelegate.shared().uuid ?? "") + pic

@@ -67,7 +67,7 @@ extension TopMentorsVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        AppDelegate.shared().openMentorProfileVC(navigationController: self.navigationController, mentor: topEducators[indexPath.item])
     }
     
 }

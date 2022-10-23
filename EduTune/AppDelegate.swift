@@ -48,6 +48,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         return true
     }
+    
+    func openMentorProfileVC(navigationController: UINavigationController?, mentor: Teacher) {
+        if let viewC: MentorProfileVC = UIStoryboard(name: "Course", bundle: nil).instantiateViewController(withIdentifier: "MentorProfileVC") as? MentorProfileVC {
+            viewC.teacher_id = mentor.id
+            navigationController?.pushViewController(viewC, animated: true)
+        }
+    }
 
     // MARK: UISceneSession Lifecycle
 
