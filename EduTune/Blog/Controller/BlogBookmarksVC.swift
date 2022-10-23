@@ -55,7 +55,7 @@ extension BlogBookmarksVC: UICollectionViewDataSource, UICollectionViewDelegate,
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let viewC: BlogDetailsVC = UIStoryboard(name: "Blog", bundle: nil).instantiateViewController(withIdentifier: "BlogDetailsVC") as? BlogDetailsVC {
+        if let viewC: BlogDetailsVC = UIStoryboard(name: "Blop", bundle: nil).instantiateViewController(withIdentifier: "BlogDetailsVC") as? BlogDetailsVC {
             viewC.blog = allBlogs[indexPath.item]
             self.navigationController?.pushViewController(viewC, animated: true)
         }

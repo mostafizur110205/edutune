@@ -82,7 +82,7 @@ class SplashVC: UIViewController {
     }
     
     func goForNextVC(_ onboardData: [OnboardData]) {
-        if AppUserDefault.getIsAppOpened() ?? false {
+        if AppUserDefault.getIsAppOpened() {
             if let viewC: TabBarVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarVC") as? TabBarVC {
                 UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController = viewC
                 UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.makeKeyAndVisible()

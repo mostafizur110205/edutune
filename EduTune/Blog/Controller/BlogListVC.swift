@@ -128,10 +128,13 @@ extension BlogListVC: UICollectionViewDataSource, UICollectionViewDelegate, UICo
             getBlogs(page: currentPage)
             
         } else {
-            if let viewC: BlogDetailsVC = UIStoryboard(name: "Blog", bundle: nil).instantiateViewController(withIdentifier: "BlogDetailsVC") as? BlogDetailsVC {
-                viewC.blog = allBlogs[indexPath.item]
-                self.navigationController?.pushViewController(viewC, animated: true)
+            DispatchQueue.main.async {
+                if let viewC: BlogDetailsVC = UIStoryboard(name: "Blog", bundle: nil).instantiateViewController(withIdentifier: "BlogDetailsVC") as? BlogDetailsVC {
+                    viewC.blog = self.allBlogs[indexPath.item]
+                    self.navigationController?.pushViewController(viewC, animated: true)
+                }
             }
+            
         }
         
     }

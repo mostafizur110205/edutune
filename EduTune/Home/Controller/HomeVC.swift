@@ -17,11 +17,14 @@ class HomeVC: UIViewController {
     @IBOutlet weak var mentorsCV: UICollectionView!
     @IBOutlet weak var categoryCV: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var notificationButton: UIButton!
+
     var homeData: HomeData?
     var categories = [String]()
     var categorySelected = "All"
     var allClasses = [Class]()
+    
+    var isLoggedIn = AppUserDefault.getIsLoggedIn()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,7 +77,32 @@ class HomeVC: UIViewController {
         super.viewWillAppear(animated)
         
         self.tabBarController?.tabBar.isHidden = false
-        
+       
+        if isLoggedIn != AppUserDefault.getIsLoggedIn() {
+            isLoggedIn = AppUserDefault.getIsLoggedIn()
+            
+            notificationButton.isHidden = !AppUserDefault.getIsLoggedIn()
+            userImageView.sd_setImage(with: URL(string: AppUserDefault.getPicture() ?? "" ), placeholderImage: UIImage(named: "ic_user_blue"))
+            statusLabel.text = getStatusText()
+            welcomeLabel.text = AppUserDefault.getName() != nil ? "Welcome \(AppUserDefault.getName()!.components(separatedBy: " ")[0])" : "Welcome to EduTune"
+
+            getHomeData()
+        }
+    }
+    
+    func getStatusText() -> String {
+        let hour = Calendar.current.component(.hour, from: Date())
+        var timeString = ""
+        if hour >= 0 && hour <= 11 {
+            timeString = "morning"
+        } else if hour > 11 && hour <= 17 {
+            timeString = "day"
+        } else if hour > 17 && hour <= 22 {
+            timeString = "evening"
+        } else {
+            timeString = "night"
+        }
+        return "Good \(timeString)"
     }
     
     @IBAction func mentorsSeeAllButtonTap(_ sender: Any) {
@@ -88,6 +116,23 @@ class HomeVC: UIViewController {
             self.navigationController?.pushViewController(viewC, animated: true)
         }
     }
+    
+    @IBAction func onProfileButtonTap(_ sender: Any) {
+        if AppUserDefault.getIsLoggedIn() {
+            
+        } else {
+            if let viewC: LetsInVC = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "LetsInVC") as? LetsInVC {
+                self.navigationController?.pushViewController(viewC, animated: true)
+            }
+        }
+    }
+    
+    @IBAction func onNotificationButtonTap(_ sender: Any) {
+        if let viewC: SearchVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "SearchVC") as? SearchVC {
+            self.navigationController?.pushViewController(viewC, animated: true)
+        }
+    }
+    
     
     @IBAction func onSearchButtonTap(_ sender: Any) {
         if let viewC: SearchVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "SearchVC") as? SearchVC {
@@ -181,6 +226,8 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return min(allClasses.count, 3)
+        }else if section == 1 {
+            return AppUserDefault.getIsLoggedIn() ? 0 : 1
         } else {
             return 1
         }

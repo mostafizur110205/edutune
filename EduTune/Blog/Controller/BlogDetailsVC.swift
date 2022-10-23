@@ -13,6 +13,7 @@ class BlogDetailsVC: UIViewController {
     @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var backButtonTopCns: NSLayoutConstraint!
     
     var blog: Blog?
     
@@ -21,6 +22,8 @@ class BlogDetailsVC: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        backButtonTopCns.constant = AppDelegate.shared().topInset
         
         refreshUI()
     }

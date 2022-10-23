@@ -26,6 +26,35 @@ class APIService: NSObject {
 //        }
 //    }
     
+    func signupStep1(params: [String: Any], completion: @escaping (String) -> Void) {
+        APIRequest.shared.postRequest(url: APIEndpoints.AUTH1, parameters: params) { (JSON, error) in
+            DispatchQueue.main.async {
+                if error == nil {
+                    if let json = JSON {
+                        if json["error"].boolValue == false {
+                            let token = json["token"].stringValue
+                            completion(token)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func signupStep2(params: [String: Any], completion: @escaping (Bool) -> Void) {
+        APIRequest.shared.postRequest(url: APIEndpoints.AUTH2, parameters: params) { (JSON, error) in
+            DispatchQueue.main.async {
+                if error == nil {
+                    if let json = JSON {
+                        if json["error"].boolValue == false {
+                            completion(true)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     func getOnboardData(completion: @escaping ([OnboardData]) -> Void) {
         let parameters = ["access_token": APIEndpoints.ACCESS_TOKEN, "package_id": "com.aitl.edutune"]
 

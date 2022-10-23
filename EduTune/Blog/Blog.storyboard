@@ -385,14 +385,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rZB-SS-kBL">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rZB-SS-kBL">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="810"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="Naj-bv-8Sy">
                                     <rect key="frame" x="0.0" y="0.0" width="390" height="410"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fIq-hv-zMY">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fIq-hv-zMY">
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="253.66666666666666"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="fIq-hv-zMY" secondAttribute="height" multiplier="2:1.3" id="Z5x-NV-9QU"/>
@@ -520,13 +520,14 @@
                         <viewLayoutGuide key="safeArea" id="IVW-5y-MbQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="rZB-SS-kBL" secondAttribute="bottom" id="I82-8T-IVH"/>
                             <constraint firstItem="rZB-SS-kBL" firstAttribute="top" secondItem="ZBH-Mo-oW6" secondAttribute="top" id="IFW-gZ-ofM"/>
+                            <constraint firstItem="IVW-5y-MbQ" firstAttribute="bottom" secondItem="rZB-SS-kBL" secondAttribute="bottom" id="LBH-IS-fcv"/>
                             <constraint firstItem="rZB-SS-kBL" firstAttribute="leading" secondItem="IVW-5y-MbQ" secondAttribute="leading" id="ig0-SJ-PEF"/>
                             <constraint firstItem="IVW-5y-MbQ" firstAttribute="trailing" secondItem="rZB-SS-kBL" secondAttribute="trailing" id="vWL-eC-Oms"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backButtonTopCns" destination="cme-54-iue" id="bno-Yk-AwW"/>
                         <outlet property="categoryLabel" destination="72R-6L-SDo" id="xlY-jd-rnB"/>
                         <outlet property="coverImageView" destination="fIq-hv-zMY" id="2R9-14-dHS"/>
                         <outlet property="tableView" destination="rZB-SS-kBL" id="9aK-cJ-hcd"/>

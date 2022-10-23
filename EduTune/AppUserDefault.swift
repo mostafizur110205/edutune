@@ -9,7 +9,7 @@ import Foundation
 
 class AppUserDefault {
     
-    class func getIsLoggedIn() -> Bool? {
+    class func getIsLoggedIn() -> Bool {
         return UserDefaults.standard.bool(forKey: "is_logged_in")
     }
     
@@ -18,7 +18,7 @@ class AppUserDefault {
         UserDefaults.standard.synchronize()
     }
     
-    class func getIsAppOpened() -> Bool? {
+    class func getIsAppOpened() -> Bool {
         return UserDefaults.standard.bool(forKey: "is_app_opened")
     }
     
@@ -36,7 +36,7 @@ class AppUserDefault {
         UserDefaults.standard.synchronize()
     }
     
-    class func getUserId() -> Int? {
+    class func getUserId() -> Int {
         return UserDefaults.standard.integer(forKey: "user_id")
     }
     
@@ -51,6 +51,15 @@ class AppUserDefault {
     
     class func setPicture(_ picture: String) {
         UserDefaults.standard.set(picture, forKey: "picture")
+        UserDefaults.standard.synchronize()
+    }
+    
+    class func getName() -> String? {
+        return UserDefaults.standard.string(forKey: "name")
+    }
+    
+    class func setName(_ name: String) {
+        UserDefaults.standard.set(name, forKey: "name")
         UserDefaults.standard.synchronize()
     }
     

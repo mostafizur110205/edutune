@@ -14,6 +14,8 @@
 		BE02838129042432006FCD52 /* ClassChecklistTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE02838029042432006FCD52 /* ClassChecklistTVCell.swift */; };
 		BE028383290439B6006FCD52 /* LessonHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE028382290439B6006FCD52 /* LessonHeaderCell.swift */; };
 		BE028385290439C4006FCD52 /* LessonTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE028384290439C4006FCD52 /* LessonTVCell.swift */; };
+		BE0AF0962905886D00FCEFAA /* NotificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0AF0952905886D00FCEFAA /* NotificationsVC.swift */; };
+		BE0AF0982905887F00FCEFAA /* BookmarksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0AF0972905887F00FCEFAA /* BookmarksVC.swift */; };
 		BE14710128F5733A00726625 /* IntroCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE14710028F5733A00726625 /* IntroCVCell.swift */; };
 		BE14710328F578F300726625 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE14710228F578F300726625 /* Localizable.strings */; };
 		BE14710528F579F100726625 /* LetsInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE14710428F579F100726625 /* LetsInVC.swift */; };
@@ -122,6 +124,8 @@
 		BE02838029042432006FCD52 /* ClassChecklistTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassChecklistTVCell.swift; sourceTree = "<group>"; };
 		BE028382290439B6006FCD52 /* LessonHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonHeaderCell.swift; sourceTree = "<group>"; };
 		BE028384290439C4006FCD52 /* LessonTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonTVCell.swift; sourceTree = "<group>"; };
+		BE0AF0952905886D00FCEFAA /* NotificationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsVC.swift; sourceTree = "<group>"; };
+		BE0AF0972905887F00FCEFAA /* BookmarksVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksVC.swift; sourceTree = "<group>"; };
 		BE14710028F5733A00726625 /* IntroCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroCVCell.swift; sourceTree = "<group>"; };
 		BE14710228F578F300726625 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		BE14710428F579F100726625 /* LetsInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetsInVC.swift; sourceTree = "<group>"; };
@@ -242,6 +246,29 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BE0AF0922905884A00FCEFAA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BE0AF0952905886D00FCEFAA /* NotificationsVC.swift */,
+				BE0AF0972905887F00FCEFAA /* BookmarksVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BE0AF0932905885500FCEFAA /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BE0AF0942905885900FCEFAA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		BE14711828F57C2400726625 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -343,6 +370,9 @@
 		BE4869D628DECDC4003040AD /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				BE0AF0942905885900FCEFAA /* Model */,
+				BE0AF0932905885500FCEFAA /* View */,
+				BE0AF0922905884A00FCEFAA /* Controller */,
 				BE4869D028DECD99003040AD /* Other.storyboard */,
 			);
 			path = Other;
@@ -780,12 +810,14 @@
 				BE14710F28F57A8300726625 /* ForgotPassVC.swift in Sources */,
 				BE486A0728DEF698003040AD /* IntroVC.swift in Sources */,
 				BE02837D290423FA006FCD52 /* ClassAboutTVCell.swift in Sources */,
+				BE0AF0962905886D00FCEFAA /* NotificationsVC.swift in Sources */,
 				BECAFF702903860A00E7C8B9 /* ClassDetail.swift in Sources */,
 				BECAFF7A29038CAD00E7C8B9 /* ClassAboutVC.swift in Sources */,
 				BEF8040328F8259500CB3AE5 /* Class.swift in Sources */,
 				BECAFF6E290385C000E7C8B9 /* ClassDetailsVC.swift in Sources */,
 				BE304D0328F847190062C48A /* MentorCVCell.swift in Sources */,
 				BE486A0528DEF673003040AD /* SocialLoginVC.swift in Sources */,
+				BE0AF0982905887F00FCEFAA /* BookmarksVC.swift in Sources */,
 				BECAFF74290388A100E7C8B9 /* Feature.swift in Sources */,
 				BE14710728F57A0800726625 /* SignupVC.swift in Sources */,
 				BECAFF7E29038CD400E7C8B9 /* ClassReviewsVC.swift in Sources */,

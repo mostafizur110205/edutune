@@ -51,6 +51,13 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOo-LO-gQj">
+                                        <rect key="frame" x="16" y="0.0" width="52" height="52"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <connections>
+                                            <action selector="onProfileButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="F9U-2c-y44"/>
+                                        </connections>
+                                    </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="AA5-Jh-0tP">
                                         <rect key="frame" x="80.000000000000014" y="6.6666666666666643" width="169.33333333333337" height="38.666666666666664"/>
                                         <subviews>
@@ -80,15 +87,33 @@
                                             <action selector="onSearchButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Y8t-g3-6sH"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFe-2p-1jN">
+                                        <rect key="frame" x="292" y="4" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="UTn-k3-5TF"/>
+                                            <constraint firstAttribute="height" constant="44" id="h6G-vg-cKK"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="ic_notification_outlined"/>
+                                        <connections>
+                                            <action selector="onNotificationButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="8MN-WI-PAS"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="SLE-d7-29h" firstAttribute="centerY" secondItem="CFe-2p-1jN" secondAttribute="centerY" id="1jO-0b-jYP"/>
                                     <constraint firstAttribute="trailing" secondItem="SLE-d7-29h" secondAttribute="trailing" constant="10" id="2Hq-0Z-A9G"/>
                                     <constraint firstItem="AA5-Jh-0tP" firstAttribute="centerY" secondItem="wMX-Sw-cUz" secondAttribute="centerY" id="Gjg-FH-bFE"/>
                                     <constraint firstItem="wMX-Sw-cUz" firstAttribute="leading" secondItem="7n3-Ft-ddN" secondAttribute="leading" constant="16" id="HmF-mj-9x7"/>
+                                    <constraint firstItem="SLE-d7-29h" firstAttribute="leading" secondItem="CFe-2p-1jN" secondAttribute="trailing" id="Jiy-AL-hYM"/>
                                     <constraint firstItem="wMX-Sw-cUz" firstAttribute="top" secondItem="7n3-Ft-ddN" secondAttribute="top" id="NNJ-UI-Sku"/>
+                                    <constraint firstItem="aOo-LO-gQj" firstAttribute="top" secondItem="wMX-Sw-cUz" secondAttribute="top" id="YrQ-gt-WLI"/>
+                                    <constraint firstItem="aOo-LO-gQj" firstAttribute="trailing" secondItem="wMX-Sw-cUz" secondAttribute="trailing" id="faB-Nl-WVy"/>
+                                    <constraint firstItem="aOo-LO-gQj" firstAttribute="bottom" secondItem="wMX-Sw-cUz" secondAttribute="bottom" id="h6s-8X-uuO"/>
                                     <constraint firstItem="AA5-Jh-0tP" firstAttribute="leading" secondItem="wMX-Sw-cUz" secondAttribute="trailing" constant="12" id="kCL-i4-3Tz"/>
                                     <constraint firstItem="SLE-d7-29h" firstAttribute="centerY" secondItem="wMX-Sw-cUz" secondAttribute="centerY" id="lBh-rf-tCa"/>
+                                    <constraint firstItem="aOo-LO-gQj" firstAttribute="leading" secondItem="wMX-Sw-cUz" secondAttribute="leading" id="oni-Mm-FY8"/>
                                     <constraint firstAttribute="height" constant="60" id="ypx-Gj-xfK"/>
                                 </constraints>
                             </view>
@@ -378,7 +403,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x6n-EU-GKY">
-                                                    <rect key="frame" x="16" y="0.0" width="358" height="222"/>
+                                                    <rect key="frame" x="16" y="0.0" width="358" height="28"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Have questions?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="C8c-P1-J8e">
                                                             <rect key="frame" x="30" y="24" width="132.66666666666666" height="21.666666666666671"/>
@@ -405,7 +430,7 @@ a phone call</string>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XpS-aZ-LTf">
-                                                            <rect key="frame" x="25" y="156" width="308" height="50"/>
+                                                            <rect key="frame" x="25" y="-38" width="308" height="50"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="50" id="aSP-1M-SxW"/>
@@ -479,17 +504,17 @@ a phone call</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ClassTVCell" id="UqL-xN-dHA" customClass="ClassTVCell" customModule="EduTune" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="992" width="390" height="176"/>
+                                        <rect key="frame" x="0.0" y="992" width="390" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UqL-xN-dHA" id="tBe-O6-IuW">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="176"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s0s-FN-yC0">
-                                                    <rect key="frame" x="16" y="0.0" width="358" height="160"/>
+                                                    <rect key="frame" x="16" y="0.0" width="358" height="28"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1VS-Rr-Kac">
-                                                            <rect key="frame" x="20" y="20" width="120" height="120"/>
+                                                            <rect key="frame" x="20" y="-46" width="120" height="120"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="120" id="fzZ-bU-KcD"/>
                                                                 <constraint firstAttribute="width" constant="120" id="wU4-PO-1Qa"/>
@@ -704,6 +729,7 @@ a phone call</string>
                         <outlet property="bannerCV" destination="l9y-6Q-aRT" id="BgW-dg-G8c"/>
                         <outlet property="categoryCV" destination="Q2X-x5-O1Q" id="uav-Nf-FNL"/>
                         <outlet property="mentorsCV" destination="Ops-3j-Xur" id="a18-Nb-4vp"/>
+                        <outlet property="notificationButton" destination="CFe-2p-1jN" id="atC-hh-Te5"/>
                         <outlet property="statusLabel" destination="6CY-dc-bFn" id="kIH-oZ-s8t"/>
                         <outlet property="tableView" destination="NqF-wk-pQj" id="BzY-SV-Jm7"/>
                         <outlet property="userImageView" destination="wMX-Sw-cUz" id="VzO-Ep-elg"/>
@@ -2498,6 +2524,7 @@ a phone call</string>
         <image name="ic_chat_outlined_blue" width="28" height="28"/>
         <image name="ic_filter" width="20" height="20"/>
         <image name="ic_more" width="28" height="28"/>
+        <image name="ic_notification_outlined" width="28" height="28"/>
         <image name="ic_search" width="20.666666030883789" height="21.333333969116211"/>
         <image name="ic_search_faded" width="17.666666030883789" height="18"/>
         <image name="ic_star" width="13.333333015441895" height="12.666666984558105"/>

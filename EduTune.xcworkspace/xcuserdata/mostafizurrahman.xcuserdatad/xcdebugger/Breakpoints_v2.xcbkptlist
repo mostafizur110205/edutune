@@ -3,4 +3,54 @@
    uuid = "A61998C5-AC30-41A3-926F-C39CA97661AA"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AACC06B0-FD4F-468A-BA82-F1952ACF47C3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EduTune/Profile/Controller/SignupVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "onSignUpButtonTap(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AACC06B0-FD4F-468A-BA82-F1952ACF47C3 - 8ba34b8cde2335cc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EduTune.SignupVC.onSignUpButtonTap(Any) -&gt; ()"
+                  moduleName = "EduTune"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Work/EduTune/EduTune/Profile/Controller/SignupVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "1676">
+               </Location>
+               <Location
+                  uuid = "AACC06B0-FD4F-468A-BA82-F1952ACF47C3 - ad8f367cb6309cf0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.String) -&gt; () in EduTune.SignupVC.onSignUpButtonTap(Any) -&gt; ()"
+                  moduleName = "EduTune"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Work/EduTune/EduTune/Profile/Controller/SignupVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "72">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

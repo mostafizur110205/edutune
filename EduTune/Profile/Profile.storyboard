@@ -41,6 +41,9 @@
                                 <color key="tintColor" name="Grey900"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="ic_back"/>
+                                <connections>
+                                    <action selector="onBackButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="0Ah-xd-u5c"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_welcome" translatesAutoresizingMaskIntoConstraints="NO" id="eeA-KD-Ilz">
                                 <rect key="frame" x="16" y="126" width="358" height="170"/>
@@ -74,6 +77,9 @@
                                         <state key="normal" title="Sign up">
                                             <color key="titleColor" name="Primary500"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onSignUpButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="TfC-tH-EZ5"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -101,6 +107,9 @@
                                                 <color key="value" name="Grey200"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onFacebookButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Tgm-1s-aLN"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXL-yh-HVy">
                                         <rect key="frame" x="0.0" y="73" width="358" height="58"/>
@@ -123,6 +132,9 @@
                                                 <color key="value" name="Grey200"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onGoogleButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="eDC-zR-NwN"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hp0-qT-wpM">
                                         <rect key="frame" x="0.0" y="146" width="358" height="58"/>
@@ -144,6 +156,9 @@
                                                 <color key="value" name="Grey200"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onAppleButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="jQh-hj-LxE"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sK0-08-Thm">
                                         <rect key="frame" x="0.0" y="219" width="358" height="40"/>
@@ -198,6 +213,9 @@
                                                 <real key="value" value="29"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onSignInButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="HYv-av-tQC"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -241,6 +259,9 @@
                                 <color key="tintColor" name="Grey900"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="ic_back"/>
+                                <connections>
+                                    <action selector="onBackButtonTap:" destination="i5Y-HG-SM0" eventType="touchUpInside" id="3nH-ta-d97"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMg-0O-5k4">
                                 <rect key="frame" x="16" y="121" width="212.66666666666666" height="96"/>
@@ -270,6 +291,9 @@ Account</string>
                                         <state key="normal" title="Sign in">
                                             <color key="titleColor" name="Primary500"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onSignInButtonTap:" destination="i5Y-HG-SM0" eventType="touchUpInside" id="y1f-D5-JWT"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -388,6 +412,9 @@ Account</string>
                                                 <real key="value" value="29"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onSignUpButtonTap:" destination="i5Y-HG-SM0" eventType="touchUpInside" id="CsU-Qv-sXa"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m5u-hV-RWj">
                                         <rect key="frame" x="0.0" y="292" width="358" height="40"/>
@@ -450,6 +477,9 @@ Account</string>
                                                 <color key="value" name="Grey200"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onFacebookButtonTap:" destination="i5Y-HG-SM0" eventType="touchUpInside" id="Vjk-qH-iKQ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yGb-bR-zxM">
                                         <rect key="frame" x="108" y="0.0" width="88" height="60"/>
@@ -470,6 +500,9 @@ Account</string>
                                                 <color key="value" name="Grey200"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onGoogleButtonTap:" destination="i5Y-HG-SM0" eventType="touchUpInside" id="Twq-1u-OQ4"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzy-yA-ZhO">
                                         <rect key="frame" x="216" y="0.0" width="88" height="60"/>
@@ -491,6 +524,9 @@ Account</string>
                                                 <color key="value" name="Grey200"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onAppleButtonTap:" destination="i5Y-HG-SM0" eventType="touchUpInside" id="aI7-lT-V8b"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -511,6 +547,11 @@ Account</string>
                             <constraint firstItem="M8G-iJ-bVV" firstAttribute="top" secondItem="aMg-0O-5k4" secondAttribute="bottom" constant="40" id="smo-Wn-WPA"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="invitationCodeTextField" destination="jqg-53-Qls" id="kgy-H0-ifY"/>
+                        <outlet property="nameTextField" destination="cff-QG-GYz" id="4PU-dj-jpt"/>
+                        <outlet property="phoneTextField" destination="Why-eK-ZjV" id="n0g-yb-2yb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ylN-lZ-1or" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -533,6 +574,9 @@ Account</string>
                                 <color key="tintColor" name="Grey900"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="ic_back"/>
+                                <connections>
+                                    <action selector="onBackButtonTap:" destination="cdQ-gb-7o4" eventType="touchUpInside" id="zXj-kZ-UIb"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OTP Verification" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fA-lc-sAw">
                                 <rect key="frame" x="16" y="121" width="294" height="48"/>
@@ -571,6 +615,9 @@ and input the OTP</string>
                                         <real key="value" value="29"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onContinueButtonTap:" destination="cdQ-gb-7o4" eventType="touchUpInside" id="k7x-on-gh6"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OzK-bX-e0Q"/>
@@ -590,6 +637,9 @@ and input the OTP</string>
                             <constraint firstItem="SNc-Xb-L45" firstAttribute="centerY" secondItem="Pob-lA-Gta" secondAttribute="centerY" constant="-60" id="yXq-oq-ZmT"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="otpTextField" destination="SNc-Xb-L45" id="xq2-se-5Gh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jQ2-T7-xt7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -612,9 +662,12 @@ and input the OTP</string>
                                 <color key="tintColor" name="Grey900"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="ic_back"/>
+                                <connections>
+                                    <action selector="onBackButtonTap:" destination="3a7-Db-z6l" eventType="touchUpInside" id="Dyp-L8-neL"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbJ-qw-oyO">
-                                <rect key="frame" x="16" y="121" width="232" height="96"/>
+                                <rect key="frame" x="16.000000000000014" y="121" width="232.33333333333337" height="96"/>
                                 <string key="text">Login to your
 Account</string>
                                 <fontDescription key="fontDescription" name="Urbanist-Bold" family="Urbanist" pointSize="40"/>
@@ -641,11 +694,14 @@ Account</string>
                                         <state key="normal" title="Sign up">
                                             <color key="titleColor" name="Primary500"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onSignUpButtonTap:" destination="3a7-Db-z6l" eventType="touchUpInside" id="tnH-1b-lzL"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="atl-1y-LCZ">
-                                <rect key="frame" x="16" y="257" width="358" height="356"/>
+                                <rect key="frame" x="16" y="257" width="358" height="241"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7fC-1t-ofs">
                                         <rect key="frame" x="0.0" y="0.0" width="358" height="58"/>
@@ -679,8 +735,8 @@ Account</string>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fdc-aW-WsI">
-                                        <rect key="frame" x="0.0" y="73" width="358" height="100"/>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fdc-aW-WsI">
+                                        <rect key="frame" x="0.0" y="65.666666666666686" width="358" height="100"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sqf-yP-vUJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="358" height="58"/>
@@ -741,6 +797,9 @@ Account</string>
                                                         <real key="value" value="29"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="onForgotPassButtonTap:" destination="3a7-Db-z6l" eventType="touchUpInside" id="dRZ-lf-uOl"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -755,7 +814,7 @@ Account</string>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gtz-Jr-Gp3">
-                                        <rect key="frame" x="0.0" y="188" width="358" height="58"/>
+                                        <rect key="frame" x="0.0" y="73" width="358" height="58"/>
                                         <color key="backgroundColor" name="Primary500"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="58" id="iSa-7b-Hxa"/>
@@ -770,9 +829,12 @@ Account</string>
                                                 <real key="value" value="29"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onSignInButtonTap:" destination="3a7-Db-z6l" eventType="touchUpInside" id="fAw-Eo-Z4e"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0Z-3g-co6">
-                                        <rect key="frame" x="0.0" y="261" width="358" height="40"/>
+                                        <rect key="frame" x="0.0" y="146" width="358" height="40"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="I63-3z-vYy"/>
@@ -787,25 +849,28 @@ Account</string>
                                                 <real key="value" value="29"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onSignInPassButtonTap:" destination="3a7-Db-z6l" eventType="touchUpInside" id="LHg-el-3tJ"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Kj-Tx-HOc">
-                                        <rect key="frame" x="0.0" y="316" width="358" height="40"/>
+                                        <rect key="frame" x="0.0" y="201" width="358" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or continue with" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgd-nf-D77">
-                                                <rect key="frame" x="114.66666666666666" y="9.333333333333373" width="129" height="21.666666666666671"/>
+                                                <rect key="frame" x="114.66666666666666" y="9.3333333333333162" width="129" height="21.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="Urbanist-SemiBold" family="Urbanist" pointSize="18"/>
                                                 <color key="textColor" name="Grey700"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xNG-fI-PCD">
-                                                <rect key="frame" x="259.66666666666669" y="19.666666666666629" width="82.333333333333314" height="1"/>
+                                                <rect key="frame" x="259.66666666666669" y="19.666666666666686" width="82.333333333333314" height="1"/>
                                                 <color key="backgroundColor" name="Grey200"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="saA-kV-CvZ"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cDS-CG-en7">
-                                                <rect key="frame" x="16" y="19.666666666666629" width="82.666666666666671" height="1"/>
+                                                <rect key="frame" x="16" y="19.666666666666686" width="82.666666666666671" height="1"/>
                                                 <color key="backgroundColor" name="Grey200"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="DLz-Ac-j6X"/>
@@ -828,7 +893,7 @@ Account</string>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4gG-qa-TCL">
-                                <rect key="frame" x="43" y="623" width="304" height="60"/>
+                                <rect key="frame" x="43" y="508" width="304" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nf7-Bh-IMP">
                                         <rect key="frame" x="0.0" y="0.0" width="88" height="60"/>
@@ -849,6 +914,9 @@ Account</string>
                                                 <color key="value" name="Grey200"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onFacebookButtonTap:" destination="3a7-Db-z6l" eventType="touchUpInside" id="vg7-Pd-UrG"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lfw-AR-zHc">
                                         <rect key="frame" x="108" y="0.0" width="88" height="60"/>
@@ -869,6 +937,9 @@ Account</string>
                                                 <color key="value" name="Grey200"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onGoogleButtonTap:" destination="3a7-Db-z6l" eventType="touchUpInside" id="3tE-LE-AJ6"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVr-ho-L6Z">
                                         <rect key="frame" x="216" y="0.0" width="88" height="60"/>
@@ -890,6 +961,9 @@ Account</string>
                                                 <color key="value" name="Grey200"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onAppleButtonTap:" destination="3a7-Db-z6l" eventType="touchUpInside" id="9Bf-b7-i5h"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -910,6 +984,10 @@ Account</string>
                             <constraint firstItem="sbJ-qw-oyO" firstAttribute="leading" secondItem="SQ1-aC-EeY" secondAttribute="leading" constant="16" id="svQ-mp-r6v"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="6oE-Uj-CRY" id="dJb-Gm-ott"/>
+                        <outlet property="phoneTextField" destination="TUf-cV-5Zu" id="h2O-A9-jdN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t2q-69-QzI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1216,6 +1294,9 @@ Account</string>
                                 <color key="tintColor" name="Grey900"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="ic_back"/>
+                                <connections>
+                                    <action selector="onBackButtonTap:" destination="6Kc-F8-A3z" eventType="touchUpInside" id="gd6-zT-jhH"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot Password" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzj-i8-cnj">
                                 <rect key="frame" x="65.000000000000014" y="54.666666666666657" width="177.33333333333337" height="29"/>
@@ -1252,6 +1333,9 @@ Account</string>
                                         <real key="value" value="29"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onContinueButtonTap:" destination="6Kc-F8-A3z" eventType="touchUpInside" id="Sez-KP-cPU"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Esr-Kc-aZe">
                                 <rect key="frame" x="97" y="319.66666666666669" width="196" height="58"/>
@@ -1273,6 +1357,9 @@ Account</string>
                                         <state key="normal" title="Resend">
                                             <color key="titleColor" name="Primary500"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onResendButtonTap:" destination="6Kc-F8-A3z" eventType="touchUpInside" id="QCU-2P-0Gl"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -1297,6 +1384,11 @@ Account</string>
                             <constraint firstItem="jdB-h9-C2K" firstAttribute="trailing" secondItem="ss2-4l-n1X" secondAttribute="trailing" constant="16" id="kR2-uE-noc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="otpTextField" destination="6wm-KA-j8Z" id="dwF-Cn-cOx"/>
+                        <outlet property="phoneLabel" destination="ss2-4l-n1X" id="pBb-VN-uns"/>
+                        <outlet property="resendLabel" destination="ung-uz-ZHN" id="x27-Fk-ix9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eWz-uY-HI9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1319,6 +1411,9 @@ Account</string>
                                 <color key="tintColor" name="Grey900"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="ic_back"/>
+                                <connections>
+                                    <action selector="onBackButtonTap:" destination="SNZ-Qa-KM1" eventType="touchUpInside" id="Tld-qa-DEw"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_forgot+pass" translatesAutoresizingMaskIntoConstraints="NO" id="C52-gm-I6N">
                                 <rect key="frame" x="16" y="126" width="358" height="230"/>
@@ -1485,6 +1580,9 @@ Account</string>
                                                 <real key="value" value="29"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onContinueButtonTap:" destination="SNZ-Qa-KM1" eventType="touchUpInside" id="Jbt-Cf-AL4"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -1514,6 +1612,10 @@ Account</string>
                             <constraint firstAttribute="trailing" secondItem="7uu-ba-0za" secondAttribute="trailing" constant="16" id="tPL-Cw-bM8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailLabel" destination="h8x-B7-scD" id="PsA-EH-LcH"/>
+                        <outlet property="phoneLabel" destination="tdr-Uz-Fy4" id="6g7-XU-3Zk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lz0-UU-cxB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1536,6 +1638,9 @@ Account</string>
                                 <color key="tintColor" name="Grey900"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="ic_back"/>
+                                <connections>
+                                    <action selector="onBackButtonTap:" destination="bt0-mt-nm9" eventType="touchUpInside" id="C8Z-Tg-23v"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_new_pass" translatesAutoresizingMaskIntoConstraints="NO" id="ygS-Av-BPs">
                                 <rect key="frame" x="16" y="126" width="358" height="230"/>
@@ -1565,7 +1670,7 @@ Account</string>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xxy-Jg-9eA">
                                                 <rect key="frame" x="52" y="0.0" width="286" height="58"/>
                                                 <fontDescription key="fontDescription" name="Urbanist-Regular" family="Urbanist" pointSize="15"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Fu-Nw-SEg">
                                                 <rect key="frame" x="304" y="7" width="44" height="44"/>
@@ -1575,6 +1680,9 @@ Account</string>
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="ic_eye_off"/>
+                                                <connections>
+                                                    <action selector="onNewPasssEysButtonTap:" destination="bt0-mt-nm9" eventType="touchUpInside" id="OmO-E8-7SS"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" name="Grey50"/>
@@ -1608,7 +1716,7 @@ Account</string>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y8P-PX-4Cl">
                                                 <rect key="frame" x="52" y="0.0" width="286" height="58"/>
                                                 <fontDescription key="fontDescription" name="Urbanist-Regular" family="Urbanist" pointSize="15"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7NZ-hs-s5a">
                                                 <rect key="frame" x="304" y="7" width="44" height="44"/>
@@ -1618,6 +1726,9 @@ Account</string>
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="ic_eye_off"/>
+                                                <connections>
+                                                    <action selector="onConfirmNewPassEyeButtonTap:" destination="bt0-mt-nm9" eventType="touchUpInside" id="mSJ-vz-H27"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" name="Grey50"/>
@@ -1653,6 +1764,9 @@ Account</string>
                                                 <state key="normal" title="Remember me" image="ic_outlined">
                                                     <color key="titleColor" name="Grey900"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onRememberButtonTap:" destination="bt0-mt-nm9" eventType="touchUpInside" id="lB1-VL-9Ml"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1679,6 +1793,9 @@ Account</string>
                                                 <real key="value" value="29"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onContinueButtonTap:" destination="bt0-mt-nm9" eventType="touchUpInside" id="ii5-rr-oyA"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -1708,6 +1825,10 @@ Account</string>
                             <constraint firstItem="804-1F-zH1" firstAttribute="leading" secondItem="f7e-Ws-aCy" secondAttribute="leading" constant="16" id="v5M-wl-PYJ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cofirmNewPassTextField" destination="y8P-PX-4Cl" id="B8l-ex-Iml"/>
+                        <outlet property="newPassTextField" destination="Xxy-Jg-9eA" id="ze7-14-TkO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sWX-2Q-bf2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
