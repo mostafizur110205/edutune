@@ -667,7 +667,7 @@ and input the OTP</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbJ-qw-oyO">
-                                <rect key="frame" x="16.000000000000014" y="121" width="232.33333333333337" height="96"/>
+                                <rect key="frame" x="16" y="121" width="232" height="96"/>
                                 <string key="text">Login to your
 Account</string>
                                 <fontDescription key="fontDescription" name="Urbanist-Bold" family="Urbanist" pointSize="40"/>
@@ -1958,36 +1958,14 @@ Account</string>
                                                 <constraint firstAttribute="height" constant="1" id="Fej-6e-xk1"/>
                                             </constraints>
                                         </view>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AMJ-k3-Dd7">
-                                            <rect key="frame" x="135" y="16" width="120" height="120"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="120" id="2x1-Yk-wLJ"/>
-                                                <constraint firstAttribute="width" constant="120" id="qeQ-Jm-OYA"/>
-                                            </constraints>
-                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                    <real key="value" value="60"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Psj-Lo-Aqo">
-                                            <rect key="frame" x="233" y="114" width="44" height="44"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="44" id="gaT-Jv-FKW"/>
-                                                <constraint firstAttribute="height" constant="44" id="ujz-O2-s6e"/>
-                                            </constraints>
-                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                            <state key="normal" image="ic_edit"/>
-                                        </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Andrew Ainsley" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dP2-Lx-fjb">
-                                            <rect key="frame" x="16" y="174" width="358" height="29"/>
+                                            <rect key="frame" x="16" y="156" width="358" height="29"/>
                                             <fontDescription key="fontDescription" name="Urbanist-Bold" family="Urbanist" pointSize="24"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="andrew@yourdomain.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3dW-AY-AIC">
-                                            <rect key="frame" x="16" y="219" width="358" height="17"/>
+                                            <rect key="frame" x="16" y="201" width="358" height="17"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" name="Urbanist-SemiBold" family="Urbanist" pointSize="14"/>
                                             <color key="textColor" name="Grey900"/>
@@ -1998,21 +1976,40 @@ Account</string>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U4S-OH-2b9">
+                                            <rect key="frame" x="135" y="16" width="120" height="120"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="120" id="EII-Bd-whx"/>
+                                                <constraint firstAttribute="height" constant="120" id="iZ9-y9-ReG"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="60"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_edit" translatesAutoresizingMaskIntoConstraints="NO" id="Fq2-vW-ce4">
+                                            <rect key="frame" x="240" y="121" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="HBS-Ua-VgA"/>
+                                                <constraint firstAttribute="height" constant="30" id="vSf-Kh-cKX"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
-                                        <constraint firstItem="Psj-Lo-Aqo" firstAttribute="top" secondItem="AMJ-k3-Dd7" secondAttribute="bottom" constant="-22" id="G9J-yN-0yu"/>
+                                        <constraint firstItem="Fq2-vW-ce4" firstAttribute="bottom" secondItem="U4S-OH-2b9" secondAttribute="bottom" constant="15" id="04n-m2-M0f"/>
+                                        <constraint firstItem="U4S-OH-2b9" firstAttribute="centerX" secondItem="BUm-ut-eLq" secondAttribute="centerX" id="DIq-R2-dEU"/>
                                         <constraint firstAttribute="trailing" secondItem="dP2-Lx-fjb" secondAttribute="trailing" constant="16" id="Mc2-gr-aRk"/>
+                                        <constraint firstItem="dP2-Lx-fjb" firstAttribute="top" secondItem="U4S-OH-2b9" secondAttribute="bottom" constant="20" id="SOv-Wt-RBO"/>
                                         <constraint firstItem="3dW-AY-AIC" firstAttribute="top" secondItem="dP2-Lx-fjb" secondAttribute="bottom" constant="16" id="WJz-Lw-RFZ"/>
                                         <constraint firstAttribute="bottom" secondItem="FHY-ug-t9h" secondAttribute="bottom" id="ZNs-eK-Je3"/>
-                                        <constraint firstItem="AMJ-k3-Dd7" firstAttribute="top" secondItem="BUm-ut-eLq" secondAttribute="top" constant="16" id="aaQ-Iq-ZG9"/>
+                                        <constraint firstItem="U4S-OH-2b9" firstAttribute="top" secondItem="BUm-ut-eLq" secondAttribute="top" constant="16" id="eAM-cx-ego"/>
                                         <constraint firstAttribute="trailing" secondItem="3dW-AY-AIC" secondAttribute="trailing" constant="16" id="fad-gm-5UU"/>
-                                        <constraint firstItem="Psj-Lo-Aqo" firstAttribute="trailing" secondItem="AMJ-k3-Dd7" secondAttribute="trailing" constant="22" id="gKG-vF-mLl"/>
                                         <constraint firstItem="3dW-AY-AIC" firstAttribute="leading" secondItem="BUm-ut-eLq" secondAttribute="leading" constant="16" id="gpr-N9-KFW"/>
-                                        <constraint firstItem="AMJ-k3-Dd7" firstAttribute="centerX" secondItem="BUm-ut-eLq" secondAttribute="centerX" id="iaM-I7-raa"/>
                                         <constraint firstAttribute="trailing" secondItem="FHY-ug-t9h" secondAttribute="trailing" constant="16" id="mf5-0J-zs9"/>
+                                        <constraint firstItem="Fq2-vW-ce4" firstAttribute="leading" secondItem="U4S-OH-2b9" secondAttribute="trailing" constant="-15" id="n2z-Nb-thc"/>
                                         <constraint firstItem="FHY-ug-t9h" firstAttribute="leading" secondItem="BUm-ut-eLq" secondAttribute="leading" constant="16" id="nXc-Kk-4od"/>
-                                        <constraint firstItem="dP2-Lx-fjb" firstAttribute="top" secondItem="Psj-Lo-Aqo" secondAttribute="bottom" constant="16" id="tPG-zs-2Ev"/>
                                         <constraint firstItem="dP2-Lx-fjb" firstAttribute="leading" secondItem="BUm-ut-eLq" secondAttribute="leading" constant="16" id="xTL-94-5Ph"/>
                                     </constraints>
                                 </view>
@@ -2188,7 +2185,7 @@ Account</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GSX-CD-cTU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2585" y="673"/>
+            <point key="canvasLocation" x="2583.0769230769229" y="672.51184834123217"/>
         </scene>
     </scenes>
     <resources>
