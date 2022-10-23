@@ -41,7 +41,12 @@ class HomeVC: UIViewController {
         categoryCV.delegate = self
         categoryCV.dataSource = self
         
-        getHomeData()
+        notificationButton.isHidden = !AppUserDefault.getIsLoggedIn()
+        userImageView.sd_setImage(with: URL(string: AppUserDefault.getPicture() ?? "" ), placeholderImage: UIImage(named: "ic_user_blue"))
+        statusLabel.text = getStatusText()
+        welcomeLabel.text = AppUserDefault.getName() != nil ? "Welcome \(AppUserDefault.getName()!.components(separatedBy: " ")[0])" : "Welcome to EduTune"
+
+        updateUI()
     }
     
     func getHomeData() {
@@ -73,6 +78,16 @@ class HomeVC: UIViewController {
         
     }
     
+    func updateUI() {
+        notificationButton.isHidden = !AppUserDefault.getIsLoggedIn()
+        userImageView.sd_setImage(with: URL(string: AppUserDefault.getPicture() ?? "" ), placeholderImage: UIImage(named: "ic_user_blue"))
+        statusLabel.text = getStatusText()
+        welcomeLabel.text = AppUserDefault.getName() != nil ? "Welcome \(AppUserDefault.getName()!.components(separatedBy: " ")[0])" : "Welcome to EduTune"
+       
+        getHomeData()
+
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -81,12 +96,8 @@ class HomeVC: UIViewController {
         if isLoggedIn != AppUserDefault.getIsLoggedIn() {
             isLoggedIn = AppUserDefault.getIsLoggedIn()
             
-            notificationButton.isHidden = !AppUserDefault.getIsLoggedIn()
-            userImageView.sd_setImage(with: URL(string: AppUserDefault.getPicture() ?? "" ), placeholderImage: UIImage(named: "ic_user_blue"))
-            statusLabel.text = getStatusText()
-            welcomeLabel.text = AppUserDefault.getName() != nil ? "Welcome \(AppUserDefault.getName()!.components(separatedBy: " ")[0])" : "Welcome to EduTune"
+            updateUI()
 
-            getHomeData()
         }
     }
     
@@ -128,9 +139,7 @@ class HomeVC: UIViewController {
     }
     
     @IBAction func onNotificationButtonTap(_ sender: Any) {
-        if let viewC: SearchVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "SearchVC") as? SearchVC {
-            self.navigationController?.pushViewController(viewC, animated: true)
-        }
+        
     }
     
     
