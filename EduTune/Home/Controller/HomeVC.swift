@@ -50,7 +50,12 @@ class HomeVC: UIViewController {
     }
     
     func getHomeData() {
-        APIService.shared.getHomeData { homeData in
+        var params = [String: Any]()
+        if AppUserDefault.getIsLoggedIn() {
+            params["user_id"] = AppUserDefault.getUserId()
+        }
+        
+        APIService.shared.getHomeData(params: params, completion: { homeData in
             if let homeData = homeData {
                 self.homeData = homeData
                 self.categories = homeData.program_wise_course.map({ $0.program_name ?? "" }).unique()
@@ -62,7 +67,7 @@ class HomeVC: UIViewController {
                 self.categoryCV.reloadData()
                 self.filterPrograms()
             }
-        }
+        })
     }
     
     func filterPrograms() {

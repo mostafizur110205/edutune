@@ -16,6 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var uuid: String?
+    var user: User? {
+        didSet {
+            AppUserDefault.setToken("Bearer \(user?.bearer_token ?? "")")
+            AppUserDefault.setUserId(user?.user_id ?? -1)
+            AppUserDefault.setPicture(user?.photo ?? "")
+            AppUserDefault.setName(user?.username ?? "")
+            AppUserDefault.setPhone(user?.phone ?? "")
+            AppUserDefault.setEmail(user?.email ?? "")
+            AppUserDefault.setIsLoggedIn(true)
+        }
+    }
 
     var topInset: CGFloat {
         return window?.safeAreaInsets.top ?? 0

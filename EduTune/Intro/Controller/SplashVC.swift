@@ -19,7 +19,7 @@ class SplashVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        //        self.getAppVersionInfo()
+        //  self.getAppVersionInfo()
         
         getBannerData()
         
@@ -27,7 +27,19 @@ class SplashVC: UIViewController {
     
     func getBannerData() {
         APIService.shared.getOnboardData { onboardData in
-            self.animate(onboardData)
+            if AppUserDefault.getIsLoggedIn() {
+                var params = ["user_id": AppUserDefault.getUserId(), "language": AppUserDefault.getLanguage()]
+                if let email = AppUserDefault.getEmail(), email.count>0 {
+                    params["mobile_or_email"] = email
+                } else  if let phone = AppUserDefault.getPhone(), phone.count>0 {
+                    params["mobile_or_email"] = phone
+                }
+                APIService.shared.relogin(params: params, completion: { user in
+                    self.animate(onboardData)
+                })
+            } else {
+                self.animate(onboardData)
+            }
         }
     }
     
@@ -36,27 +48,27 @@ class SplashVC: UIViewController {
     }
     
     func showUpdateAlert(_ isForce: Bool) {
-//        let alertController = UIAlertController(title: "Update available", message: "An update is available. Please update your app !", preferredStyle: .alert)
-//
-//        let appUrl = "https://apps.apple.com/us/app/id1628444676"
-//        let updateAction = UIAlertAction(title: "Update", style: .default, handler: { (alert) in
-//            if let url = URL(string: appUrl) {
-//                if UIApplication.shared.canOpenURL(url) {
-//                    UIApplication.shared.open(url)
-//                }
-//            }
-//        })
-//        alertController.addAction(updateAction)
-//
-//        if !isForce {
-//            let cancel = UIAlertAction(title: "Not now", style: .cancel) { (action) in
-//                self.goForNextVC()
-//            }
-//            alertController.addAction(cancel)
-//
-//        }
-//
-//        present(alertController, animated: true, completion: nil)
+        //        let alertController = UIAlertController(title: "Update available", message: "An update is available. Please update your app !", preferredStyle: .alert)
+        //
+        //        let appUrl = "https://apps.apple.com/us/app/id1628444676"
+        //        let updateAction = UIAlertAction(title: "Update", style: .default, handler: { (alert) in
+        //            if let url = URL(string: appUrl) {
+        //                if UIApplication.shared.canOpenURL(url) {
+        //                    UIApplication.shared.open(url)
+        //                }
+        //            }
+        //        })
+        //        alertController.addAction(updateAction)
+        //
+        //        if !isForce {
+        //            let cancel = UIAlertAction(title: "Not now", style: .cancel) { (action) in
+        //                self.goForNextVC()
+        //            }
+        //            alertController.addAction(cancel)
+        //
+        //        }
+        //
+        //        present(alertController, animated: true, completion: nil)
     }
     
     func getAppVersionInfo() {

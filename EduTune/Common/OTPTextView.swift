@@ -291,7 +291,7 @@ public class OTPTextView: UIView {
             txt.tintColor = cursorColor
             txt.keyboardType = .numberPad
             txt.textAlignment = .center
-            txt.font = UIFont(name: "Roboto-Medium", size: 20)!
+            txt.font = UIFont(name: "Urbanist-Medium", size: 20)!
             txt.textColor = txtColor
             txt.isSecureTextEntry = isPasswordProtected
             

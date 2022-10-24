@@ -33,6 +33,8 @@ class APIRequest: NSObject {
         parameters["institution_url"] = "https://edutune.com"
         parameters["institution_id"] = 206
         
+        print(parameters)
+
         let escapedString = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? url
         
         AF.request(URL(string: escapedString)!, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: APIRequest.header, interceptor: nil).responseJSON(queue: self.networkQueue, completionHandler: {
@@ -65,9 +67,46 @@ class APIRequest: NSObject {
         parameters["institution_url"] = "https://edutune.com"
         parameters["institution_id"] = 206
         
+        print(parameters)
+        
         let escapedString = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? url
         
         AF.request(URL(string: escapedString)!, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: APIRequest.header, interceptor: nil).responseJSON(queue: self.networkQueue, completionHandler: {
+            response in
+            
+            let statusCode: Int = response.response?.statusCode ?? -1
+            let requestURL: String = response.request?.url?.absoluteString ?? "No url"
+            print("\(statusCode) -- \(requestURL)")
+            print(response)
+            
+            //            if statusCode == 401 {
+            //                SocketClient.shared.logout()
+            //            }
+            
+            switch response.result {
+            case .success(let value):
+                //                print(value)
+                let json = JSON(value)
+                completion(json, nil)
+            case .failure(let error):
+                completion(nil, error as NSError)
+            }
+            
+        })
+    }
+    
+    public func postRequestJSON(url: String, parameters: [String: Any]?, completion: @escaping (_ JSON: JSON?, _ error: NSError?) -> Void) {
+        
+        var parameters = parameters ?? [String: Any]()
+        parameters["user_type"] = 2
+        parameters["institution_url"] = "https://edutune.com"
+        parameters["institution_id"] = 206
+        
+        print(parameters)
+
+        let escapedString = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? url
+        
+        AF.request(URL(string: escapedString)!, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: APIRequest.header, interceptor: nil).responseJSON(queue: self.networkQueue, completionHandler: {
             response in
             
             let statusCode: Int = response.response?.statusCode ?? -1

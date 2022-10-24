@@ -72,6 +72,33 @@ class AppUserDefault {
         UserDefaults.standard.synchronize()
     }
     
+    class func getPhone() -> String? {
+        return UserDefaults.standard.string(forKey: "phone")
+    }
+    
+    class func setPhone(_ phone: String) {
+        UserDefaults.standard.set(phone, forKey: "phone")
+        UserDefaults.standard.synchronize()
+    }
+    
+    class func getEmail() -> String? {
+        return UserDefaults.standard.string(forKey: "email")
+    }
+    
+    class func setEmail(_ email: String) {
+        UserDefaults.standard.set(email, forKey: "email")
+        UserDefaults.standard.synchronize()
+    }
+    
+    class func getLanguage() -> String {
+        return UserDefaults.standard.string(forKey: "language") ?? "en"
+    }
+    
+    class func setLanguage(_ language: String) {
+        UserDefaults.standard.set(language, forKey: "language")
+        UserDefaults.standard.synchronize()
+    }
+    
     class func clearAll() {
         let domain = Bundle.main.bundleIdentifier!
         UserDefaults.standard.removePersistentDomain(forName: domain)

@@ -98,6 +98,7 @@
 		BED6540D28F9B1E200737B78 /* MentorTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED6540C28F9B1E200737B78 /* MentorTVCell.swift */; };
 		BED6540F28F9C4DD00737B78 /* FilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED6540E28F9C4DD00737B78 /* FilterVC.swift */; };
 		BEDD168A2904E3D000C90051 /* ReviewTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDD16892904E3D000C90051 /* ReviewTVCell.swift */; };
+		BEE33B7F29064449007C35B4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE33B7E29064449007C35B4 /* User.swift */; };
 		BEE78F7228F6D30600A4B3B1 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE78F7128F6D30600A4B3B1 /* HomeVC.swift */; };
 		BEE78F7428F6D44800A4B3B1 /* DVDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE78F7328F6D44800A4B3B1 /* DVDevice.swift */; };
 		BEF803EA28F8029100CB3AE5 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF803E928F8029100CB3AE5 /* SplashVC.swift */; };
@@ -210,6 +211,7 @@
 		BED6540C28F9B1E200737B78 /* MentorTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorTVCell.swift; sourceTree = "<group>"; };
 		BED6540E28F9C4DD00737B78 /* FilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterVC.swift; sourceTree = "<group>"; };
 		BEDD16892904E3D000C90051 /* ReviewTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTVCell.swift; sourceTree = "<group>"; };
+		BEE33B7E29064449007C35B4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BEE78F7128F6D30600A4B3B1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		BEE78F7328F6D44800A4B3B1 /* DVDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DVDevice.swift; sourceTree = "<group>"; };
 		BEF803E928F8029100CB3AE5 /* SplashVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
@@ -453,6 +455,7 @@
 		BE486A0D28DEF85F003040AD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BEE33B7E29064449007C35B4 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -812,6 +815,7 @@
 				BE02837D290423FA006FCD52 /* ClassAboutTVCell.swift in Sources */,
 				BE0AF0962905886D00FCEFAA /* NotificationsVC.swift in Sources */,
 				BECAFF702903860A00E7C8B9 /* ClassDetail.swift in Sources */,
+				BEE33B7F29064449007C35B4 /* User.swift in Sources */,
 				BECAFF7A29038CAD00E7C8B9 /* ClassAboutVC.swift in Sources */,
 				BEF8040328F8259500CB3AE5 /* Class.swift in Sources */,
 				BECAFF6E290385C000E7C8B9 /* ClassDetailsVC.swift in Sources */,
