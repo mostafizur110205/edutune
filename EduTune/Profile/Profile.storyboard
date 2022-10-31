@@ -1906,10 +1906,10 @@ Account</string>
             </objects>
             <point key="canvasLocation" x="1914" y="673"/>
         </scene>
-        <!--View Controller-->
+        <!--ProfileVC-->
         <scene sceneID="VX6-bS-Skm">
             <objects>
-                <viewController id="7BA-Wk-OZc" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileVC" id="7BA-Wk-OZc" customClass="ProfileVC" customModule="EduTune" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hPq-vP-jzI">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
