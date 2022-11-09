@@ -4,10 +4,16 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Urbanist-Bold.ttf">
+            <string>Urbanist-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--My CourseVC-->
         <scene sceneID="eVy-pg-2yr">
@@ -17,18 +23,73 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My course" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlJ-or-lw3">
-                                <rect key="frame" x="155.33333333333334" y="411.66666666666669" width="79.666666666666657" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n8y-S9-1VR" userLabel="navView">
+                                <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JKA-Ss-Qfg">
+                                        <rect key="frame" x="330" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="5jC-8m-vsQ"/>
+                                            <constraint firstAttribute="width" constant="44" id="74E-ew-qyp"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="gSh-bh-YAo"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="tA3-6Z-eaY"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="ic_search"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Course" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BxZ-6O-GXv">
+                                        <rect key="frame" x="61" y="13.333333333333334" width="313" height="21.333333333333329"/>
+                                        <fontDescription key="fontDescription" name="Urbanist-Bold" family="Urbanist" pointSize="18"/>
+                                        <color key="textColor" name="Grey900"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logo_filled" translatesAutoresizingMaskIntoConstraints="NO" id="Lyz-Ke-pgP">
+                                        <rect key="frame" x="16" y="4" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="8sj-cY-mCF"/>
+                                            <constraint firstAttribute="height" constant="40" id="NUl-C0-wmf"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="3Zc-2R-jwD"/>
+                                    <constraint firstItem="JKA-Ss-Qfg" firstAttribute="top" secondItem="n8y-S9-1VR" secondAttribute="top" id="687-sg-Hp5"/>
+                                    <constraint firstAttribute="trailing" secondItem="JKA-Ss-Qfg" secondAttribute="trailing" constant="16" id="At1-h2-Kfr"/>
+                                    <constraint firstItem="Lyz-Ke-pgP" firstAttribute="top" secondItem="n8y-S9-1VR" secondAttribute="top" constant="4" id="B4P-qV-nCr"/>
+                                    <constraint firstItem="BxZ-6O-GXv" firstAttribute="centerY" secondItem="Lyz-Ke-pgP" secondAttribute="centerY" id="Dev-UM-Utb"/>
+                                    <constraint firstAttribute="trailing" secondItem="BxZ-6O-GXv" secondAttribute="trailing" constant="16" id="ElB-Ev-nj1"/>
+                                    <constraint firstItem="Lyz-Ke-pgP" firstAttribute="leading" secondItem="n8y-S9-1VR" secondAttribute="leading" constant="16" id="H5b-xZ-9YV"/>
+                                    <constraint firstAttribute="bottom" secondItem="JKA-Ss-Qfg" secondAttribute="bottom" id="LWf-eQ-atu"/>
+                                    <constraint firstItem="BxZ-6O-GXv" firstAttribute="leading" secondItem="Lyz-Ke-pgP" secondAttribute="trailing" constant="5" id="gLX-Vn-3HI"/>
+                                    <constraint firstItem="BxZ-6O-GXv" firstAttribute="top" secondItem="n8y-S9-1VR" secondAttribute="top" constant="13.333333333333336" id="mR0-pG-OXO"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_empty" translatesAutoresizingMaskIntoConstraints="NO" id="Z31-iZ-6RA">
+                                <rect key="frame" x="110" y="359.66666666666669" width="170" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Z31-iZ-6RA" secondAttribute="height" multiplier="34:25" id="b78-v1-3yf"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="imageRenderingMode">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3Zk-gs-9Ob"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="wlJ-or-lw3" firstAttribute="centerX" secondItem="TNe-fs-8r1" secondAttribute="centerX" id="a2a-Sf-dDA"/>
-                            <constraint firstItem="wlJ-or-lw3" firstAttribute="centerY" secondItem="TNe-fs-8r1" secondAttribute="centerY" id="lhw-SI-5CT"/>
+                            <constraint firstItem="n8y-S9-1VR" firstAttribute="trailing" secondItem="3Zk-gs-9Ob" secondAttribute="trailing" id="4ns-R3-v6u"/>
+                            <constraint firstItem="n8y-S9-1VR" firstAttribute="leading" secondItem="3Zk-gs-9Ob" secondAttribute="leading" id="8Qa-Xu-Bwy"/>
+                            <constraint firstItem="n8y-S9-1VR" firstAttribute="top" secondItem="3Zk-gs-9Ob" secondAttribute="top" id="8iF-Hr-WQR"/>
+                            <constraint firstItem="Z31-iZ-6RA" firstAttribute="centerX" secondItem="TNe-fs-8r1" secondAttribute="centerX" id="Cun-4L-5z8"/>
+                            <constraint firstItem="Z31-iZ-6RA" firstAttribute="centerY" secondItem="TNe-fs-8r1" secondAttribute="centerY" id="wO2-Sq-VJG"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -38,6 +99,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_empty" width="170" height="125"/>
+        <image name="ic_logo_filled" width="32" height="32"/>
+        <image name="ic_search" width="20.666666030883789" height="21.333333969116211"/>
+        <namedColor name="Grey900">
+            <color red="0.1289999932050705" green="0.1289999932050705" blue="0.1289999932050705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
