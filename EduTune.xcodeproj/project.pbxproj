@@ -43,6 +43,7 @@
 		BE304D1128F84B7F0062C48A /* LoginTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE304D1028F84B7F0062C48A /* LoginTVCell.swift */; };
 		BE304D1328F85C8E0062C48A /* ExtensionFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE304D1228F85C8E0062C48A /* ExtensionFont.swift */; };
 		BE304D1528F864530062C48A /* CenteredCVLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE304D1428F864530062C48A /* CenteredCVLayout.swift */; };
+		BE469833291C28060026EEA5 /* MyCourseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE469832291C28060026EEA5 /* MyCourseVC.swift */; };
 		BE4869C728DECD14003040AD /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE4869C628DECD14003040AD /* Profile.storyboard */; };
 		BE4869C928DECD67003040AD /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE4869C828DECD67003040AD /* Home.storyboard */; };
 		BE4869CB28DECD75003040AD /* MyCourse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE4869CA28DECD75003040AD /* MyCourse.storyboard */; };
@@ -172,6 +173,7 @@
 		BE304D1028F84B7F0062C48A /* LoginTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTVCell.swift; sourceTree = "<group>"; };
 		BE304D1228F85C8E0062C48A /* ExtensionFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionFont.swift; sourceTree = "<group>"; };
 		BE304D1428F864530062C48A /* CenteredCVLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenteredCVLayout.swift; sourceTree = "<group>"; };
+		BE469832291C28060026EEA5 /* MyCourseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCourseVC.swift; sourceTree = "<group>"; };
 		BE4869C628DECD14003040AD /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		BE4869C828DECD67003040AD /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		BE4869CA28DECD75003040AD /* MyCourse.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyCourse.storyboard; sourceTree = "<group>"; };
@@ -374,6 +376,28 @@
 			path = EduTune;
 			sourceTree = "<group>";
 		};
+		BE46982F291C27D70026EEA5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BE469832291C28060026EEA5 /* MyCourseVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BE469830291C27E60026EEA5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BE469831291C27EC0026EEA5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		BE4869D228DECDA8003040AD /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -389,6 +413,9 @@
 			isa = PBXGroup;
 			children = (
 				BE4869CA28DECD75003040AD /* MyCourse.storyboard */,
+				BE469831291C27EC0026EEA5 /* Model */,
+				BE469830291C27E60026EEA5 /* View */,
+				BE46982F291C27D70026EEA5 /* Controller */,
 			);
 			path = MyCourse;
 			sourceTree = "<group>";
@@ -829,6 +856,7 @@
 				BEA4330B2905388100B3291E /* BlogDetailsVC.swift in Sources */,
 				BEB83B9B290E610200860770 /* MoreTVCell.swift in Sources */,
 				BED6540928F9899200737B78 /* SearchVC.swift in Sources */,
+				BE469833291C28060026EEA5 /* MyCourseVC.swift in Sources */,
 				BE14710128F5733A00726625 /* IntroCVCell.swift in Sources */,
 				BEF803EA28F8029100CB3AE5 /* SplashVC.swift in Sources */,
 				BE1D520C28D887F300EC151A /* AppDelegate.swift in Sources */,

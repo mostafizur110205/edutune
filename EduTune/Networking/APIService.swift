@@ -79,7 +79,6 @@ class APIService: NSObject {
         }
     }
     
-    
     func getOnboardData(completion: @escaping ([OnboardData]) -> Void) {
         let parameters = ["access_token": APIEndpoints.ACCESS_TOKEN, "package_id": "com.aitl.edutune"]
 
