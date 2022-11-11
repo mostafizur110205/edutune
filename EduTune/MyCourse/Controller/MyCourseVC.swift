@@ -7,13 +7,34 @@
 
 import UIKit
 
-class MyCourseVC: UIViewController {
+class MyCourseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    let animals: [String] = ["Horse", "Cow", "Camel", "Sheep", "Goat"]
+    let cellReuseIdentifier = "cell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
 
-        // Do any additional setup after loading the view.
     }
 
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell:UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier)!
+                
+                cell.textLabel?.text = self.animals[indexPath.row]
+                
+                return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 3
+    }
 
 }

@@ -81,21 +81,36 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="doX-pa-Wa1">
+                                <rect key="frame" x="0.0" y="91" width="390" height="719"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="MpI-qR-4OG" id="WAP-fs-EmB"/>
+                                    <outlet property="prefetchDataSource" destination="MpI-qR-4OG" id="HJn-qM-ybQ"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3Zk-gs-9Ob"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="3Zk-gs-9Ob" firstAttribute="trailing" secondItem="doX-pa-Wa1" secondAttribute="trailing" id="3F0-E7-LTs"/>
                             <constraint firstItem="n8y-S9-1VR" firstAttribute="trailing" secondItem="3Zk-gs-9Ob" secondAttribute="trailing" id="4ns-R3-v6u"/>
+                            <constraint firstItem="doX-pa-Wa1" firstAttribute="top" secondItem="n8y-S9-1VR" secondAttribute="bottom" id="7ep-gQ-aQH"/>
                             <constraint firstItem="n8y-S9-1VR" firstAttribute="leading" secondItem="3Zk-gs-9Ob" secondAttribute="leading" id="8Qa-Xu-Bwy"/>
                             <constraint firstItem="n8y-S9-1VR" firstAttribute="top" secondItem="3Zk-gs-9Ob" secondAttribute="top" id="8iF-Hr-WQR"/>
+                            <constraint firstItem="3Zk-gs-9Ob" firstAttribute="bottom" secondItem="doX-pa-Wa1" secondAttribute="bottom" id="9vf-bP-c4v"/>
                             <constraint firstItem="Z31-iZ-6RA" firstAttribute="centerX" secondItem="TNe-fs-8r1" secondAttribute="centerX" id="Cun-4L-5z8"/>
+                            <constraint firstItem="doX-pa-Wa1" firstAttribute="leading" secondItem="3Zk-gs-9Ob" secondAttribute="leading" id="IIP-dH-0bo"/>
                             <constraint firstItem="Z31-iZ-6RA" firstAttribute="centerY" secondItem="TNe-fs-8r1" secondAttribute="centerY" id="wO2-Sq-VJG"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="doX-pa-Wa1" id="TwJ-53-OCc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ep-Yh-PvE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4142" y="-716"/>
+            <point key="canvasLocation" x="2695" y="-1071"/>
         </scene>
     </scenes>
     <resources>
