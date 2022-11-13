@@ -12,6 +12,8 @@
 		BB89C6C72921268000BA5B7A /* LiveClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB89C6C62921268000BA5B7A /* LiveClass.swift */; };
 		BB89C6D129214B0300BA5B7A /* OngoingClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB89C6D029214B0200BA5B7A /* OngoingClass.swift */; };
 		BBB9F80529215E0F005C82E2 /* DueAssignmentsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB9F80429215E0F005C82E2 /* DueAssignmentsTVCell.swift */; };
+		BBB9F808292169AF005C82E2 /* LiveClassTVCell copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB9F806292169AF005C82E2 /* LiveClassTVCell copy.swift */; };
+		BBB9F809292169AF005C82E2 /* OngoingClassTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB9F807292169AF005C82E2 /* OngoingClassTVCell.swift */; };
 		BE02837B290423DB006FCD52 /* ClassHeaderTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE02837A290423DB006FCD52 /* ClassHeaderTVCell.swift */; };
 		BE02837D290423FA006FCD52 /* ClassAboutTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE02837C290423FA006FCD52 /* ClassAboutTVCell.swift */; };
 		BE02837F2904240C006FCD52 /* ClassCertificateTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE02837E2904240C006FCD52 /* ClassCertificateTVCell.swift */; };
@@ -160,6 +162,8 @@
 		BB89C6C62921268000BA5B7A /* LiveClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveClass.swift; sourceTree = "<group>"; };
 		BB89C6D029214B0200BA5B7A /* OngoingClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OngoingClass.swift; sourceTree = "<group>"; };
 		BBB9F80429215E0F005C82E2 /* DueAssignmentsTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DueAssignmentsTVCell.swift; sourceTree = "<group>"; };
+		BBB9F806292169AF005C82E2 /* LiveClassTVCell copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LiveClassTVCell copy.swift"; sourceTree = "<group>"; };
+		BBB9F807292169AF005C82E2 /* OngoingClassTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OngoingClassTVCell.swift; sourceTree = "<group>"; };
 		BE02837A290423DB006FCD52 /* ClassHeaderTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassHeaderTVCell.swift; sourceTree = "<group>"; };
 		BE02837C290423FA006FCD52 /* ClassAboutTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassAboutTVCell.swift; sourceTree = "<group>"; };
 		BE02837E2904240C006FCD52 /* ClassCertificateTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassCertificateTVCell.swift; sourceTree = "<group>"; };
@@ -322,6 +326,8 @@
 		BB89C6C12921233E00BA5B7A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BBB9F806292169AF005C82E2 /* LiveClassTVCell copy.swift */,
+				BBB9F807292169AF005C82E2 /* OngoingClassTVCell.swift */,
 				BBB9F80429215E0F005C82E2 /* DueAssignmentsTVCell.swift */,
 			);
 			path = View;
@@ -877,6 +883,7 @@
 				BEA432FC2904EB0100B3291E /* AllReviewsVC.swift in Sources */,
 				BE14710528F579F100726625 /* LetsInVC.swift in Sources */,
 				BEF8040528F826A500CB3AE5 /* Teacher.swift in Sources */,
+				BBB9F809292169AF005C82E2 /* OngoingClassTVCell.swift in Sources */,
 				BEA432FA2904EAE600B3291E /* AllLessonsVC.swift in Sources */,
 				BECAFF8029038FDC00E7C8B9 /* ClassHeaderVC.swift in Sources */,
 				BEA433022905370200B3291E /* Blog.swift in Sources */,
@@ -919,6 +926,7 @@
 				BEF8040128F8247A00CB3AE5 /* Program.swift in Sources */,
 				BECAFF6C290385AE00E7C8B9 /* MentorProfileVC.swift in Sources */,
 				BEA433092905387200B3291E /* BlogBookmarksVC.swift in Sources */,
+				BBB9F808292169AF005C82E2 /* LiveClassTVCell copy.swift in Sources */,
 				BBB9F80529215E0F005C82E2 /* DueAssignmentsTVCell.swift in Sources */,
 				BE304D0D28F84A650062C48A /* BannerCVCell.swift in Sources */,
 				BE14711728F57C1F00726625 /* MakeToast.swift in Sources */,

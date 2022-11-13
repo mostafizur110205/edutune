@@ -105,6 +105,16 @@ class MyCourseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             
             cell.classData = self.dueAssignments[indexPath.row]
             return cell
+        }else  if sectionKey == MyCourseType.live{
+            guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "LiveClassTVCell") as? LiveClassTVCell else {return UITableViewCell()}
+            
+            cell.classData = self.liveClasses[indexPath.row]
+            return cell
+        }else  if sectionKey == MyCourseType.onGoing{
+            guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "OngoingTVCell") as? OngoingTVCell else {return UITableViewCell()}
+            
+            cell.classData = self.ongoingClasses[indexPath.row]
+            return cell
         }
        
         return UITableViewCell()
