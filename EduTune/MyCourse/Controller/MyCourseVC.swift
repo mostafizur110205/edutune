@@ -18,6 +18,10 @@ class MyCourseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let params = ["user_id": AppUserDefault.getUserId()]
+        APIService.shared.getMyCourse(page: 0, params: params) { course, types, cu, ne in
+            
+        }
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

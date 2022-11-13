@@ -303,11 +303,11 @@
         <!--My Course-->
         <scene sceneID="6cs-4S-Mys">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xTh-YP-y8k" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="xTh-YP-y8k" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Course" image="ic_tab_my_course" selectedImage="ic_tab_my_course_selected" id="S1h-mR-nC9"/>
                     <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q72-Ep-0hQ">
-                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

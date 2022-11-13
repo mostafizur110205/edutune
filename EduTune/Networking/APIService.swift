@@ -233,6 +233,20 @@ class APIService: NSObject {
         }
     }
     
+    func purchaseCourse(params: [String: Any], completion: @escaping (Bool) -> Void) {
+        APIRequest.shared.postRequestJSON(url: APIEndpoints.COURSE_PURCHASE, parameters: params) { (JSON, error) in
+            DispatchQueue.main.async {
+                if error == nil {
+                    if let json = JSON {
+                        if json["error"].boolValue == false {
+                            completion(true)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
 //    func getSearchResult(_ queryText: String, completion: @escaping ([User], [Trend]) -> Void) {
 //        APIRequest.shared.getRequest(url: APIEndpoints.SEARCH+"\(queryText)", parameters: nil) { (JSON, error) in
 //            DispatchQueue.main.async {

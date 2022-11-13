@@ -18,7 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var uuid: String?
     var user: User? {
         didSet {
-            AppUserDefault.setToken("Bearer \(user?.bearer_token ?? "")")
+            if let token = user?.bearer_token {
+                AppUserDefault.setToken("Bearer \(token)")
+            }
             AppUserDefault.setUserId(user?.user_id ?? -1)
             AppUserDefault.setPicture(user?.photo ?? "")
             AppUserDefault.setName(user?.username ?? "")

@@ -74,6 +74,8 @@
 		BE486A0528DEF673003040AD /* SocialLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE486A0428DEF673003040AD /* SocialLoginVC.swift */; };
 		BE486A0728DEF698003040AD /* IntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE486A0628DEF698003040AD /* IntroVC.swift */; };
 		BE486A0928DEF6D3003040AD /* OTPTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE486A0828DEF6D3003040AD /* OTPTextView.swift */; };
+		BE980F572920F9170078C7BD /* SSLCommerzSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE980F562920F9170078C7BD /* SSLCommerzSDK.framework */; };
+		BE980F582920F9170078C7BD /* SSLCommerzSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE980F562920F9170078C7BD /* SSLCommerzSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BEA432F82904E54900B3291E /* Course.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA432F72904E54900B3291E /* Course.storyboard */; };
 		BEA432FA2904EAE600B3291E /* AllLessonsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA432F92904EAE600B3291E /* AllLessonsVC.swift */; };
 		BEA432FC2904EB0100B3291E /* AllReviewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA432FB2904EB0100B3291E /* AllReviewsVC.swift */; };
@@ -131,6 +133,20 @@
 		BEF8040528F826A500CB3AE5 /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF8040428F826A500CB3AE5 /* Teacher.swift */; };
 		FCDE3F2F2901C8B6005DAA96 /* Garbage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCDE3F2E2901C8B6005DAA96 /* Garbage.storyboard */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BE980F592920F9170078C7BD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BE980F582920F9170078C7BD /* SSLCommerzSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0C96D62E64AD5083F9B26A3F /* Pods_EduTune.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EduTune.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -204,6 +220,7 @@
 		BE486A0428DEF673003040AD /* SocialLoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialLoginVC.swift; sourceTree = "<group>"; };
 		BE486A0628DEF698003040AD /* IntroVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroVC.swift; sourceTree = "<group>"; };
 		BE486A0828DEF6D3003040AD /* OTPTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPTextView.swift; sourceTree = "<group>"; };
+		BE980F562920F9170078C7BD /* SSLCommerzSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SSLCommerzSDK.framework; sourceTree = "<group>"; };
 		BEA432F72904E54900B3291E /* Course.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Course.storyboard; sourceTree = "<group>"; };
 		BEA432F92904EAE600B3291E /* AllLessonsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllLessonsVC.swift; sourceTree = "<group>"; };
 		BEA432FB2904EB0100B3291E /* AllReviewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllReviewsVC.swift; sourceTree = "<group>"; };
@@ -267,6 +284,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE980F572920F9170078C7BD /* SSLCommerzSDK.framework in Frameworks */,
 				768E2115262AAB544AE6EBA9 /* Pods_EduTune.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,6 +295,7 @@
 		3AC52E304DD6071320C30BE6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BE980F562920F9170078C7BD /* SSLCommerzSDK.framework */,
 				0C96D62E64AD5083F9B26A3F /* Pods_EduTune.framework */,
 			);
 			name = Frameworks;
@@ -707,6 +726,7 @@
 				BE1D520528D887F300EC151A /* Frameworks */,
 				BE1D520628D887F300EC151A /* Resources */,
 				3C857365994026CC8F48BAC5 /* [CP] Embed Pods Frameworks */,
+				BE980F592920F9170078C7BD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1077,6 +1097,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = C88TF32R63;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EduTune/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "EduTune wants to access your camera to take profile picture or record video";
@@ -1113,6 +1137,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = C88TF32R63;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EduTune/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "EduTune wants to access your camera to take profile picture or record video";
