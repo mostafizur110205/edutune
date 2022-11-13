@@ -215,17 +215,17 @@ class APIService: NSObject {
         }
     }
     
-    func getMyCourse(page: Int, params: [String: Any], completion: @escaping ([Blog], [BlogType], Int, Int) -> Void) {
+    func getMyCourse(params: [String: Any], completion: @escaping ([LiveClass]?, [DueAssignments]?,  [OngoingClass]?) -> Void) {
         APIRequest.shared.getRequest(url: APIEndpoints.MY_COURSE, parameters: params) { (JSON, error) in
             DispatchQueue.main.async {
                 if error == nil {
                     if let json = JSON {
                         if json["error"].boolValue == false {
-                            let blogs = json["blogs"]["data"].arrayValue.map { Blog(json: $0) }
-                            let types = json["blog_types"].arrayValue.map { BlogType(json: $0) }
-                            let currentPage = json["blogs"]["current_page"].intValue
-                            let lastPage = json["blogs"]["last_page"].intValue
-                            completion(blogs, types, currentPage, lastPage)
+                            let liveClass = json["allClass"].arrayValue.map { LiveClass($0) }
+                            let dueAssignments = json["running_assignments"].arrayValue.map { DueAssignments($0) }
+                            let onGoingClass = json["registered_classes"].arrayValue.map { OngoingClass($0) }
+                            
+                            completion(liveClass, dueAssignments, onGoingClass)
                         }
                     }
                 }

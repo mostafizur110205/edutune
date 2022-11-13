@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		768E2115262AAB544AE6EBA9 /* Pods_EduTune.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C96D62E64AD5083F9B26A3F /* Pods_EduTune.framework */; };
+		BB89C6C5292125CD00BA5B7A /* DueAssignments.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB89C6C4292125CD00BA5B7A /* DueAssignments.swift */; };
+		BB89C6C72921268000BA5B7A /* LiveClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB89C6C62921268000BA5B7A /* LiveClass.swift */; };
+		BB89C6D129214B0300BA5B7A /* OngoingClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB89C6D029214B0200BA5B7A /* OngoingClass.swift */; };
+		BBB9F80529215E0F005C82E2 /* DueAssignmentsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB9F80429215E0F005C82E2 /* DueAssignmentsTVCell.swift */; };
 		BE02837B290423DB006FCD52 /* ClassHeaderTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE02837A290423DB006FCD52 /* ClassHeaderTVCell.swift */; };
 		BE02837D290423FA006FCD52 /* ClassAboutTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE02837C290423FA006FCD52 /* ClassAboutTVCell.swift */; };
 		BE02837F2904240C006FCD52 /* ClassCertificateTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE02837E2904240C006FCD52 /* ClassCertificateTVCell.swift */; };
@@ -152,6 +156,10 @@
 		0C96D62E64AD5083F9B26A3F /* Pods_EduTune.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EduTune.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		12A43F5A3E4339F493AD1793 /* Pods-EduTune.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTune.release.xcconfig"; path = "Target Support Files/Pods-EduTune/Pods-EduTune.release.xcconfig"; sourceTree = "<group>"; };
 		172CA9B0D970362B62617A01 /* Pods-EduTune.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTune.debug.xcconfig"; path = "Target Support Files/Pods-EduTune/Pods-EduTune.debug.xcconfig"; sourceTree = "<group>"; };
+		BB89C6C4292125CD00BA5B7A /* DueAssignments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DueAssignments.swift; sourceTree = "<group>"; };
+		BB89C6C62921268000BA5B7A /* LiveClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveClass.swift; sourceTree = "<group>"; };
+		BB89C6D029214B0200BA5B7A /* OngoingClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OngoingClass.swift; sourceTree = "<group>"; };
+		BBB9F80429215E0F005C82E2 /* DueAssignmentsTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DueAssignmentsTVCell.swift; sourceTree = "<group>"; };
 		BE02837A290423DB006FCD52 /* ClassHeaderTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassHeaderTVCell.swift; sourceTree = "<group>"; };
 		BE02837C290423FA006FCD52 /* ClassAboutTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassAboutTVCell.swift; sourceTree = "<group>"; };
 		BE02837E2904240C006FCD52 /* ClassCertificateTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassCertificateTVCell.swift; sourceTree = "<group>"; };
@@ -301,6 +309,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BB89C6C02921232500BA5B7A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BB89C6D029214B0200BA5B7A /* OngoingClass.swift */,
+				BB89C6C62921268000BA5B7A /* LiveClass.swift */,
+				BB89C6C4292125CD00BA5B7A /* DueAssignments.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BB89C6C12921233E00BA5B7A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BBB9F80429215E0F005C82E2 /* DueAssignmentsTVCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		BE0AF0922905884A00FCEFAA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -403,20 +429,6 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		BE469830291C27E60026EEA5 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		BE469831291C27EC0026EEA5 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		BE4869D228DECDA8003040AD /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -431,9 +443,9 @@
 		BE4869D328DECDAF003040AD /* MyCourse */ = {
 			isa = PBXGroup;
 			children = (
+				BB89C6C12921233E00BA5B7A /* View */,
+				BB89C6C02921232500BA5B7A /* Model */,
 				BE4869CA28DECD75003040AD /* MyCourse.storyboard */,
-				BE469831291C27EC0026EEA5 /* Model */,
-				BE469830291C27E60026EEA5 /* View */,
 				BE46982F291C27D70026EEA5 /* Controller */,
 			);
 			path = MyCourse;
@@ -870,6 +882,7 @@
 				BEA433022905370200B3291E /* Blog.swift in Sources */,
 				BE02838129042432006FCD52 /* ClassChecklistTVCell.swift in Sources */,
 				BE14710928F57A1800726625 /* LoginVC.swift in Sources */,
+				BB89C6D129214B0300BA5B7A /* OngoingClass.swift in Sources */,
 				BE304D1528F864530062C48A /* CenteredCVLayout.swift in Sources */,
 				BEF803FB28F8074F00CB3AE5 /* OnboardData.swift in Sources */,
 				BE028385290439C4006FCD52 /* LessonTVCell.swift in Sources */,
@@ -882,6 +895,7 @@
 				BE1D520C28D887F300EC151A /* AppDelegate.swift in Sources */,
 				BE304D0728F8474E0062C48A /* ClassTVCell.swift in Sources */,
 				BE304D1328F85C8E0062C48A /* ExtensionFont.swift in Sources */,
+				BB89C6C5292125CD00BA5B7A /* DueAssignments.swift in Sources */,
 				BEB83BAF290E682700860770 /* LanguageVC.swift in Sources */,
 				BE304D0528F847390062C48A /* CategoryCVCell.swift in Sources */,
 				BEF803F928F8061F00CB3AE5 /* AppUserDefault.swift in Sources */,
@@ -894,6 +908,7 @@
 				BE14711328F57AC300726625 /* CreateNewPassVC.swift in Sources */,
 				BEDD168A2904E3D000C90051 /* ReviewTVCell.swift in Sources */,
 				BE4869FF28DEF5B8003040AD /* Extensions.swift in Sources */,
+				BB89C6C72921268000BA5B7A /* LiveClass.swift in Sources */,
 				BE14711528F57AE400726625 /* PassResetSuccessVC.swift in Sources */,
 				BE1D520E28D887F300EC151A /* SceneDelegate.swift in Sources */,
 				BE028383290439B6006FCD52 /* LessonHeaderCell.swift in Sources */,
@@ -904,6 +919,7 @@
 				BEF8040128F8247A00CB3AE5 /* Program.swift in Sources */,
 				BECAFF6C290385AE00E7C8B9 /* MentorProfileVC.swift in Sources */,
 				BEA433092905387200B3291E /* BlogBookmarksVC.swift in Sources */,
+				BBB9F80529215E0F005C82E2 /* DueAssignmentsTVCell.swift in Sources */,
 				BE304D0D28F84A650062C48A /* BannerCVCell.swift in Sources */,
 				BE14711728F57C1F00726625 /* MakeToast.swift in Sources */,
 				BECAFF76290389A200E7C8B9 /* Lecture.swift in Sources */,
