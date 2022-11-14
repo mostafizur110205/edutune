@@ -65,6 +65,17 @@ class Extensions{
             return false
         }
     }
+    
+    class func getTimeFrom24Time(timeStr: String?) -> String {
+        if let timeS = timeStr {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "HH:mm:ss"
+            let date = dateFormatter.date(from: timeS)
+            dateFormatter.dateFormat = "h:mm a"
+            return dateFormatter.string(from: date!)
+        }
+        return ""
+    }
 }
 
 // MARK: - UIImageView
@@ -277,7 +288,6 @@ extension UIImage {
         return coloredImage
     }
 }
-
 
 // MARK: - UIColor
 extension UIColor {
@@ -1182,6 +1192,7 @@ extension Date{
         
         return "\(day)d:\(hour)h"
     }
+    
 }
 
 

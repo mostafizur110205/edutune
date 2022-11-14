@@ -20,7 +20,7 @@ class LiveClassTVCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        
         mainContentView.layer.masksToBounds = false
         mainContentView.layer.shadowColor = UIColor.init(hex: "535990", alpha: 0.2).cgColor
         mainContentView.layer.cornerRadius = 10.0
@@ -28,39 +28,25 @@ class LiveClassTVCell: UITableViewCell {
         mainContentView.layer.shadowRadius = 5
         mainContentView.layer.shadowOpacity = 0.5
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
     }
     
     var classData: LiveClass? {
         didSet {
             cellImageView.sd_setImage(with: URL(string: classData?.image ?? "" ), placeholderImage: nil)
-            categoryLabel.text = "  \(classData?.className ?? "")  "
-            titleLabel.text = classData?.hostName
-            priceLabel.text = classData?.day ?? ""
-            //priceLabel.text = "৳\(classData?.examTime ?? 0)"
-            //statusLabel.text = classData?.mode == 1 ? "Batch" : "Recorded Class"
+            categoryLabel.text = "  \(classData?.hostName ?? "")  "
+            titleLabel.text = classData?.className
+            priceLabel.text = "\(Extensions.getTimeFrom24Time(timeStr: classData?.startTime)) - \(Extensions.getTimeFrom24Time(timeStr: classData?.endTime))"
+            reviewLabel.text = "Upcoming"
+            statusLabel.text = "10 min remaining"
+            oldPriceLabel.isHidden = true
             
-//            if classData?.original_price ?? 0 == 0 {
-//                oldPriceLabel.text = ""
-//                oldPriceLine.isHidden = true
-//            } else {
-//                oldPriceLabel.text = "৳\(classData?.original_price ?? 0)"
-//                oldPriceLine.isHidden = false
-//            }
-//
-//            let review = Float(classData?.get_user_review_avg_rating ?? "0") ?? 0
-//
-//            if review == 0 {
-//                reviewStackView.isHidden = true
-//            } else {
-//                reviewStackView.isHidden = false
-//                reviewLabel.text = String(format: "%.2f", review)
-//            }
-
+            
+            
         }
     }
-
+    
 }

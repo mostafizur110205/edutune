@@ -39,26 +39,11 @@ class DueAssignmentsTVCell: UITableViewCell {
             cellImageView.sd_setImage(with: URL(string: classData?.subjectImage ?? "" ), placeholderImage: nil)
             categoryLabel.text = "  \(classData?.className ?? "")  "
             titleLabel.text = classData?.name
-            priceLabel.text = "৳\(classData?.examTime ?? 0)"
-            //statusLabel.text = classData?.mode == 1 ? "Batch" : "Recorded Class"
+            priceLabel.text = "Due \(classData?.dueDate ?? "")"
+            oldPriceLabel.isHidden = true
+            reviewLabel.text = "Submission (\(classData?.numOfAttempts ?? 0))"
+            statusLabel.text = "Start Test"
             
-//            if classData?.original_price ?? 0 == 0 {
-//                oldPriceLabel.text = ""
-//                oldPriceLine.isHidden = true
-//            } else {
-//                oldPriceLabel.text = "৳\(classData?.original_price ?? 0)"
-//                oldPriceLine.isHidden = false
-//            }
-//
-//            let review = Float(classData?.get_user_review_avg_rating ?? "0") ?? 0
-//
-//            if review == 0 {
-//                reviewStackView.isHidden = true
-//            } else {
-//                reviewStackView.isHidden = false
-//                reviewLabel.text = String(format: "%.2f", review)
-//            }
-
         }
     }
 
