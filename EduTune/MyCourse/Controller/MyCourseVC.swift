@@ -21,6 +21,13 @@ class MyCourseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         getMyCourses()
     }
     
+    func goToCourseListView(ogc: OngoingClass) {
+        if let viewC: MyCourseDetailsListVC = self.storyboard?.instantiateViewController(withIdentifier: "MyCourseDetailsListVC") as? MyCourseDetailsListVC {
+            viewC.ongoingClass = ogc
+            navigationController?.pushViewController(viewC, animated: true)
+        }
+    }
+    
     func getMyCourses() {
         
         if AppUserDefault.getIsLoggedIn() {
@@ -136,6 +143,14 @@ class MyCourseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             return self.ongoingClasses.count
         }
         else{return 0}
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let sectionKey = self.sections[indexPath.section]
+        if sectionKey == MyCourseType.onGoing{
+            goToCourseListView(ogc: self.ongoingClasses[indexPath.row])
+        }
     }
     
     

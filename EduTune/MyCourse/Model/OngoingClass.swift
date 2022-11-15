@@ -14,7 +14,7 @@ struct OngoingClass {
 	var name: String?
 	var photo: String?
 	//var getOfferedCourses: [GetOfferedCourses]?
-	//var getClassContents: [GetClassContents]?
+	var getClassContents: [ClassContent]?
 	//var getClassContentView: [Any]?
 
 	init(_ json: JSON) {
@@ -26,7 +26,7 @@ struct OngoingClass {
             photo = APIEndpoints.S3_URL + (AppDelegate.shared().uuid ?? "") + pic
         }
 		//getOfferedCourses = json["get_offered_courses"].arrayValue.map { GetOfferedCourses($0) }
-		//getClassContents = json["get_class_contents"].arrayValue.map { GetClassContents($0) }
+        getClassContents = json["get_class_contents"].arrayValue.map { ClassContent(json: $0) }
 		//getClassContentView = json["get_class_content_view"].arrayValue.map { $0 }
 	}
 

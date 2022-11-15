@@ -649,8 +649,81 @@
             </objects>
             <point key="canvasLocation" x="2695" y="-1071"/>
         </scene>
+        <!--My Course Details ListVC-->
+        <scene sceneID="n9W-J6-Isa">
+            <objects>
+                <viewController storyboardIdentifier="MyCourseDetailsListVC" id="HP7-40-9tN" customClass="MyCourseDetailsListVC" customModule="EduTune" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AjI-IX-j6V">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gFW-3H-sVl">
+                                <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bkr-wL-piW">
+                                        <rect key="frame" x="10" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="UOe-QW-jfF"/>
+                                            <constraint firstAttribute="height" constant="44" id="aba-wc-OL1"/>
+                                        </constraints>
+                                        <color key="tintColor" name="Grey900"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="ic_back"/>
+                                        <connections>
+                                            <action selector="backBtnAction:" destination="HP7-40-9tN" eventType="touchUpInside" id="FYv-Im-xNA"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Mentors" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7c2-Xq-Jxx">
+                                        <rect key="frame" x="59" y="11.333333333333337" width="331" height="21.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="Urbanist-Bold" family="Urbanist" pointSize="18"/>
+                                        <color key="textColor" name="Grey900"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Bkr-wL-piW" firstAttribute="centerY" secondItem="gFW-3H-sVl" secondAttribute="centerY" id="7MI-kz-XOA"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="DEf-1B-MP8"/>
+                                    <constraint firstAttribute="height" constant="44" id="F9b-8s-T7B"/>
+                                    <constraint firstAttribute="trailing" secondItem="7c2-Xq-Jxx" secondAttribute="trailing" id="Tl7-KM-Vq0"/>
+                                    <constraint firstItem="7c2-Xq-Jxx" firstAttribute="centerY" secondItem="Bkr-wL-piW" secondAttribute="centerY" id="d7a-CS-uQ8"/>
+                                    <constraint firstItem="Bkr-wL-piW" firstAttribute="leading" secondItem="gFW-3H-sVl" secondAttribute="leading" constant="10" id="o9H-58-KTq"/>
+                                    <constraint firstItem="7c2-Xq-Jxx" firstAttribute="leading" secondItem="Bkr-wL-piW" secondAttribute="trailing" constant="5" id="yWV-qS-Bh1"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3Pf-B9-dIc">
+                                <rect key="frame" x="0.0" y="91" width="390" height="719"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="HP7-40-9tN" id="9ze-y7-fey"/>
+                                    <outlet property="delegate" destination="HP7-40-9tN" id="1LB-dk-A7J"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cWS-CX-fcg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gFW-3H-sVl" firstAttribute="leading" secondItem="cWS-CX-fcg" secondAttribute="leading" id="DBD-gF-llE"/>
+                            <constraint firstItem="3Pf-B9-dIc" firstAttribute="leading" secondItem="cWS-CX-fcg" secondAttribute="leading" id="HhV-2i-JCE"/>
+                            <constraint firstItem="cWS-CX-fcg" firstAttribute="bottom" secondItem="3Pf-B9-dIc" secondAttribute="bottom" id="IyC-qz-9JQ"/>
+                            <constraint firstItem="gFW-3H-sVl" firstAttribute="top" secondItem="cWS-CX-fcg" secondAttribute="top" id="Ulr-KV-DUj"/>
+                            <constraint firstItem="cWS-CX-fcg" firstAttribute="trailing" secondItem="3Pf-B9-dIc" secondAttribute="trailing" id="aNO-bh-ol1"/>
+                            <constraint firstItem="3Pf-B9-dIc" firstAttribute="top" secondItem="gFW-3H-sVl" secondAttribute="bottom" id="ecI-vP-4ZK"/>
+                            <constraint firstItem="gFW-3H-sVl" firstAttribute="trailing" secondItem="cWS-CX-fcg" secondAttribute="trailing" id="g8m-fe-viS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="navTitle" destination="7c2-Xq-Jxx" id="kZk-zZ-ZLK"/>
+                        <outlet property="tableView" destination="3Pf-B9-dIc" id="6je-cg-lVM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nA8-PP-max" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3472" y="-1057"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="ic_back" width="28" height="28"/>
         <image name="ic_clock" width="20" height="20"/>
         <image name="ic_empty" width="170" height="125"/>
         <image name="ic_logo_filled" width="32" height="32"/>
