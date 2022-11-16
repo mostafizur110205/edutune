@@ -50,6 +50,13 @@
 		BE304D1128F84B7F0062C48A /* LoginTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE304D1028F84B7F0062C48A /* LoginTVCell.swift */; };
 		BE304D1328F85C8E0062C48A /* ExtensionFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE304D1228F85C8E0062C48A /* ExtensionFont.swift */; };
 		BE304D1528F864530062C48A /* CenteredCVLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE304D1428F864530062C48A /* CenteredCVLayout.swift */; };
+		BE44ECA3292522A300AD0DCA /* CheckoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE44ECA2292522A300AD0DCA /* CheckoutVC.swift */; };
+		BE44ECA52925239D00AD0DCA /* InputPromoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE44ECA42925239D00AD0DCA /* InputPromoVC.swift */; };
+		BE44ECA729252F2200AD0DCA /* UserAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE44ECA629252F2200AD0DCA /* UserAPIService.swift */; };
+		BE44ECA929252F7700AD0DCA /* HomeAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE44ECA829252F7700AD0DCA /* HomeAPIService.swift */; };
+		BE44ECAB29252F8400AD0DCA /* MyCourseAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE44ECAA29252F8400AD0DCA /* MyCourseAPIService.swift */; };
+		BE44ECAD29252F9100AD0DCA /* BlogAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE44ECAC29252F9100AD0DCA /* BlogAPIService.swift */; };
+		BE44ECAF2925309E00AD0DCA /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE44ECAE2925309E00AD0DCA /* Coupon.swift */; };
 		BE469833291C28060026EEA5 /* MyCourseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE469832291C28060026EEA5 /* MyCourseVC.swift */; };
 		BE4869C728DECD14003040AD /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE4869C628DECD14003040AD /* Profile.storyboard */; };
 		BE4869C928DECD67003040AD /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE4869C828DECD67003040AD /* Home.storyboard */; };
@@ -203,6 +210,13 @@
 		BE304D1028F84B7F0062C48A /* LoginTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTVCell.swift; sourceTree = "<group>"; };
 		BE304D1228F85C8E0062C48A /* ExtensionFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionFont.swift; sourceTree = "<group>"; };
 		BE304D1428F864530062C48A /* CenteredCVLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenteredCVLayout.swift; sourceTree = "<group>"; };
+		BE44ECA2292522A300AD0DCA /* CheckoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutVC.swift; sourceTree = "<group>"; };
+		BE44ECA42925239D00AD0DCA /* InputPromoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPromoVC.swift; sourceTree = "<group>"; };
+		BE44ECA629252F2200AD0DCA /* UserAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPIService.swift; sourceTree = "<group>"; };
+		BE44ECA829252F7700AD0DCA /* HomeAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAPIService.swift; sourceTree = "<group>"; };
+		BE44ECAA29252F8400AD0DCA /* MyCourseAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCourseAPIService.swift; sourceTree = "<group>"; };
+		BE44ECAC29252F9100AD0DCA /* BlogAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogAPIService.swift; sourceTree = "<group>"; };
+		BE44ECAE2925309E00AD0DCA /* Coupon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coupon.swift; sourceTree = "<group>"; };
 		BE469832291C28060026EEA5 /* MyCourseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCourseVC.swift; sourceTree = "<group>"; };
 		BE4869C628DECD14003040AD /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		BE4869C828DECD67003040AD /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -614,6 +628,7 @@
 				BECAFF712903876100E7C8B9 /* Review.swift */,
 				BECAFF73290388A100E7C8B9 /* Feature.swift */,
 				BECAFF75290389A200E7C8B9 /* Lecture.swift */,
+				BE44ECAE2925309E00AD0DCA /* Coupon.swift */,
 				BECAFF7729038AAC00E7C8B9 /* ClassContent.swift */,
 			);
 			path = Model;
@@ -644,6 +659,8 @@
 				BECAFF7D29038CD400E7C8B9 /* ClassReviewsVC.swift */,
 				BEA432F92904EAE600B3291E /* AllLessonsVC.swift */,
 				BEA432FB2904EB0100B3291E /* AllReviewsVC.swift */,
+				BE44ECA2292522A300AD0DCA /* CheckoutVC.swift */,
+				BE44ECA42925239D00AD0DCA /* InputPromoVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -719,9 +736,13 @@
 		BEF803EB28F8059A00CB3AE5 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				BEF803ED28F8059A00CB3AE5 /* APIService.swift */,
 				BEF803EE28F8059A00CB3AE5 /* APIEndpoints.swift */,
 				BEF803F028F8059A00CB3AE5 /* APIRequest.swift */,
+				BEF803ED28F8059A00CB3AE5 /* APIService.swift */,
+				BE44ECA629252F2200AD0DCA /* UserAPIService.swift */,
+				BE44ECA829252F7700AD0DCA /* HomeAPIService.swift */,
+				BE44ECAA29252F8400AD0DCA /* MyCourseAPIService.swift */,
+				BE44ECAC29252F9100AD0DCA /* BlogAPIService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -904,6 +925,7 @@
 				BEF803EA28F8029100CB3AE5 /* SplashVC.swift in Sources */,
 				BE1D520C28D887F300EC151A /* AppDelegate.swift in Sources */,
 				BE304D0728F8474E0062C48A /* ClassTVCell.swift in Sources */,
+				BE44ECA52925239D00AD0DCA /* InputPromoVC.swift in Sources */,
 				BE304D1328F85C8E0062C48A /* ExtensionFont.swift in Sources */,
 				BB89C6C5292125CD00BA5B7A /* DueAssignments.swift in Sources */,
 				BEB83BAF290E682700860770 /* LanguageVC.swift in Sources */,
@@ -924,6 +946,7 @@
 				BE1D520E28D887F300EC151A /* SceneDelegate.swift in Sources */,
 				BE028383290439B6006FCD52 /* LessonHeaderCell.swift in Sources */,
 				BEF803FD28F80CFA00CB3AE5 /* TabBarVC.swift in Sources */,
+				BE44ECA3292522A300AD0DCA /* CheckoutVC.swift in Sources */,
 				BE14710B28F57A2900726625 /* VerificationVC.swift in Sources */,
 				BEB83BB1290E685D00860770 /* HelpVC.swift in Sources */,
 				BEE78F7428F6D44800A4B3B1 /* DVDevice.swift in Sources */,
@@ -934,9 +957,11 @@
 				BBB9F80529215E0F005C82E2 /* DueAssignmentsTVCell.swift in Sources */,
 				BE304D0D28F84A650062C48A /* BannerCVCell.swift in Sources */,
 				BE14711728F57C1F00726625 /* MakeToast.swift in Sources */,
+				BE44ECAD29252F9100AD0DCA /* BlogAPIService.swift in Sources */,
 				BECAFF76290389A200E7C8B9 /* Lecture.swift in Sources */,
 				BEB83B9D290E662600860770 /* AddRemoveBookmarkVC.swift in Sources */,
 				BE486A0328DEF62C003040AD /* FormValidation.swift in Sources */,
+				BE44ECAB29252F8400AD0DCA /* MyCourseAPIService.swift in Sources */,
 				BED6540F28F9C4DD00737B78 /* FilterVC.swift in Sources */,
 				BE14711128F57AAD00726625 /* ForgotPassVerifyVC.swift in Sources */,
 				BEF803FF28F81E0D00CB3AE5 /* HomeData.swift in Sources */,
@@ -949,6 +974,7 @@
 				BECAFF702903860A00E7C8B9 /* ClassDetail.swift in Sources */,
 				BEB83BAD290E680D00860770 /* SetPasswordVC.swift in Sources */,
 				BEE33B7F29064449007C35B4 /* User.swift in Sources */,
+				BE44ECA729252F2200AD0DCA /* UserAPIService.swift in Sources */,
 				BECAFF7A29038CAD00E7C8B9 /* ClassAboutVC.swift in Sources */,
 				BEF8040328F8259500CB3AE5 /* Class.swift in Sources */,
 				BECAFF6E290385C000E7C8B9 /* ClassDetailsVC.swift in Sources */,
@@ -970,12 +996,14 @@
 				BEB83BA1290E66B500860770 /* ReferralVC.swift in Sources */,
 				BEB83BA3290E66CF00860770 /* SubmitProblemVC.swift in Sources */,
 				BECAFF722903876100E7C8B9 /* Review.swift in Sources */,
+				BE44ECAF2925309E00AD0DCA /* Coupon.swift in Sources */,
 				BEF803F328F8059A00CB3AE5 /* APIService.swift in Sources */,
 				BEB83BB5290E687E00860770 /* LogoutVC.swift in Sources */,
 				BEF803F628F8059A00CB3AE5 /* APIRequest.swift in Sources */,
 				BE14710D28F57A5700726625 /* UpdateProfileVC.swift in Sources */,
 				BEA433032905370200B3291E /* BlogType.swift in Sources */,
 				BECAFF7829038AAC00E7C8B9 /* ClassContent.swift in Sources */,
+				BE44ECA929252F7700AD0DCA /* HomeAPIService.swift in Sources */,
 				BE304D0B28F8479C0062C48A /* MostPopularCoursesVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
