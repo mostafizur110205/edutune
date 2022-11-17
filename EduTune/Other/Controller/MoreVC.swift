@@ -12,18 +12,18 @@ class MoreVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    let tableData = [[["icon": "", "title": "Certificates"],
-                      ["icon": "", "title": "Syllabus"],
+    let tableData = [[["icon": "ic_certificate", "title": "Certificates"],
+                      ["icon": "ic_syllabus", "title": "Syllabus"],
                       ["icon": "ic_bookmarked", "title": "Bookmark"],
-                      ["icon": "", "title": "Notification"]],
-                     [["icon": "", "title": "Profile"],
-                      ["icon": "", "title": "Referral"],
-                      ["icon": "", "title": "Submit Problem"],
-                      ["icon": "", "title": "Message"]],
+                      ["icon": "ic_notification", "title": "Notification"]],
+                     [["icon": "ic_profile", "title": "Profile"],
+                      ["icon": "ic_referral", "title": "Referral"],
+                      ["icon": "ic_problem", "title": "Submit Problem"],
+                      ["icon": "ic_message", "title": "Message"]],
                      [["icon": "ic_facebook_blue", "title": "Facebook"],
-                      ["icon": "", "title": "LinkedIn"],
-                      ["icon": "", "title": "Youtube"],
-                      ["icon": "", "title": "Rate us"]]]
+                      ["icon": "ic_linkedin", "title": "LinkedIn"],
+                      ["icon": "ic_youtube", "title": "Youtube"],
+                      ["icon": "ic_rate", "title": "Rate us"]]]
     
     let sectionTitles = ["ACADEMIC OPTIONS", "IMPORTANT LINK", "SOCIAL DETAILS"]
     
