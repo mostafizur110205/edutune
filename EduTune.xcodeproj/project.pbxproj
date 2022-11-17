@@ -57,6 +57,8 @@
 		BE44ECAB29252F8400AD0DCA /* MyCourseAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE44ECAA29252F8400AD0DCA /* MyCourseAPIService.swift */; };
 		BE44ECAD29252F9100AD0DCA /* BlogAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE44ECAC29252F9100AD0DCA /* BlogAPIService.swift */; };
 		BE44ECAF2925309E00AD0DCA /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE44ECAE2925309E00AD0DCA /* Coupon.swift */; };
+		BE44ECB129254C4800AD0DCA /* NotificationTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE44ECB029254C4800AD0DCA /* NotificationTVCell.swift */; };
+		BE44ECB329254EB700AD0DCA /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE44ECB229254EB700AD0DCA /* Notification.swift */; };
 		BE469833291C28060026EEA5 /* MyCourseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE469832291C28060026EEA5 /* MyCourseVC.swift */; };
 		BE4869C728DECD14003040AD /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE4869C628DECD14003040AD /* Profile.storyboard */; };
 		BE4869C928DECD67003040AD /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE4869C828DECD67003040AD /* Home.storyboard */; };
@@ -145,6 +147,7 @@
 		BEF8040128F8247A00CB3AE5 /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF8040028F8247A00CB3AE5 /* Program.swift */; };
 		BEF8040328F8259500CB3AE5 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF8040228F8259500CB3AE5 /* Class.swift */; };
 		BEF8040528F826A500CB3AE5 /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF8040428F826A500CB3AE5 /* Teacher.swift */; };
+		BEFE792029266F2900062986 /* ProfileTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFE791F29266F2900062986 /* ProfileTVCell.swift */; };
 		FCDE3F2F2901C8B6005DAA96 /* Garbage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCDE3F2E2901C8B6005DAA96 /* Garbage.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -217,6 +220,8 @@
 		BE44ECAA29252F8400AD0DCA /* MyCourseAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCourseAPIService.swift; sourceTree = "<group>"; };
 		BE44ECAC29252F9100AD0DCA /* BlogAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogAPIService.swift; sourceTree = "<group>"; };
 		BE44ECAE2925309E00AD0DCA /* Coupon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coupon.swift; sourceTree = "<group>"; };
+		BE44ECB029254C4800AD0DCA /* NotificationTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTVCell.swift; sourceTree = "<group>"; };
+		BE44ECB229254EB700AD0DCA /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		BE469832291C28060026EEA5 /* MyCourseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCourseVC.swift; sourceTree = "<group>"; };
 		BE4869C628DECD14003040AD /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		BE4869C828DECD67003040AD /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -304,6 +309,7 @@
 		BEF8040028F8247A00CB3AE5 /* Program.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
 		BEF8040228F8259500CB3AE5 /* Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
 		BEF8040428F826A500CB3AE5 /* Teacher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
+		BEFE791F29266F2900062986 /* ProfileTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTVCell.swift; sourceTree = "<group>"; };
 		FCDE3F2E2901C8B6005DAA96 /* Garbage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Garbage.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -606,6 +612,7 @@
 		BE486A0F28DEF871003040AD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BEFE791F29266F2900062986 /* ProfileTVCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -699,6 +706,7 @@
 				BEF803FE28F81E0D00CB3AE5 /* HomeData.swift */,
 				BEF8040028F8247A00CB3AE5 /* Program.swift */,
 				BEF8040228F8259500CB3AE5 /* Class.swift */,
+				BE44ECB229254EB700AD0DCA /* Notification.swift */,
 				BEF8040428F826A500CB3AE5 /* Teacher.swift */,
 			);
 			path = Model;
@@ -714,6 +722,7 @@
 				BE304D1028F84B7F0062C48A /* LoginTVCell.swift */,
 				BE304D0E28F84B660062C48A /* HomeHelpCell.swift */,
 				BED6540C28F9B1E200737B78 /* MentorTVCell.swift */,
+				BE44ECB029254C4800AD0DCA /* NotificationTVCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -915,13 +924,16 @@
 				BE14710928F57A1800726625 /* LoginVC.swift in Sources */,
 				BB89C6D129214B0300BA5B7A /* OngoingClass.swift in Sources */,
 				BE304D1528F864530062C48A /* CenteredCVLayout.swift in Sources */,
+				BE44ECB129254C4800AD0DCA /* NotificationTVCell.swift in Sources */,
 				BEF803FB28F8074F00CB3AE5 /* OnboardData.swift in Sources */,
 				BE028385290439C4006FCD52 /* LessonTVCell.swift in Sources */,
 				BEA4330B2905388100B3291E /* BlogDetailsVC.swift in Sources */,
+				BE44ECB329254EB700AD0DCA /* Notification.swift in Sources */,
 				BEB83B9B290E610200860770 /* MoreTVCell.swift in Sources */,
 				BED6540928F9899200737B78 /* SearchVC.swift in Sources */,
 				BE469833291C28060026EEA5 /* MyCourseVC.swift in Sources */,
 				BE14710128F5733A00726625 /* IntroCVCell.swift in Sources */,
+				BEFE792029266F2900062986 /* ProfileTVCell.swift in Sources */,
 				BEF803EA28F8029100CB3AE5 /* SplashVC.swift in Sources */,
 				BE1D520C28D887F300EC151A /* AppDelegate.swift in Sources */,
 				BE304D0728F8474E0062C48A /* ClassTVCell.swift in Sources */,

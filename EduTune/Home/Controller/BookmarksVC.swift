@@ -17,6 +17,8 @@ class BookmarksVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tabBarController?.tabBar.isHidden = true
+
         tableView.delegate = self
         tableView.dataSource = self
         

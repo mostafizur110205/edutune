@@ -747,7 +747,7 @@ a phone call</string>
         <!--NotificationsVC-->
         <scene sceneID="hUn-RJ-cKR">
             <objects>
-                <viewController id="DIp-4J-bOG" customClass="NotificationsVC" customModule="EduTune" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NotificationsVC" id="DIp-4J-bOG" customClass="NotificationsVC" customModule="EduTune" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wJl-Wn-aso">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -824,38 +824,35 @@ a phone call</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="NotificationTVCell" id="vzk-Da-waw" customClass="NotificationTVCell" customModule="EduTune" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="94" width="390" height="128"/>
+                                        <rect key="frame" x="0.0" y="94" width="390" height="107.33333587646484"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vzk-Da-waw" id="nnh-Je-lDH">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="107.33333587646484"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GRE-bg-4hv">
-                                                    <rect key="frame" x="16" y="0.0" width="358" height="112"/>
+                                                    <rect key="frame" x="16" y="0.0" width="358" height="91.333333333333329"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mW5-7z-cHK">
-                                                            <rect key="frame" x="20" y="16" width="83" height="80"/>
+                                                            <rect key="frame" x="12" y="10.666666666666664" width="70" height="70"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="83" id="4Xs-x2-FkM"/>
-                                                                <constraint firstAttribute="height" constant="80" id="dIt-qr-CgC"/>
+                                                                <constraint firstAttribute="width" constant="70" id="4Xs-x2-FkM"/>
+                                                                <constraint firstAttribute="height" constant="70" id="dIt-qr-CgC"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KAC-As-CjV">
-                                                            <rect key="frame" x="119" y="33.666666666666671" width="239" height="44.666666666666671"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KAC-As-CjV">
+                                                            <rect key="frame" x="98" y="20.000000000000004" width="260" height="51.333333333333343"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment Successful!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMK-oj-9Ua">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="164.66666666666666" height="22"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="22" id="IRL-a2-Qaw"/>
-                                                                    </constraints>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment Successful!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMK-oj-9Ua">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="164.66666666666666" height="21.666666666666668"/>
                                                                     <fontDescription key="fontDescription" name="Urbanist-Bold" family="Urbanist" pointSize="18"/>
                                                                     <color key="textColor" name="Grey900"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have made a course payment" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUo-aM-yoP">
-                                                                    <rect key="frame" x="0.0" y="30.000000000000004" width="181.33333333333334" height="14.666666666666668"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have made a course payment" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUo-aM-yoP">
+                                                                    <rect key="frame" x="0.0" y="29.666666666666664" width="211.33333333333334" height="21.666666666666664"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <fontDescription key="fontDescription" name="Urbanist-Medium" family="Urbanist" pointSize="12"/>
+                                                                    <fontDescription key="fontDescription" name="Urbanist-Medium" family="Urbanist" pointSize="14"/>
                                                                     <color key="textColor" name="Grey700"/>
                                                                     <nil key="highlightedColor"/>
                                                                     <userDefinedRuntimeAttributes>
@@ -869,9 +866,9 @@ a phone call</string>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
-                                                        <constraint firstItem="KAC-As-CjV" firstAttribute="centerY" secondItem="mW5-7z-cHK" secondAttribute="centerY" id="0Zp-WG-8RK"/>
-                                                        <constraint firstAttribute="height" constant="112" id="6xZ-Ab-9oV"/>
-                                                        <constraint firstItem="mW5-7z-cHK" firstAttribute="leading" secondItem="GRE-bg-4hv" secondAttribute="leading" constant="20" id="9Yb-57-hBt"/>
+                                                        <constraint firstItem="mW5-7z-cHK" firstAttribute="leading" secondItem="GRE-bg-4hv" secondAttribute="leading" constant="12" id="9Yb-57-hBt"/>
+                                                        <constraint firstItem="KAC-As-CjV" firstAttribute="top" secondItem="GRE-bg-4hv" secondAttribute="top" constant="20" id="R4d-tP-2mG"/>
+                                                        <constraint firstAttribute="bottom" secondItem="KAC-As-CjV" secondAttribute="bottom" constant="20" id="WwU-7s-Mn3"/>
                                                         <constraint firstAttribute="trailing" secondItem="KAC-As-CjV" secondAttribute="trailing" id="lKb-OO-Z1t"/>
                                                         <constraint firstItem="mW5-7z-cHK" firstAttribute="centerY" secondItem="GRE-bg-4hv" secondAttribute="centerY" id="pOE-zB-tvZ"/>
                                                         <constraint firstItem="KAC-As-CjV" firstAttribute="leading" secondItem="mW5-7z-cHK" secondAttribute="trailing" constant="16" id="th6-bA-FWA"/>
@@ -919,7 +916,7 @@ a phone call</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rim-uE-F4N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2180" y="660"/>
+            <point key="canvasLocation" x="2180" y="659.71563981042652"/>
         </scene>
         <!--Top MentorsVC-->
         <scene sceneID="K2l-Nx-28H">

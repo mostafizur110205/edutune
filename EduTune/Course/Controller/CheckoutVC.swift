@@ -23,6 +23,10 @@ class CheckoutVC: UIViewController {
     var classDetail: ClassDetail?
     
     var finalPrice = 0
+    var couponCode = ""
+    
+    // get live payment credintials 
+    //https://api.npoint.io/95352dec1b6a18eee2e8
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +47,7 @@ class CheckoutVC: UIViewController {
            
             if let coupon = coupon {
                 self.finalPrice = coupon.set_cart_amount ?? 0
+                self.couponCode = code
                 self.promoStackView.isHidden = false
                 self.promoLabel.text = coupon.discount_message
                 self.promoPriceLabel.text = "৳\(coupon.discount ?? 0)"
@@ -50,6 +55,7 @@ class CheckoutVC: UIViewController {
                 self.applyPromoButton.setTitle("Promo Applied", for: .normal)
             } else {
                 self.finalPrice = self.classDetail?.current_price ?? 0
+                self.couponCode = ""
                 self.promoStackView.isHidden = true
                 self.promoLabel.text = ""
                 self.promoPriceLabel.text = ""
@@ -129,7 +135,7 @@ class CheckoutVC: UIViewController {
             "validated_on": transactionDetails?.validated_on as Any,
             "value_a": val_A,
             "value_b": "",
-            "value_c": "",
+            "value_c": self.couponCode,
             "value_d": transactionDetails?.value_d as Any
         ]
         

@@ -144,7 +144,9 @@ class HomeVC: UIViewController {
     
     @IBAction func onProfileButtonTap(_ sender: Any) {
         if AppUserDefault.getIsLoggedIn() {
-            
+            if let viewC: ProfileVC = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "ProfileVC") as? ProfileVC {
+                self.navigationController?.pushViewController(viewC, animated: true)
+            }
         } else {
             if let viewC: LetsInVC = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "LetsInVC") as? LetsInVC {
                 self.navigationController?.pushViewController(viewC, animated: true)
@@ -153,7 +155,9 @@ class HomeVC: UIViewController {
     }
     
     @IBAction func onNotificationButtonTap(_ sender: Any) {
-        
+        if let viewC: NotificationsVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "NotificationsVC") as? NotificationsVC {
+            self.navigationController?.pushViewController(viewC, animated: true)
+        }
     }
     
     @IBAction func onSearchButtonTap(_ sender: Any) {

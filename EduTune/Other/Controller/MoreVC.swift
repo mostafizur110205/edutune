@@ -12,9 +12,18 @@ class MoreVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    let tableData = [[["icon": "", "title": "Certificates"], ["icon": "", "title": "Syllabus"], ["icon": "", "title": "Bookmark"], ["icon": "", "title": "Notification"]],
-                     [["icon": "", "title": "Profile"], ["icon": "", "title": "Referral"], ["icon": "", "title": "Submit Problem"], ["icon": "", "title": "Message"]],
-                     [["icon": "", "title": "Facebook"], ["icon": "", "title": "LinkedIn"], ["icon": "", "title": "Youtube"], ["icon": "", "title": "Rate us"]]]
+    let tableData = [[["icon": "", "title": "Certificates"],
+                      ["icon": "", "title": "Syllabus"],
+                      ["icon": "ic_bookmarked", "title": "Bookmark"],
+                      ["icon": "", "title": "Notification"]],
+                     [["icon": "", "title": "Profile"],
+                      ["icon": "", "title": "Referral"],
+                      ["icon": "", "title": "Submit Problem"],
+                      ["icon": "", "title": "Message"]],
+                     [["icon": "ic_facebook_blue", "title": "Facebook"],
+                      ["icon": "", "title": "LinkedIn"],
+                      ["icon": "", "title": "Youtube"],
+                      ["icon": "", "title": "Rate us"]]]
     
     let sectionTitles = ["ACADEMIC OPTIONS", "IMPORTANT LINK", "SOCIAL DETAILS"]
     
@@ -24,6 +33,12 @@ class MoreVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.tabBarController?.tabBar.isHidden = false
     }
     
 }
@@ -60,7 +75,7 @@ extension MoreVC: UITableViewDelegate, UITableViewDataSource {
         guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "MoreTVCell") as? MoreTVCell else {return UITableViewCell()}
         
         let cellData = tableData[indexPath.section][indexPath.row]
-        //        cell.iconImageView.image = UIImage(named: cellData["icon"] ?? "")
+        cell.iconImageView.image = UIImage(named: cellData["icon"] ?? "")
         cell.titleLabel.text = cellData["title"]
         return cell
         

@@ -149,22 +149,18 @@ extension APIService {
         }
     }
     
-    func getNotifications(params: [String: Any], completion: @escaping ([Notification]) -> Void) {
+    func getNotifications(page: Int, params: [String: Any], completion: @escaping ([Notification], Int, Int) -> Void) {
         APIRequest.shared.getRequest(url: APIEndpoints.NOTIFICATIONS, parameters: params) { (JSON, error) in
             DispatchQueue.main.async {
                 if error == nil {
                     if let json = JSON {
                         if json["error"].boolValue == false {
-                            let notifications = json["notifications"].arrayValue.map { Notification(json: $0) }
-                            completion(notifications)
-                        } else {
-                            completion([])
+                            let notifications = json["logs"]["data"].arrayValue.map { Notification(json: $0) }
+                            let currentPage = json["logs"]["current_page"].intValue
+                            let lastPage = json["logs"]["last_page"].intValue
+                            completion(notifications, currentPage, lastPage)
                         }
-                    } else {
-                        completion([])
                     }
-                } else {
-                    completion([])
                 }
             }
         }
