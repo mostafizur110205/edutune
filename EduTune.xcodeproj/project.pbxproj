@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		768E2115262AAB544AE6EBA9 /* Pods_EduTune.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C96D62E64AD5083F9B26A3F /* Pods_EduTune.framework */; };
+		BB2302DE2926B48400A88C97 /* OtherApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2302DD2926B48400A88C97 /* OtherApiService.swift */; };
 		BB340C492923FC48006C3816 /* MyCourseDetailsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB340C482923FC48006C3816 /* MyCourseDetailsListVC.swift */; };
 		BB89C6C5292125CD00BA5B7A /* DueAssignments.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB89C6C4292125CD00BA5B7A /* DueAssignments.swift */; };
 		BB89C6C72921268000BA5B7A /* LiveClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB89C6C62921268000BA5B7A /* LiveClass.swift */; };
@@ -169,6 +170,7 @@
 		0C96D62E64AD5083F9B26A3F /* Pods_EduTune.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EduTune.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		12A43F5A3E4339F493AD1793 /* Pods-EduTune.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTune.release.xcconfig"; path = "Target Support Files/Pods-EduTune/Pods-EduTune.release.xcconfig"; sourceTree = "<group>"; };
 		172CA9B0D970362B62617A01 /* Pods-EduTune.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTune.debug.xcconfig"; path = "Target Support Files/Pods-EduTune/Pods-EduTune.debug.xcconfig"; sourceTree = "<group>"; };
+		BB2302DD2926B48400A88C97 /* OtherApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherApiService.swift; sourceTree = "<group>"; };
 		BB340C482923FC48006C3816 /* MyCourseDetailsListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCourseDetailsListVC.swift; sourceTree = "<group>"; };
 		BB89C6C4292125CD00BA5B7A /* DueAssignments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DueAssignments.swift; sourceTree = "<group>"; };
 		BB89C6C62921268000BA5B7A /* LiveClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveClass.swift; sourceTree = "<group>"; };
@@ -752,6 +754,7 @@
 				BE44ECA829252F7700AD0DCA /* HomeAPIService.swift */,
 				BE44ECAA29252F8400AD0DCA /* MyCourseAPIService.swift */,
 				BE44ECAC29252F9100AD0DCA /* BlogAPIService.swift */,
+				BB2302DD2926B48400A88C97 /* OtherApiService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -949,6 +952,7 @@
 				BEA433052905385600B3291E /* BlogVC.swift in Sources */,
 				BE304D0928F847870062C48A /* TopMentorsVC.swift in Sources */,
 				BEB83B97290E5EC000860770 /* MoreVC.swift in Sources */,
+				BB2302DE2926B48400A88C97 /* OtherApiService.swift in Sources */,
 				BE304D1128F84B7F0062C48A /* LoginTVCell.swift in Sources */,
 				BE14711328F57AC300726625 /* CreateNewPassVC.swift in Sources */,
 				BEDD168A2904E3D000C90051 /* ReviewTVCell.swift in Sources */,

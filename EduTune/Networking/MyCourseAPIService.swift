@@ -20,7 +20,7 @@ extension APIService {
                             let liveClass = json["allClass"].arrayValue.map { LiveClass($0) }
                             let dueAssignments = json["running_assignments"].arrayValue.map { DueAssignments($0) }
                             let onGoingClass = json["registered_classes"].arrayValue.map { OngoingClass($0) }
-                            
+                        
                             completion(liveClass, dueAssignments, onGoingClass)
                         }
                     }

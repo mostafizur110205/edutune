@@ -112,6 +112,9 @@ extension MoreVC: UITableViewDelegate, UITableViewDataSource {
                 break
             case 1:
                 // Referral
+                if let viewC: ReferralVC = UIStoryboard(name: "Other", bundle: nil).instantiateViewController(withIdentifier: "ReferralVC") as? ReferralVC {
+                    self.navigationController?.pushViewController(viewC, animated: true)
+                }
                 break
             case 2:
                 // Submit problem
