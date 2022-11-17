@@ -19,6 +19,8 @@ class Blog: NSObject {
     var post_short_content: String?
     var post_image: String?
     var type: BlogType?
+    
+    var book_mark_id: Int?
 
     required init(json: JSON) {
         id = json["id"].int
@@ -36,5 +38,7 @@ class Blog: NSObject {
             post_image = APIEndpoints.S3_URL + (AppDelegate.shared().uuid ?? "") + pic
         }
         
+        book_mark_id = json["book_mark_id"].int ?? ((json["get_bookmarks"].arrayValue.first)?["id"].int ?? nil)
+
     }
 }

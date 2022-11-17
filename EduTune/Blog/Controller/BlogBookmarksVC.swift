@@ -20,11 +20,17 @@ class BlogBookmarksVC: UIViewController {
         blogCV.delegate = self
         blogCV.dataSource = self
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         getBlogs()
+
     }
     
     func getBlogs() {
-        let params: [String: Any] = ["type": "bookmark_list", "user_id": "25764"]
+        let params: [String: Any] = ["type": "bookmark_list", "user_id": AppUserDefault.getUserId()]
                 
         APIService.shared.getBlogBookmarks(params: params) { blogs in
             self.allBlogs = blogs
@@ -55,7 +61,7 @@ extension BlogBookmarksVC: UICollectionViewDataSource, UICollectionViewDelegate,
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let viewC: BlogDetailsVC = UIStoryboard(name: "Blop", bundle: nil).instantiateViewController(withIdentifier: "BlogDetailsVC") as? BlogDetailsVC {
+        if let viewC: BlogDetailsVC = UIStoryboard(name: "Blog", bundle: nil).instantiateViewController(withIdentifier: "BlogDetailsVC") as? BlogDetailsVC {
             viewC.blog = allBlogs[indexPath.item]
             self.navigationController?.pushViewController(viewC, animated: true)
         }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -176,7 +176,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" ক্যারিয়ার " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hm0-6X-Mi1">
-                                                            <rect key="frame" x="13.999999999999996" y="201" width="40.666666666666657" height="22"/>
+                                                            <rect key="frame" x="14" y="201" width="40" height="22"/>
                                                             <color key="backgroundColor" red="0.21960784310000001" green="0.34599998589999997" blue="0.96899998190000003" alpha="0.080000000000000002" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="22" id="e9I-bZ-ixQ"/>
@@ -305,7 +305,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" ক্যারিয়ার " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NC9-7D-TMR">
-                                                            <rect key="frame" x="13.999999999999996" y="201" width="40.666666666666657" height="22"/>
+                                                            <rect key="frame" x="14" y="201" width="40" height="22"/>
                                                             <color key="backgroundColor" red="0.21960784310000001" green="0.34599998589999997" blue="0.96899998190000003" alpha="0.080000000000000002" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="22" id="B37-t9-aQj"/>
@@ -528,6 +528,7 @@
                     </view>
                     <connections>
                         <outlet property="backButtonTopCns" destination="cme-54-iue" id="bno-Yk-AwW"/>
+                        <outlet property="bookMarkButton" destination="4or-9Z-HdV" id="MCX-9L-Sw4"/>
                         <outlet property="categoryLabel" destination="72R-6L-SDo" id="xlY-jd-rnB"/>
                         <outlet property="coverImageView" destination="fIq-hv-zMY" id="2R9-14-dHS"/>
                         <outlet property="tableView" destination="rZB-SS-kBL" id="9aK-cJ-hcd"/>
@@ -537,6 +538,208 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3DV-Lw-g8q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2889.2307692307691" y="12.796208530805687"/>
+        </scene>
+        <!--Add Remove BookmarkVC-->
+        <scene sceneID="wrA-Ss-CcA">
+            <objects>
+                <viewController storyboardIdentifier="AddBookmarkVC" id="mXt-xo-lG0" customClass="AddRemoveBookmarkVC" customModule="EduTune" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="T6Y-Kt-jsK">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cm6-Hm-5VN">
+                                <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add to Bookmark?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Qc-eY-aUo">
+                                        <rect key="frame" x="16" y="11.333333333333337" width="358" height="21.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="Urbanist-Bold" family="Urbanist" pointSize="18"/>
+                                        <color key="textColor" name="Grey900"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="5Qc-eY-aUo" firstAttribute="leading" secondItem="Cm6-Hm-5VN" secondAttribute="leading" constant="16" id="6TZ-lo-v5c"/>
+                                    <constraint firstAttribute="trailing" secondItem="5Qc-eY-aUo" secondAttribute="trailing" constant="16" id="cMs-Y5-gKs"/>
+                                    <constraint firstItem="5Qc-eY-aUo" firstAttribute="centerY" secondItem="Cm6-Hm-5VN" secondAttribute="centerY" id="kv6-tV-ZUc"/>
+                                    <constraint firstAttribute="height" constant="44" id="lS9-Vp-Bfx"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0bn-KK-Utw">
+                                <rect key="frame" x="16" y="91" width="358" height="1"/>
+                                <color key="backgroundColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="XqJ-YD-0NY"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="bc8-BF-bal">
+                                <rect key="frame" x="16" y="117" width="358" height="58"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yif-PD-fsI">
+                                        <rect key="frame" x="0.0" y="0.0" width="173" height="58"/>
+                                        <color key="backgroundColor" red="0.21960784310000001" green="0.34509803919999998" blue="0.96862745100000003" alpha="0.080000000000000002" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="58" id="FTu-An-oBE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Urbanist-Bold" family="Urbanist" pointSize="16"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" name="Primary500"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="29"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onCanceButtonTap:" destination="mXt-xo-lG0" eventType="touchUpInside" id="rYM-mq-pdk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEc-Vn-Dfa">
+                                        <rect key="frame" x="185" y="0.0" width="173" height="58"/>
+                                        <color key="backgroundColor" name="Primary500"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="58" id="fhO-3t-pvR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Urbanist-Bold" family="Urbanist" pointSize="16"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Yes, Add">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="29"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onAddButtonTap:" destination="mXt-xo-lG0" eventType="touchUpInside" id="7g0-Qr-WF8"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="A3K-C6-cw2"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dh0-az-oGR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bc8-BF-bal" firstAttribute="top" secondItem="0bn-KK-Utw" secondAttribute="bottom" constant="25" id="4At-RT-RpR"/>
+                            <constraint firstItem="Cm6-Hm-5VN" firstAttribute="leading" secondItem="dh0-az-oGR" secondAttribute="leading" id="Bl3-If-YoP"/>
+                            <constraint firstItem="0bn-KK-Utw" firstAttribute="leading" secondItem="dh0-az-oGR" secondAttribute="leading" constant="16" id="OiK-sy-SXr"/>
+                            <constraint firstItem="dh0-az-oGR" firstAttribute="trailing" secondItem="0bn-KK-Utw" secondAttribute="trailing" constant="16" id="UZr-Hh-0h1"/>
+                            <constraint firstItem="0bn-KK-Utw" firstAttribute="top" secondItem="Cm6-Hm-5VN" secondAttribute="bottom" id="Uh7-zB-Gh1"/>
+                            <constraint firstItem="bc8-BF-bal" firstAttribute="leading" secondItem="dh0-az-oGR" secondAttribute="leading" constant="16" id="WVF-Qo-1Kf"/>
+                            <constraint firstItem="dh0-az-oGR" firstAttribute="trailing" secondItem="bc8-BF-bal" secondAttribute="trailing" constant="16" id="da1-wl-2PE"/>
+                            <constraint firstItem="Cm6-Hm-5VN" firstAttribute="top" secondItem="dh0-az-oGR" secondAttribute="top" id="fS0-re-L6O"/>
+                            <constraint firstItem="dh0-az-oGR" firstAttribute="trailing" secondItem="Cm6-Hm-5VN" secondAttribute="trailing" id="gdG-BC-eao"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kR0-rm-93W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="920" y="672"/>
+        </scene>
+        <!--Add Remove BookmarkVC-->
+        <scene sceneID="7iv-2E-UGi">
+            <objects>
+                <viewController storyboardIdentifier="RemoveBookmarkVC" id="EFI-6Q-U7W" customClass="AddRemoveBookmarkVC" customModule="EduTune" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2rV-hP-NWN">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dLz-YI-EUX">
+                                <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remove from Bookmark?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8a-RE-hsP">
+                                        <rect key="frame" x="16" y="11.333333333333337" width="358" height="21.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="Urbanist-Bold" family="Urbanist" pointSize="18"/>
+                                        <color key="textColor" name="Grey900"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="U8a-RE-hsP" firstAttribute="leading" secondItem="dLz-YI-EUX" secondAttribute="leading" constant="16" id="93P-4H-5cy"/>
+                                    <constraint firstAttribute="height" constant="44" id="HzG-nd-dgP"/>
+                                    <constraint firstItem="U8a-RE-hsP" firstAttribute="centerY" secondItem="dLz-YI-EUX" secondAttribute="centerY" id="cxo-PL-STF"/>
+                                    <constraint firstAttribute="trailing" secondItem="U8a-RE-hsP" secondAttribute="trailing" constant="16" id="reV-9x-7N3"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fwz-4x-S8l">
+                                <rect key="frame" x="16" y="91" width="358" height="1"/>
+                                <color key="backgroundColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="yfx-Ht-QOI"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="cbE-dT-A5G">
+                                <rect key="frame" x="16" y="117" width="358" height="58"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pPO-Mv-zxB">
+                                        <rect key="frame" x="0.0" y="0.0" width="173" height="58"/>
+                                        <color key="backgroundColor" red="0.96078431372549022" green="0.2627450980392157" blue="0.21176470588235294" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="58" id="fRE-T4-FyT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Urbanist-Bold" family="Urbanist" pointSize="16"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" name="Red"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="29"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onCanceButtonTap:" destination="EFI-6Q-U7W" eventType="touchUpInside" id="W3y-qc-oGq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jxv-IH-h5S">
+                                        <rect key="frame" x="185" y="0.0" width="173" height="58"/>
+                                        <color key="backgroundColor" name="Red"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="58" id="deS-EY-k26"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Urbanist-Bold" family="Urbanist" pointSize="16"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Yes, Remove">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="29"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onRemoveButtonTap:" destination="EFI-6Q-U7W" eventType="touchUpInside" id="PXi-CE-RRx"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="PLM-Eo-Yp1"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fYx-r7-sGG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Fwz-4x-S8l" firstAttribute="leading" secondItem="fYx-r7-sGG" secondAttribute="leading" constant="16" id="649-qd-csp"/>
+                            <constraint firstItem="cbE-dT-A5G" firstAttribute="top" secondItem="Fwz-4x-S8l" secondAttribute="bottom" constant="25" id="9D4-zM-Vbc"/>
+                            <constraint firstItem="dLz-YI-EUX" firstAttribute="top" secondItem="fYx-r7-sGG" secondAttribute="top" id="S0H-El-L0u"/>
+                            <constraint firstItem="cbE-dT-A5G" firstAttribute="leading" secondItem="fYx-r7-sGG" secondAttribute="leading" constant="16" id="TJK-ef-NzP"/>
+                            <constraint firstItem="fYx-r7-sGG" firstAttribute="trailing" secondItem="dLz-YI-EUX" secondAttribute="trailing" id="f9J-pD-gN7"/>
+                            <constraint firstItem="dLz-YI-EUX" firstAttribute="leading" secondItem="fYx-r7-sGG" secondAttribute="leading" id="kEu-z1-x87"/>
+                            <constraint firstItem="fYx-r7-sGG" firstAttribute="trailing" secondItem="Fwz-4x-S8l" secondAttribute="trailing" constant="16" id="n9j-wG-wuA"/>
+                            <constraint firstItem="Fwz-4x-S8l" firstAttribute="top" secondItem="dLz-YI-EUX" secondAttribute="bottom" id="qzY-Nq-ik7"/>
+                            <constraint firstItem="fYx-r7-sGG" firstAttribute="trailing" secondItem="cbE-dT-A5G" secondAttribute="trailing" constant="16" id="yeO-ki-QTH"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m75-Xt-gc7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1580" y="672"/>
         </scene>
     </scenes>
     <resources>
@@ -555,6 +758,9 @@
         </namedColor>
         <namedColor name="Primary500">
             <color red="0.21799999475479126" green="0.34599998593330383" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Red">
+            <color red="0.96100002527236938" green="0.2630000114440918" blue="0.21199999749660492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
