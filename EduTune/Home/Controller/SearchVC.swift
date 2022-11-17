@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FittedSheets
 
 class SearchVC: UIViewController {
     
@@ -111,7 +112,9 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
         
         let classData = allClasses[indexPath.row]
         cell.classData = classData
-        
+        cell.delegate = self
+        cell.bookmarkButton.setImage(UIImage(named: AppDelegate.shared().bookmarkIds.contains(classData.class_book_mark_id ?? -1) ? "ic_bookmarked" : "ic_bookmark"), for: .normal)
+
         if indexPath.row == allClasses.count-1 && currentPage < lastPage {
             currentPage += 1
             getSearchResult(text: searchTextField.text!)
@@ -123,6 +126,75 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+    }
+    
+}
+
+extension SearchVC: ClassTVCellDelegate {
+    func didBookmarkButtonTap(_ cell: ClassTVCell) {
+        if let indexPath = tableView.indexPath(for: cell) {
+            let classData = allClasses[indexPath.row]
+            if AppDelegate.shared().bookmarkIds.firstIndex(where: { $0 == classData.class_book_mark_id }) != nil {
+                if let viewC: AddRemoveBookmarkVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "RemoveBookmarkVC") as? AddRemoveBookmarkVC {
+                    viewC.delegate = self
+                    viewC.classData = classData
+                    let options = SheetOptions (
+                        shrinkPresentingViewController: false
+                    )
+                    let sheetController = SheetViewController(controller: viewC, sizes: [.fixed(340)], options: options)
+                    sheetController.didDismiss = { _ in
+                        print("Sheet dismissed")
+                        
+                    }
+                    sheetController.gripColor = UIColor(white: 0.5, alpha: 1)
+                    
+                    self.present(sheetController, animated: true, completion: nil)
+                }
+            } else {
+                if let viewC: AddRemoveBookmarkVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "AddBookmarkVC") as? AddRemoveBookmarkVC {
+                    viewC.delegate = self
+                    viewC.classData = classData
+                    let options = SheetOptions (
+                        shrinkPresentingViewController: false
+                    )
+                    let sheetController = SheetViewController(controller: viewC, sizes: [.fixed(340)], options: options)
+                    sheetController.didDismiss = { _ in
+                        print("Sheet dismissed")
+                        
+                    }
+                    sheetController.gripColor = UIColor(white: 0.5, alpha: 1)
+                    
+                    self.present(sheetController, animated: true, completion: nil)
+                }
+            }
+
+        }
+    }
+}
+
+extension SearchVC: AddRemoveBookmarkVCDelegate {
+    func didAddButtonTap(_ classId: Int?) {
+        let params = ["class_id": classId ?? -1, "user_id": AppUserDefault.getUserId(), "type": "set"] as [String: Any]
+        APIService.shared.addBookmark(params: params) { bookmark_id in
+            AppDelegate.shared().bookmarkIds.append(bookmark_id)
+            if let index = self.allClasses.firstIndex(where: { $0.id == classId }) {
+                let classData = self.allClasses[index]
+                classData.class_book_mark_id = bookmark_id
+                self.allClasses[index] = classData
+            }
+            self.tableView.reloadData()
+        }
+    }
+    
+    func didRemoveButtonTap(_ bookmarkId: Int?) {
+        let params = ["book_mark_id": bookmarkId ?? -1, "user_id": AppUserDefault.getUserId(), "type": "remove"] as [String: Any]
+        
+        APIService.shared.removeBookmark(params: params) { success in
+            if let index = AppDelegate.shared().bookmarkIds.firstIndex(where: { $0 == bookmarkId }) {
+                AppDelegate.shared().bookmarkIds.remove(at: index)
+                self.tableView.reloadData()
+            }
+        }
     }
     
 }

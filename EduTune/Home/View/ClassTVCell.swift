@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ClassTVCellDelegate {
+    func didBookmarkButtonTap(_ cell: ClassTVCell)
+}
+
 class ClassTVCell: UITableViewCell {
     @IBOutlet weak var mainContentView: UIView!
     @IBOutlet weak var cellImageView: UIImageView!
@@ -18,6 +22,9 @@ class ClassTVCell: UITableViewCell {
     @IBOutlet weak var reviewLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var reviewStackView: UIStackView!
+    @IBOutlet weak var bookmarkButton: UIButton!
+
+    var delegate: ClassTVCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -62,5 +69,10 @@ class ClassTVCell: UITableViewCell {
 
         }
     }
+    
+    @IBAction func onBookmarkButtonTap(_ sender: Any) {
+        delegate?.didBookmarkButtonTap(self)
+    }
+    
 
 }

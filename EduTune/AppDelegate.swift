@@ -29,6 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             AppUserDefault.setIsLoggedIn(true)
         }
     }
+    
+    var bookmarkIds = [Int]()
 
     var topInset: CGFloat {
         return window?.safeAreaInsets.top ?? 0

@@ -95,5 +95,80 @@ extension APIService {
             }
         }
     }
+    
+    func getBookmarks(params: [String: Any], completion: @escaping ([Class]) -> Void) {
+        APIRequest.shared.getRequest(url: APIEndpoints.BOOKMARKS, parameters: params) { (JSON, error) in
+            DispatchQueue.main.async {
+                if error == nil {
+                    if let json = JSON {
+                        if json["error"].boolValue == false {
+                            let classes = json["book_marks"].arrayValue.map { Class(json: $0) }
+                            completion(classes)
+                        } else {
+                            completion([])
+                        }
+                    } else {
+                        completion([])
+                    }
+                } else {
+                    completion([])
+                }
+            }
+        }
+    }
+    
+    func addBookmark(params: [String: Any], completion: @escaping (Int) -> Void) {
+        APIRequest.shared.getRequest(url: APIEndpoints.BOOKMARKS, parameters: params) { (JSON, error) in
+            DispatchQueue.main.async {
+                if error == nil {
+                    if let json = JSON {
+                        MakeToast.shared.makeNormalToast(json["message"].stringValue)
+                        if json["error"].boolValue == false {
+                            let id = json["class_book_mark_id"].intValue
+                            completion(id)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    func removeBookmark(params: [String: Any], completion: @escaping (Bool) -> Void) {
+        APIRequest.shared.getRequest(url: APIEndpoints.BOOKMARKS, parameters: params) { (JSON, error) in
+            DispatchQueue.main.async {
+                if error == nil {
+                    if let json = JSON {
+                        MakeToast.shared.makeNormalToast(json["message"].stringValue)
+                        if json["error"].boolValue == false {
+                            completion(true)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func getNotifications(params: [String: Any], completion: @escaping ([Notification]) -> Void) {
+        APIRequest.shared.getRequest(url: APIEndpoints.NOTIFICATIONS, parameters: params) { (JSON, error) in
+            DispatchQueue.main.async {
+                if error == nil {
+                    if let json = JSON {
+                        if json["error"].boolValue == false {
+                            let notifications = json["notifications"].arrayValue.map { Notification(json: $0) }
+                            completion(notifications)
+                        } else {
+                            completion([])
+                        }
+                    } else {
+                        completion([])
+                    }
+                } else {
+                    completion([])
+                }
+            }
+        }
+    }
+
 
 }

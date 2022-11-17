@@ -21,12 +21,19 @@ open class APIEndpoints: NSObject {
     public static let AUTH1: String = BASE_URL+"online-class-registration-and-login-step1"
     public static let AUTH2: String = BASE_URL+"online-class-registration-and-login-step2"
     public static let RELOGIN: String = BASE_URL+"online-class-login-inst-check"
+    
     public static let HOME_PUBLIC: String = BASE_URL+"olv2/public/home"
     public static let SEE_ALL: String = BASE_URL+"olv2/see-all?page="
     public static let COURSE_DETAIL: String = BASE_URL+"olv2/public/online-course-details"
     public static let MENTOR_DETAIL: String = BASE_URL+"olv2/mentor-details?page="
+    
+    public static let BOOKMARKS: String = BASE_URL+"olv2/class-user-bookmark"
+    public static let NOTIFICATIONS: String = BASE_URL+"push/log"
+
     public static let BLOG: String = BASE_URL+"olv2/public/blog"
+
     public static let MY_COURSE: String = BASE_URL+"olv2/my-course"
     public static let APPLY_COUPON: String = BASE_URL+"get-class-coupon-data"
     public static let COURSE_PURCHASE: String = BASE_URL+"online-class-payment-complete"
+    
 }

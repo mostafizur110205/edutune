@@ -8,8 +8,8 @@
 import UIKit
 
 protocol AddRemoveBookmarkVCDelegate {
-    func didRemoveButtonTap(_ bookmarkId: Int?)
     func didAddButtonTap(_ classId: Int?)
+    func didRemoveButtonTap(_ bookmarkId: Int?)
 }
 
 class AddRemoveBookmarkVC: UIViewController {
@@ -77,7 +77,7 @@ class AddRemoveBookmarkVC: UIViewController {
     
     @IBAction func onRemoveButtonTap(_ sender: Any) {
         self.dismiss(animated: true) {
-            self.delegate?.didRemoveButtonTap(self.classData?.id) // should pass bookmark id
+            self.delegate?.didRemoveButtonTap(self.classData?.class_book_mark_id) 
         }
     }
     

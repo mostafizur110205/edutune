@@ -23,6 +23,8 @@ class Class: NSObject {
     var youtube_video_id: String?
     var photo: String?
 
+    var class_book_mark_id: Int?
+    
     required init(json: JSON) {
         id = json["id"].int
         current_price = json["current_price"].intValue
@@ -41,6 +43,8 @@ class Class: NSObject {
         if !pic.isEmpty {
             photo = APIEndpoints.S3_URL + (AppDelegate.shared().uuid ?? "") + pic
         }
+        
+        class_book_mark_id = json["class_book_mark_id"].int ?? (json["get_user_book_mark"]["id"].int ?? nil)
 
     }
 }
