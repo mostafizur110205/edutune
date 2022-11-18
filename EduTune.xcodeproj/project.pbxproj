@@ -16,6 +16,7 @@
 		BBB9F80529215E0F005C82E2 /* DueAssignmentsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB9F80429215E0F005C82E2 /* DueAssignmentsTVCell.swift */; };
 		BBB9F808292169AF005C82E2 /* LiveClassTVCell copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB9F806292169AF005C82E2 /* LiveClassTVCell copy.swift */; };
 		BBB9F809292169AF005C82E2 /* OngoingClassTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB9F807292169AF005C82E2 /* OngoingClassTVCell.swift */; };
+		BBC290832927EFBC00FAC25E /* Referral.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC290822927EFBC00FAC25E /* Referral.swift */; };
 		BE02837B290423DB006FCD52 /* ClassHeaderTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE02837A290423DB006FCD52 /* ClassHeaderTVCell.swift */; };
 		BE02837D290423FA006FCD52 /* ClassAboutTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE02837C290423FA006FCD52 /* ClassAboutTVCell.swift */; };
 		BE02837F2904240C006FCD52 /* ClassCertificateTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE02837E2904240C006FCD52 /* ClassCertificateTVCell.swift */; };
@@ -178,6 +179,7 @@
 		BBB9F80429215E0F005C82E2 /* DueAssignmentsTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DueAssignmentsTVCell.swift; sourceTree = "<group>"; };
 		BBB9F806292169AF005C82E2 /* LiveClassTVCell copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LiveClassTVCell copy.swift"; sourceTree = "<group>"; };
 		BBB9F807292169AF005C82E2 /* OngoingClassTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OngoingClassTVCell.swift; sourceTree = "<group>"; };
+		BBC290822927EFBC00FAC25E /* Referral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Referral.swift; sourceTree = "<group>"; };
 		BE02837A290423DB006FCD52 /* ClassHeaderTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassHeaderTVCell.swift; sourceTree = "<group>"; };
 		BE02837C290423FA006FCD52 /* ClassAboutTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassAboutTVCell.swift; sourceTree = "<group>"; };
 		BE02837E2904240C006FCD52 /* ClassCertificateTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassCertificateTVCell.swift; sourceTree = "<group>"; };
@@ -387,6 +389,7 @@
 		BE0AF0942905885900FCEFAA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BBC290822927EFBC00FAC25E /* Referral.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -942,6 +945,7 @@
 				BE304D0728F8474E0062C48A /* ClassTVCell.swift in Sources */,
 				BE44ECA52925239D00AD0DCA /* InputPromoVC.swift in Sources */,
 				BE304D1328F85C8E0062C48A /* ExtensionFont.swift in Sources */,
+				BBC290832927EFBC00FAC25E /* Referral.swift in Sources */,
 				BB89C6C5292125CD00BA5B7A /* DueAssignments.swift in Sources */,
 				BEB83BAF290E682700860770 /* LanguageVC.swift in Sources */,
 				BB340C492923FC48006C3816 /* MyCourseDetailsListVC.swift in Sources */,

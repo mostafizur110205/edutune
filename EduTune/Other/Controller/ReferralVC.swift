@@ -16,11 +16,12 @@ class ReferralVC: UIViewController {
     @IBOutlet weak var buttonTopRight: UIButton!
     @IBOutlet weak var buttonShare: UIButton!
     
+    var referral: Referral?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         buttonTopRight.tintColor = UIColor.orange
-        buttonShare.tintColor = UIColor.white
-        
+        getReferrals()
     }
     
     func getReferrals() {
@@ -29,15 +30,17 @@ class ReferralVC: UIViewController {
             var params = [String: Any]()
             params["user_id"] = AppUserDefault.getUserId()
             APIService.shared.getReferrals(params: params, completion: {refData  in
-                
                 if let referralData = refData {
-                    //self.liveClasses = lClasses;
-                    //self.sections.append(MyCourseType.live)
-                    
+                    self.referral = referralData;
+                    self.updateView()
                 }
-                
             })
         }
+    }
+    
+    func updateView(){
+        lblPointMessage.text = "You will get \(self.referral?.perSignupPoint ?? 0) points on every sign up"
+        
     }
     
     
@@ -53,7 +56,7 @@ class ReferralVC: UIViewController {
     }
     
     @IBAction func shareButtonAction(_ sender: Any) {
-        let text = "This is some text that I want to share."
+        let text = "Edutue app store url"
         let activityViewController = UIActivityViewController(activityItems: [ text ], applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view
         self.present(activityViewController, animated: true, completion: nil)

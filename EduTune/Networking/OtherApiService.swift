@@ -9,15 +9,16 @@ import Foundation
 
 extension APIService {
     
-    func getReferrals(params: [String: Any], completion: @escaping (Any?) -> Void) {
+    func getReferrals(params: [String: Any], completion: @escaping (Referral?) -> Void) {
         APIRequest.shared.getRequest(url: APIEndpoints.MY_POINT_DASHBOARD, parameters: params) { (JSON, error) in
             DispatchQueue.main.async {
                 if error == nil {
                     if let json = JSON {
                         if json["error"].boolValue == false {
-                            let liveClass = json["allClass"].arrayValue.map { LiveClass($0) }
-                            
-                            completion("")
+                            completion(Referral(json))
+                        } else {
+                            completion(nil)
+                            MakeToast.shared.makeNormalToast(json["message"].stringValue)
                         }
                     }
                 }
