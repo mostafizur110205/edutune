@@ -34,10 +34,13 @@ class OngoingTVCell: UITableViewCell {
         didSet {
             cellImageView.sd_setImage(with: URL(string: classData?.photo ?? "" ), placeholderImage: nil)
             titleLabel.text = classData?.name
-            categoryLabel.text = classData?.mode == 1 ? "Batch" : "Recorded Class"
-            progressBar.progress = 0.5
-            percentLabel.text = "0/0"
-            
+            categoryLabel.text = "  \(classData?.mode == 1 ? "Batch" : "Course")  "
+            let classCount = classData?.getClassContents.map({$0.get_lectures.count}).reduce(0, +)
+            let viewCount = classData?.getClassContentView.map({$0.count ?? 0}).reduce(0, +)
+
+            percentLabel.text = "\(viewCount ?? 0) / \(classCount ?? 0)"
+            progressBar.progress = Float(viewCount ?? 0)/Float(classCount ?? 0)
+
         }
     }
     

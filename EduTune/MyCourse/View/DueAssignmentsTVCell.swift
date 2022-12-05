@@ -12,12 +12,8 @@ class DueAssignmentsTVCell: UITableViewCell {
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var oldPriceLabel: UILabel!
-    @IBOutlet weak var oldPriceLine: UIView!
     @IBOutlet weak var reviewLabel: UILabel!
-    @IBOutlet weak var statusLabel: UILabel!
-    @IBOutlet weak var reviewStackView: UIStackView!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
 
@@ -39,12 +35,23 @@ class DueAssignmentsTVCell: UITableViewCell {
             cellImageView.sd_setImage(with: URL(string: classData?.subjectImage ?? "" ), placeholderImage: nil)
             categoryLabel.text = "  \(classData?.className ?? "")  "
             titleLabel.text = classData?.name
-            priceLabel.text = "Due \(classData?.dueDate ?? "")"
-            oldPriceLabel.isHidden = true
-            reviewLabel.text = "Submission (\(classData?.numOfAttempts ?? 0))"
-            statusLabel.text = "Start Test"
-            
+            reviewLabel.text = "Submission (\(classData?.getSubmissionsCount ?? 0)) | Start Test"
+            let (date, isDuePassed) = getDate(classData?.dueDate)
+            priceLabel.text = "Due: \(date.replacingOccurrences(of: "00:00 AM", with: "12:00 AM"))"
+            priceLabel.textColor = UIColor(named: isDuePassed ? "Primary500" : "AlertError")
         }
+    }
+    
+    func getDate(_ dateStringValue: String?) -> (String, Bool) {
+        guard let dateString = dateStringValue else {return ("", false)}
+       
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss";
+        let date = dateFormatter.date(from: dateString) ?? Date()
+        
+        let isDuePassed = date>Date()
+        dateFormatter.dateFormat = "d MMM, HH:mm a"
+        return (dateFormatter.string(from: date), isDuePassed)
     }
 
 }

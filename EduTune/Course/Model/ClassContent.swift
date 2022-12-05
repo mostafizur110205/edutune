@@ -30,3 +30,24 @@ class ClassContent: NSObject {
 
     }
 }
+
+class ClassContentView: NSObject {
+    
+    var id: Int?
+    var count: Int?
+    var institution_id: Int?
+    var user_id: Int?
+    var class_id: Int?
+    var offered_course_id: Int?
+   
+
+    required init(json: JSON) {
+        id = json["id"].int
+        count = json["count"].int
+        institution_id = json["institution_id"].int
+        user_id = json["user_id"].int
+        class_id = json["class_id"].int
+        offered_course_id = json["offered_course_id"].int
+
+    }
+}

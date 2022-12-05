@@ -14,8 +14,8 @@ struct OngoingClass {
 	var name: String?
 	var photo: String?
 	//var getOfferedCourses: [GetOfferedCourses]?
-	var getClassContents: [ClassContent]?
-	//var getClassContentView: [Any]?
+	var getClassContents = [ClassContent]()
+	var getClassContentView = [ClassContentView]()
 
 	init(_ json: JSON) {
 		id = json["id"].intValue
@@ -27,7 +27,7 @@ struct OngoingClass {
         }
 		//getOfferedCourses = json["get_offered_courses"].arrayValue.map { GetOfferedCourses($0) }
         getClassContents = json["get_class_contents"].arrayValue.map { ClassContent(json: $0) }
-		//getClassContentView = json["get_class_content_view"].arrayValue.map { $0 }
+        getClassContentView = json["get_class_content_view"].arrayValue.map { ClassContentView(json: $0) }
 	}
 
 }

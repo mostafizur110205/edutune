@@ -76,7 +76,6 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
         
         guard var cell = self.tableView.dequeueReusableCell(withIdentifier: cellId) as? ProfileTVCell else {return UITableViewCell()}
 
-        
         cell.iconImageView.image = icon
         cell.titleLabel.text = title
         

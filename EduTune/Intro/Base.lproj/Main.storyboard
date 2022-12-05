@@ -58,7 +58,7 @@
             </objects>
             <point key="canvasLocation" x="2489.2307692307691" y="34.834123222748815"/>
         </scene>
-        <!--Inbox-->
+        <!--MESSAGE-->
         <scene sceneID="jm0-R3-ppY">
             <objects>
                 <viewController id="0MO-Td-Bsr" sceneMemberID="viewController">
@@ -68,7 +68,9 @@
                         <viewLayoutGuide key="safeArea" id="dkb-yW-Ww5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Inbox" image="ic_tab_chat" selectedImage="ic_tab_chat_selected" id="e0Z-Hp-p7r"/>
+                    <tabBarItem key="tabBarItem" title="MESSAGE" image="ic_tab_chat" selectedImage="ic_tab_chat_selected" id="e0Z-Hp-p7r">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-2"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fDA-G0-EvQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -201,11 +203,13 @@
             </objects>
             <point key="canvasLocation" x="1803.0769230769231" y="34.834123222748815"/>
         </scene>
-        <!--Home-->
+        <!--HOME-->
         <scene sceneID="hc9-kZ-8ke">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="AD6-4g-gG5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="ic_tab_home" selectedImage="ic_tab_home_selected" id="zef-K4-XWR"/>
+                    <tabBarItem key="tabBarItem" title="HOME" image="ic_tab_home" selectedImage="ic_tab_home_selected" id="zef-K4-XWR">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-2"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4dT-SR-Xg1">
@@ -252,11 +256,13 @@
             </objects>
             <point key="canvasLocation" x="1106.1538461538462" y="34.834123222748815"/>
         </scene>
-        <!--Study-->
+        <!--BLOG-->
         <scene sceneID="ZnC-Or-Y1J">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="hl8-Tx-25b" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Study" image="ic_tab_study" selectedImage="ic_tab_study_selected" id="WyE-Fw-Uvu"/>
+                    <tabBarItem key="tabBarItem" title="BLOG" image="ic_tab_study" selectedImage="ic_tab_study_selected" id="WyE-Fw-Uvu">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-2"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jRb-IB-fNN">
@@ -281,11 +287,13 @@
             </objects>
             <point key="canvasLocation" x="2490" y="1167"/>
         </scene>
-        <!--Profile-->
+        <!--MORE-->
         <scene sceneID="1iR-4W-iqh">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="hKJ-Iy-foW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="ic_tab_profile" selectedImage="ic_tab_profile_selected" id="j3m-HO-bOy"/>
+                    <tabBarItem key="tabBarItem" title="MORE" image="ic_tab_profile" selectedImage="ic_tab_profile_selected" id="j3m-HO-bOy">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-2"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jQX-sq-i88">
@@ -300,11 +308,13 @@
             </objects>
             <point key="canvasLocation" x="3825" y="758"/>
         </scene>
-        <!--My Course-->
+        <!--COURSE-->
         <scene sceneID="6cs-4S-Mys">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="xTh-YP-y8k" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Course" image="ic_tab_my_course" selectedImage="ic_tab_my_course_selected" id="S1h-mR-nC9"/>
+                    <tabBarItem key="tabBarItem" title="COURSE" image="ic_tab_my_course" selectedImage="ic_tab_my_course_selected" id="S1h-mR-nC9">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-2"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q72-Ep-0hQ">

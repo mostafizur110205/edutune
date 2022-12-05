@@ -44,6 +44,7 @@ struct LiveClass {
 	var teacherStr: String?
 	var teacherFullStr: String?
 	//var getOfferedCourse: GetOfferedCourse?
+    var status: LiveCalssType = .finished //
 
 	init(_ json: JSON) {
 		id = json["id"].intValue
@@ -77,13 +78,33 @@ struct LiveClass {
             image = APIEndpoints.S3_URL + (AppDelegate.shared().uuid ?? "") + pic
         }
 		divisionId = json["division_id"]
-		startDateTime = json["start_date_time"].intValue
-		endDateTime = json["end_date_time"].intValue
+		let startDateTime = json["start_date_time"].intValue
+		let endDateTime = json["end_date_time"].intValue
+        self.startDateTime = startDateTime
+        self.endDateTime = endDateTime
 		//courses = json["courses"].arrayValue.map { Courses($0) }
 		//teachers = json["teachers"].arrayValue.map { Teachers($0) }
 		teacherStr = json["teacher_str"].stringValue
 		teacherFullStr = json["teacher_full_str"].stringValue
 		//getOfferedCourse = GetOfferedCourse(json["get_offered_course"])
+        
+        let currentSeconds = Int64(Date().timeIntervalSince1970)
+
+        if currentSeconds>startDateTime && currentSeconds<endDateTime {
+            self.status = .live
+        } else if currentSeconds<startDateTime{
+            self.status = .upcoming
+        } else if currentSeconds>endDateTime{
+            self.status = .finished
+        }
+        
 	}
 
+}
+
+
+enum LiveCalssType {
+    case finished
+    case live
+    case upcoming
 }

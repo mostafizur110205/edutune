@@ -30,15 +30,15 @@ class MyCourseDetailsListVC: UIViewController {
 extension MyCourseDetailsListVC: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return self.ongoingClass?.getClassContents?.count ?? 0
+        return self.ongoingClass?.getClassContents.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return self.ongoingClass?.getClassContents?[section].title ?? ""
+        return self.ongoingClass?.getClassContents[section].title ?? ""
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.ongoingClass?.getClassContents?[section].get_lectures.count ?? 0
+        return self.ongoingClass?.getClassContents[section].get_lectures.count ?? 0
     }
     
    

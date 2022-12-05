@@ -48,7 +48,7 @@ class ClassTVCell: UITableViewCell {
             categoryLabel.text = "  \(classData?.program_name ?? "")  "
             titleLabel.text = classData?.name
             priceLabel.text = "৳\(classData?.current_price ?? 0)"
-            statusLabel.text = classData?.mode == 1 ? "Batch" : "Recorded Class"
+            statusLabel.text = classData?.mode == 1 ? "Batch" : "Course"
             
             if classData?.original_price ?? 0 == 0 {
                 oldPriceLabel.text = ""

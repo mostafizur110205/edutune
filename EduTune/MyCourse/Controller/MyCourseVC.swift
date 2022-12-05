@@ -10,14 +10,15 @@ import UIKit
 class MyCourseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    //var sections:[String: String] = [:]
-    var sections:[String] = []
-    var dueAssignments = [DueAssignments]()
+
+    var sections: [String] = []
     var liveClasses = [LiveClass]()
+    var dueAssignments = [DueAssignments]()
     var ongoingClasses = [OngoingClass]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+      
         getMyCourses()
     }
     
@@ -33,12 +34,12 @@ class MyCourseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if AppUserDefault.getIsLoggedIn() {
             var params = [String: Any]()
             params["user_id"] = AppUserDefault.getUserId()
-            APIService.shared.getMyCourse(params: params, completion: {liveC, dAssignments, ogClass  in
+            APIService.shared.getMyCourse(params: params, completion: { liveC, dAssignments, ogClass  in
                 
                 if let lClasses = liveC {
-                    self.liveClasses = lClasses;
+                    print(lClasses.count)
+                    self.liveClasses = lClasses.filter({ $0.status != .finished })
                     self.sections.append(MyCourseType.live)
-                    
                     //self.sections["Live Classes"] = "See All"
                 }
                 
@@ -109,7 +110,6 @@ class MyCourseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let sectionKey = self.sections[indexPath.section]
         if sectionKey == MyCourseType.due{
             guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "DueAssignmentsTVCell") as? DueAssignmentsTVCell else {return UITableViewCell()}
-            
             cell.classData = self.dueAssignments[indexPath.row]
             return cell
         }else  if sectionKey == MyCourseType.live{
@@ -158,10 +158,42 @@ class MyCourseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
 }
 
-
 struct MyCourseType{
     static let live = "live"
     static let due = "due"
     static let onGoing = "onGoing"
-    
 }
+
+/*
+private static final String VIDEO_TYPE = "1";
+private static final String LIVE_TYPE = "2";
+private static final String AUDIO_BOOK_TYPE = "3";
+private static final String TRANSCRIPT_TYPE = "4";
+private static final String NOTE_TYPE = "5";
+private static final String PDF_BOOK_TYPE = "6";
+private static final String LECTURE_SHEET_TYPE = "7";
+private static final String MODEL_TEST_TYPE = "8";
+private static final String SOLVE_CLASS_TYPE = "9";
+private static final String QUIZ_TYPE = "10";
+private static final String ASSESSMENT_TYPE = "11";
+
+
+
+Exam system (All of these same Functionality):
+ MODEL_TEST_TYPE
+ QUIZ_TYPE
+ ASSESSMENT_TYPE
+
+
+Lecture (All of these same Functionality):
+LECTURE_SHEET_TYPE
+SOLVE_CLASS_TYPE
+AUDIO_BOOK_TYPE
+PDF_BOOK_TYPE
+TRANSCRIPT_TYPE
+NOTE_TYPE
+LIVE_TYPE
+
+Video (Youtube Api):
+VIDEO_TYPE
+*/
