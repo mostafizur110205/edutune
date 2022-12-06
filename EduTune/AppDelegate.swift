@@ -55,6 +55,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
     
+    func getDueDate(_ dateStringValue: String?) -> (String, Bool) {
+        guard let dateString = dateStringValue else {return ("", false)}
+       
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss";
+        let date = dateFormatter.date(from: dateString) ?? Date()
+        
+        let isDuePassed = date>Date()
+        dateFormatter.dateFormat = "d MMM, HH:mm a"
+        return (dateFormatter.string(from: date), isDuePassed)
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         SVProgressHUD.setDefaultMaskType(.custom)

@@ -131,6 +131,10 @@
 		BECAFF7C29038CC400E7C8B9 /* ClassLessonsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECAFF7B29038CC400E7C8B9 /* ClassLessonsVC.swift */; };
 		BECAFF7E29038CD400E7C8B9 /* ClassReviewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECAFF7D29038CD400E7C8B9 /* ClassReviewsVC.swift */; };
 		BECAFF8029038FDC00E7C8B9 /* ClassHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECAFF7F29038FDC00E7C8B9 /* ClassHeaderVC.swift */; };
+		BED3864D293F04B00034ACC8 /* LectureTypePreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED3864C293F04B00034ACC8 /* LectureTypePreviewVC.swift */; };
+		BED3864F293F04D00034ACC8 /* ExamTypePreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED3864E293F04D00034ACC8 /* ExamTypePreviewVC.swift */; };
+		BED38651293F04E90034ACC8 /* VideoTypePreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED38650293F04E90034ACC8 /* VideoTypePreviewVC.swift */; };
+		BED38653293F31B10034ACC8 /* VideoContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED38652293F31B10034ACC8 /* VideoContent.swift */; };
 		BED6540928F9899200737B78 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED6540828F9899200737B78 /* SearchVC.swift */; };
 		BED6540D28F9B1E200737B78 /* MentorTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED6540C28F9B1E200737B78 /* MentorTVCell.swift */; };
 		BED6540F28F9C4DD00737B78 /* FilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED6540E28F9C4DD00737B78 /* FilterVC.swift */; };
@@ -294,6 +298,10 @@
 		BECAFF7B29038CC400E7C8B9 /* ClassLessonsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassLessonsVC.swift; sourceTree = "<group>"; };
 		BECAFF7D29038CD400E7C8B9 /* ClassReviewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassReviewsVC.swift; sourceTree = "<group>"; };
 		BECAFF7F29038FDC00E7C8B9 /* ClassHeaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassHeaderVC.swift; sourceTree = "<group>"; };
+		BED3864C293F04B00034ACC8 /* LectureTypePreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureTypePreviewVC.swift; sourceTree = "<group>"; };
+		BED3864E293F04D00034ACC8 /* ExamTypePreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamTypePreviewVC.swift; sourceTree = "<group>"; };
+		BED38650293F04E90034ACC8 /* VideoTypePreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTypePreviewVC.swift; sourceTree = "<group>"; };
+		BED38652293F31B10034ACC8 /* VideoContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoContent.swift; sourceTree = "<group>"; };
 		BED6540828F9899200737B78 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		BED6540C28F9B1E200737B78 /* MentorTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorTVCell.swift; sourceTree = "<group>"; };
 		BED6540E28F9C4DD00737B78 /* FilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterVC.swift; sourceTree = "<group>"; };
@@ -456,6 +464,9 @@
 			children = (
 				BE469832291C28060026EEA5 /* MyCourseVC.swift */,
 				BB340C482923FC48006C3816 /* MyCourseDetailsListVC.swift */,
+				BED3864E293F04D00034ACC8 /* ExamTypePreviewVC.swift */,
+				BED3864C293F04B00034ACC8 /* LectureTypePreviewVC.swift */,
+				BED38650293F04E90034ACC8 /* VideoTypePreviewVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -639,6 +650,7 @@
 				BECAFF75290389A200E7C8B9 /* Lecture.swift */,
 				BE44ECAE2925309E00AD0DCA /* Coupon.swift */,
 				BECAFF7729038AAC00E7C8B9 /* ClassContent.swift */,
+				BED38652293F31B10034ACC8 /* VideoContent.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -932,6 +944,7 @@
 				BEA4330B2905388100B3291E /* BlogDetailsVC.swift in Sources */,
 				BE44ECB329254EB700AD0DCA /* Notification.swift in Sources */,
 				BEB83B9B290E610200860770 /* MoreTVCell.swift in Sources */,
+				BED3864D293F04B00034ACC8 /* LectureTypePreviewVC.swift in Sources */,
 				BED6540928F9899200737B78 /* SearchVC.swift in Sources */,
 				BE469833291C28060026EEA5 /* MyCourseVC.swift in Sources */,
 				BE14710128F5733A00726625 /* IntroCVCell.swift in Sources */,
@@ -957,6 +970,7 @@
 				BE14711328F57AC300726625 /* CreateNewPassVC.swift in Sources */,
 				BEDD168A2904E3D000C90051 /* ReviewTVCell.swift in Sources */,
 				BE4869FF28DEF5B8003040AD /* Extensions.swift in Sources */,
+				BED38653293F31B10034ACC8 /* VideoContent.swift in Sources */,
 				BB89C6C72921268000BA5B7A /* LiveClass.swift in Sources */,
 				BE14711528F57AE400726625 /* PassResetSuccessVC.swift in Sources */,
 				BE1D520E28D887F300EC151A /* SceneDelegate.swift in Sources */,
@@ -968,6 +982,7 @@
 				BEE78F7428F6D44800A4B3B1 /* DVDevice.swift in Sources */,
 				BEF8040128F8247A00CB3AE5 /* Program.swift in Sources */,
 				BECAFF6C290385AE00E7C8B9 /* MentorProfileVC.swift in Sources */,
+				BED38651293F04E90034ACC8 /* VideoTypePreviewVC.swift in Sources */,
 				BEA433092905387200B3291E /* BlogBookmarksVC.swift in Sources */,
 				BBB9F808292169AF005C82E2 /* LiveClassTVCell.swift in Sources */,
 				BBB9F80529215E0F005C82E2 /* DueAssignmentsTVCell.swift in Sources */,
@@ -1011,6 +1026,7 @@
 				BEB83BB3290E687400860770 /* WebviewVC.swift in Sources */,
 				BEB83BA1290E66B500860770 /* ReferralVC.swift in Sources */,
 				BEB83BA3290E66CF00860770 /* SubmitProblemVC.swift in Sources */,
+				BED3864F293F04D00034ACC8 /* ExamTypePreviewVC.swift in Sources */,
 				BECAFF722903876100E7C8B9 /* Review.swift in Sources */,
 				BE44ECAF2925309E00AD0DCA /* Coupon.swift in Sources */,
 				BEF803F328F8059A00CB3AE5 /* APIService.swift in Sources */,

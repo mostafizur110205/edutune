@@ -18,9 +18,12 @@ class Lecture: NSObject {
     var is_protected: Int?
     var linked_lecture_id: Int?
     var linked_assignment_id: Int?
-
+    var youtube_id: String?
+   
     var title: String?
     var type_icon: String?
+    var get_class_content_view: ClassContentView?
+    var get_video_content: VideoContent?
 
     required init(json: JSON) {
         id = json["id"].int
@@ -32,9 +35,12 @@ class Lecture: NSObject {
         is_protected = json["is_protected"].int
         linked_lecture_id = json["linked_lecture_id"].int
         linked_assignment_id = json["linked_assignment_id"].int
+        youtube_id = json["youtube_id"].string
 
         title = json["title"].string
         type_icon = json["type_icon"].string
+        get_class_content_view = ClassContentView(json: json["get_class_content_lecture_view"])
+        get_video_content = VideoContent(json: json["get_video_content"])
 
     }
 }

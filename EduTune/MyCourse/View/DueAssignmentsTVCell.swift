@@ -36,22 +36,12 @@ class DueAssignmentsTVCell: UITableViewCell {
             categoryLabel.text = "  \(classData?.className ?? "")  "
             titleLabel.text = classData?.name
             reviewLabel.text = "Submission (\(classData?.getSubmissionsCount ?? 0)) | Start Test"
-            let (date, isDuePassed) = getDate(classData?.dueDate)
+            let (date, isDuePassed) = AppDelegate.shared().getDueDate(classData?.dueDate)
             priceLabel.text = "Due: \(date.replacingOccurrences(of: "00:00 AM", with: "12:00 AM"))"
             priceLabel.textColor = UIColor(named: isDuePassed ? "Primary500" : "AlertError")
         }
     }
     
-    func getDate(_ dateStringValue: String?) -> (String, Bool) {
-        guard let dateString = dateStringValue else {return ("", false)}
-       
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss";
-        let date = dateFormatter.date(from: dateString) ?? Date()
-        
-        let isDuePassed = date>Date()
-        dateFormatter.dateFormat = "d MMM, HH:mm a"
-        return (dateFormatter.string(from: date), isDuePassed)
-    }
+    
 
 }

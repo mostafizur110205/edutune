@@ -7,10 +7,25 @@
 
 import UIKit
 
+let MODEL_TEST_TYPE = 8
+let QUIZ_TYPE = 10
+let ASSESSMENT_TYPE = 11
+
+let VIDEO_TYPE = 1
+
+let LIVE_TYPE = 2
+let AUDIO_BOOK_TYPE = 3
+let TRANSCRIPT_TYPE = 4
+let NOTE_TYPE = 5
+let PDF_BOOK_TYPE = 6
+let LECTURE_SHEET_TYPE = 7
+let SOLVE_CLASS_TYPE = 9
+
+
 class MyCourseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-
+    
     var sections: [String] = []
     var liveClasses = [LiveClass]()
     var dueAssignments = [DueAssignments]()
@@ -18,15 +33,13 @@ class MyCourseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        
         getMyCourses()
     }
     
-    func goToCourseListView(ogc: OngoingClass) {
-        if let viewC: MyCourseDetailsListVC = self.storyboard?.instantiateViewController(withIdentifier: "MyCourseDetailsListVC") as? MyCourseDetailsListVC {
-            viewC.ongoingClass = ogc
-            navigationController?.pushViewController(viewC, animated: true)
-        }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     func getMyCourses() {
@@ -36,36 +49,23 @@ class MyCourseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             params["user_id"] = AppUserDefault.getUserId()
             APIService.shared.getMyCourse(params: params, completion: { liveC, dAssignments, ogClass  in
                 
-                if let lClasses = liveC {
-                    print(lClasses.count)
-                    self.liveClasses = lClasses.filter({ $0.status != .finished })
-                    self.sections.append(MyCourseType.live)
-                    //self.sections["Live Classes"] = "See All"
-                }
+                print(liveC.count)
+                self.liveClasses = liveC.filter({ $0.status != .finished })
+                self.sections.append(MyCourseType.live)
                 
-                if let dueAssignments = dAssignments {
-                    print(dueAssignments.count)
-                    self.dueAssignments = dueAssignments;
-                    self.sections.append(MyCourseType.due)
-
-                   // self.sections["Due Assignments"] = "See All"
-                }
+                print(dAssignments.count)
+                self.dueAssignments = dAssignments;
+                self.sections.append(MyCourseType.due)
                 
-                if let ogClasses = ogClass {
-                    print(ogClasses.count)
-                    self.ongoingClasses = ogClasses;
-                    self.sections.append(MyCourseType.onGoing)
-
-                    //self.sections["Ongoing Courses"] = ""
-                }
+                print(ogClass.count)
+                self.ongoingClasses = ogClass;
+                self.sections.append(MyCourseType.onGoing)
+                
                 self.sections.isEmpty ? self.tableView.isHidden = true : self.tableView.reloadData()
-                
             })
         } else {
             tableView.isHidden = true
-        }
-        
-        
+        }        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -108,38 +108,33 @@ class MyCourseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let sectionKey = self.sections[indexPath.section]
-        if sectionKey == MyCourseType.due{
-            guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "DueAssignmentsTVCell") as? DueAssignmentsTVCell else {return UITableViewCell()}
-            cell.classData = self.dueAssignments[indexPath.row]
-            return cell
-        }else  if sectionKey == MyCourseType.live{
+        if sectionKey == MyCourseType.live {
             guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "LiveClassTVCell") as? LiveClassTVCell else {return UITableViewCell()}
             
             cell.classData = self.liveClasses[indexPath.row]
             return cell
-        }else  if sectionKey == MyCourseType.onGoing{
+        } else if sectionKey == MyCourseType.due {
+            guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "DueAssignmentsTVCell") as? DueAssignmentsTVCell else {return UITableViewCell()}
+            cell.classData = self.dueAssignments[indexPath.row]
+            return cell
+        } else  if sectionKey == MyCourseType.onGoing {
             guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "OngoingTVCell") as? OngoingTVCell else {return UITableViewCell()}
             
             cell.classData = self.ongoingClasses[indexPath.row]
             return cell
         }
-       
+        
         return UITableViewCell()
-//        guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "ClassTVCell") as? ClassTVCell else {return UITableViewCell()}
-//
-//        let classData = Class(json: [])
-//        cell.classData = classData
-//        return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //let sectionKey = Array(self.sections.keys)[section]
         let sectionKey = self.sections[section]
-        if sectionKey == MyCourseType.due{
-            return self.dueAssignments.count
-        } else if sectionKey == MyCourseType.live{
+        if sectionKey == MyCourseType.live {
             return self.liveClasses.count
-        }else if sectionKey == MyCourseType.onGoing{
+        } else if sectionKey == MyCourseType.due {
+            return self.dueAssignments.count
+        } else if sectionKey == MyCourseType.onGoing {
             return self.ongoingClasses.count
         }
         else{return 0}
@@ -148,13 +143,20 @@ class MyCourseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let sectionKey = self.sections[indexPath.section]
-        if sectionKey == MyCourseType.onGoing{
-            goToCourseListView(ogc: self.ongoingClasses[indexPath.row])
+        if sectionKey == MyCourseType.live {
+            // Join video
+        } else if sectionKey == MyCourseType.due {
+            if let viewC: ExamTypePreviewVC = self.storyboard?.instantiateViewController(withIdentifier: "ExamTypePreviewVC") as? ExamTypePreviewVC {
+                viewC.classData = self.dueAssignments[indexPath.row]
+                navigationController?.pushViewController(viewC, animated: true)
+            }
+        } else {
+            if let viewC: MyCourseDetailsListVC = self.storyboard?.instantiateViewController(withIdentifier: "MyCourseDetailsListVC") as? MyCourseDetailsListVC {
+                viewC.ongoingClass = self.ongoingClasses[indexPath.row]
+                navigationController?.pushViewController(viewC, animated: true)
+            }
         }
     }
-    
-    
-    
     
 }
 
@@ -165,35 +167,23 @@ struct MyCourseType{
 }
 
 /*
-private static final String VIDEO_TYPE = "1";
-private static final String LIVE_TYPE = "2";
-private static final String AUDIO_BOOK_TYPE = "3";
-private static final String TRANSCRIPT_TYPE = "4";
-private static final String NOTE_TYPE = "5";
-private static final String PDF_BOOK_TYPE = "6";
-private static final String LECTURE_SHEET_TYPE = "7";
-private static final String MODEL_TEST_TYPE = "8";
-private static final String SOLVE_CLASS_TYPE = "9";
-private static final String QUIZ_TYPE = "10";
-private static final String ASSESSMENT_TYPE = "11";
-
-
-
-Exam system (All of these same Functionality):
+ Exam system (All of these same Functionality):
  MODEL_TEST_TYPE
  QUIZ_TYPE
  ASSESSMENT_TYPE
+ 
+ 
+ Lecture (All of these same Functionality):
+ LECTURE_SHEET_TYPE
+ SOLVE_CLASS_TYPE
+ AUDIO_BOOK_TYPE
+ PDF_BOOK_TYPE
+ TRANSCRIPT_TYPE
+ NOTE_TYPE
+ LIVE_TYPE
+ 
+ Video (Youtube Api):
+ VIDEO_TYPE
+ */
 
 
-Lecture (All of these same Functionality):
-LECTURE_SHEET_TYPE
-SOLVE_CLASS_TYPE
-AUDIO_BOOK_TYPE
-PDF_BOOK_TYPE
-TRANSCRIPT_TYPE
-NOTE_TYPE
-LIVE_TYPE
-
-Video (Youtube Api):
-VIDEO_TYPE
-*/

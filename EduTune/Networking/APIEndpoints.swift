@@ -32,9 +32,11 @@ open class APIEndpoints: NSObject {
 
     public static let BLOG: String = BASE_URL+"olv2/public/blog"
 
-    public static let MY_COURSE: String = BASE_URL+"olv2/my-course"
     public static let APPLY_COUPON: String = BASE_URL+"get-class-coupon-data"
     public static let COURSE_PURCHASE: String = BASE_URL+"online-class-payment-complete"
     public static let MY_POINT_DASHBOARD: String = BASE_URL+"user/my-point-dashboard"
+    
+    public static let MY_COURSE: String = BASE_URL+"olv2/my-course"
+    public static let MY_COURSE_WISE_LESSONS: String = BASE_URL+"olv2/my-course-wise-lessons"
     
 }
