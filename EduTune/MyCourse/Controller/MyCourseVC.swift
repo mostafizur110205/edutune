@@ -7,21 +7,6 @@
 
 import UIKit
 
-let MODEL_TEST_TYPE = 8
-let QUIZ_TYPE = 10
-let ASSESSMENT_TYPE = 11
-
-let VIDEO_TYPE = 1
-
-let LIVE_TYPE = 2
-let AUDIO_BOOK_TYPE = 3
-let TRANSCRIPT_TYPE = 4
-let NOTE_TYPE = 5
-let PDF_BOOK_TYPE = 6
-let LECTURE_SHEET_TYPE = 7
-let SOLVE_CLASS_TYPE = 9
-
-
 class MyCourseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
@@ -144,7 +129,7 @@ class MyCourseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         let sectionKey = self.sections[indexPath.section]
         if sectionKey == MyCourseType.live {
-            // Join video
+// open zoom call
         } else if sectionKey == MyCourseType.due {
             if let viewC: ExamTypePreviewVC = self.storyboard?.instantiateViewController(withIdentifier: "ExamTypePreviewVC") as? ExamTypePreviewVC {
                 viewC.classData = self.dueAssignments[indexPath.row]
@@ -165,25 +150,3 @@ struct MyCourseType{
     static let due = "due"
     static let onGoing = "onGoing"
 }
-
-/*
- Exam system (All of these same Functionality):
- MODEL_TEST_TYPE
- QUIZ_TYPE
- ASSESSMENT_TYPE
- 
- 
- Lecture (All of these same Functionality):
- LECTURE_SHEET_TYPE
- SOLVE_CLASS_TYPE
- AUDIO_BOOK_TYPE
- PDF_BOOK_TYPE
- TRANSCRIPT_TYPE
- NOTE_TYPE
- LIVE_TYPE
- 
- Video (Youtube Api):
- VIDEO_TYPE
- */
-
-

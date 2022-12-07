@@ -1007,6 +1007,9 @@
                                         <real key="value" value="29"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onNextButtonTap:" destination="9cN-Jb-Yt9" eventType="touchUpInside" id="j6T-Cj-CGI"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ls2-Fb-wwd"/>
@@ -1033,6 +1036,7 @@
                     <connections>
                         <outlet property="categoryLabel" destination="OLK-g8-7dg" id="cex-cD-pWK"/>
                         <outlet property="nameLabel" destination="jaI-b0-330" id="4Ra-lw-lx9"/>
+                        <outlet property="nextButton" destination="4eo-99-LDu" id="AMh-gM-rZt"/>
                         <outlet property="previewImageView" destination="fq4-mX-1tD" id="cPm-Br-arf"/>
                         <outlet property="titleLabel" destination="Q2D-Ws-Ubm" id="nfZ-FW-3dv"/>
                     </connections>
@@ -1132,6 +1136,89 @@
             </objects>
             <point key="canvasLocation" x="5285" y="-1071"/>
         </scene>
+        <!--Zoom CallVC-->
+        <scene sceneID="3xM-yz-Jzq">
+            <objects>
+                <viewController storyboardIdentifier="ZoomCallVC" id="GDf-lP-fCc" customClass="ZoomCallVC" customModule="EduTune" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dSj-Lj-KEH">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Live Class" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaA-XD-nwW">
+                                <rect key="frame" x="150" y="325" width="90" height="22"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="lsJ-uJ-A7d"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Urbanist-Bold" family="Urbanist" pointSize="20"/>
+                                <color key="textColor" name="Primary500"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_zoom_waiting" translatesAutoresizingMaskIntoConstraints="NO" id="t61-Rm-w5u">
+                                <rect key="frame" x="120" y="347" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="72g-CB-9Pp"/>
+                                    <constraint firstAttribute="height" constant="150" id="u0Z-C9-JAX"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="www.edutune.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32B-Wd-MMt">
+                                <rect key="frame" x="127.33333333333333" y="497" width="135.66666666666669" height="22"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="RTf-hP-pDX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Urbanist-SemiBold" family="Urbanist" pointSize="16"/>
+                                <color key="textColor" name="Grey900"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wait for teacher to start this class ..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHw-t6-1uI">
+                                <rect key="frame" x="16" y="772" width="358" height="22"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="OCc-24-H8R"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Urbanist-SemiBold" family="Urbanist" pointSize="18"/>
+                                <color key="textColor" name="Grey900"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fSQ-EJ-dxf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BHw-t6-1uI" firstAttribute="leading" secondItem="fSQ-EJ-dxf" secondAttribute="leading" constant="16" id="CTI-yP-mo9"/>
+                            <constraint firstItem="fSQ-EJ-dxf" firstAttribute="bottom" secondItem="BHw-t6-1uI" secondAttribute="bottom" constant="16" id="Cgi-DM-fBR"/>
+                            <constraint firstItem="t61-Rm-w5u" firstAttribute="centerY" secondItem="dSj-Lj-KEH" secondAttribute="centerY" id="FXJ-Lu-8wo"/>
+                            <constraint firstItem="fSQ-EJ-dxf" firstAttribute="trailing" secondItem="BHw-t6-1uI" secondAttribute="trailing" constant="16" id="Q16-ef-jkD"/>
+                            <constraint firstItem="t61-Rm-w5u" firstAttribute="top" secondItem="eaA-XD-nwW" secondAttribute="bottom" id="cWT-Ne-G4W"/>
+                            <constraint firstItem="32B-Wd-MMt" firstAttribute="centerX" secondItem="dSj-Lj-KEH" secondAttribute="centerX" id="qPL-fy-5lw"/>
+                            <constraint firstItem="t61-Rm-w5u" firstAttribute="centerX" secondItem="dSj-Lj-KEH" secondAttribute="centerX" id="qQa-Cc-29w"/>
+                            <constraint firstItem="eaA-XD-nwW" firstAttribute="centerX" secondItem="dSj-Lj-KEH" secondAttribute="centerX" id="rst-8d-MOp"/>
+                            <constraint firstItem="32B-Wd-MMt" firstAttribute="top" secondItem="t61-Rm-w5u" secondAttribute="bottom" id="upF-b6-iLe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="statusLabel" destination="BHw-t6-1uI" id="H6W-lx-KiY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OcY-e6-qTV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5938" y="-1071"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ic_back" width="28" height="28"/>
@@ -1143,6 +1230,7 @@
         <image name="ic_tab_my_course" width="24.333333969116211" height="24"/>
         <image name="ic_tab_my_course_selected" width="24.333333969116211" height="24"/>
         <image name="ic_video" width="20" height="20"/>
+        <image name="ic_zoom_waiting" width="141" height="141"/>
         <namedColor name="Blue8">
             <color red="0.20000000298023224" green="0.36899998784065247" blue="0.96899998188018799" alpha="0.079999998211860657" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

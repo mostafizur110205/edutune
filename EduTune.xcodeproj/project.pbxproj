@@ -38,7 +38,6 @@
 		BE14711528F57AE400726625 /* PassResetSuccessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE14711428F57AE400726625 /* PassResetSuccessVC.swift */; };
 		BE14711728F57C1F00726625 /* MakeToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE14711628F57C1F00726625 /* MakeToast.swift */; };
 		BE1D520C28D887F300EC151A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1D520B28D887F300EC151A /* AppDelegate.swift */; };
-		BE1D520E28D887F300EC151A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1D520D28D887F300EC151A /* SceneDelegate.swift */; };
 		BE1D521328D887F300EC151A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE1D521128D887F300EC151A /* Main.storyboard */; };
 		BE1D521528D887F400EC151A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE1D521428D887F400EC151A /* Assets.xcassets */; };
 		BE1D521828D887F400EC151A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE1D521628D887F400EC151A /* LaunchScreen.storyboard */; };
@@ -131,6 +130,12 @@
 		BECAFF7C29038CC400E7C8B9 /* ClassLessonsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECAFF7B29038CC400E7C8B9 /* ClassLessonsVC.swift */; };
 		BECAFF7E29038CD400E7C8B9 /* ClassReviewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECAFF7D29038CD400E7C8B9 /* ClassReviewsVC.swift */; };
 		BECAFF8029038FDC00E7C8B9 /* ClassHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECAFF7F29038FDC00E7C8B9 /* ClassHeaderVC.swift */; };
+		BECF68A72940521500F5004E /* MobileRTC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BECF68A329404E3900F5004E /* MobileRTC.xcframework */; };
+		BECF68A82940521500F5004E /* MobileRTC.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BECF68A329404E3900F5004E /* MobileRTC.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BECF68AE2940529800F5004E /* MobileRTCResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BECF68AD2940529800F5004E /* MobileRTCResources.bundle */; };
+		BECF68B229406B0300F5004E /* ZoomCallVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECF68B129406B0300F5004E /* ZoomCallVC.swift */; };
+		BECF68B4294082A200F5004E /* LectureHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECF68B3294082A200F5004E /* LectureHost.swift */; };
+		BECF68B62940917800F5004E /* CustomUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECF68B52940917800F5004E /* CustomUIViewController.swift */; };
 		BED3864D293F04B00034ACC8 /* LectureTypePreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED3864C293F04B00034ACC8 /* LectureTypePreviewVC.swift */; };
 		BED3864F293F04D00034ACC8 /* ExamTypePreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED3864E293F04D00034ACC8 /* ExamTypePreviewVC.swift */; };
 		BED38651293F04E90034ACC8 /* VideoTypePreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED38650293F04E90034ACC8 /* VideoTypePreviewVC.swift */; };
@@ -164,6 +169,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				BE980F582920F9170078C7BD /* SSLCommerzSDK.framework in Embed Frameworks */,
+				BECF68A82940521500F5004E /* MobileRTC.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -205,7 +211,6 @@
 		BE14711628F57C1F00726625 /* MakeToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeToast.swift; sourceTree = "<group>"; };
 		BE1D520828D887F300EC151A /* EduTune.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EduTune.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE1D520B28D887F300EC151A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BE1D520D28D887F300EC151A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BE1D521228D887F300EC151A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BE1D521428D887F400EC151A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE1D521728D887F400EC151A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -298,6 +303,12 @@
 		BECAFF7B29038CC400E7C8B9 /* ClassLessonsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassLessonsVC.swift; sourceTree = "<group>"; };
 		BECAFF7D29038CD400E7C8B9 /* ClassReviewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassReviewsVC.swift; sourceTree = "<group>"; };
 		BECAFF7F29038FDC00E7C8B9 /* ClassHeaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassHeaderVC.swift; sourceTree = "<group>"; };
+		BECF68A329404E3900F5004E /* MobileRTC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = MobileRTC.xcframework; sourceTree = "<group>"; };
+		BECF68AD2940529800F5004E /* MobileRTCResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MobileRTCResources.bundle; sourceTree = "<group>"; };
+		BECF68AF2940538000F5004E /* MobileRTC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = MobileRTC.xcframework; sourceTree = "<group>"; };
+		BECF68B129406B0300F5004E /* ZoomCallVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomCallVC.swift; sourceTree = "<group>"; };
+		BECF68B3294082A200F5004E /* LectureHost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LectureHost.swift; sourceTree = "<group>"; };
+		BECF68B52940917800F5004E /* CustomUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIViewController.swift; sourceTree = "<group>"; };
 		BED3864C293F04B00034ACC8 /* LectureTypePreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureTypePreviewVC.swift; sourceTree = "<group>"; };
 		BED3864E293F04D00034ACC8 /* ExamTypePreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamTypePreviewVC.swift; sourceTree = "<group>"; };
 		BED38650293F04E90034ACC8 /* VideoTypePreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTypePreviewVC.swift; sourceTree = "<group>"; };
@@ -328,6 +339,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BECF68A72940521500F5004E /* MobileRTC.xcframework in Frameworks */,
 				BE980F572920F9170078C7BD /* SSLCommerzSDK.framework in Frameworks */,
 				768E2115262AAB544AE6EBA9 /* Pods_EduTune.framework in Frameworks */,
 			);
@@ -339,6 +351,7 @@
 		3AC52E304DD6071320C30BE6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BECF68A329404E3900F5004E /* MobileRTC.xcframework */,
 				BE980F562920F9170078C7BD /* SSLCommerzSDK.framework */,
 				0C96D62E64AD5083F9B26A3F /* Pods_EduTune.framework */,
 			);
@@ -418,6 +431,8 @@
 		BE1D51FF28D887F300EC151A = {
 			isa = PBXGroup;
 			children = (
+				BECF68AF2940538000F5004E /* MobileRTC.xcframework */,
+				BECF68AD2940529800F5004E /* MobileRTCResources.bundle */,
 				BE1D520A28D887F300EC151A /* EduTune */,
 				BE1D520928D887F300EC151A /* Products */,
 				EC5ACE55AC49EBBDC88E0AB0 /* Pods */,
@@ -437,7 +452,6 @@
 			isa = PBXGroup;
 			children = (
 				BE1D520B28D887F300EC151A /* AppDelegate.swift */,
-				BE1D520D28D887F300EC151A /* SceneDelegate.swift */,
 				BEF803F828F8061F00CB3AE5 /* AppUserDefault.swift */,
 				BEF803FC28F80CFA00CB3AE5 /* TabBarVC.swift */,
 				BE14711828F57C2400726625 /* Common */,
@@ -467,6 +481,8 @@
 				BED3864E293F04D00034ACC8 /* ExamTypePreviewVC.swift */,
 				BED3864C293F04B00034ACC8 /* LectureTypePreviewVC.swift */,
 				BED38650293F04E90034ACC8 /* VideoTypePreviewVC.swift */,
+				BECF68B129406B0300F5004E /* ZoomCallVC.swift */,
+				BECF68B52940917800F5004E /* CustomUIViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -651,6 +667,7 @@
 				BE44ECAE2925309E00AD0DCA /* Coupon.swift */,
 				BECAFF7729038AAC00E7C8B9 /* ClassContent.swift */,
 				BED38652293F31B10034ACC8 /* VideoContent.swift */,
+				BECF68B3294082A200F5004E /* LectureHost.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -848,6 +865,7 @@
 				BE1D521828D887F400EC151A /* LaunchScreen.storyboard in Resources */,
 				BE4869F628DEF4D7003040AD /* Urbanist-BlackItalic.ttf in Resources */,
 				BE4869EC28DEF4D7003040AD /* Urbanist-Bold.ttf in Resources */,
+				BECF68AE2940529800F5004E /* MobileRTCResources.bundle in Resources */,
 				BE4869CB28DECD75003040AD /* MyCourse.storyboard in Resources */,
 				BE4869EE28DEF4D7003040AD /* Urbanist-LightItalic.ttf in Resources */,
 				BE4869D128DECD99003040AD /* Other.storyboard in Resources */,
@@ -957,9 +975,11 @@
 				BBC290832927EFBC00FAC25E /* Referral.swift in Sources */,
 				BB89C6C5292125CD00BA5B7A /* DueAssignments.swift in Sources */,
 				BEB83BAF290E682700860770 /* LanguageVC.swift in Sources */,
+				BECF68B62940917800F5004E /* CustomUIViewController.swift in Sources */,
 				BB340C492923FC48006C3816 /* MyCourseDetailsListVC.swift in Sources */,
 				BE304D0528F847390062C48A /* CategoryCVCell.swift in Sources */,
 				BEF803F928F8061F00CB3AE5 /* AppUserDefault.swift in Sources */,
+				BECF68B4294082A200F5004E /* LectureHost.swift in Sources */,
 				BE304D0F28F84B660062C48A /* HomeHelpCell.swift in Sources */,
 				BEB83BAB290E67E600860770 /* PaymentVC.swift in Sources */,
 				BEA433052905385600B3291E /* BlogVC.swift in Sources */,
@@ -973,7 +993,6 @@
 				BED38653293F31B10034ACC8 /* VideoContent.swift in Sources */,
 				BB89C6C72921268000BA5B7A /* LiveClass.swift in Sources */,
 				BE14711528F57AE400726625 /* PassResetSuccessVC.swift in Sources */,
-				BE1D520E28D887F300EC151A /* SceneDelegate.swift in Sources */,
 				BE028383290439B6006FCD52 /* LessonHeaderCell.swift in Sources */,
 				BEF803FD28F80CFA00CB3AE5 /* TabBarVC.swift in Sources */,
 				BE44ECA3292522A300AD0DCA /* CheckoutVC.swift in Sources */,
@@ -1005,6 +1024,7 @@
 				BECAFF702903860A00E7C8B9 /* ClassDetail.swift in Sources */,
 				BEB83BAD290E680D00860770 /* SetPasswordVC.swift in Sources */,
 				BEE33B7F29064449007C35B4 /* User.swift in Sources */,
+				BECF68B229406B0300F5004E /* ZoomCallVC.swift in Sources */,
 				BE44ECA729252F2200AD0DCA /* UserAPIService.swift in Sources */,
 				BECAFF7A29038CAD00E7C8B9 /* ClassAboutVC.swift in Sources */,
 				BEF8040328F8259500CB3AE5 /* Class.swift in Sources */,
@@ -1199,12 +1219,68 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"AppAuth\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"FittedSheets\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"GTMAppAuth\"",
+					"-framework",
+					"\"GTMSessionFetcher\"",
+					"-framework",
+					"\"GoogleSignIn\"",
+					"-framework",
+					"\"IQKeyboardManagerSwift\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"LetterAvatarKit\"",
+					"-framework",
+					"\"LocalAuthentication\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"SJSegmentedScrollView\"",
+					"-framework",
+					"\"SVProgressHUD\"",
+					"-framework",
+					"\"SafariServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SkeletonView\"",
+					"-framework",
+					"\"SwiftyJSON\"",
+					"-framework",
+					"\"Toast_Swift\"",
+					"-framework",
+					"\"UICollectionViewLeftAlignedLayout\"",
+					"-framework",
+					"\"UIKit\"",
+					"-weak_framework",
+					"\"AuthenticationServices\"",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mostafizur.EduTune;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1239,12 +1315,68 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"AppAuth\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"FittedSheets\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"GTMAppAuth\"",
+					"-framework",
+					"\"GTMSessionFetcher\"",
+					"-framework",
+					"\"GoogleSignIn\"",
+					"-framework",
+					"\"IQKeyboardManagerSwift\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"LetterAvatarKit\"",
+					"-framework",
+					"\"LocalAuthentication\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"SJSegmentedScrollView\"",
+					"-framework",
+					"\"SVProgressHUD\"",
+					"-framework",
+					"\"SafariServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SkeletonView\"",
+					"-framework",
+					"\"SwiftyJSON\"",
+					"-framework",
+					"\"Toast_Swift\"",
+					"-framework",
+					"\"UICollectionViewLeftAlignedLayout\"",
+					"-framework",
+					"\"UIKit\"",
+					"-weak_framework",
+					"\"AuthenticationServices\"",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mostafizur.EduTune;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

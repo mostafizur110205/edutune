@@ -24,6 +24,7 @@ class Lecture: NSObject {
     var type_icon: String?
     var get_class_content_view: ClassContentView?
     var get_video_content: VideoContent?
+    var get_class_content_lecture_host: LectureHost?
 
     required init(json: JSON) {
         id = json["id"].int
@@ -41,6 +42,7 @@ class Lecture: NSObject {
         type_icon = json["type_icon"].string
         get_class_content_view = ClassContentView(json: json["get_class_content_lecture_view"])
         get_video_content = VideoContent(json: json["get_video_content"])
+        get_class_content_lecture_host = LectureHost(json: json["get_class_content_lecture_host"])
 
     }
 }

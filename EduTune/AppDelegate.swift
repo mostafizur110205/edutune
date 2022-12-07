@@ -8,7 +8,21 @@
 import UIKit
 import SVProgressHUD
 import IQKeyboardManagerSwift
+import MobileRTC
 
+let MODEL_TEST_TYPE = 8
+let QUIZ_TYPE = 10
+let ASSESSMENT_TYPE = 11
+
+let VIDEO_TYPE = 1
+
+let LIVE_TYPE = 2
+let AUDIO_BOOK_TYPE = 3
+let TRANSCRIPT_TYPE = 4
+let NOTE_TYPE = 5
+let PDF_BOOK_TYPE = 6
+let LECTURE_SHEET_TYPE = 7
+let SOLVE_CLASS_TYPE = 9
 let GOOGLECLIENTID = "606879515005-8ie3fedl108c6vrdg4mko9keqg96bppi.apps.googleusercontent.com"
 
 @main
@@ -72,9 +86,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SVProgressHUD.setDefaultMaskType(.custom)
         SVProgressHUD.setDefaultStyle(.light)
         IQKeyboardManager.shared.enable = true
+        
+        window?.overrideUserInterfaceStyle = .light
 
         return true
     }
+    
     
     func openMentorProfileVC(navigationController: UINavigationController?, mentor: Teacher) {
         if let viewC: MentorProfileVC = UIStoryboard(name: "Course", bundle: nil).instantiateViewController(withIdentifier: "MentorProfileVC") as? MentorProfileVC {
@@ -82,21 +99,103 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             navigationController?.pushViewController(viewC, animated: true)
         }
     }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        if let authorizationService = MobileRTC.shared().getAuthService() {
 
-    // MARK: UISceneSession Lifecycle
+            // Call logoutRTC() to log the user out.
+            authorizationService.logoutRTC()
 
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+            // Notify MobileRTC of appWillTerminate call.
+            MobileRTC.shared().appWillTerminate()
+        }
     }
 
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    func applicationWillResignActive(_ application: UIApplication) {
+        // Notify MobileRTC of appWillResignActive call.
+        MobileRTC.shared().appWillResignActive()
+    }
+
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        // Notify MobileRTC of appDidBecomeActive call.
+        MobileRTC.shared().appDidBecomeActive()
+    }
+
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        // Notify MobileRTC of appDidEnterBackgroud call.
+        MobileRTC.shared().appDidEnterBackgroud()
+    }
+
+    func setupSDK(sdkKey: String, sdkSecret: String) {
+        // Create a MobileRTCSDKInitContext. This class contains attributes for modifying how the SDK will be created. You must supply the context with a domain.
+        let context = MobileRTCSDKInitContext()
+        // The domain we will use is zoom.us
+        context.domain = "zoom.us"
+        // Turns on SDK logging. This is optional.
+        context.enableLog = true
+
+        // Call initialize(_ context: MobileRTCSDKInitContext) to create an instance of the Zoom SDK. Without initializing first, the SDK will not do anything. This call will return true if the SDK was initialized successfully.
+        let sdkInitializedSuccessfully = MobileRTC.shared().initialize(context)
+
+        // Check if initialization was successful. Obtain a MobileRTCAuthService, this is for supplying credentials to the SDK for authorization.
+        if sdkInitializedSuccessfully == true, let authorizationService = MobileRTC.shared().getAuthService() {
+
+            // Supply the SDK with SDK Key and SDK Secret. This is required if a JWT is not supplied.
+            // To use a JWT, replace these lines with authorizationService.jwtToken = yourJWTToken.
+            authorizationService.clientKey = sdkKey
+            authorizationService.clientSecret = sdkSecret
+
+            // Assign AppDelegate to be a MobileRTCAuthDelegate to listen for authorization callbacks.
+            authorizationService.delegate = self
+
+            // Call sdkAuth to perform authorization.
+            authorizationService.sdkAuth()
+        }
     }
 
 
 }
 
+extension AppDelegate: MobileRTCAuthDelegate {
+
+    // Result of calling sdkAuth(). MobileRTCAuthError_Success represents a successful authorization.
+    func onMobileRTCAuthReturn(_ returnValue: MobileRTCAuthError) {
+        switch returnValue {
+        case .success:
+            print("SDK successfully initialized.")
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "SDKInitialized"), object: nil)
+        case .keyOrSecretEmpty:
+            assertionFailure("SDK Key/Secret was not provided. Replace sdkKey and sdkSecret at the top of this file with your SDK Key/Secret.")
+        case .keyOrSecretWrong, .unknown:
+            assertionFailure("SDK Key/Secret is not valid.")
+        default:
+            assertionFailure("SDK Authorization failed with MobileRTCAuthError: \(returnValue).")
+        }
+    }
+    
+    // Result of calling logIn()
+    func onMobileRTCLoginResult(_ resultValue: MobileRTCLoginFailReason) {
+        switch resultValue {
+        case .success:
+            print("Successfully logged in")
+
+            // This alerts the ViewController that log in was successful.
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "userLoggedIn"), object: nil)
+        case .wrongPassword:
+            print("Password incorrect")
+        default:
+            print("Could not log in. Error code: \(resultValue)")
+
+        }
+    }
+
+    // Result of calling logoutRTC(). 0 represents a successful log out attempt.
+    func onMobileRTCLogoutReturn(_ returnValue: Int) {
+        switch returnValue {
+        case 0:
+            print("Successfully logged out")
+        default:
+            print("Could not log out. Error code: \(returnValue)")
+        }
+    }
+}
