@@ -159,6 +159,11 @@
 		BEF8040328F8259500CB3AE5 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF8040228F8259500CB3AE5 /* Class.swift */; };
 		BEF8040528F826A500CB3AE5 /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF8040428F826A500CB3AE5 /* Teacher.swift */; };
 		BEFE792029266F2900062986 /* ProfileTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFE791F29266F2900062986 /* ProfileTVCell.swift */; };
+		E31E18F72945AEFF009E44DE /* BottomSheetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31E18F62945AEFE009E44DE /* BottomSheetVC.swift */; };
+		E31E18F92945AF66009E44DE /* BottomSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31E18F82945AF66009E44DE /* BottomSheetViewModel.swift */; };
+		E31E18FB2945B08E009E44DE /* BottomSheetVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E31E18FA2945B08E009E44DE /* BottomSheetVC.xib */; };
+		E31E18FE2945B692009E44DE /* InstructionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31E18FC2945B691009E44DE /* InstructionsVC.swift */; };
+		E31E18FF2945B692009E44DE /* InstructionsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E31E18FD2945B692009E44DE /* InstructionsVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -332,6 +337,11 @@
 		BEF8040228F8259500CB3AE5 /* Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
 		BEF8040428F826A500CB3AE5 /* Teacher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
 		BEFE791F29266F2900062986 /* ProfileTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTVCell.swift; sourceTree = "<group>"; };
+		E31E18F62945AEFE009E44DE /* BottomSheetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetVC.swift; sourceTree = "<group>"; };
+		E31E18F82945AF66009E44DE /* BottomSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewModel.swift; sourceTree = "<group>"; };
+		E31E18FA2945B08E009E44DE /* BottomSheetVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BottomSheetVC.xib; sourceTree = "<group>"; };
+		E31E18FC2945B691009E44DE /* InstructionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionsVC.swift; sourceTree = "<group>"; };
+		E31E18FD2945B692009E44DE /* InstructionsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstructionsVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -460,6 +470,7 @@
 				BE4869D728DECDDE003040AD /* Intro */,
 				BE4869D828DECDF4003040AD /* Profile */,
 				BE4869D228DECDA8003040AD /* Home */,
+				E31E18F52945AE1E009E44DE /* Assignment */,
 				BEA432F32904E50900B3291E /* Course */,
 				BE4869D328DECDAF003040AD /* MyCourse */,
 				BE4869D428DECDB8003040AD /* Blog */,
@@ -788,6 +799,34 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		E31E18F52945AE1E009E44DE /* Assignment */ = {
+			isa = PBXGroup;
+			children = (
+				E31E19002945DB54009E44DE /* BottomSheet */,
+				E31E19012945DB62009E44DE /* Instructions */,
+			);
+			path = Assignment;
+			sourceTree = "<group>";
+		};
+		E31E19002945DB54009E44DE /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				E31E18F62945AEFE009E44DE /* BottomSheetVC.swift */,
+				E31E18F82945AF66009E44DE /* BottomSheetViewModel.swift */,
+				E31E18FA2945B08E009E44DE /* BottomSheetVC.xib */,
+			);
+			path = BottomSheet;
+			sourceTree = "<group>";
+		};
+		E31E19012945DB62009E44DE /* Instructions */ = {
+			isa = PBXGroup;
+			children = (
+				E31E18FC2945B691009E44DE /* InstructionsVC.swift */,
+				E31E18FD2945B692009E44DE /* InstructionsVC.xib */,
+			);
+			path = Instructions;
+			sourceTree = "<group>";
+		};
 		EC5ACE55AC49EBBDC88E0AB0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -876,6 +915,7 @@
 				BE4869F328DEF4D7003040AD /* Urbanist-SemiBold.ttf in Resources */,
 				BE4869ED28DEF4D7003040AD /* Urbanist-Regular.ttf in Resources */,
 				BE4869F128DEF4D7003040AD /* Urbanist-Thin.ttf in Resources */,
+				E31E18FB2945B08E009E44DE /* BottomSheetVC.xib in Resources */,
 				BE14710328F578F300726625 /* Localizable.strings in Resources */,
 				BE4869F828DEF4D7003040AD /* Urbanist-SemiBoldItalic.ttf in Resources */,
 				BE1D521528D887F400EC151A /* Assets.xcassets in Resources */,
@@ -886,6 +926,7 @@
 				BE4869FC28DEF4D7003040AD /* Urbanist-ExtraLight.ttf in Resources */,
 				BE1D521328D887F300EC151A /* Main.storyboard in Resources */,
 				BE4869F028DEF4D7003040AD /* Urbanist-ExtraBoldItalic.ttf in Resources */,
+				E31E18FF2945B692009E44DE /* InstructionsVC.xib in Resources */,
 				BE4869FD28DEF4D7003040AD /* Urbanist-ThinItalic.ttf in Resources */,
 				BE4869CF28DECD90003040AD /* Inbox.storyboard in Resources */,
 			);
@@ -957,6 +998,7 @@
 				BB89C6D129214B0300BA5B7A /* OngoingClass.swift in Sources */,
 				BE304D1528F864530062C48A /* CenteredCVLayout.swift in Sources */,
 				BE44ECB129254C4800AD0DCA /* NotificationTVCell.swift in Sources */,
+				E31E18FE2945B692009E44DE /* InstructionsVC.swift in Sources */,
 				BEF803FB28F8074F00CB3AE5 /* OnboardData.swift in Sources */,
 				BE028385290439C4006FCD52 /* LessonTVCell.swift in Sources */,
 				BEA4330B2905388100B3291E /* BlogDetailsVC.swift in Sources */,
@@ -999,6 +1041,7 @@
 				BE14710B28F57A2900726625 /* VerificationVC.swift in Sources */,
 				BEB83BB1290E685D00860770 /* HelpVC.swift in Sources */,
 				BEE78F7428F6D44800A4B3B1 /* DVDevice.swift in Sources */,
+				E31E18F72945AEFF009E44DE /* BottomSheetVC.swift in Sources */,
 				BEF8040128F8247A00CB3AE5 /* Program.swift in Sources */,
 				BECAFF6C290385AE00E7C8B9 /* MentorProfileVC.swift in Sources */,
 				BED38651293F04E90034ACC8 /* VideoTypePreviewVC.swift in Sources */,
@@ -1035,6 +1078,7 @@
 				BECAFF74290388A100E7C8B9 /* Feature.swift in Sources */,
 				BE14710728F57A0800726625 /* SignupVC.swift in Sources */,
 				BECAFF7E29038CD400E7C8B9 /* ClassReviewsVC.swift in Sources */,
+				E31E18F92945AF66009E44DE /* BottomSheetViewModel.swift in Sources */,
 				BEB83B9F290E669A00860770 /* SyllabusVC.swift in Sources */,
 				BE02837B290423DB006FCD52 /* ClassHeaderTVCell.swift in Sources */,
 				BEB83BA9290E67BE00860770 /* MyPointsVC.swift in Sources */,
@@ -1116,6 +1160,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1176,6 +1221,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1204,16 +1250,18 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = C88TF32R63;
+				DEVELOPMENT_TEAM = Z5BQBFA4M2;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EduTune/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "EduTune wants to access your camera to take profile picture or record video";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "EduTune wants to access your microphone to record video";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "EduTune wants to access your photo library to pick profile pictures or choose videos to post";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "We will use your Bluetooth to access your Bluetooth headphones.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "For people to see you during meetings, we need access to your camera.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "For people to hear you during meetings, we need access to your microphone.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "For people to share, we need access to your photos";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1300,16 +1348,18 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = C88TF32R63;
+				DEVELOPMENT_TEAM = Z5BQBFA4M2;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EduTune/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "EduTune wants to access your camera to take profile picture or record video";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "EduTune wants to access your microphone to record video";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "EduTune wants to access your photo library to pick profile pictures or choose videos to post";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "We will use your Bluetooth to access your Bluetooth headphones.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "For people to see you during meetings, we need access to your camera.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "For people to hear you during meetings, we need access to your microphone.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "For people to share, we need access to your photos";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

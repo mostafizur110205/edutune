@@ -41,11 +41,32 @@ class ExamTypePreviewVC: UIViewController {
     }
     
     @IBAction func onViewSubmissionButtonTap(_ sender: Any) {
-  
     }
   
+    @IBAction func onStartAssignment(_ sender: Any) {
+        
+        let instructionsVC = InstructionsVC()
+        let bottomSheetViewModel = BottomSheetViewModel(
+            cornerRadius: 20,
+            animationTransitionDuration: 0.3,
+            backgroundColor: UIColor.black.withAlphaComponent(0.5)
+        )
+        
+        let bottomSheetVC = BottomSheetVC(
+            viewModel: bottomSheetViewModel,
+            childViewController: instructionsVC
+        )
+        instructionsVC.bottomSheetVC = bottomSheetVC
+        presentBottomSheet(bottomSheetVC, completion: nil)
+    }
     @IBAction func onBackButtonTap(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     
+}
+
+public extension UIViewController {
+    internal func presentBottomSheet(_ bottomSheet: BottomSheetVC, completion: (() -> Void)?) {
+        self.present(bottomSheet, animated: false, completion: completion)
+    }
 }

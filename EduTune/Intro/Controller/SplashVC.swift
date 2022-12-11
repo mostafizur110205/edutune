@@ -28,7 +28,7 @@ class SplashVC: UIViewController {
     func getBannerData() {
         APIService.shared.getOnboardData { onboardData in
             if AppUserDefault.getIsLoggedIn() {
-                var params = ["user_id": AppUserDefault.getUserId(), "language": AppUserDefault.getLanguage()]
+                var params = ["user_id": AppUserDefault.getUserId(), "language": AppUserDefault.getLanguage()] as [String : Any]
                 if let email = AppUserDefault.getEmail(), email.count>0 {
                     params["mobile_or_email"] = email
                 } else  if let phone = AppUserDefault.getPhone(), phone.count>0 {
