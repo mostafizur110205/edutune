@@ -2,32 +2,28 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>CFBundleURLTypes</key>
-    <array>
-        <dict>
-            <key>CFBundleTypeRole</key>
-            <string>Editor</string>
-            <key>CFBundleURLSchemes</key>
-            <array>
-                <string>com.googleusercontent.apps.606879515005-8ie3fedl108c6vrdg4mko9keqg96bppi</string>
-                <string>trendit</string>
-            </array>
-        </dict>
-    </array>
-    <key>ITSAppUsesNonExemptEncryption</key>
-    <false/>
-    <key>NSAppTransportSecurity</key>
-    <dict>
-        <key>NSAllowsArbitraryLoads</key>
-        <true/>
-    </dict>
-    <key>NSBluetoothPeripheralUsageDescription</key>
-    <string>We will use your Bluetooth to access your Bluetooth headphones.</string>
-    <key>NSCameraUsageDescription</key>
-    <string>For people to see you during meetings, we need access to your camera.</string>
-    <key>NSMicrophoneUsageDescription</key>
-    <string>For people to hear you during meetings, we need access to your microphone.</string>
-    <key>NSPhotoLibraryUsageDescription</key>
-    <string>For people to share, we need access to your photos</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.606879515005-8ie3fedl108c6vrdg4mko9keqg96bppi</string>
+				<string>trendit</string>
+			</array>
+		</dict>
+	</array>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+	</array>
 </dict>
 </plist>

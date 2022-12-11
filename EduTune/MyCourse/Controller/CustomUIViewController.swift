@@ -120,7 +120,7 @@ class CustomMeetingUIViewController: UIViewController {
     
     func setupButtons() {
         view.addSubview(buttonContainerScrollView)
-        buttonContainerScrollView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        buttonContainerScrollView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         buttonContainerScrollView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
         buttonContainerScrollView.bottomAnchor.constraint(equalTo:view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         buttonContainerScrollView.leadingAnchor.constraint(equalTo:view.leadingAnchor).isActive = true
@@ -178,7 +178,7 @@ extension CustomMeetingUIViewController: MobileRTCMeetingServiceDelegate {
         switch cmd {
         case .show:
             print("Joined before host.")
-            showAlert(with: "Joined before host.", and: "Wait for the host to start the meeting.")
+//            showAlert(with: "Joined before host.", and: "Wait for the host to start the meeting.")
         case .hide:
             print("Hide join before host message.")
         @unknown default:
@@ -189,9 +189,9 @@ extension CustomMeetingUIViewController: MobileRTCMeetingServiceDelegate {
     func onWaitingRoomStatusChange(_ needWaiting: Bool) {
         if needWaiting {
             print("User joined waiting room.")
-            showAlert(with: "User now in waiting room.", and: "User needs to be admitted by host or leave.", action: UIAlertAction(title: "Leave", style: .default, handler: { _ in
-                MobileRTC.shared().getMeetingService()?.leaveMeeting(with: .leave)
-            }))
+//            showAlert(with: "User now in waiting room.", and: "User needs to be admitted by host or leave.", action: UIAlertAction(title: "Leave", style: .default, handler: { _ in
+//                MobileRTC.shared().getMeetingService()?.leaveMeeting(with: .leave)
+//            }))
         } else {
             print("User is entering meeting.")
             delegate?.userWasAdmittedFromTheWaitingRoom()

@@ -1211,9 +1211,10 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EduTune/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "EduTune wants to access your camera to take profile picture or record video";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "EduTune wants to access your microphone to record video";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "EduTune wants to access your photo library to pick profile pictures or choose videos to post";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "We will use your Bluetooth to access your Bluetooth headphones.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "For people to see you during meetings, we need access to your camera.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "For people to hear you during meetings, we need access to your microphone.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "For people to share, we need access to your photos";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1307,9 +1308,10 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EduTune/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "EduTune wants to access your camera to take profile picture or record video";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "EduTune wants to access your microphone to record video";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "EduTune wants to access your photo library to pick profile pictures or choose videos to post";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "We will use your Bluetooth to access your Bluetooth headphones.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "For people to see you during meetings, we need access to your camera.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "For people to hear you during meetings, we need access to your microphone.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "For people to share, we need access to your photos";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
