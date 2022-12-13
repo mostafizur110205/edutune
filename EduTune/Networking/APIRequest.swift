@@ -71,7 +71,7 @@ class APIRequest: NSObject {
         
         let escapedString = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? url
         
-        AF.request(URL(string: escapedString)!, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: APIRequest.header, interceptor: nil).responseJSON(queue: self.networkQueue, completionHandler: {
+        AF.request(URL(string: escapedString)!, method: .post, parameters: parameters, encoding: URLEncoding.queryString, headers: APIRequest.header, interceptor: nil).responseJSON(queue: self.networkQueue, completionHandler: {
             response in
             
             let statusCode: Int = response.response?.statusCode ?? -1

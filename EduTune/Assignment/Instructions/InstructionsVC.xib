@@ -107,9 +107,9 @@
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="tLz-Bf-3fQ" secondAttribute="trailing" constant="20" id="3UK-jS-917"/>
                         <constraint firstAttribute="trailing" secondItem="72J-Qh-T7e" secondAttribute="trailing" constant="15" id="4A8-Xv-Mq7"/>
-                        <constraint firstAttribute="bottom" secondItem="tLz-Bf-3fQ" secondAttribute="bottom" constant="20" id="62x-nu-Af1"/>
                         <constraint firstItem="5bv-ON-7zk" firstAttribute="top" secondItem="72J-Qh-T7e" secondAttribute="bottom" constant="20" id="Apc-bY-zwq"/>
                         <constraint firstAttribute="trailing" secondItem="k1E-BE-f9F" secondAttribute="trailing" constant="20" id="ECG-4a-AvR"/>
+                        <constraint firstAttribute="bottom" secondItem="tLz-Bf-3fQ" secondAttribute="bottom" constant="20" id="IqO-IM-PHA"/>
                         <constraint firstItem="k1E-BE-f9F" firstAttribute="top" secondItem="5bv-ON-7zk" secondAttribute="bottom" constant="5" id="RV4-2A-6zA"/>
                         <constraint firstItem="5bv-ON-7zk" firstAttribute="leading" secondItem="7PA-Ad-f0y" secondAttribute="leading" constant="20" id="btd-5w-Qqq"/>
                         <constraint firstItem="tLz-Bf-3fQ" firstAttribute="leading" secondItem="7PA-Ad-f0y" secondAttribute="leading" constant="20" id="deS-1h-1x7"/>
@@ -124,15 +124,15 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <constraints>
                 <constraint firstItem="7PA-Ad-f0y" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="4gO-dw-w9C"/>
-                <constraint firstItem="7PA-Ad-f0y" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="cz3-yV-HZH"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1o4-x3-S09" secondAttribute="trailing" constant="200" id="hJd-Wh-w9a"/>
                 <constraint firstItem="7PA-Ad-f0y" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="orC-XQ-Dkj"/>
                 <constraint firstAttribute="bottom" secondItem="1o4-x3-S09" secondAttribute="bottom" constant="84" id="tSb-31-roT"/>
                 <constraint firstItem="7PA-Ad-f0y" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="w7M-dT-BST"/>
                 <constraint firstItem="1o4-x3-S09" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="wuk-Ux-fdi"/>
+                <constraint firstItem="7PA-Ad-f0y" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="xGt-aj-rq9"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="47.826086956521742" y="281.58482142857139"/>
+            <point key="canvasLocation" x="-3" y="241"/>
         </view>
     </objects>
     <resources>

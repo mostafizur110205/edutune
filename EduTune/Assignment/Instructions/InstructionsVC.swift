@@ -13,8 +13,11 @@ class InstructionsVC: UIViewController {
     @IBOutlet weak var mainLabel: UILabel!
     
     var bottomSheetVC: BottomSheetVC?
+    var superView: UIViewController?
+    var viewModel: AssignmentsViewModel
 
-    init() {
+    init(viewModel: AssignmentsViewModel) {
+        self.viewModel = viewModel
         super.init(
             nibName: String(describing: InstructionsVC.self),
             bundle: Bundle(for: InstructionsVC.self)
@@ -59,6 +62,24 @@ class InstructionsVC: UIViewController {
     }
     
     @IBAction func yesAction(_ sender: Any) {
+        
+        bottomSheetVC?.dismissViewController()
+        
+        let params = ["user_id": AppUserDefault.getUserId(),
+                      "assignment_id":26605,
+                      "language":"en",
+        ] as [String:Any]
+        
+        viewModel.getAssignmentQuestions(params: params, completion: {[weak self] in
+            
+            guard let _self = self else {return}
+            
+            guard (_self.viewModel.questionsModel) != nil,
+            let controller = _self.superView else {return}
+            
+            let coordinator = AssignmentsCoordinator(controller: controller, viewModel: _self.viewModel)
+            coordinator.openController()
+        })
     }
     
 }

@@ -45,7 +45,10 @@ class ExamTypePreviewVC: UIViewController {
   
     @IBAction func onStartAssignment(_ sender: Any) {
         
-        let instructionsVC = InstructionsVC()
+        let instructionsVC = InstructionsVC(viewModel:
+                AssignmentsViewModel(apiService:
+                    AssignmentApiService()))
+        
         let bottomSheetViewModel = BottomSheetViewModel(
             cornerRadius: 20,
             animationTransitionDuration: 0.3,
@@ -57,6 +60,7 @@ class ExamTypePreviewVC: UIViewController {
             childViewController: instructionsVC
         )
         instructionsVC.bottomSheetVC = bottomSheetVC
+        instructionsVC.superView = self
         presentBottomSheet(bottomSheetVC, completion: nil)
     }
     @IBAction func onBackButtonTap(_ sender: Any) {
