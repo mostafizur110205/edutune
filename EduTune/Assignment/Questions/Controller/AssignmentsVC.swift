@@ -13,6 +13,8 @@ class AssignmentsVC: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var progressBar: UIProgressView!
+    @IBOutlet weak var reportButton: UIButton!
+    @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var progressCountLabel: UILabel!
     
     var viewModel: AssignmentsViewModel?
@@ -21,16 +23,7 @@ class AssignmentsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       // progressBar.transform = CGAffineTransform(scaleX: 1, y: 3)
-        
-        QuestionCVC.register(for: collectionView)
-        
-        let cellSize = CGSize(width: 0, height: 0)
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        layout.itemSize = cellSize
-        collectionView.setCollectionViewLayout(layout, animated: true)
-        collectionView.reloadData()
+        setupViews()
     }
     
     @IBAction func onReportQuestion(_ sender: Any) {
@@ -52,6 +45,22 @@ class AssignmentsVC: UIViewController {
         let progress = (Float( 1.0) / Float(totalQuestion)) * Float(value + 1)
         progressBar.setProgress(progress, animated: true)
         progressCountLabel.text = "\(value + 1)" + "/" + "\(totalQuestion)"
+    }
+    
+    private func setupViews() {
+        
+        reportButton.setTitle("", for: .normal)
+        reportButton.setImage(UIImage(named: "ic_problem")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        reportButton.tintColor = UIColor.lightGray
+        
+        QuestionCVC.register(for: collectionView)
+        
+        let cellSize = CGSize(width: 0, height: 0)
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.itemSize = cellSize
+        collectionView.setCollectionViewLayout(layout, animated: true)
+        collectionView.reloadData()
     }
     
 }

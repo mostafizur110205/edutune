@@ -13,6 +13,9 @@
         <array key="Urbanist-Bold.ttf">
             <string>Urbanist-Bold</string>
         </array>
+        <array key="Urbanist-Medium.ttf">
+            <string>Urbanist-Medium</string>
+        </array>
         <array key="Urbanist-SemiBold.ttf">
             <string>Urbanist-SemiBold</string>
         </array>
@@ -49,27 +52,62 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EO1-Xg-EHG">
-                                        <rect key="frame" x="384" y="12" width="20" height="20"/>
+                                        <rect key="frame" x="374" y="12" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="RZ1-6X-Egt"/>
                                             <constraint firstAttribute="height" constant="20" id="Vvw-2t-IX1"/>
                                         </constraints>
-                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" name="Grey600"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="ic_cross"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
                                         <connections>
                                             <action selector="onReportQuestion:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="3u8-Nm-pek"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E1M-UO-dKI">
+                                        <rect key="frame" x="274" y="7" width="80" height="30"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="8Pl-FE-3Uf">
+                                                <rect key="frame" x="10" y="10" width="60" height="10"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_chat_light" translatesAutoresizingMaskIntoConstraints="NO" id="oaX-Fw-67m">
+                                                        <rect key="frame" x="0.0" y="0.0" width="21" height="10"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20:45" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSa-BG-nMA">
+                                                        <rect key="frame" x="23" y="0.0" width="37" height="10"/>
+                                                        <fontDescription key="fontDescription" name="Urbanist-Medium" family="Urbanist" pointSize="14"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="linkColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="HBz-aX-v3A"/>
+                                            <constraint firstAttribute="width" constant="80" id="XEw-0J-39e"/>
+                                            <constraint firstItem="8Pl-FE-3Uf" firstAttribute="top" secondItem="E1M-UO-dKI" secondAttribute="top" constant="10" id="fYP-8h-GBr"/>
+                                            <constraint firstAttribute="bottom" secondItem="8Pl-FE-3Uf" secondAttribute="bottom" constant="10" id="o3N-7t-i5A"/>
+                                            <constraint firstAttribute="trailing" secondItem="8Pl-FE-3Uf" secondAttribute="trailing" constant="10" id="vfC-8S-RCF"/>
+                                            <constraint firstItem="8Pl-FE-3Uf" firstAttribute="leading" secondItem="E1M-UO-dKI" secondAttribute="leading" constant="10" id="wJZ-Zf-sdF"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="EO1-Xg-EHG" secondAttribute="trailing" constant="10" id="94g-af-VPx"/>
+                                    <constraint firstAttribute="trailing" secondItem="EO1-Xg-EHG" secondAttribute="trailing" constant="20" id="94g-af-VPx"/>
+                                    <constraint firstItem="E1M-UO-dKI" firstAttribute="centerY" secondItem="uHd-k9-V7k" secondAttribute="centerY" id="JsD-SL-ET4"/>
                                     <constraint firstItem="EO1-Xg-EHG" firstAttribute="centerY" secondItem="uHd-k9-V7k" secondAttribute="centerY" id="LDa-Ju-22K"/>
                                     <constraint firstItem="vhP-J7-KEd" firstAttribute="centerY" secondItem="uHd-k9-V7k" secondAttribute="centerY" id="V6z-ak-Qrr"/>
                                     <constraint firstAttribute="height" constant="44" id="dWp-8R-qkZ"/>
                                     <constraint firstItem="wqe-sq-hwp" firstAttribute="leading" secondItem="uHd-k9-V7k" secondAttribute="leading" constant="10" id="luV-R4-epH"/>
                                     <constraint firstItem="vhP-J7-KEd" firstAttribute="leading" secondItem="wqe-sq-hwp" secondAttribute="trailing" constant="5" id="n7V-rc-8RG"/>
+                                    <constraint firstItem="EO1-Xg-EHG" firstAttribute="leading" secondItem="E1M-UO-dKI" secondAttribute="trailing" constant="20" id="oxZ-z2-HVb"/>
                                     <constraint firstItem="wqe-sq-hwp" firstAttribute="centerY" secondItem="uHd-k9-V7k" secondAttribute="centerY" id="tbr-3e-sY6"/>
                                     <constraint firstAttribute="trailing" secondItem="vhP-J7-KEd" secondAttribute="trailing" constant="16" id="xDA-c2-z2Q"/>
                                 </constraints>
@@ -169,16 +207,21 @@
                         <outlet property="collectionView" destination="GK8-k4-TQC" id="kil-xX-BzK"/>
                         <outlet property="progressBar" destination="hV9-An-J3k" id="Par-GO-c3i"/>
                         <outlet property="progressCountLabel" destination="SAD-Vt-NZo" id="eYV-YO-YAW"/>
+                        <outlet property="reportButton" destination="EO1-Xg-EHG" id="bA9-qX-HER"/>
+                        <outlet property="timerLabel" destination="KSa-BG-nMA" id="Xp5-cD-9MI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="26" y="-39"/>
+            <point key="canvasLocation" x="24.637681159420293" y="-39.508928571428569"/>
         </scene>
     </scenes>
     <resources>
         <image name="ic_back" width="28" height="28"/>
-        <image name="ic_cross" width="24" height="24"/>
+        <image name="ic_chat_light" width="20" height="20"/>
+        <namedColor name="Grey600">
+            <color red="0.45899999141693115" green="0.45899999141693115" blue="0.45899999141693115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Grey700">
             <color red="0.37999999523162842" green="0.37999999523162842" blue="0.37999999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -188,6 +231,9 @@
         <namedColor name="Primary500">
             <color red="0.21799999475479126" green="0.34599998593330383" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

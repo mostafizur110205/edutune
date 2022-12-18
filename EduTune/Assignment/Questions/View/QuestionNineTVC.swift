@@ -17,7 +17,7 @@ class QuestionNineTVC: UITableViewCell {
     }
     
     private func setUpViews(){
-        backgroundColor = UIColor.purple
+        backgroundColor = UIColor.white
     }
     
     private func setupLayouts() {

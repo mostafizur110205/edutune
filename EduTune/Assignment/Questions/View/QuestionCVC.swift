@@ -42,7 +42,6 @@ class QuestionCVC: UICollectionViewCell {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
-       // tableView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.1)
         return tableView
     }()
 
