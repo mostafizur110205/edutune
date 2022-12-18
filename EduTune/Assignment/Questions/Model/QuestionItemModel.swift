@@ -28,7 +28,7 @@ struct QuestionItemModel : Codable {
 	let questionId : String?
 	let createdAt : String?
 	let updatedAt : String?
-	let questionOptions : [QuestionOptionsModel]?
+    var questionOptions : [QuestionOptionsModel]?
 
 	enum CodingKeys: String, CodingKey {
 		case id = "id"
@@ -67,6 +67,9 @@ struct QuestionItemModel : Codable {
         createdAt = try values.decodeIfPresent(String.self, forKey: .createdAt)
         updatedAt = try values.decodeIfPresent(String.self, forKey: .updatedAt)
         questionOptions = try values.decodeIfPresent([QuestionOptionsModel].self, forKey: .questionOptions)
+        
+        guard questionOptions?.count == 0 else {return}
+        questionOptions = [QuestionOptionsModel(id: id, institutionId: institutionId, questionId: 0, optionOrder: 0, optionTitle: "", isCorrect: 0, explanation: "", createdAt: createdAt, updatedAt: updatedAt)]
 	}
 
 }

@@ -13,21 +13,22 @@ class AssignmentsVC: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     var viewModel: AssignmentsViewModel?
+    var questionCVCell: QuestionCVC?
+    var collectionViewIndexpath = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        QuestionOneCVC.register(for: collectionView)
-        QuestionTwoCVC.register(for: collectionView)
-        QuestionThreeCVC.register(for: collectionView)
-        QuestionFourCVC.register(for: collectionView)
-        QuestionSevenCVC.register(for: collectionView)
-        QuestionNineCVC.register(for: collectionView)
-        QuestionElevenCVC.register(for: collectionView)
-
+        QuestionCVC.register(for: collectionView)
+        
+        let cellSize = CGSize(width: 0, height: 0)
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.itemSize = cellSize
+        collectionView.setCollectionViewLayout(layout, animated: true)
+        collectionView.reloadData()
     }
     
-    //-IBOutlets
     @IBAction func onReportQuestion(_ sender: Any) {
     }
     @IBAction func onBack(_ sender: Any) {
@@ -43,36 +44,4 @@ class AssignmentsVC: UIViewController {
     
 }
 
-extension AssignmentsVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
-    //Datasource Methods
-      func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-      }
-      
-      func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-          return viewModel?.questionsModel?.questionItems?.count ?? 0
-      }
-      
-      func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-          guard let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "QuestionOneCVC", for: indexPath) as? QuestionOneCVC else {return UICollectionViewCell()}
-          
-          cell.marksLabel.text = "\(viewModel?.questionsModel?.questionItems?[indexPath.row].point ?? 0) Marks"
-          cell.textView.attributedText = viewModel?.questionsModel?.questionItems?[indexPath.row].htmlTitle?.htmlToAttributedString
-          
-          return cell
-      }
-      
-    
-      func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-       
-      }
-      
-      func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-          return CGSize(width: self.collectionView.frame.width, height: self.collectionView.frame.height)
-      }
-}
+
