@@ -49,8 +49,7 @@ class QuestionSevenTVC: UITableViewCell {
         
         setUpViews()
         setupLayouts()
-        self.isEditing = true
-        textField.becomeFirstResponder()
+       
         textField.delegate = self
     }
     

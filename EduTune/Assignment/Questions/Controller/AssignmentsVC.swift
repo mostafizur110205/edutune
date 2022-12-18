@@ -12,12 +12,16 @@ import UIKit
 class AssignmentsVC: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var progressBar: UIProgressView!
+    @IBOutlet weak var progressCountLabel: UILabel!
+    
     var viewModel: AssignmentsViewModel?
     var questionCVCell: QuestionCVC?
-    var collectionViewIndexpath = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       // progressBar.transform = CGAffineTransform(scaleX: 1, y: 3)
         
         QuestionCVC.register(for: collectionView)
         
@@ -40,6 +44,14 @@ class AssignmentsVC: UIViewController {
         let contentOffset = collectionView.contentOffset
         
         collectionView.scrollRectToVisible(CGRect(x: contentOffset.x + cellSize.width + 10, y: contentOffset.y, width: cellSize.width, height: cellSize.height), animated: true);
+    }
+    
+    func updateProgressBar(withValue value: Int) {
+        
+        guard let totalQuestion = viewModel?.questionsModel?.questionItems?.count else {return}
+        let progress = (Float( 1.0) / Float(totalQuestion)) * Float(value + 1)
+        progressBar.setProgress(progress, animated: true)
+        progressCountLabel.text = "\(value + 1)" + "/" + "\(totalQuestion)"
     }
     
 }

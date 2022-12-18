@@ -18,7 +18,8 @@ extension AssignmentsVC: UICollectionViewDataSource, UICollectionViewDelegate, U
         guard let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "QuestionCVC", for: indexPath) as? QuestionCVC else {return UICollectionViewCell()}
 
         cell.questionItem = viewModel?.questionsModel?.questionItems?[indexPath.row]
-  
+        updateProgressBar(withValue: indexPath.row)
+    
         return cell
     }
     

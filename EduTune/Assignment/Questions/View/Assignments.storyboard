@@ -13,6 +13,9 @@
         <array key="Urbanist-Bold.ttf">
             <string>Urbanist-Bold</string>
         </array>
+        <array key="Urbanist-SemiBold.ttf">
+            <string>Urbanist-SemiBold</string>
+        </array>
     </customFonts>
     <scenes>
         <!--AssignmentsVC-->
@@ -93,14 +96,43 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yoe-eM-pbE">
-                                <rect key="frame" x="0.0" y="88" width="414" height="70"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="30"/>
+                                <subviews>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hV9-An-J3k">
+                                        <rect key="frame" x="20" y="10" width="314" height="10"/>
+                                        <color key="tintColor" systemColor="systemOrangeColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="10" id="Gnw-cm-C4S"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </progressView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAD-Vt-NZo">
+                                        <rect key="frame" x="344" y="6.5" width="50" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="9k9-KL-6bB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Urbanist-SemiBold" family="Urbanist" pointSize="14"/>
+                                        <color key="textColor" name="Grey700"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="c9N-xV-KEy"/>
+                                    <constraint firstAttribute="trailing" secondItem="SAD-Vt-NZo" secondAttribute="trailing" constant="20" id="7Tg-4j-ZWz"/>
+                                    <constraint firstItem="hV9-An-J3k" firstAttribute="centerY" secondItem="yoe-eM-pbE" secondAttribute="centerY" id="Go3-Qr-6ty"/>
+                                    <constraint firstAttribute="height" constant="30" id="c9N-xV-KEy"/>
+                                    <constraint firstItem="SAD-Vt-NZo" firstAttribute="leading" secondItem="hV9-An-J3k" secondAttribute="trailing" constant="10" id="jIE-EB-Pk9"/>
+                                    <constraint firstItem="SAD-Vt-NZo" firstAttribute="centerY" secondItem="yoe-eM-pbE" secondAttribute="centerY" id="nHH-vj-kec"/>
+                                    <constraint firstItem="hV9-An-J3k" firstAttribute="leading" secondItem="yoe-eM-pbE" secondAttribute="leading" constant="20" id="v3J-RI-gkR"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GK8-k4-TQC">
-                                <rect key="frame" x="0.0" y="158" width="414" height="610"/>
+                                <rect key="frame" x="0.0" y="118" width="414" height="650"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xWO-rt-7SC">
                                     <size key="itemSize" width="403" height="461"/>
@@ -135,6 +167,8 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="GK8-k4-TQC" id="kil-xX-BzK"/>
+                        <outlet property="progressBar" destination="hV9-An-J3k" id="Par-GO-c3i"/>
+                        <outlet property="progressCountLabel" destination="SAD-Vt-NZo" id="eYV-YO-YAW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -145,6 +179,9 @@
     <resources>
         <image name="ic_back" width="28" height="28"/>
         <image name="ic_cross" width="24" height="24"/>
+        <namedColor name="Grey700">
+            <color red="0.37999999523162842" green="0.37999999523162842" blue="0.37999999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Grey900">
             <color red="0.1289999932050705" green="0.1289999932050705" blue="0.1289999932050705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -153,6 +190,9 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
