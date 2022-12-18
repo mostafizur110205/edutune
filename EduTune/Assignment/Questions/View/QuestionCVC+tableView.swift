@@ -14,13 +14,13 @@ extension QuestionCVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return 80
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let view = QuestionHeaderView()
-        view.titleLabel.attributedText = questionItem?.htmlTitle?.htmlToAttributedString
+        view.titleLabel.text = questionItem?.htmlTitle?.htmlToAttributedString?.string.trimmingCharacters(in: .whitespaces)
         return view
     }
 

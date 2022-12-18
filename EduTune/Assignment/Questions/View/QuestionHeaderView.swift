@@ -11,8 +11,9 @@ class QuestionHeaderView: UIView {
 
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.textColor = UIColor.darkGray
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.textColor = UIColor.black
+        label.backgroundColor = UIColor.white
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label

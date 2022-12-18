@@ -30,9 +30,9 @@ class QuestionCVC: UICollectionViewCell {
 
     let marksLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.textColor = UIColor.darkGray
+        label.font = UIFont.systemFont(ofSize: 18)
         label.numberOfLines = 0
+        label.textColor = UIColor.blue
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -42,6 +42,7 @@ class QuestionCVC: UICollectionViewCell {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
+       // tableView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.1)
         return tableView
     }()
 
@@ -79,8 +80,8 @@ class QuestionCVC: UICollectionViewCell {
         marksLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
         tableView.topAnchor.constraint(equalTo: marksLabel.bottomAnchor).isActive = true
-        tableView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
-        tableView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        tableView.leftAnchor.constraint(equalTo: leftAnchor, constant: 0).isActive = true
+        tableView.rightAnchor.constraint(equalTo: rightAnchor, constant: 0).isActive = true
         tableView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
 
