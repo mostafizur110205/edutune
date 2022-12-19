@@ -14,7 +14,6 @@ class QuestionOneTVC: UITableViewCell {
             guard let model = questionOptions else {return}
             titleLabel.text = model.optionTitle
             
-            print("isselected - \(model.isSelected)")
             guard model.isSelected else {
                 radioImageView.image = UIImage.init(systemName: "circle")
                 return
