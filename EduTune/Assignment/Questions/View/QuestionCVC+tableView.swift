@@ -14,7 +14,8 @@ extension QuestionCVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        guard questionItem?.questionType == .shortAnswer else {return 80}
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -23,7 +24,7 @@ extension QuestionCVC: UITableViewDelegate, UITableViewDataSource {
         view.titleLabel.text = questionItem?.htmlTitle?.htmlToAttributedString?.string.trimmingCharacters(in: .whitespaces)
         return view
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         switch questionItem?.questionType {
@@ -55,6 +56,7 @@ extension QuestionCVC: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionSevenTVC") as? QuestionSevenTVC
             else {return UITableViewCell()}
             cell.selectionStyle = .none
+            cell.contentView.isUserInteractionEnabled = false
             cell.questionItem = questionItem
             return cell
             
@@ -70,6 +72,8 @@ extension QuestionCVC: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionElevenTVC") as? QuestionElevenTVC
             else {return UITableViewCell()}
             cell.selectionStyle = .none
+            cell.contentView.isUserInteractionEnabled = false
+            cell.delegate = self
             return cell
             
         case .none:
@@ -78,6 +82,24 @@ extension QuestionCVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        switch questionItem?.questionType {
+        case .multipleChoice, .trueFalse:
+            
+            guard let id = questionItem?.questionOptions?[indexPath.row].id else {return}
+            
+            questionItem?.questionOptions?[indexPath.row].isSelected = true
+            let _ = (questionItem?.questionOptions?.filter {$0.id != id}.map {$0.isSelected = false})
+            
+        case .multipleAnswer:
+            
+            guard let isSelected = questionItem?.questionOptions?[indexPath.row].isSelected else {return}
+            questionItem?.questionOptions?[indexPath.row].isSelected = !isSelected
+            
+        case .none, .essay, .shortAnswer, .filInTheBlanks, .fileResponse:
+            print("none")
+        }
+        tableView.reloadData()
     }
 }
 

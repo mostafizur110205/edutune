@@ -54,6 +54,8 @@ class QuestionCVC: UICollectionViewCell {
         
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.rowHeight = 80
+        
         QuestionOneTVC.register(for: tableView)
         QuestionTwoTVC.register(for: tableView)
         QuestionFourTVC.register(for: tableView)

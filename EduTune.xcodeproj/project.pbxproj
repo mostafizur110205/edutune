@@ -179,6 +179,7 @@
 		E3221E9A29484000001FEE53 /* AssignmentApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3221E9929484000001FEE53 /* AssignmentApiService.swift */; };
 		E3221E9C294847DD001FEE53 /* AssignmentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3221E9B294847DD001FEE53 /* AssignmentsViewModel.swift */; };
 		E3221E9F294866D9001FEE53 /* AssignmentsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3221E9E294866D9001FEE53 /* AssignmentsCoordinator.swift */; };
+		E3DF867B29507E9C00AEA9E2 /* QuestionCVC+cellHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DF867A29507E9C00AEA9E2 /* QuestionCVC+cellHeight.swift */; };
 		E3FF805C294ED58800F3D9A3 /* QuestionNineTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FF805B294ED58800F3D9A3 /* QuestionNineTVC.swift */; };
 		E3FF805E294ED59B00F3D9A3 /* QuestionElevenTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FF805D294ED59B00F3D9A3 /* QuestionElevenTVC.swift */; };
 		E3FF8060294ED62C00F3D9A3 /* QuestionFourTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FF805F294ED62C00F3D9A3 /* QuestionFourTVC.swift */; };
@@ -375,6 +376,7 @@
 		E3221E9929484000001FEE53 /* AssignmentApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentApiService.swift; sourceTree = "<group>"; };
 		E3221E9B294847DD001FEE53 /* AssignmentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentsViewModel.swift; sourceTree = "<group>"; };
 		E3221E9E294866D9001FEE53 /* AssignmentsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentsCoordinator.swift; sourceTree = "<group>"; };
+		E3DF867A29507E9C00AEA9E2 /* QuestionCVC+cellHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuestionCVC+cellHeight.swift"; sourceTree = "<group>"; };
 		E3FF805B294ED58800F3D9A3 /* QuestionNineTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionNineTVC.swift; sourceTree = "<group>"; };
 		E3FF805D294ED59B00F3D9A3 /* QuestionElevenTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionElevenTVC.swift; sourceTree = "<group>"; };
 		E3FF805F294ED62C00F3D9A3 /* QuestionFourTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionFourTVC.swift; sourceTree = "<group>"; };
@@ -893,6 +895,7 @@
 			children = (
 				E3221E6D29463650001FEE53 /* QuestionCVC.swift */,
 				E30FA8FB294D4D510052D9A1 /* QuestionCVC+tableView.swift */,
+				E3DF867A29507E9C00AEA9E2 /* QuestionCVC+cellHeight.swift */,
 				E30FA8ED294CE9CC0052D9A1 /* QuestionOneTVC.swift */,
 				E30FA8F5294D1E360052D9A1 /* QuestionTwoTVC.swift */,
 				E3FF805F294ED62C00F3D9A3 /* QuestionFourTVC.swift */,
@@ -1155,6 +1158,7 @@
 				BB2302DE2926B48400A88C97 /* OtherApiService.swift in Sources */,
 				BE304D1128F84B7F0062C48A /* LoginTVCell.swift in Sources */,
 				BE14711328F57AC300726625 /* CreateNewPassVC.swift in Sources */,
+				E3DF867B29507E9C00AEA9E2 /* QuestionCVC+cellHeight.swift in Sources */,
 				BEDD168A2904E3D000C90051 /* ReviewTVCell.swift in Sources */,
 				BE4869FF28DEF5B8003040AD /* Extensions.swift in Sources */,
 				BED38653293F31B10034ACC8 /* VideoContent.swift in Sources */,

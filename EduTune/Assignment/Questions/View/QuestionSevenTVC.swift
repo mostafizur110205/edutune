@@ -40,7 +40,7 @@ class QuestionSevenTVC: UITableViewCell {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis  = .horizontal
         stackView.distribution  = .fillEqually
-        stackView.alignment = .leading
+        stackView.alignment = .center
         return stackView
     }()
     
