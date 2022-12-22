@@ -72,11 +72,6 @@
 @property (nullable, nonatomic, retain, readwrite) NSString * userName;
 
 /**
- * @brief The user's ID or email address.
- */
-@property (nonnull, nonatomic, retain, readwrite) NSString * userID;
-
-/**
  * @brief The user's Zoom Access Key (ZAK) token.
  * @warning The ZAK cannot be null.
  */

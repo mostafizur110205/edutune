@@ -29,7 +29,6 @@
  @brief The Meeting Service will issue the following values when the meeting state changes.
  */  
 @protocol MobileRTCMeetingServiceDelegate <NSObject>
-
 @optional
 /*!
  @brief Specified Meeting Errors.
@@ -346,7 +345,7 @@
  @brief An Audio Service will issue the following values when the meeting audio changes.
  */
 @protocol MobileRTCAudioServiceDelegate <MobileRTCMeetingServiceDelegate>
-
+@optional
 /*!
  @brief Callback event that the participant's audio status changes. 
  @param UserID The ID of user whose audio status changes.
@@ -393,7 +392,7 @@
  @brief A video service will issue the following values when the meeting video changes.
  */
 @protocol MobileRTCVideoServiceDelegate <MobileRTCMeetingServiceDelegate>
-
+@optional
 /*!
  @brief The function will be invoked once the active video status changes. 
  @param userID The ID of user whose video is active at present.
@@ -488,7 +487,7 @@
  @brief Callback event when the attendee's status changes. 
  */
 @protocol MobileRTCUserServiceDelegate <MobileRTCMeetingServiceDelegate>
-
+@optional
 /*!
  @brief Callback event that the current user's hand state changes.
  */
@@ -567,7 +566,7 @@
  @brief Callback event when the meeting sharing status changes.
  */
 @protocol MobileRTCShareServiceDelegate <MobileRTCMeetingServiceDelegate>
-
+@optional
 /*!
  @brief Callback event of starting a meeting by sharing.
  */
@@ -616,7 +615,6 @@
  @brief Callback event when the Interpretaion status change.
  */
 @protocol MobileRTCInterpretationServiceDelegate <MobileRTCMeetingServiceDelegate>
-
 @optional
 
 /*!
@@ -670,6 +668,7 @@
 @end
 
 @protocol MobileRTCSignInterpretationServiceDelegate <MobileRTCMeetingServiceDelegate>
+@optional
 /**
  @brief Sign interpretation staus change callback. This function is used to inform the user sign interpretation has been started or stopped, and all users in meeting can get the event.
  @param status Specify current sign interpretation status.
@@ -704,9 +703,15 @@
 - (void)onRequestSignInterpreterToTalk;
 
 /**
- @brief Callback event of the host disallow sign interpreter to talk.
+ @brief Callback event for the host to disallow the sign interpreter to talk.
  */
-- (void)onDisallowSignInterpreterToTalk;
+- (void)onDisallowSignInterpreterToTalk DEPRECATED_MSG_ATTRIBUTE("Use -onTalkPrivilegeChanged:(BOOL)hasPrivilege instead");
+
+/**
+ @brief Callback event for the user talk privilege changed. When the interpreter role changed, host changed, host allow or disallow interpreter talk, this will be triggered, and only the sign interpreter itself can get the event.
+ @param hasPrivilege Specify whether the user has talk privilege or not
+ */
+- (void)onTalkPrivilegeChanged:(BOOL)hasPrivilege;
 
 @end
 
@@ -717,7 +722,7 @@
  @brief Callback event when the Webinar changes.
  */
 @protocol MobileRTCWebinarServiceDelegate <MobileRTCMeetingServiceDelegate>
-
+@optional
 /*!
  @brief Callback event when Question and Answer(Q&A) conneAnswerction starts.
  */
@@ -896,7 +901,6 @@
 @brief The function will be invoked when attendde disallow to talk.
 */
 @protocol MobileRTCLiveTranscriptionServiceDelegate <MobileRTCMeetingServiceDelegate>
-
 @optional
 /*!
 @brief Sink the event of live transcription status.
@@ -960,7 +964,6 @@
  @discussion The MobileRTCCustomizedUIMeetingDelegate protocol is required in the custom meeting UI view.
  */ 
 @protocol MobileRTCCustomizedUIMeetingDelegate <NSObject>
-
 @required
 /*!
  @brief Notify user to create a custom in-meeting UI. 
@@ -982,7 +985,6 @@
  @discussion The MobileRTCVideoRawDataDelegate protocol is required in the custom meeting UI view.
  */
 @protocol MobileRTCVideoRawDataDelegate <NSObject>
-
 @optional
 
 /*!
@@ -1019,7 +1021,6 @@
  @discussion The MobileRTCAudioRawDataDelegate protocol is required in the custom meeting UI view.
  */
 @protocol MobileRTCAudioRawDataDelegate <NSObject>
-
 @optional
 
 /*!
@@ -1042,7 +1043,6 @@
 @discussion The MobileRTCAudioSourceDelegate protocol is required in the custom meeting UI view.
 */
 @protocol MobileRTCAudioSourceDelegate <NSObject>
-
 @optional
 
 /**
@@ -1072,7 +1072,6 @@
 @discussion The MobileRTCPreProcessorDelegate protocol is required in the custom meeting UI view.
 */
 @protocol MobileRTCPreProcessorDelegate <NSObject>
-
 @optional
 /*!
 @brief This callback is used to preprocess video's YUV420 data before rendering receive.
@@ -1089,7 +1088,6 @@
 @discussion The MobileRTCVideoSourceDelegate protocol is required in the custom meeting UI view.
 */
 @protocol MobileRTCVideoSourceDelegate <NSObject>
-
 @optional
 /*!
 @brief This callback is used to send data for initialization.
@@ -1130,7 +1128,6 @@
 @brief This class is used to send your own share rawdata.
 */
 @protocol MobileRTCShareSourceDelegate <NSObject>
-
 @optional
 /**
  * @brief Notify to start send share source.
@@ -1180,7 +1177,6 @@
 
 #pragma mark - MobileRTCBOServiceDelegate
 @protocol MobileRTCBOServiceDelegate <MobileRTCMeetingServiceDelegate>
-
 @optional
 /*!
 @brief This method will notify the creator role gived.
@@ -1274,7 +1270,6 @@
 
 #pragma mark - MobileRTCReactionServiceDelegate
 @protocol MobileRTCReactionServiceDelegate <MobileRTCMeetingServiceDelegate>
-
 @optional
 /**
  * @brief Notify receive the emoji reaction.
@@ -1295,6 +1290,7 @@
 
 #pragma mark - MobileRTCBOServiceDelegate
 @protocol MobileRTCBODataDelegate <MobileRTCMeetingServiceDelegate>
+@optional
 /*!
 @brief The bo meeting information updated.
 @param boId the identifier for the bo meeting.
@@ -1310,7 +1306,7 @@
 
 #pragma mark - MobileRTCBOServiceDelegate
 @protocol MobileRTCBOAdminDelegate <MobileRTCMeetingServiceDelegate>
-
+@optional
 /*!
 @brief admin received help request from userID
 @param strUserID the identifier of the bo meeting user.
@@ -1334,7 +1330,7 @@
 
 #pragma mark - MobileRTCBOServiceDelegate
 @protocol MobileRTCBOAttendeeDelegate <MobileRTCMeetingServiceDelegate>
-
+@optional
 /*!
 @brief received the result of sending help request
 @param eResult the response result for the help request.
@@ -1355,7 +1351,7 @@
 
 #pragma mark - MobileRTCBOServiceDelegate
 @protocol MobileRTCBOCreatorDelegate <MobileRTCMeetingServiceDelegate>
-
+@optional
 /*!
 @brief creator received BO identifier when create BO success
 @param BOID the identifier of the created bo.

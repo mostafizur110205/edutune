@@ -126,14 +126,20 @@ typedef NS_ENUM(NSUInteger, MobileRTCCustomWaitingRoomDataStatus) {
  @return the result of this operation.
  @warning Only meeting host/co-host can run the function.
  */
-- (BOOL)admitToMeeting:(NSUInteger)userId;
+- (MobileRTCSDKError)admitToMeeting:(NSUInteger)userId;
 
+/*!
+ @brief Permit all of the users currently in the waiting room to join the meeting.
+ @return If the function succeeds, the return value is MobileRTCSDKError_Success.
+ Otherwise failed, the return is error. For more details, see [MobileRTCSDKError] enum.
+ */
+- (MobileRTCSDKError)admitAllToMeeting;
 /*!
  @brief put the user to waiting room from meeting.
  @return the result of this operation.
  @warning Only meeting host/co-host can run the function.
  */
-- (BOOL)putInWaitingRoom:(NSUInteger)userId;
+- (MobileRTCSDKError)putInWaitingRoom:(NSUInteger)userId;
 
 /*!
  @brief Determine if the attendee is enabled to turn on audio when joining the meeting.

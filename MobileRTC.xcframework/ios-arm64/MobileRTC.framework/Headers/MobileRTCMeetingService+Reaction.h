@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
  * @param skinTone The skintone of the emoji reaction
  * @return If the function succeeds, it will return MobileRTCMeetError_Success, otherwise not.
  */
-- (MobileRTCMeetError)sendEmojiReaction:(MobileRTCEmojiReactionType)type reactionSkinTone:(MobileRTCEmojiReactionSkinTone)skinTone; DEPRECATED_MSG_ATTRIBUTE("Use -sendEmojiReaction: instead");
+- (MobileRTCMeetError)sendEmojiReaction:(MobileRTCEmojiReactionType)type reactionSkinTone:(MobileRTCEmojiReactionSkinTone)skinTone  DEPRECATED_MSG_ATTRIBUTE("Use -sendEmojiReaction: instead");
 
 /**
  * @brief Send emoji reaction.

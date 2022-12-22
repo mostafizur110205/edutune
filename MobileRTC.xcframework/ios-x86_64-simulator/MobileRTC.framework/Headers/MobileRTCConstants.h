@@ -1088,3 +1088,14 @@ typedef NS_ENUM(NSInteger,MobileRTCSignInterpretationStatus)
     MobileRTCSignInterpretationStatus_Started, //<sign interpretation stared.
     MobileRTCSignInterpretationStatus_Stopped,  //<sign interpretation stopped.
 };
+
+/*!
+ @brief Enumerations of the type for alive connect service status.
+ */
+typedef NS_ENUM(NSInteger, MobileRTCNotificationServiceStatus) {
+    MobileRTCNotificationServiceStatus_None = 0,
+    MobileRTCNotificationServiceStatus_Starting,
+    MobileRTCNotificationServiceStatus_Started,
+    MobileRTCNotificationServiceStatus_StartFailed,
+    MobileRTCNotificationServiceStatus_Closed
+};

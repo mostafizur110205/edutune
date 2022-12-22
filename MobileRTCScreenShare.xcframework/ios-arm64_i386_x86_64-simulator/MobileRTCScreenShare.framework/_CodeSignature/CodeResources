@@ -4,37 +4,26 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Assets.car</key>
+		<key>Headers/MobileRTCScreenShareService.h</key>
 		<data>
-		4Htlne9l8ErJTpR9zypoYX5vhiY=
+		bHpHeGwhQ+jTXyAnJrYZl+d3i8Y=
 		</data>
-		<key>ReadMe.txt</key>
+		<key>Info.plist</key>
 		<data>
-		kPof4n7cSvc66WhqS7hVaGcd+Wo=
+		/fwkOeguYI8PB2blWKlfPcqPcS4=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Assets.car</key>
+		<key>Headers/MobileRTCScreenShareService.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			4Htlne9l8ErJTpR9zypoYX5vhiY=
+			bHpHeGwhQ+jTXyAnJrYZl+d3i8Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			vDVekbxqCA2K7dwLSKRBpV+MfO834i3+Rq6VRKO1dWI=
-			</data>
-		</dict>
-		<key>ReadMe.txt</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			kPof4n7cSvc66WhqS7hVaGcd+Wo=
-			</data>
-			<key>hash2</key>
-			<data>
-			hXyIRLyVr27Flas1028XSR9/8Nzz3o+TvQHiokvZ0u4=
+			BooL2gL4rZgHPW3aMhMH+eETKnYhoWjiW2OBcP1ov10=
 			</data>
 		</dict>
 	</dict>
