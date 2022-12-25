@@ -16,5 +16,8 @@ target 'EduTune' do
   pod "LetterAvatarKit"
   pod 'SJSegmentedScrollView', '1.3.8'
   pod 'UICollectionViewLeftAlignedLayout'
+  pod 'ExpyTableView'
+  pod 'PhoneNumberKit', '~> 3.1'
+  pod 'CropViewController'
 
 end

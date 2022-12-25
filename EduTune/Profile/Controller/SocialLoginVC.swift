@@ -25,13 +25,13 @@ class SocialLoginVC: UIViewController {
         
         let signInConfig = GIDConfiguration.init(clientID: GOOGLECLIENTID)
         
-        GIDSignIn.sharedInstance.signIn(with: signInConfig, presenting: self) { user, error in
-            guard error == nil else {
-                self.showErrorMessage(error)
-                return
-            }
-            self.signUp(user?.profile?.email ?? "", socialId: user?.userID ?? "", name: user?.profile?.name)
-        }
+//        GIDSignIn.sharedInstance.signIn(with: signInConfig, presenting: self) { user, error in
+//            guard error == nil else {
+//                self.showErrorMessage(error)
+//                return
+//            }
+//            self.signUp(user?.profile?.email ?? "", socialId: user?.userID ?? "", name: user?.profile?.name)
+//        }
         
     }
     

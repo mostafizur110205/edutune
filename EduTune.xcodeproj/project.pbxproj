@@ -146,6 +146,9 @@
 		BED916A4295821C9006C1FD3 /* NotificationDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED916A3295821C9006C1FD3 /* NotificationDetailsVC.swift */; };
 		BED916A62958347C006C1FD3 /* CertificatesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED916A52958347C006C1FD3 /* CertificatesVC.swift */; };
 		BED916A829585BCC006C1FD3 /* Help.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED916A729585BCC006C1FD3 /* Help.swift */; };
+		BED916AA295868F5006C1FD3 /* HelpFaqVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED916A9295868F5006C1FD3 /* HelpFaqVC.swift */; };
+		BED916AC29586901006C1FD3 /* HelpLinksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED916AB29586901006C1FD3 /* HelpLinksVC.swift */; };
+		BED916AE29586B23006C1FD3 /* FAQCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED916AD29586B23006C1FD3 /* FAQCells.swift */; };
 		BEDD168A2904E3D000C90051 /* ReviewTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDD16892904E3D000C90051 /* ReviewTVCell.swift */; };
 		BEE33B7F29064449007C35B4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE33B7E29064449007C35B4 /* User.swift */; };
 		BEE78F7228F6D30600A4B3B1 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE78F7128F6D30600A4B3B1 /* HomeVC.swift */; };
@@ -346,6 +349,9 @@
 		BED916A3295821C9006C1FD3 /* NotificationDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailsVC.swift; sourceTree = "<group>"; };
 		BED916A52958347C006C1FD3 /* CertificatesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificatesVC.swift; sourceTree = "<group>"; };
 		BED916A729585BCC006C1FD3 /* Help.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Help.swift; sourceTree = "<group>"; };
+		BED916A9295868F5006C1FD3 /* HelpFaqVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpFaqVC.swift; sourceTree = "<group>"; };
+		BED916AB29586901006C1FD3 /* HelpLinksVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpLinksVC.swift; sourceTree = "<group>"; };
+		BED916AD29586B23006C1FD3 /* FAQCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQCells.swift; sourceTree = "<group>"; };
 		BEDD16892904E3D000C90051 /* ReviewTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTVCell.swift; sourceTree = "<group>"; };
 		BEE33B7E29064449007C35B4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BEE78F7128F6D30600A4B3B1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -441,8 +447,10 @@
 				BEB83BA2290E66CF00860770 /* SubmitProblemVC.swift */,
 				BEB83BA4290E66E600860770 /* AddProblemVC.swift */,
 				BEB83BAA290E67E600860770 /* PaymentVC.swift */,
-				BEB83BB0290E685D00860770 /* HelpVC.swift */,
 				BEB83BB2290E687400860770 /* WebviewVC.swift */,
+				BEB83BB0290E685D00860770 /* HelpVC.swift */,
+				BED916A9295868F5006C1FD3 /* HelpFaqVC.swift */,
+				BED916AB29586901006C1FD3 /* HelpLinksVC.swift */,
 				BEB83BB4290E687E00860770 /* LogoutVC.swift */,
 				BEB83BA8290E67BE00860770 /* MyPointsVC.swift */,
 				BEB83BAE290E682700860770 /* LanguageVC.swift */,
@@ -454,6 +462,7 @@
 		BE0AF0932905885500FCEFAA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BED916AD29586B23006C1FD3 /* FAQCells.swift */,
 				BEB83B98290E60F200860770 /* MoreSectionTVCell.swift */,
 				BEB83B9A290E610200860770 /* MoreTVCell.swift */,
 			);
@@ -1108,6 +1117,7 @@
 				BECAFF7C29038CC400E7C8B9 /* ClassLessonsVC.swift in Sources */,
 				BE486A0128DEF624003040AD /* RPicker.swift in Sources */,
 				BEB83BA5290E66E600860770 /* AddProblemVC.swift in Sources */,
+				BED916AE29586B23006C1FD3 /* FAQCells.swift in Sources */,
 				BEE78F7228F6D30600A4B3B1 /* HomeVC.swift in Sources */,
 				BEA432FC2904EB0100B3291E /* AllReviewsVC.swift in Sources */,
 				BE14710528F579F100726625 /* LetsInVC.swift in Sources */,
@@ -1122,6 +1132,7 @@
 				BE14710928F57A1800726625 /* LoginVC.swift in Sources */,
 				BB89C6D129214B0300BA5B7A /* OngoingClass.swift in Sources */,
 				BE304D1528F864530062C48A /* CenteredCVLayout.swift in Sources */,
+				BED916AA295868F5006C1FD3 /* HelpFaqVC.swift in Sources */,
 				BE44ECB129254C4800AD0DCA /* NotificationTVCell.swift in Sources */,
 				E31E18FE2945B692009E44DE /* InstructionsVC.swift in Sources */,
 				E30FA8FC294D4D510052D9A1 /* QuestionCVC+tableView.swift in Sources */,
@@ -1190,6 +1201,7 @@
 				E3221E94294712C1001FEE53 /* QuestionOptionsModel.swift in Sources */,
 				BED6540F28F9C4DD00737B78 /* FilterVC.swift in Sources */,
 				BE14711128F57AAD00726625 /* ForgotPassVerifyVC.swift in Sources */,
+				BED916AC29586901006C1FD3 /* HelpLinksVC.swift in Sources */,
 				BEF803FF28F81E0D00CB3AE5 /* HomeData.swift in Sources */,
 				BED6540D28F9B1E200737B78 /* MentorTVCell.swift in Sources */,
 				BEB83B99290E60F200860770 /* MoreSectionTVCell.swift in Sources */,
