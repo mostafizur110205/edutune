@@ -25,4 +25,22 @@ extension APIService {
             }
         }
     }
+    
+    func getHelpData(completion: @escaping (Help?) -> Void) {
+        APIRequest.shared.getRequest(url: APIEndpoints.HELP_DATA, parameters:  nil) { (JSON, error) in
+            DispatchQueue.main.async {
+                if error == nil {
+                    if let json = JSON {
+                        if json["error"].boolValue == false {
+                            completion(Help(json["data"]))
+                        } else {
+                            completion(nil)
+                            MakeToast.shared.makeNormalToast(json["message"].stringValue)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
 }

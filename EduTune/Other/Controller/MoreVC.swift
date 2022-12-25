@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SafariServices
 
 class MoreVC: UIViewController {
     
@@ -37,6 +36,14 @@ class MoreVC: UIViewController {
         super.viewWillAppear(animated)
         
         self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    func goToWebviewVC(_ title: String, urlString: String) {
+        if let viewC: WebviewVC = UIStoryboard(name: "Other", bundle: nil).instantiateViewController(withIdentifier: "WebviewVC") as? WebviewVC {
+            viewC.titleText = title
+            viewC.url = urlString
+            self.navigationController?.pushViewController(viewC, animated: true)
+        }
     }
     
 }
@@ -125,19 +132,13 @@ extension MoreVC: UITableViewDelegate, UITableViewDataSource {
         } else if indexPath.section == 2 {
             switch indexPath.row {
             case 0:
-                let safariVC = SFSafariViewController(url: URL(string: "https://facebook.com/edutuneapp")!)
-                safariVC.delegate = self
-                self.present(safariVC, animated: true, completion: nil)
+                goToWebviewVC("Facebook", urlString: "https://facebook.com/edutuneapp")
                 break
             case 1:
-                let safariVC = SFSafariViewController(url: URL(string: "https://www.linkedin.com/company/edutune")!)
-                safariVC.delegate = self
-                self.present(safariVC, animated: true, completion: nil)
+                goToWebviewVC("LinkedIn", urlString: "https://www.linkedin.com/company/edutune")
                 break
             case 2:
-                let safariVC = SFSafariViewController(url: URL(string: "https://www.youtube.com/channel/UCYLLXnYivNnNIqMwSls1e4Q")!)
-                safariVC.delegate = self
-                self.present(safariVC, animated: true, completion: nil)
+                goToWebviewVC("Youtube", urlString: "https://www.youtube.com/channel/UCYLLXnYivNnNIqMwSls1e4Q")
                 break
             case 3:
                 guard let url = URL(string : "itms-apps://itunes.apple.com/app/id1473824619?action=write-review") else {return}
@@ -149,10 +150,4 @@ extension MoreVC: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-}
-
-extension MoreVC: SFSafariViewControllerDelegate {
-    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
-        controller.dismiss(animated: true, completion: nil)
-    }
 }

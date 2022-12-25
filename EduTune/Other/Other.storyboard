@@ -1043,6 +1043,83 @@ Code</string>
             </objects>
             <point key="canvasLocation" x="4585" y="306"/>
         </scene>
+        <!--WebviewVC-->
+        <scene sceneID="Lai-5b-tme">
+            <objects>
+                <viewController storyboardIdentifier="WebviewVC" id="UX1-H5-KKM" customClass="WebviewVC" customModule="EduTune" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9aS-iu-bOa">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4xK-l3-cyh">
+                                <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VkI-oV-qVP">
+                                        <rect key="frame" x="10" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="VZW-Cc-jcd"/>
+                                            <constraint firstAttribute="height" constant="44" id="s3Z-9d-J9F"/>
+                                        </constraints>
+                                        <color key="tintColor" name="Grey900"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="ic_back"/>
+                                        <connections>
+                                            <action selector="onBackButtonTap:" destination="UX1-H5-KKM" eventType="touchUpInside" id="t7U-nv-cTu"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zOQ-oI-MBW">
+                                        <rect key="frame" x="59" y="11.666666666666664" width="48.666666666666657" height="21"/>
+                                        <fontDescription key="fontDescription" name="Urbanist-Bold" family="Urbanist" pointSize="18"/>
+                                        <color key="textColor" name="Grey900"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="VkI-oV-qVP" firstAttribute="leading" secondItem="4xK-l3-cyh" secondAttribute="leading" constant="10" id="4cE-zf-gtT"/>
+                                    <constraint firstItem="VkI-oV-qVP" firstAttribute="centerY" secondItem="4xK-l3-cyh" secondAttribute="centerY" id="6oU-4H-Dvf"/>
+                                    <constraint firstAttribute="height" constant="44" id="KMz-GM-Et5"/>
+                                    <constraint firstItem="zOQ-oI-MBW" firstAttribute="leading" secondItem="VkI-oV-qVP" secondAttribute="trailing" constant="5" id="XZD-GT-2rz"/>
+                                    <constraint firstItem="zOQ-oI-MBW" firstAttribute="centerY" secondItem="VkI-oV-qVP" secondAttribute="centerY" id="rgk-2v-p7a"/>
+                                </constraints>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7k-3B-Nms">
+                                <rect key="frame" x="11" y="91" width="368" height="708"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name="Urbanist-Regular" family="Urbanist" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4VH-OK-Ln6">
+                                <rect key="frame" x="10" y="91" width="370" height="719"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="akO-dW-DKw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4VH-OK-Ln6" firstAttribute="leading" secondItem="akO-dW-DKw" secondAttribute="leading" constant="10" id="7FH-dH-4kl"/>
+                            <constraint firstItem="4xK-l3-cyh" firstAttribute="top" secondItem="akO-dW-DKw" secondAttribute="top" id="7qR-h0-IKn"/>
+                            <constraint firstItem="4VH-OK-Ln6" firstAttribute="top" secondItem="4xK-l3-cyh" secondAttribute="bottom" id="Dfl-Uh-Qy4"/>
+                            <constraint firstItem="akO-dW-DKw" firstAttribute="bottom" secondItem="4VH-OK-Ln6" secondAttribute="bottom" id="NtY-jo-Gte"/>
+                            <constraint firstItem="y7k-3B-Nms" firstAttribute="top" secondItem="4xK-l3-cyh" secondAttribute="bottom" id="Qt4-3H-Y3u"/>
+                            <constraint firstItem="akO-dW-DKw" firstAttribute="trailing" secondItem="y7k-3B-Nms" secondAttribute="trailing" constant="11" id="SwH-Li-zwx"/>
+                            <constraint firstItem="y7k-3B-Nms" firstAttribute="leading" secondItem="akO-dW-DKw" secondAttribute="leading" constant="11" id="UgI-Vh-iqL"/>
+                            <constraint firstItem="4xK-l3-cyh" firstAttribute="leading" secondItem="akO-dW-DKw" secondAttribute="leading" id="Uu2-Gt-2Dn"/>
+                            <constraint firstItem="akO-dW-DKw" firstAttribute="bottom" secondItem="y7k-3B-Nms" secondAttribute="bottom" constant="11" id="eWL-KX-dT8"/>
+                            <constraint firstItem="akO-dW-DKw" firstAttribute="trailing" secondItem="4xK-l3-cyh" secondAttribute="trailing" id="pKD-GH-LYG"/>
+                            <constraint firstAttribute="trailing" secondItem="4VH-OK-Ln6" secondAttribute="trailing" constant="10" id="q8P-2k-hHg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentView" destination="4VH-OK-Ln6" id="cwQ-8e-dfC"/>
+                        <outlet property="titleLabel" destination="zOQ-oI-MBW" id="Jso-nl-FIf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XLM-qq-9Dv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3255.3846153846152" y="126.54028436018957"/>
+        </scene>
     </scenes>
     <resources>
         <image name="gift" catalog="system" width="128" height="125"/>
@@ -1078,6 +1155,9 @@ Code</string>
         <namedColor name="Primary500">
             <color red="0.21799999475479126" green="0.34599998593330383" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

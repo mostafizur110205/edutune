@@ -7,7 +7,6 @@
 
 import UIKit
 import FittedSheets
-import SafariServices
 
 class HomeVC: UIViewController {
     
@@ -19,7 +18,7 @@ class HomeVC: UIViewController {
     @IBOutlet weak var categoryCV: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var notificationButton: UIButton!
-
+    
     var homeData: HomeData?
     var categories = [String]()
     var categorySelected = "All"
@@ -46,7 +45,7 @@ class HomeVC: UIViewController {
         userImageView.sd_setImage(with: URL(string: AppUserDefault.getPicture() ?? "" ), placeholderImage: UIImage(named: "ic_user_blue"))
         statusLabel.text = getStatusText()
         welcomeLabel.text = AppUserDefault.getName() != nil ? "Welcome \(AppUserDefault.getName()!.components(separatedBy: " ")[0])" : "Welcome to EduTune"
-
+        
         getBookmarks()
     }
     
@@ -97,21 +96,21 @@ class HomeVC: UIViewController {
         userImageView.sd_setImage(with: URL(string: AppUserDefault.getPicture() ?? "" ), placeholderImage: UIImage(named: "ic_user_blue"))
         statusLabel.text = getStatusText()
         welcomeLabel.text = AppUserDefault.getName() != nil ? "Welcome \(AppUserDefault.getName()!.components(separatedBy: " ")[0])" : "Welcome to EduTune"
-       
+        
         getHomeData()
-
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         self.tabBarController?.tabBar.isHidden = false
-       
+        
         if isLoggedIn != AppUserDefault.getIsLoggedIn() {
             isLoggedIn = AppUserDefault.getIsLoggedIn()
             
             updateUI()
-
+            
         }
     }
     
@@ -227,9 +226,11 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollec
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if collectionView == bannerCV {
-            let safariVC = SFSafariViewController(url: URL(string: homeData?.popup_advertisements_v2[indexPath.item].url ?? "")!)
-            self.present(safariVC, animated: true, completion: nil)
-            safariVC.delegate = self
+            if let viewC: WebviewVC = UIStoryboard(name: "Other", bundle: nil).instantiateViewController(withIdentifier: "WebviewVC") as? WebviewVC {
+                viewC.titleText = "Edutune"
+                viewC.url = homeData?.popup_advertisements_v2[indexPath.item].url ?? ""
+                self.navigationController?.pushViewController(viewC, animated: true)
+            }
         } else if collectionView == mentorsCV {
             AppDelegate.shared().openMentorProfileVC(navigationController: self.navigationController, mentor: homeData!.top_educators[indexPath.item])
         } else if collectionView == categoryCV {
@@ -271,7 +272,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
             cell.classData = classData
             cell.delegate = self
             cell.bookmarkButton.setImage(UIImage(named: AppDelegate.shared().bookmarkIds.contains(classData.class_book_mark_id ?? -1) ? "ic_bookmarked" : "ic_bookmark"), for: .normal)
-
+            
             return cell
         } else if indexPath.section == 1 {
             guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "LoginTVCell") as? LoginTVCell else {return UITableViewCell()}
@@ -299,13 +300,6 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     }
     
 }
-
-extension HomeVC: SFSafariViewControllerDelegate {
-    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
-        controller.dismiss(animated: true, completion: nil)
-    }
-}
-
 
 extension HomeVC: ClassTVCellDelegate {
     func didBookmarkButtonTap(_ cell: ClassTVCell) {
@@ -344,7 +338,7 @@ extension HomeVC: ClassTVCellDelegate {
                     self.present(sheetController, animated: true, completion: nil)
                 }
             }
-
+            
         }
     }
 }

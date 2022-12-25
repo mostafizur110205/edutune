@@ -117,7 +117,7 @@
 		BEB83BAD290E680D00860770 /* SetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB83BAC290E680D00860770 /* SetPasswordVC.swift */; };
 		BEB83BAF290E682700860770 /* LanguageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB83BAE290E682700860770 /* LanguageVC.swift */; };
 		BEB83BB1290E685D00860770 /* HelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB83BB0290E685D00860770 /* HelpVC.swift */; };
-		BEB83BB3290E687400860770 /* TextViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB83BB2290E687400860770 /* TextViewVC.swift */; };
+		BEB83BB3290E687400860770 /* WebviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB83BB2290E687400860770 /* WebviewVC.swift */; };
 		BEB83BB5290E687E00860770 /* LogoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB83BB4290E687E00860770 /* LogoutVC.swift */; };
 		BECAFF6C290385AE00E7C8B9 /* MentorProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECAFF6B290385AE00E7C8B9 /* MentorProfileVC.swift */; };
 		BECAFF6E290385C000E7C8B9 /* ClassDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECAFF6D290385C000E7C8B9 /* ClassDetailsVC.swift */; };
@@ -145,6 +145,7 @@
 		BED6540F28F9C4DD00737B78 /* FilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED6540E28F9C4DD00737B78 /* FilterVC.swift */; };
 		BED916A4295821C9006C1FD3 /* NotificationDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED916A3295821C9006C1FD3 /* NotificationDetailsVC.swift */; };
 		BED916A62958347C006C1FD3 /* CertificatesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED916A52958347C006C1FD3 /* CertificatesVC.swift */; };
+		BED916A829585BCC006C1FD3 /* Help.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED916A729585BCC006C1FD3 /* Help.swift */; };
 		BEDD168A2904E3D000C90051 /* ReviewTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDD16892904E3D000C90051 /* ReviewTVCell.swift */; };
 		BEE33B7F29064449007C35B4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE33B7E29064449007C35B4 /* User.swift */; };
 		BEE78F7228F6D30600A4B3B1 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE78F7128F6D30600A4B3B1 /* HomeVC.swift */; };
@@ -316,7 +317,7 @@
 		BEB83BAC290E680D00860770 /* SetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPasswordVC.swift; sourceTree = "<group>"; };
 		BEB83BAE290E682700860770 /* LanguageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageVC.swift; sourceTree = "<group>"; };
 		BEB83BB0290E685D00860770 /* HelpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpVC.swift; sourceTree = "<group>"; };
-		BEB83BB2290E687400860770 /* TextViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewVC.swift; sourceTree = "<group>"; };
+		BEB83BB2290E687400860770 /* WebviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebviewVC.swift; sourceTree = "<group>"; };
 		BEB83BB4290E687E00860770 /* LogoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutVC.swift; sourceTree = "<group>"; };
 		BECAFF6B290385AE00E7C8B9 /* MentorProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorProfileVC.swift; sourceTree = "<group>"; };
 		BECAFF6D290385C000E7C8B9 /* ClassDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailsVC.swift; sourceTree = "<group>"; };
@@ -344,6 +345,7 @@
 		BED6540E28F9C4DD00737B78 /* FilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterVC.swift; sourceTree = "<group>"; };
 		BED916A3295821C9006C1FD3 /* NotificationDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailsVC.swift; sourceTree = "<group>"; };
 		BED916A52958347C006C1FD3 /* CertificatesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificatesVC.swift; sourceTree = "<group>"; };
+		BED916A729585BCC006C1FD3 /* Help.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Help.swift; sourceTree = "<group>"; };
 		BEDD16892904E3D000C90051 /* ReviewTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTVCell.swift; sourceTree = "<group>"; };
 		BEE33B7E29064449007C35B4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BEE78F7128F6D30600A4B3B1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -440,7 +442,7 @@
 				BEB83BA4290E66E600860770 /* AddProblemVC.swift */,
 				BEB83BAA290E67E600860770 /* PaymentVC.swift */,
 				BEB83BB0290E685D00860770 /* HelpVC.swift */,
-				BEB83BB2290E687400860770 /* TextViewVC.swift */,
+				BEB83BB2290E687400860770 /* WebviewVC.swift */,
 				BEB83BB4290E687E00860770 /* LogoutVC.swift */,
 				BEB83BA8290E67BE00860770 /* MyPointsVC.swift */,
 				BEB83BAE290E682700860770 /* LanguageVC.swift */,
@@ -462,6 +464,7 @@
 			isa = PBXGroup;
 			children = (
 				BBC290822927EFBC00FAC25E /* Referral.swift */,
+				BED916A729585BCC006C1FD3 /* Help.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1133,6 +1136,7 @@
 				BE14710128F5733A00726625 /* IntroCVCell.swift in Sources */,
 				BEFE792029266F2900062986 /* ProfileTVCell.swift in Sources */,
 				BEF803EA28F8029100CB3AE5 /* SplashVC.swift in Sources */,
+				BED916A829585BCC006C1FD3 /* Help.swift in Sources */,
 				BE1D520C28D887F300EC151A /* AppDelegate.swift in Sources */,
 				BE304D0728F8474E0062C48A /* ClassTVCell.swift in Sources */,
 				E3221E95294712C1001FEE53 /* QuestionItemModel.swift in Sources */,
@@ -1223,7 +1227,7 @@
 				BEA4330D2905451000B3291E /* BlogCVCell.swift in Sources */,
 				E3221E9A29484000001FEE53 /* AssignmentApiService.swift in Sources */,
 				E3221E9F294866D9001FEE53 /* AssignmentsCoordinator.swift in Sources */,
-				BEB83BB3290E687400860770 /* TextViewVC.swift in Sources */,
+				BEB83BB3290E687400860770 /* WebviewVC.swift in Sources */,
 				BEB83BA1290E66B500860770 /* ReferralVC.swift in Sources */,
 				BEB83BA3290E66CF00860770 /* SubmitProblemVC.swift in Sources */,
 				E3FF8060294ED62C00F3D9A3 /* QuestionFourTVC.swift in Sources */,

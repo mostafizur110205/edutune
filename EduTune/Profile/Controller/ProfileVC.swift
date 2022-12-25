@@ -42,26 +42,39 @@ class ProfileVC: UIViewController {
     }
     
     func editProfile() {
-        if let viewC: UpdateProfileVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "Profile") as? UpdateProfileVC {
+        if let viewC: UpdateProfileVC = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "UpdateProfileVC") as? UpdateProfileVC {
             self.navigationController?.pushViewController(viewC, animated: true)
         }
     }
     
     func payment() {
-        if let viewC: PaymentVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "PaymentVC") as? PaymentVC {
+        if let viewC: PaymentVC = UIStoryboard(name: "Other", bundle: nil).instantiateViewController(withIdentifier: "PaymentVC") as? PaymentVC {
             self.navigationController?.pushViewController(viewC, animated: true)
         }
     }
     
     func showContent(_ index: Int) {
-        if let viewC: TextViewVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "TextViewVC") as? TextViewVC {
-            viewC.index = index
+        if let viewC: WebviewVC = UIStoryboard(name: "Other", bundle: nil).instantiateViewController(withIdentifier: "WebviewVC") as? WebviewVC {
+            switch index {
+            case 2:
+                viewC.titleText = "Terms & Conditions"
+                break
+            case 3:
+                viewC.titleText = "Refund Policy"
+                break
+            case 4:
+                viewC.titleText = "Privacy Policy"
+                break
+            default:
+                break
+            }
+            viewC.url = ""
             self.navigationController?.pushViewController(viewC, animated: true)
         }
     }
     
     func help() {
-        if let viewC: HelpVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HelpVC") as? HelpVC {
+        if let viewC: HelpVC = UIStoryboard(name: "Other", bundle: nil).instantiateViewController(withIdentifier: "HelpVC") as? HelpVC {
             self.navigationController?.pushViewController(viewC, animated: true)
         }
     }
