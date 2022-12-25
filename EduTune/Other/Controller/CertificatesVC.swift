@@ -24,10 +24,10 @@ class CertificatesVC: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        getMyTickets()
+        getMyCertificates()
     }
     
-    func getMyTickets() {
+    func getMyCertificates() {
         let params = ["user_id": AppUserDefault.getUserId(), "type": "list"] as [String: Any]
         APIService.shared.getMyCertificates(params: params, completion: { certificates in
             self.certificates = certificates

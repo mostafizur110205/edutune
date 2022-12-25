@@ -7,14 +7,12 @@
 
 import UIKit
 import SwiftyJSON
-import SVProgressHUD
 
 extension APIService {
 
     func getBlogs(page: Int, params: [String: Any], completion: @escaping ([Blog], [BlogType], Int, Int) -> Void) {
         APIRequest.shared.getRequest(url: APIEndpoints.BLOG+"?page=\(page)", parameters: params) { (JSON, error) in
             DispatchQueue.main.async {
-                SVProgressHUD.dismiss()
                 if error == nil {
                     if let json = JSON {
                         if json["error"].boolValue == false {
@@ -33,7 +31,6 @@ extension APIService {
     func getBlogBookmarks(params: [String: Any], completion: @escaping ([Blog]) -> Void) {
         APIRequest.shared.getRequest(url: APIEndpoints.BLOG, parameters: params) { (JSON, error) in
             DispatchQueue.main.async {
-                SVProgressHUD.dismiss()
                 if error == nil {
                     if let json = JSON {
                         if json["error"].boolValue == false {
@@ -49,7 +46,6 @@ extension APIService {
     func addBlogBookmark(params: [String: Any], completion: @escaping (Int?) -> Void) {
         APIRequest.shared.getRequest(url: APIEndpoints.BLOG, parameters: params) { (JSON, error) in
             DispatchQueue.main.async {
-                SVProgressHUD.dismiss()
                 if error == nil {
                     if let json = JSON {
                         MakeToast.shared.makeNormalToast(json["message"].stringValue)
@@ -66,7 +62,6 @@ extension APIService {
     func removeBlogBookmark(params: [String: Any], completion: @escaping (Bool) -> Void) {
         APIRequest.shared.getRequest(url: APIEndpoints.BLOG, parameters: params) { (JSON, error) in
             DispatchQueue.main.async {
-                SVProgressHUD.dismiss()
                 if error == nil {
                     if let json = JSON {
                         MakeToast.shared.makeNormalToast(json["message"].stringValue)

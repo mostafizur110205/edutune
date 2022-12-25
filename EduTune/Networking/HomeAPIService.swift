@@ -7,14 +7,12 @@
 
 import UIKit
 import SwiftyJSON
-import SVProgressHUD
 
 extension APIService {
 
     func getHomeData(params: [String: Any], completion: @escaping (HomeData?) -> Void) {
         APIRequest.shared.getRequest(url: APIEndpoints.HOME_PUBLIC, parameters: params) { (JSON, error) in
             DispatchQueue.main.async {
-                SVProgressHUD.dismiss()
                 if error == nil {
                     if let json = JSON {
                         if json["error"].boolValue == false {
@@ -30,7 +28,6 @@ extension APIService {
     func getTopEducators(params: [String: Any], completion: @escaping ([Teacher]) -> Void) {
         APIRequest.shared.getRequest(url: APIEndpoints.SEE_ALL, parameters: params) { (JSON, error) in
             DispatchQueue.main.async {
-                SVProgressHUD.dismiss()
                 if error == nil {
                     if let json = JSON {
                         if json["error"].boolValue == false {
@@ -46,7 +43,6 @@ extension APIService {
     func getMostPopular(page: Int, params: [String: Any], completion: @escaping ([Class], [Program], Int, Int) -> Void) {
         APIRequest.shared.getRequest(url: APIEndpoints.SEE_ALL+"\(page)", parameters: params) { (JSON, error) in
             DispatchQueue.main.async {
-                SVProgressHUD.dismiss()
                 if error == nil {
                     if let json = JSON {
                         if json["error"].boolValue == false {
@@ -65,7 +61,6 @@ extension APIService {
     func getCourseDetails(params: [String: Any], completion: @escaping (ClassDetail) -> Void) {
         APIRequest.shared.getRequest(url: APIEndpoints.COURSE_DETAIL, parameters: params) { (JSON, error) in
             DispatchQueue.main.async {
-                SVProgressHUD.dismiss()
                 if error == nil {
                     if let json = JSON {
                         if json["error"].boolValue == false {
@@ -83,7 +78,6 @@ extension APIService {
     func getMentorDetails(page: Int, params: [String: Any], completion: @escaping (Teacher, [Class], Int, Int) -> Void) {
         APIRequest.shared.getRequest(url: APIEndpoints.MENTOR_DETAIL+"\(page)", parameters: params) { (JSON, error) in
             DispatchQueue.main.async {
-                SVProgressHUD.dismiss()
                 if error == nil {
                     if let json = JSON {
                         if json["error"].boolValue == false {
@@ -104,7 +98,6 @@ extension APIService {
     func getBookmarks(params: [String: Any], completion: @escaping ([Class]) -> Void) {
         APIRequest.shared.getRequest(url: APIEndpoints.BOOKMARKS, parameters: params) { (JSON, error) in
             DispatchQueue.main.async {
-                SVProgressHUD.dismiss()
                 if error == nil {
                     if let json = JSON {
                         if json["error"].boolValue == false {
@@ -126,7 +119,6 @@ extension APIService {
     func addBookmark(params: [String: Any], completion: @escaping (Int) -> Void) {
         APIRequest.shared.getRequest(url: APIEndpoints.BOOKMARKS, parameters: params) { (JSON, error) in
             DispatchQueue.main.async {
-                SVProgressHUD.dismiss()
                 if error == nil {
                     if let json = JSON {
                         MakeToast.shared.makeNormalToast(json["message"].stringValue)
@@ -144,7 +136,6 @@ extension APIService {
     func removeBookmark(params: [String: Any], completion: @escaping (Bool) -> Void) {
         APIRequest.shared.getRequest(url: APIEndpoints.BOOKMARKS, parameters: params) { (JSON, error) in
             DispatchQueue.main.async {
-                SVProgressHUD.dismiss()
                 if error == nil {
                     if let json = JSON {
                         MakeToast.shared.makeNormalToast(json["message"].stringValue)
@@ -160,7 +151,6 @@ extension APIService {
     func getNotifications(page: Int, params: [String: Any], completion: @escaping ([Notification], Int, Int) -> Void) {
         APIRequest.shared.getRequest(url: APIEndpoints.NOTIFICATIONS, parameters: params) { (JSON, error) in
             DispatchQueue.main.async {
-                SVProgressHUD.dismiss()
                 if error == nil {
                     if let json = JSON {
                         if json["error"].boolValue == false {

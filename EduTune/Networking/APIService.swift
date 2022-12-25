@@ -8,7 +8,6 @@
 
 import UIKit
 import SwiftyJSON
-import SVProgressHUD
 
 class APIService: NSObject {
     
@@ -19,7 +18,6 @@ class APIService: NSObject {
 
         APIRequest.shared.getRequest(url: APIEndpoints.ONBOARD_DATA, parameters: parameters) { (JSON, error) in
             DispatchQueue.main.async {
-                SVProgressHUD.dismiss()
                 if error == nil {
                     if let json = JSON {
                         if json["error"].boolValue == false {

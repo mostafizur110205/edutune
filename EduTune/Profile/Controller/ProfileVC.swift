@@ -7,7 +7,6 @@
 
 import UIKit
 import Photos
-import SVProgressHUD
 import CropViewController
 
 class ProfileVC: UIViewController {
@@ -133,9 +132,7 @@ class ProfileVC: UIViewController {
         if let strBase64 = self.resizeImage(image: image, targetSize: CGSize(width: 400, height: 400)).jpegData(compressionQuality: 1)?.base64EncodedString(options: .lineLength64Characters) {
             let params = ["photo": strBase64, "user_id": AppUserDefault.getUserId()] as [String : Any]
             
-            SVProgressHUD.show()
             APIService.shared.updateProfileImage(params: params, completion: { photo in
-                SVProgressHUD.dismiss()
                 AppDelegate.shared().user?.phone = photo
                 self.userImageView.sd_setImage(with: URL(string: AppDelegate.shared().user?.photo ?? "" ), placeholderImage: UIImage(named: "ic_user_placeholder"))
 

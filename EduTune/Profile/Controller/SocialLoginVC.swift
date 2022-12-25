@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SVProgressHUD
 import GoogleSignIn
 import AuthenticationServices
 import CryptoKit
@@ -40,7 +39,6 @@ class SocialLoginVC: UIViewController {
     }
     
     func showErrorMessage(_ error: Error?) {
-        SVProgressHUD.dismiss()
         if let message = error?.localizedDescription {
             print(message)
             MakeToast.shared.makeNormalToast(message)
@@ -51,7 +49,6 @@ class SocialLoginVC: UIViewController {
     
     func signUp(_ email: String, socialId: String, name: String?) {
         
-        SVProgressHUD.show()
         
         var params = [String: Any]()
         params["email"] = email
@@ -59,7 +56,6 @@ class SocialLoginVC: UIViewController {
         params["fullname"] = name
         
 //        APIService.shared.socialLogin(params) { (user) in
-//            SVProgressHUD.dismiss()
 //            if let user = user {
 //                SocketClient.shared.user = user
 //                AppUserDefault.setPicture(user.picture ?? "")

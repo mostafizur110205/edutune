@@ -1,119 +1,36 @@
 //
-//  AllCoursesVC.swift
+//  EditorChoiceDetailsVC.swift
 //  EduTune
 //
-//  Created by Mostafizur Rahman on 13/10/22.
+//  Created by Mostafizur Rahman on 25/12/22.
 //
 
 import UIKit
 import FittedSheets
 
-class MostPopularCoursesVC: UIViewController {
-    @IBOutlet weak var categoryCV: UICollectionView!
+class EditorChoiceDetailsVC: UIViewController {
+    
     @IBOutlet weak var tableView: UITableView!
     
-    var categories = [String]()
-    var categorySelected = "All"
-    var programs = [Program]()
     var allClasses = [Class]()
-    
-    var currentPage = 1
-    var lastPage = 1
-    var isAPICalling: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.tabBarController?.tabBar.isHidden = true
-        
-        categoryCV.delegate = self
-        categoryCV.dataSource = self
-        
+                
         tableView.delegate = self
         tableView.dataSource = self
-        
-        getMostPopular(page: currentPage)
-        
+                
     }
     
-    func getMostPopular(page: Int) {
-        if isAPICalling {
-            return
-        }
-        var params: [String: Any] = ["type": "MOST_POPULAR_COURSES"]
-        
-        if let program = programs.first(where: { $0.program_name == categorySelected }) {
-            params["program_id"] = program.id
-        }
-        
-        isAPICalling = true
-        APIService.shared.getMostPopular(page: page, params: params, completion: { classes, programs, currentPage, lastPage in
-            
-            self.currentPage = currentPage
-            self.lastPage = lastPage
-            
-            self.isAPICalling = false
-            
-            self.programs = programs
-            
-            if page == 1 {
-                self.allClasses = classes
-            } else {
-                self.allClasses += classes
-            }
-            
-            self.categories = programs.map({ $0.program_name ?? "" }).unique()
-            self.categories.insert("All", at: 0)
-            
-            self.categoryCV.reloadData()
-            self.tableView.reloadData()
-        })
-    }
-
     @IBAction func onBackButtonTap(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     
 }
 
-extension MostPopularCoursesVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categories.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        guard let cell: CategoryCVCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCVCell", for: indexPath) as? CategoryCVCell else {return UICollectionViewCell()}
-        let category = categories[indexPath.item]
-        cell.configure(with: category, selected: categorySelected == category, height: 38)
-        
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        var textWidth: CGFloat = 0.0
-        let text = categories[indexPath.item]
-        textWidth = text.widthWithConstrainedHeight(height: 38, font: UIFont.urbanist(style: .semiBold, ofSize: 16)) + 32
-        return CGSize(width: textWidth, height: 38)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        categorySelected = categories[indexPath.item]
-        categoryCV.reloadData()
-        
-        currentPage = 1
-        getMostPopular(page: currentPage)
-    }
-    
-}
-
-
-extension MostPopularCoursesVC: UITableViewDelegate, UITableViewDataSource {
+extension EditorChoiceDetailsVC: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -134,10 +51,6 @@ extension MostPopularCoursesVC: UITableViewDelegate, UITableViewDataSource {
         cell.classData = classData
         cell.delegate = self
         cell.bookmarkButton.setImage(UIImage(named: AppDelegate.shared().bookmarkIds.contains(classData.class_book_mark_id ?? -1) ? "ic_bookmarked" : "ic_bookmark"), for: .normal)
-
-        if indexPath.row == allClasses.count-1 && currentPage < lastPage {
-            getMostPopular(page: currentPage + 1)
-        }
         
         return cell
         
@@ -155,7 +68,7 @@ extension MostPopularCoursesVC: UITableViewDelegate, UITableViewDataSource {
     
 }
 
-extension MostPopularCoursesVC: ClassTVCellDelegate {
+extension EditorChoiceDetailsVC: ClassTVCellDelegate {
     func didBookmarkButtonTap(_ cell: ClassTVCell) {
         if let indexPath = tableView.indexPath(for: cell) {
             let classData = allClasses[indexPath.row]
@@ -197,7 +110,7 @@ extension MostPopularCoursesVC: ClassTVCellDelegate {
     }
 }
 
-extension MostPopularCoursesVC: AddRemoveBookmarkVCDelegate {
+extension EditorChoiceDetailsVC: AddRemoveBookmarkVCDelegate {
     func didAddButtonTap(_ classId: Int?) {
         let params = ["class_id": classId ?? -1, "user_id": AppUserDefault.getUserId(), "type": "set"] as [String: Any]
         APIService.shared.addBookmark(params: params) { bookmark_id in

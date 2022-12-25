@@ -23,7 +23,8 @@ class HomeVC: UIViewController {
     var categories = [String]()
     var categorySelected = "All"
     var allClasses = [Class]()
-    
+    var editorsChoiceClasses = [Class]()
+
     var isLoggedIn = AppUserDefault.getIsLoggedIn()
     
     override func viewDidLoad() {
@@ -73,6 +74,8 @@ class HomeVC: UIViewController {
                 self.bannerCV.reloadData()
                 self.mentorsCV.reloadData()
                 self.categoryCV.reloadData()
+                
+                self.editorsChoiceClasses = homeData.editors_choice
                 self.filterPrograms()
             }
         })
@@ -247,13 +250,15 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollec
 extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 4
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return min(allClasses.count, 3)
         }else if section == 1 {
+            return min(editorsChoiceClasses.count, 3)
+        } else if section == 2 {
             return AppUserDefault.getIsLoggedIn() ? 0 : 1
         } else {
             return 1
@@ -264,6 +269,25 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         return UITableView.automaticDimension
     }
     
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.0001
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return (section == 1 && editorsChoiceClasses.count>0) ? 50 : 0.0001
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if editorsChoiceClasses.count>0 && section == 1 {
+            guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "HomeHeaderTVCell") as? HomeHeaderTVCell else {return UITableViewCell()}
+            cell.delegate = self
+            return cell
+        } else {
+            return nil
+        }
+
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "ClassTVCell") as? ClassTVCell else {return UITableViewCell()}
@@ -272,12 +296,19 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
             cell.classData = classData
             cell.delegate = self
             cell.bookmarkButton.setImage(UIImage(named: AppDelegate.shared().bookmarkIds.contains(classData.class_book_mark_id ?? -1) ? "ic_bookmarked" : "ic_bookmark"), for: .normal)
-            
             return cell
         } else if indexPath.section == 1 {
-            guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "LoginTVCell") as? LoginTVCell else {return UITableViewCell()}
+            guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "ClassTVCell") as? ClassTVCell else {return UITableViewCell()}
+            
+            let classData = editorsChoiceClasses[indexPath.row]
+            cell.classData = classData
+            cell.delegate = self
+            cell.bookmarkButton.setImage(UIImage(named: AppDelegate.shared().bookmarkIds.contains(classData.class_book_mark_id ?? -1) ? "ic_bookmarked" : "ic_bookmark"), for: .normal)
             return cell
         } else if indexPath.section == 2 {
+            guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "LoginTVCell") as? LoginTVCell else {return UITableViewCell()}
+            return cell
+        }  else if indexPath.section == 3 {
             guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "HomeHelpCell") as? HomeHelpCell else {return UITableViewCell()}
             cell.institution = homeData?.institution
             return cell
@@ -296,9 +327,26 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
                     self.navigationController?.pushViewController(viewC, animated: true)
                 }
             })
+        } else if indexPath.section == 1 {
+            let params = ["class_id": editorsChoiceClasses[indexPath.row].id ?? -1]
+            APIService.shared.getCourseDetails(params: params, completion: { clsDetail in
+                if let viewC: ClassDetailsVC = UIStoryboard(name: "Course", bundle: nil).instantiateViewController(withIdentifier: "ClassDetailsVC") as? ClassDetailsVC {
+                    viewC.classDetail = clsDetail
+                    self.navigationController?.pushViewController(viewC, animated: true)
+                }
+            })
         }
     }
     
+}
+
+extension HomeVC: HomeHeaderTVCellDelegate {
+    func didSeeAllButtonTap() {
+        if let viewC: EditorChoiceDetailsVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "EditorChoiceDetailsVC") as? EditorChoiceDetailsVC {
+            viewC.allClasses = homeData?.editors_choice ?? []
+            self.navigationController?.pushViewController(viewC, animated: true)
+        }
+    }
 }
 
 extension HomeVC: ClassTVCellDelegate {
