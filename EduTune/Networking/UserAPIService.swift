@@ -14,6 +14,7 @@ extension APIService {
     func signupStep1(params: [String: Any], completion: @escaping (String) -> Void) {
         APIRequest.shared.postRequestJSON(url: APIEndpoints.AUTH1, parameters: params) { (JSON, error) in
             DispatchQueue.main.async {
+                SVProgressHUD.dismiss()
                 if error == nil {
                     if let json = JSON {
                         if json["error"].boolValue == false {
@@ -31,6 +32,7 @@ extension APIService {
     func signupStep2(params: [String: Any], completion: @escaping (User) -> Void) {
         APIRequest.shared.postRequestJSON(url: APIEndpoints.AUTH2, parameters: params) { (JSON, error) in
             DispatchQueue.main.async {
+                SVProgressHUD.dismiss()
                 if error == nil {
                     if let json = JSON {
                         if json["error"].boolValue == false {
@@ -49,6 +51,7 @@ extension APIService {
     func relogin(params: [String: Any], completion: @escaping (User) -> Void) {
         APIRequest.shared.postRequestJSON(url: APIEndpoints.RELOGIN, parameters: params) { (JSON, error) in
             DispatchQueue.main.async {
+                SVProgressHUD.dismiss()
                 if error == nil {
                     if let json = JSON {
                         if json["error"].boolValue == false {
@@ -63,5 +66,24 @@ extension APIService {
             }
         }
     }
+    
+    
+    func updateProfileImage(params: [String: Any], completion: @escaping (String) -> Void) {
+        APIRequest.shared.postRequestJSON(url: APIEndpoints.UPDATE_PROFILE_IMAGE, parameters: params) { (JSON, error) in
+            DispatchQueue.main.async {
+                SVProgressHUD.dismiss()
+                if error == nil {
+                    if let json = JSON {
+                        if json["error"].boolValue == false {
+                            completion(json["photo"].stringValue)
+                        } else {
+                            MakeToast.shared.makeNormalToast(json["message"].stringValue)
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 
 }

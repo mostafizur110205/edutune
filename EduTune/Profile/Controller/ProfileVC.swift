@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import Photos
+import SVProgressHUD
+import CropViewController
 
 class ProfileVC: UIViewController {
     
@@ -35,6 +38,110 @@ class ProfileVC: UIViewController {
         emailOrPhoneLabel.text = AppDelegate.shared().user?.email ?? AppDelegate.shared().user?.phone
         userImageView.sd_setImage(with: URL(string: AppDelegate.shared().user?.photo ?? "" ), placeholderImage: UIImage(named: "ic_user_placeholder"))
         
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        userImageView.addGestureRecognizer(tap)
+        userImageView.isUserInteractionEnabled = true
+        
+    }
+    
+    @objc func handleTap(_ sender: UITapGestureRecognizer) {
+        
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let cameraActionButton = UIAlertAction(title: "Camera", style: .default, handler:{ (UIAlertAction)in
+            print("Camera")
+            
+            AVCaptureDevice.requestAccess(for: .video, completionHandler: { granted in
+                if granted {
+                    DispatchQueue.main.async(execute: {
+                        self.openSource(UIImagePickerController.SourceType.camera)
+                    })
+                } else {
+                    DispatchQueue.main.async(execute: {
+                        MakeToast.shared.makeNormalToast("Edutune needs access to the camera")
+                    })
+                }
+            })
+        })
+        alert.addAction(cameraActionButton)
+        
+        let photosActionButton = UIAlertAction(title: "Photo Library", style: .default, handler: { (UIAlertAction)in
+            print("Photos")
+            
+            PHPhotoLibrary.requestAuthorization({ status in
+                switch status {
+                case .authorized:
+                    DispatchQueue.main.async(execute: {
+                        self.openSource(UIImagePickerController.SourceType.photoLibrary)
+                    })
+                default:
+                    DispatchQueue.main.async(execute: {
+                        MakeToast.shared.makeNormalToast("Edutune needs access to the photo library")
+                    })
+                }
+            })
+        })
+        alert.addAction(photosActionButton)
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (UIAlertAction)in
+            print("Cancel")
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    func openSource(_ sourceType: UIImagePickerController.SourceType) {
+        if UIImagePickerController.isSourceTypeAvailable(sourceType) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = sourceType
+            imagePicker.allowsEditing = false
+            present(imagePicker, animated: true)
+        } else {
+            //            DVAlertViewController.showCommonAlert(title: "Alert", message: "Sorry, this feature is not compatible with your phone", controller: self)
+        }
+    }
+    
+    func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+        let size = image.size
+        
+        let widthRatio  = targetSize.width  / size.width
+        let heightRatio = targetSize.height / size.height
+        
+        // Figure out what our orientation is, and use that to form the rectangle
+        var newSize: CGSize
+        if (widthRatio > heightRatio) {
+            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+        } else {
+            newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
+        }
+        
+        // This is the rect that we've calculated out and this is what is actually used below
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+        
+        // Actually do the resizing to the rect using the ImageContext stuff
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        image.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
+    }
+    
+    func uploadPicture(_ image: UIImage) {
+        
+        if let strBase64 = self.resizeImage(image: image, targetSize: CGSize(width: 400, height: 400)).jpegData(compressionQuality: 1)?.base64EncodedString(options: .lineLength64Characters) {
+            let params = ["photo": strBase64, "user_id": AppUserDefault.getUserId()] as [String : Any]
+            
+            SVProgressHUD.show()
+            APIService.shared.updateProfileImage(params: params, completion: { photo in
+                SVProgressHUD.dismiss()
+                AppDelegate.shared().user?.phone = photo
+                self.userImageView.sd_setImage(with: URL(string: AppDelegate.shared().user?.photo ?? "" ), placeholderImage: UIImage(named: "ic_user_placeholder"))
+
+                MakeToast.shared.makeNormalToast("Profile picture updated successfully")
+            })
+        }
     }
     
     @IBAction func onBackButtonTap(_ sender: Any) {
@@ -159,6 +266,33 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
         default:
             break
         }
+    }
+    
+}
+
+extension ProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        self.dismiss(animated: true, completion: nil)
+        if let anImage = info[.originalImage] as? UIImage {
+            
+            let cropViewController = CropViewController(croppingStyle: .circular, image: anImage)
+            cropViewController.delegate = self
+            present(cropViewController, animated: true, completion: nil)
+        }
+    }
+}
+
+extension ProfileVC: CropViewControllerDelegate {
+    
+    func cropViewController(_ cropViewController: CropViewController, didCropToCircularImage image: UIImage, withRect cropRect: CGRect, angle: Int) {
+        
+        let viewController = cropViewController.children.first!
+        viewController.modalTransitionStyle = .coverVertical
+        viewController.presentingViewController?.dismiss(animated: true, completion: nil)
+        
+        self.uploadPicture(image)
+        
     }
     
 }

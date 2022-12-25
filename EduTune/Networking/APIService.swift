@@ -13,24 +13,13 @@ import SVProgressHUD
 class APIService: NSObject {
     
     static let shared = APIService()
-    
-//    func getAppVersionInfo(completion: @escaping (JSON) -> Void) {
-//        APIRequest.shared.getRequest(url: APIEndpoints.APPVERSION, parameters: nil) { (JSON, error) in
-//            DispatchQueue.main.async {
-//                if error == nil {
-//                    if let json = JSON {
-//                        completion(json)
-//                    }
-//                }
-//            }
-//        }
-//    }
         
     func getOnboardData(completion: @escaping ([OnboardData]) -> Void) {
         let parameters = ["access_token": APIEndpoints.ACCESS_TOKEN, "package_id": "com.aitl.edutune"]
 
         APIRequest.shared.getRequest(url: APIEndpoints.ONBOARD_DATA, parameters: parameters) { (JSON, error) in
             DispatchQueue.main.async {
+                SVProgressHUD.dismiss()
                 if error == nil {
                     if let json = JSON {
                         if json["error"].boolValue == false {

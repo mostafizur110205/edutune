@@ -14,6 +14,7 @@ extension APIService {
     func applyPromo(params: [String: Any], completion: @escaping (Coupon?) -> Void) {
         APIRequest.shared.postRequestJSON(url: APIEndpoints.APPLY_COUPON, parameters: params) { (JSON, error) in
             DispatchQueue.main.async {
+                SVProgressHUD.dismiss()
                 if error == nil {
                     if let json = JSON {
                         if json["error"].boolValue == false {
@@ -31,6 +32,7 @@ extension APIService {
     func purchaseCourse(params: [String: Any], completion: @escaping (Bool) -> Void) {
         APIRequest.shared.postRequestJSON(url: APIEndpoints.COURSE_PURCHASE, parameters: params) { (JSON, error) in
             DispatchQueue.main.async {
+                SVProgressHUD.dismiss()
                 if error == nil {
                     if let json = JSON {
                         if json["error"].boolValue == false {
@@ -48,6 +50,7 @@ extension APIService {
     func getMyCourse(params: [String: Any], completion: @escaping ([LiveClass], [DueAssignments], [OngoingClass]) -> Void) {
         APIRequest.shared.getRequest(url: APIEndpoints.MY_COURSE, parameters: params) { (JSON, error) in
             DispatchQueue.main.async {
+                SVProgressHUD.dismiss()
                 if error == nil {
                     if let json = JSON {
                         if json["error"].boolValue == false {
@@ -66,6 +69,7 @@ extension APIService {
     func getMyCourseWiseLessons(params: [String: Any], completion: @escaping ([ClassContent], String?) -> Void) {
         APIRequest.shared.getRequest(url: APIEndpoints.MY_COURSE_WISE_LESSONS, parameters: params) { (JSON, error) in
             DispatchQueue.main.async {
+                SVProgressHUD.dismiss()
                 if error == nil {
                     if let json = JSON {
                         if json["error"].boolValue == false {
@@ -81,6 +85,7 @@ extension APIService {
     func getMyCourseWiseLessonsLecture(params: [String: Any], completion: @escaping ([Lecture]) -> Void) {
         APIRequest.shared.getRequest(url: APIEndpoints.MY_COURSE_WISE_LESSONS, parameters: params) { (JSON, error) in
             DispatchQueue.main.async {
+                SVProgressHUD.dismiss()
                 if error == nil {
                     if let json = JSON {
                         if json["error"].boolValue == false {

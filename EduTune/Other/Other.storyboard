@@ -1402,7 +1402,7 @@ Code</string>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="F9w-gc-k65">
-                                <rect key="frame" x="0.0" y="272" width="390" height="300"/>
+                                <rect key="frame" x="0.0" y="229.66666666666663" width="390" height="300"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="dYi-hP-MfO"/>
@@ -1516,7 +1516,7 @@ Code</string>
                         <constraints>
                             <constraint firstItem="F9w-gc-k65" firstAttribute="leading" secondItem="akM-lC-hkp" secondAttribute="leading" id="2ch-gf-1S3"/>
                             <constraint firstItem="aOl-N5-cLp" firstAttribute="leading" secondItem="akM-lC-hkp" secondAttribute="leading" constant="16" id="3OB-ty-e9Z"/>
-                            <constraint firstItem="F9w-gc-k65" firstAttribute="centerY" secondItem="zig-q7-4VE" secondAttribute="centerY" id="6OL-fM-BJN"/>
+                            <constraint firstItem="F9w-gc-k65" firstAttribute="centerY" secondItem="zig-q7-4VE" secondAttribute="centerY" multiplier="0.9" id="6OL-fM-BJN"/>
                             <constraint firstAttribute="trailing" secondItem="F9w-gc-k65" secondAttribute="trailing" id="NAa-Yy-lOC"/>
                             <constraint firstItem="akM-lC-hkp" firstAttribute="trailing" secondItem="aOl-N5-cLp" secondAttribute="trailing" constant="16" id="P6V-vK-tD8"/>
                             <constraint firstItem="fRJ-ZR-4xj" firstAttribute="leading" secondItem="akM-lC-hkp" secondAttribute="leading" id="WDh-W1-gtg"/>

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class VerificationVC: UIViewController {
     
@@ -33,7 +34,9 @@ class VerificationVC: UIViewController {
     func verify(_ code: String){
         params["otp"] = code
         
+        SVProgressHUD.show()
         APIService.shared.signupStep2(params: params) { succes in
+            SVProgressHUD.dismiss()
             if let viewC: TabBarVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarVC") as? TabBarVC {
                 UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController = viewC
                 UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.makeKeyAndVisible()
