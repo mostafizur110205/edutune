@@ -66,7 +66,7 @@ class InstructionsVC: UIViewController {
         bottomSheetVC?.dismissViewController()
         
         let params = ["user_id": AppUserDefault.getUserId(),
-                      "assignment_id":26605,
+                      "assignment_id": 26605,
                       "language":"en",
         ] as [String:Any]
         

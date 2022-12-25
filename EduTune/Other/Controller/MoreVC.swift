@@ -17,9 +17,7 @@ class MoreVC: UIViewController {
                       ["icon": "ic_bookmarked", "title": "Bookmark"],
                       ["icon": "ic_notification", "title": "Notification"]],
                      [["icon": "ic_profile", "title": "Profile"],
-                      ["icon": "ic_referral", "title": "Referral"],
-                      ["icon": "ic_problem", "title": "Submit Problem"],
-                      ["icon": "ic_message", "title": "Message"]],
+                      ["icon": "ic_problem", "title": "Submit Problem"]],
                      [["icon": "ic_facebook_blue", "title": "Facebook"],
                       ["icon": "ic_linkedin", "title": "LinkedIn"],
                       ["icon": "ic_youtube", "title": "Youtube"],
@@ -87,10 +85,14 @@ extension MoreVC: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             switch indexPath.row {
             case 0:
-                // Certificates
+                if let viewC: CertificatesVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "CertificatesVC") as? CertificatesVC {
+                    self.navigationController?.pushViewController(viewC, animated: true)
+                }
                 break
             case 1:
-                // Syllabus
+                if let viewC: SyllabusVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "SyllabusVC") as? SyllabusVC {
+                    self.navigationController?.pushViewController(viewC, animated: true)
+                }
                 break
             case 2:
                 if let viewC: BookmarksVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "BookmarksVC") as? BookmarksVC {
@@ -108,19 +110,14 @@ extension MoreVC: UITableViewDelegate, UITableViewDataSource {
         } else if indexPath.section == 1 {
             switch indexPath.row {
             case 0:
-                // profile
-                break
-            case 1:
-                // Referral
-                if let viewC: ReferralVC = UIStoryboard(name: "Other", bundle: nil).instantiateViewController(withIdentifier: "ReferralVC") as? ReferralVC {
+                if let viewC: ProfileVC = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "ProfileVC") as? ProfileVC {
                     self.navigationController?.pushViewController(viewC, animated: true)
                 }
                 break
-            case 2:
-                // Submit problem
-                break
-            case 3:
-                // Message
+            case 1:
+                if let viewC: SubmitProblemVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "SubmitProblemVC") as? SubmitProblemVC {
+                    self.navigationController?.pushViewController(viewC, animated: true)
+                }
                 break
             default:
                 break

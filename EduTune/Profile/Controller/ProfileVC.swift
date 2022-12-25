@@ -15,16 +15,13 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var emailOrPhoneLabel: UILabel!
     
     let tableData = [["icon": "ic_profile_outlined", "title": "Edit Profile"],
-                     ["icon": "ic_notification_outlined", "title": "Notification"],
                      ["icon": "ic_wallet_outlined", "title": "Payment"],
-                     ["icon": "ic_sheild_outlined", "title": "Security"],
-                     ["icon": "ic_language_outlined", "title": "Language"],
-                     ["icon": "ic_eye_outlined", "title": "Dark Mode"],
+                     ["icon": "ic_sheild_outlined", "title": "Terms & Conditions"],
+                     ["icon": "ic_work", "title": "Refund Policy"],
                      ["icon": "ic_lock_outlined", "title": "Privacy Policy"],
                      ["icon": "ic_info_outlined", "title": "Help Center"],
-                     ["icon": "ic_people_outlined", "title": "Invite Friends"],
-                     ["icon": "ic_logout", "title": "Logout"]]
-    
+                     ["icon": "ic_logout", "title": "Logout"],
+                     ["icon": "ic_delete", "title": "Delete Account"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,12 +33,57 @@ class ProfileVC: UIViewController {
         
         nameLabel.text = AppDelegate.shared().user?.username
         emailOrPhoneLabel.text = AppDelegate.shared().user?.email ?? AppDelegate.shared().user?.phone
-        userImageView.sd_setImage(with: URL(string: AppDelegate.shared().user?.photo ?? "" ), placeholderImage: nil)
+        userImageView.sd_setImage(with: URL(string: AppDelegate.shared().user?.photo ?? "" ), placeholderImage: UIImage(named: "ic_user_placeholder"))
         
     }
     
     @IBAction func onBackButtonTap(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    func editProfile() {
+        if let viewC: UpdateProfileVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "Profile") as? UpdateProfileVC {
+            self.navigationController?.pushViewController(viewC, animated: true)
+        }
+    }
+    
+    func payment() {
+        if let viewC: PaymentVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "PaymentVC") as? PaymentVC {
+            self.navigationController?.pushViewController(viewC, animated: true)
+        }
+    }
+    
+    func showContent(_ index: Int) {
+        if let viewC: TextViewVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "TextViewVC") as? TextViewVC {
+            viewC.index = index
+            self.navigationController?.pushViewController(viewC, animated: true)
+        }
+    }
+    
+    func help() {
+        if let viewC: HelpVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HelpVC") as? HelpVC {
+            self.navigationController?.pushViewController(viewC, animated: true)
+        }
+    }
+    
+    func logout() {
+        let alertController = UIAlertController(title: "Logout", message: "Are you sure you want to logout ?", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        
+        alertController.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { _ in
+            
+        }))
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func deleteAccount() {
+        let alertController = UIAlertController(title: "Delete account", message: "Are you sure you want to delete your account ?", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        
+        alertController.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { _ in
+            
+        }))
+        self.present(alertController, animated: true, completion: nil)
     }
     
 }
@@ -66,16 +108,12 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
         let title = cellData["title"]
         
         var cellId = "ProfileTVCell"
-        if title == "Language" {
-            cellId = "ProfileTVCellL"
-        } else if title == "Dark Mode" {
-            cellId = "ProfileTVCellT"
-        } else if title == "Logout" {
+        if indexPath.row == 6 || indexPath.row == 7 {
             cellId = "ProfileTVCellE"
         }
         
-        guard var cell = self.tableView.dequeueReusableCell(withIdentifier: cellId) as? ProfileTVCell else {return UITableViewCell()}
-
+        guard let cell = self.tableView.dequeueReusableCell(withIdentifier: cellId) as? ProfileTVCell else {return UITableViewCell()}
+        
         cell.iconImageView.image = icon
         cell.titleLabel.text = title
         
@@ -86,6 +124,28 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
+        switch indexPath.row {
+        case 0:
+            editProfile()
+            break
+        case 1:
+            payment()
+            break
+        case 2,3,4:
+            showContent(indexPath.row)
+            break
+        case 5:
+            help()
+            break
+        case 6:
+            logout()
+            break
+        case 7:
+            deleteAccount()
+            break
+        default:
+            break
+        }
     }
     
 }

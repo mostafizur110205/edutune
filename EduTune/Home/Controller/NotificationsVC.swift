@@ -78,5 +78,16 @@ extension NotificationsVC: UITableViewDelegate, UITableViewDataSource {
         
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        if let viewC: NotificationDetailsVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "NotificationDetailsVC") as? NotificationDetailsVC {
+            viewC.modalTransitionStyle   = .crossDissolve;
+            viewC.modalPresentationStyle = .overCurrentContext
+            viewC.notification = notifications[indexPath.row]
+            viewC.icon = UIImage(named: icons[indexPath.row%5])
+            self.present(viewC, animated: true, completion: nil)
+        }
+    }
     
 }

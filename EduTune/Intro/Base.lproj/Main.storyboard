@@ -50,7 +50,6 @@
                         <segue destination="AD6-4g-gG5" kind="relationship" relationship="viewControllers" id="sGm-zT-8uT"/>
                         <segue destination="xTh-YP-y8k" kind="relationship" relationship="viewControllers" id="8WF-R8-m1a"/>
                         <segue destination="hl8-Tx-25b" kind="relationship" relationship="viewControllers" id="aor-HB-llv"/>
-                        <segue destination="0MO-Td-Bsr" kind="relationship" relationship="viewControllers" id="sR9-Jo-jiI"/>
                         <segue destination="hKJ-Iy-foW" kind="relationship" relationship="viewControllers" id="YbF-UZ-l9R"/>
                     </connections>
                 </tabBarController>

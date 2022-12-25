@@ -13,7 +13,8 @@ class NotificationTVCell: UITableViewCell {
     @IBOutlet weak var cellImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
-    
+    @IBOutlet weak var dateLabel: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
 
@@ -34,6 +35,8 @@ class NotificationTVCell: UITableViewCell {
         didSet {
             titleLabel.text = notification?.subject
             subtitleLabel.text = notification?.message
+            dateLabel.text = notification?.created_at
+
         }
     }
 

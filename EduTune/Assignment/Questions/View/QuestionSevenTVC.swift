@@ -70,7 +70,6 @@ class QuestionSevenTVC: UITableViewCell {
         stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant:-10).isActive = true
         
         titleLabel.centerYAnchor.constraint(equalTo: stackView.centerYAnchor).isActive = true
-        
 
     }
     
