@@ -43,4 +43,21 @@ extension APIService {
         }
     }
     
+    func getMyCertificates(params: [String: Any], completion: @escaping ([Certificate]) -> Void) {
+        APIRequest.shared.getRequest(url: APIEndpoints.MY_CERTIFICATES, parameters:  params) { (JSON, error) in
+            DispatchQueue.main.async {
+                if error == nil {
+                    if let json = JSON {
+                        if json["error"].boolValue == false {
+                            completion(json["data"].arrayValue.map({ Certificate($0) }))
+                        } else {
+                            completion([])
+                            MakeToast.shared.makeNormalToast(json["message"].stringValue)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
 }

@@ -93,6 +93,9 @@
 		BE486A0928DEF6D3003040AD /* OTPTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE486A0828DEF6D3003040AD /* OTPTextView.swift */; };
 		BE980F572920F9170078C7BD /* SSLCommerzSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE980F562920F9170078C7BD /* SSLCommerzSDK.framework */; };
 		BE980F582920F9170078C7BD /* SSLCommerzSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE980F562920F9170078C7BD /* SSLCommerzSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BE9BC6BC2958873A00ED0AE4 /* Certificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BC6BA2958873A00ED0AE4 /* Certificate.swift */; };
+		BE9BC6BD2958873A00ED0AE4 /* Syllabus.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BC6BB2958873A00ED0AE4 /* Syllabus.swift */; };
+		BE9BC6BF2958889100ED0AE4 /* MyCertificateCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BC6BE2958889100ED0AE4 /* MyCertificateCVCell.swift */; };
 		BEA432F82904E54900B3291E /* Course.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA432F72904E54900B3291E /* Course.storyboard */; };
 		BEA432FA2904EAE600B3291E /* AllLessonsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA432F92904EAE600B3291E /* AllLessonsVC.swift */; };
 		BEA432FC2904EB0100B3291E /* AllReviewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA432FB2904EB0100B3291E /* AllReviewsVC.swift */; };
@@ -297,6 +300,9 @@
 		BE486A0628DEF698003040AD /* IntroVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroVC.swift; sourceTree = "<group>"; };
 		BE486A0828DEF6D3003040AD /* OTPTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPTextView.swift; sourceTree = "<group>"; };
 		BE980F562920F9170078C7BD /* SSLCommerzSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SSLCommerzSDK.framework; sourceTree = "<group>"; };
+		BE9BC6BA2958873A00ED0AE4 /* Certificate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Certificate.swift; sourceTree = "<group>"; };
+		BE9BC6BB2958873A00ED0AE4 /* Syllabus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Syllabus.swift; sourceTree = "<group>"; };
+		BE9BC6BE2958889100ED0AE4 /* MyCertificateCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCertificateCVCell.swift; sourceTree = "<group>"; };
 		BEA432F72904E54900B3291E /* Course.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Course.storyboard; sourceTree = "<group>"; };
 		BEA432F92904EAE600B3291E /* AllLessonsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllLessonsVC.swift; sourceTree = "<group>"; };
 		BEA432FB2904EB0100B3291E /* AllReviewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllReviewsVC.swift; sourceTree = "<group>"; };
@@ -468,6 +474,7 @@
 				BED916AD29586B23006C1FD3 /* FAQCells.swift */,
 				BEB83B98290E60F200860770 /* MoreSectionTVCell.swift */,
 				BEB83B9A290E610200860770 /* MoreTVCell.swift */,
+				BE9BC6BE2958889100ED0AE4 /* MyCertificateCVCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -477,6 +484,8 @@
 			children = (
 				BBC290822927EFBC00FAC25E /* Referral.swift */,
 				BED916A729585BCC006C1FD3 /* Help.swift */,
+				BE9BC6BA2958873A00ED0AE4 /* Certificate.swift */,
+				BE9BC6BB2958873A00ED0AE4 /* Syllabus.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1250,15 +1259,18 @@
 				E3221E9C294847DD001FEE53 /* AssignmentsViewModel.swift in Sources */,
 				BED3864F293F04D00034ACC8 /* ExamTypePreviewVC.swift in Sources */,
 				BECAFF722903876100E7C8B9 /* Review.swift in Sources */,
+				BE9BC6BF2958889100ED0AE4 /* MyCertificateCVCell.swift in Sources */,
 				BE44ECAF2925309E00AD0DCA /* Coupon.swift in Sources */,
 				BEF803F328F8059A00CB3AE5 /* APIService.swift in Sources */,
 				BEB83BB5290E687E00860770 /* LogoutVC.swift in Sources */,
+				BE9BC6BD2958873A00ED0AE4 /* Syllabus.swift in Sources */,
 				E30FA8EE294CE9CC0052D9A1 /* QuestionOneTVC.swift in Sources */,
 				BEF803F628F8059A00CB3AE5 /* APIRequest.swift in Sources */,
 				BED916A62958347C006C1FD3 /* CertificatesVC.swift in Sources */,
 				BE14710D28F57A5700726625 /* UpdateProfileVC.swift in Sources */,
 				BEA433032905370200B3291E /* BlogType.swift in Sources */,
 				BECAFF7829038AAC00E7C8B9 /* ClassContent.swift in Sources */,
+				BE9BC6BC2958873A00ED0AE4 /* Certificate.swift in Sources */,
 				BE44ECA929252F7700AD0DCA /* HomeAPIService.swift in Sources */,
 				BE304D0B28F8479C0062C48A /* MostPopularCoursesVC.swift in Sources */,
 			);
