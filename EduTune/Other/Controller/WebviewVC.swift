@@ -18,6 +18,7 @@ class WebviewVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBarController?.tabBar.isHidden = true
         
         titleLabel.text = titleText
         
@@ -103,6 +104,7 @@ class WebviewVC: UIViewController {
     @IBAction func onBackButtonTap(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    
 }
 
 

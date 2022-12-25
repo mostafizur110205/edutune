@@ -667,7 +667,7 @@ and input the OTP</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbJ-qw-oyO">
-                                <rect key="frame" x="16.000000000000014" y="133" width="232.33333333333337" height="96"/>
+                                <rect key="frame" x="16" y="133" width="232" height="96"/>
                                 <string key="text">Login to your
 Account</string>
                                 <fontDescription key="fontDescription" name="Urbanist-Bold" family="Urbanist" pointSize="40"/>
@@ -1231,6 +1231,9 @@ Account</string>
                                 <color key="tintColor" name="Grey900"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="ic_back"/>
+                                <connections>
+                                    <action selector="onBackButtonTap:" destination="DIN-Dd-ObW" eventType="touchUpInside" id="SSX-vj-Jjc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vv0-eK-FZt">
                                 <rect key="frame" x="16" y="744" width="361" height="58"/>

@@ -92,12 +92,12 @@ extension MoreVC: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             switch indexPath.row {
             case 0:
-                if let viewC: CertificatesVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "CertificatesVC") as? CertificatesVC {
+                if let viewC: CertificatesVC = UIStoryboard(name: "Other", bundle: nil).instantiateViewController(withIdentifier: "CertificatesVC") as? CertificatesVC {
                     self.navigationController?.pushViewController(viewC, animated: true)
                 }
                 break
             case 1:
-                if let viewC: SyllabusVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "SyllabusVC") as? SyllabusVC {
+                if let viewC: SyllabusVC = UIStoryboard(name: "Other", bundle: nil).instantiateViewController(withIdentifier: "SyllabusVC") as? SyllabusVC {
                     self.navigationController?.pushViewController(viewC, animated: true)
                 }
                 break
@@ -122,7 +122,7 @@ extension MoreVC: UITableViewDelegate, UITableViewDataSource {
                 }
                 break
             case 1:
-                if let viewC: SubmitProblemVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "SubmitProblemVC") as? SubmitProblemVC {
+                if let viewC: SubmitProblemVC = UIStoryboard(name: "Other", bundle: nil).instantiateViewController(withIdentifier: "SubmitProblemVC") as? SubmitProblemVC {
                     self.navigationController?.pushViewController(viewC, animated: true)
                 }
                 break

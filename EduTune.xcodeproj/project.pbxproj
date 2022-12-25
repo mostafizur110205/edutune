@@ -149,6 +149,7 @@
 		BED916AA295868F5006C1FD3 /* HelpFaqVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED916A9295868F5006C1FD3 /* HelpFaqVC.swift */; };
 		BED916AC29586901006C1FD3 /* HelpLinksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED916AB29586901006C1FD3 /* HelpLinksVC.swift */; };
 		BED916AE29586B23006C1FD3 /* FAQCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED916AD29586B23006C1FD3 /* FAQCells.swift */; };
+		BED916B0295881FA006C1FD3 /* InvoiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED916AF295881FA006C1FD3 /* InvoiceVC.swift */; };
 		BEDD168A2904E3D000C90051 /* ReviewTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDD16892904E3D000C90051 /* ReviewTVCell.swift */; };
 		BEE33B7F29064449007C35B4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE33B7E29064449007C35B4 /* User.swift */; };
 		BEE78F7228F6D30600A4B3B1 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE78F7128F6D30600A4B3B1 /* HomeVC.swift */; };
@@ -352,6 +353,7 @@
 		BED916A9295868F5006C1FD3 /* HelpFaqVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpFaqVC.swift; sourceTree = "<group>"; };
 		BED916AB29586901006C1FD3 /* HelpLinksVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpLinksVC.swift; sourceTree = "<group>"; };
 		BED916AD29586B23006C1FD3 /* FAQCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQCells.swift; sourceTree = "<group>"; };
+		BED916AF295881FA006C1FD3 /* InvoiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceVC.swift; sourceTree = "<group>"; };
 		BEDD16892904E3D000C90051 /* ReviewTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTVCell.swift; sourceTree = "<group>"; };
 		BEE33B7E29064449007C35B4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BEE78F7128F6D30600A4B3B1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -447,6 +449,7 @@
 				BEB83BA2290E66CF00860770 /* SubmitProblemVC.swift */,
 				BEB83BA4290E66E600860770 /* AddProblemVC.swift */,
 				BEB83BAA290E67E600860770 /* PaymentVC.swift */,
+				BED916AF295881FA006C1FD3 /* InvoiceVC.swift */,
 				BEB83BB2290E687400860770 /* WebviewVC.swift */,
 				BEB83BB0290E685D00860770 /* HelpVC.swift */,
 				BED916A9295868F5006C1FD3 /* HelpFaqVC.swift */,
@@ -1117,6 +1120,7 @@
 				BECAFF7C29038CC400E7C8B9 /* ClassLessonsVC.swift in Sources */,
 				BE486A0128DEF624003040AD /* RPicker.swift in Sources */,
 				BEB83BA5290E66E600860770 /* AddProblemVC.swift in Sources */,
+				BED916B0295881FA006C1FD3 /* InvoiceVC.swift in Sources */,
 				BED916AE29586B23006C1FD3 /* FAQCells.swift in Sources */,
 				BEE78F7228F6D30600A4B3B1 /* HomeVC.swift in Sources */,
 				BEA432FC2904EB0100B3291E /* AllReviewsVC.swift in Sources */,
