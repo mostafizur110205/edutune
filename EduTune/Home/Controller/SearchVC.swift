@@ -14,11 +14,17 @@ class SearchVC: UIViewController {
     @IBOutlet private weak var searchTextField: UITextField!
     
     var allClasses = [Class]()
-    
+    var programs = [Program]()
+
     var currentPage = 1
     var lastPage = 1
     var isAPICalling: Bool = false
     
+    var selectedProgram: Int?
+    var selectedRating: Int?
+    var minPrice: Int = 0
+    var maxPrice: Int = 25000
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,7 +47,29 @@ class SearchVC: UIViewController {
     }
     
     @IBAction func onFilterButtonTap(_ sender: Any) {
-        
+        if let viewC: FilterVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "FilterVC") as? FilterVC {
+            viewC.delegate = self
+            viewC.programs = self.programs
+            viewC.selectedRating = self.selectedRating
+            viewC.selectedProgram = self.selectedProgram
+            viewC.minPrice = self.minPrice
+            viewC.maxPrice = self.maxPrice
+
+            let options = SheetOptions (
+                shrinkPresentingViewController: false
+            )
+            let sheetController = SheetViewController(controller: viewC, sizes: [.fixed(500)], options: options)
+            sheetController.didDismiss = { _ in
+                print("Sheet dismissed")
+                
+            }
+            sheetController.allowPullingPastMaxHeight = false
+            sheetController.allowPullingPastMinHeight = false
+
+            sheetController.gripColor = UIColor(white: 0.5, alpha: 1)
+            
+            self.present(sheetController, animated: true, completion: nil)
+        }
     }
     
     func filterContentForSearchText(_ searchText: String) {
@@ -54,12 +82,20 @@ class SearchVC: UIViewController {
         if isAPICalling {
             return
         }
-        //rating, min_price, max_price, program_id
-        var params: [String: Any] = ["type": "MOST_POPULAR_COURSES", "search_key": text, "min_price": 0, "max_price": 25000]
+        //rating, program_id
+        var params: [String: Any] = ["type": "MOST_POPULAR_COURSES", "search_key": text, "min_price": self.minPrice, "max_price": self.maxPrice]
+        
+        if let rating = self.selectedRating {
+            params["rating"] = rating
+        }
+        
+        if let program = self.selectedProgram {
+            params["program_id"] = program
+        }
         
         isAPICalling = true
         APIService.shared.getMostPopular(page: currentPage, params: params, completion: { classes, programs, currentPage, lastPage in
-            
+            self.programs = programs
             self.currentPage = currentPage
             self.lastPage = lastPage
             
@@ -90,6 +126,17 @@ extension SearchVC: UITextFieldDelegate {
         }
         
         return true
+    }
+}
+
+extension SearchVC: FilterVCDelegate {
+    func didApplyButtonTap(_ category: Int?, minPrice: Int, maxPrice: Int, rating: Int?) {
+        self.selectedProgram = category
+        self.selectedRating = rating
+        self.minPrice = minPrice
+        self.maxPrice = maxPrice
+        
+        self.getSearchResult(text: searchTextField.text!.trim)
     }
 }
 
@@ -125,7 +172,13 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let params = ["class_id": allClasses[indexPath.row].id ?? -1]
+        APIService.shared.getCourseDetails(params: params, completion: { clsDetail in
+            if let viewC: ClassDetailsVC = UIStoryboard(name: "Course", bundle: nil).instantiateViewController(withIdentifier: "ClassDetailsVC") as? ClassDetailsVC {
+                viewC.classDetail = clsDetail
+                self.navigationController?.pushViewController(viewC, animated: true)
+            }
+        })
     }
     
 }
@@ -146,6 +199,8 @@ extension SearchVC: ClassTVCellDelegate {
                         print("Sheet dismissed")
                         
                     }
+                    sheetController.allowPullingPastMaxHeight = false
+                    sheetController.allowPullingPastMinHeight = false
                     sheetController.gripColor = UIColor(white: 0.5, alpha: 1)
                     
                     self.present(sheetController, animated: true, completion: nil)
@@ -162,6 +217,8 @@ extension SearchVC: ClassTVCellDelegate {
                         print("Sheet dismissed")
                         
                     }
+                    sheetController.allowPullingPastMaxHeight = false
+                    sheetController.allowPullingPastMinHeight = false
                     sheetController.gripColor = UIColor(white: 0.5, alpha: 1)
                     
                     self.present(sheetController, animated: true, completion: nil)

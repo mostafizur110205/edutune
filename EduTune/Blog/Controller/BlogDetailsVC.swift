@@ -51,6 +51,8 @@ class BlogDetailsVC: UIViewController {
                     print("Sheet dismissed")
                     
                 }
+                sheetController.allowPullingPastMaxHeight = false
+                sheetController.allowPullingPastMinHeight = false
                 sheetController.gripColor = UIColor(white: 0.5, alpha: 1)
                 
                 self.present(sheetController, animated: true, completion: nil)
@@ -66,6 +68,8 @@ class BlogDetailsVC: UIViewController {
                     print("Sheet dismissed")
                     
                 }
+                sheetController.allowPullingPastMaxHeight = false
+                sheetController.allowPullingPastMinHeight = false
                 sheetController.gripColor = UIColor(white: 0.5, alpha: 1)
                 
                 self.present(sheetController, animated: true, completion: nil)

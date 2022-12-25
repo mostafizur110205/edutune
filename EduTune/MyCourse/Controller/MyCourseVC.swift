@@ -27,6 +27,12 @@ class MyCourseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.tabBarController?.tabBar.isHidden = false
     }
     
+    @IBAction func onSearchButtonTap(_ sender: Any) {
+        if let viewC: SearchVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "SearchVC") as? SearchVC {
+            self.navigationController?.pushViewController(viewC, animated: true)
+        }
+    }
+    
     func getMyCourses() {
         
         if AppUserDefault.getIsLoggedIn() {

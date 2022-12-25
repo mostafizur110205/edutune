@@ -19,5 +19,6 @@ target 'EduTune' do
   pod 'ExpyTableView'
   pod 'PhoneNumberKit', '~> 3.1'
   pod 'CropViewController'
+  pod 'MultiSlider'
 
 end

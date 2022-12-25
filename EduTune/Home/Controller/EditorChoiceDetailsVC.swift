@@ -84,6 +84,8 @@ extension EditorChoiceDetailsVC: ClassTVCellDelegate {
                         print("Sheet dismissed")
                         
                     }
+                    sheetController.allowPullingPastMaxHeight = false
+                    sheetController.allowPullingPastMinHeight = false
                     sheetController.gripColor = UIColor(white: 0.5, alpha: 1)
                     
                     self.present(sheetController, animated: true, completion: nil)
@@ -100,6 +102,8 @@ extension EditorChoiceDetailsVC: ClassTVCellDelegate {
                         print("Sheet dismissed")
                         
                     }
+                    sheetController.allowPullingPastMaxHeight = false
+                    sheetController.allowPullingPastMinHeight = false
                     sheetController.gripColor = UIColor(white: 0.5, alpha: 1)
                     
                     self.present(sheetController, animated: true, completion: nil)

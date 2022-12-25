@@ -37,10 +37,6 @@ class TopMentorsVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func onSearchButtonTap(_ sender: Any) {
-        
-    }
-    
 }
 
 extension TopMentorsVC: UITableViewDelegate, UITableViewDataSource {

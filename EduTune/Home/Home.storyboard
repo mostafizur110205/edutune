@@ -980,18 +980,6 @@ a phone call</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J7l-qC-N7n">
                                 <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kce-XL-kEU">
-                                        <rect key="frame" x="336" y="0.0" width="44" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="44" id="cdv-Dv-dUP"/>
-                                            <constraint firstAttribute="height" constant="44" id="tDq-rp-jSZ"/>
-                                        </constraints>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="ic_search"/>
-                                        <connections>
-                                            <action selector="onSearchButtonTap:" destination="m4r-WU-8DD" eventType="touchUpInside" id="neV-xW-HoA"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIh-JL-EMA">
                                         <rect key="frame" x="10" y="0.0" width="44" height="44"/>
                                         <constraints>
@@ -1014,12 +1002,10 @@ a phone call</string>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="kce-XL-kEU" firstAttribute="centerY" secondItem="zIh-JL-EMA" secondAttribute="centerY" id="0j1-Dc-9Ez"/>
                                     <constraint firstItem="2RG-xc-AKl" firstAttribute="leading" secondItem="zIh-JL-EMA" secondAttribute="trailing" constant="5" id="3e6-aC-ytP"/>
                                     <constraint firstItem="zIh-JL-EMA" firstAttribute="centerY" secondItem="J7l-qC-N7n" secondAttribute="centerY" id="RDQ-Ie-QgS"/>
                                     <constraint firstItem="zIh-JL-EMA" firstAttribute="leading" secondItem="J7l-qC-N7n" secondAttribute="leading" constant="10" id="cu3-qd-hN9"/>
                                     <constraint firstAttribute="height" constant="44" id="fbh-iR-YXz"/>
-                                    <constraint firstAttribute="trailing" secondItem="kce-XL-kEU" secondAttribute="trailing" constant="10" id="nIR-IF-bpo"/>
                                     <constraint firstItem="2RG-xc-AKl" firstAttribute="centerY" secondItem="zIh-JL-EMA" secondAttribute="centerY" id="zc1-Dx-ca4"/>
                                 </constraints>
                             </view>
@@ -1072,7 +1058,7 @@ a phone call</string>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zPd-8E-9RV">
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zPd-8E-9RV">
                                                     <rect key="frame" x="336" y="21" width="44" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="Kij-hA-KMK"/>
@@ -1799,7 +1785,7 @@ a phone call</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X2f-Aa-RkG">
                                 <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Fj-Bj-eOy">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Fj-Bj-eOy">
                                         <rect key="frame" x="336" y="0.0" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="44" id="36G-g0-ZK2"/>
@@ -2393,8 +2379,8 @@ a phone call</string>
                                     <constraint firstAttribute="height" constant="1" id="VYd-a6-fVQ"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="erc-B6-Z0O">
-                                <rect key="frame" x="16" y="430" width="358" height="58"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="erc-B6-Z0O">
+                                <rect key="frame" x="16" y="409" width="358" height="58"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hge-MH-xFD">
                                         <rect key="frame" x="0.0" y="0.0" width="173" height="58"/>
@@ -2412,6 +2398,9 @@ a phone call</string>
                                                 <real key="value" value="29"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onResetButtonTap:" destination="hHH-MJ-6Mq" eventType="touchUpInside" id="MPq-0q-tSV"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fAR-zj-4dO">
                                         <rect key="frame" x="185" y="0.0" width="173" height="58"/>
@@ -2429,6 +2418,9 @@ a phone call</string>
                                                 <real key="value" value="29"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onApplyButtonTap:" destination="hHH-MJ-6Mq" eventType="touchUpInside" id="6pb-17-6ly"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -2437,7 +2429,7 @@ a phone call</string>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="InB-5t-4Fm">
                                 <rect key="frame" x="16" y="108" width="358" height="21.666666666666657"/>
-                                <fontDescription key="fontDescription" name="Urbanist-Bold" family="Urbanist" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="Urbanist-SemiBold" family="Urbanist" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -2454,17 +2446,17 @@ a phone call</string>
                                     <inset key="sectionInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryCVCell" id="Xa2-eZ-9fX" customClass="CategoryCVCell" customModule="EduTune" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryCVCell" id="Pf9-Nj-uPC" customClass="CategoryCVCell" customModule="EduTune" customModuleProvider="target">
                                         <rect key="frame" x="16" y="0.0" width="150" height="38"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Txo-A9-jpG">
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="GNH-tL-6ym">
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="38"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OrK-k7-nk6">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LF7-He-lXy">
                                                     <rect key="frame" x="0.0" y="0.0" width="150" height="38"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="22" id="c6g-ox-BdV"/>
+                                                        <constraint firstAttribute="height" constant="22" id="hfc-o9-l7A"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Urbanist-SemiBold" family="Urbanist" pointSize="16"/>
                                                     <color key="textColor" name="Grey900"/>
@@ -2472,35 +2464,66 @@ a phone call</string>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="OrK-k7-nk6" firstAttribute="top" secondItem="Txo-A9-jpG" secondAttribute="top" id="Oau-nC-Cf5"/>
-                                                <constraint firstAttribute="trailing" secondItem="OrK-k7-nk6" secondAttribute="trailing" id="XFP-ob-eGk"/>
-                                                <constraint firstAttribute="bottom" secondItem="OrK-k7-nk6" secondAttribute="bottom" id="dAu-hY-OCQ"/>
-                                                <constraint firstItem="OrK-k7-nk6" firstAttribute="leading" secondItem="Txo-A9-jpG" secondAttribute="leading" id="tRn-l8-Yhb"/>
+                                                <constraint firstAttribute="bottom" secondItem="LF7-He-lXy" secondAttribute="bottom" id="DVm-HN-fIm"/>
+                                                <constraint firstAttribute="trailing" secondItem="LF7-He-lXy" secondAttribute="trailing" id="Pno-tw-Cm7"/>
+                                                <constraint firstItem="LF7-He-lXy" firstAttribute="leading" secondItem="GNH-tL-6ym" secondAttribute="leading" id="h6V-d4-ix1"/>
+                                                <constraint firstItem="LF7-He-lXy" firstAttribute="top" secondItem="GNH-tL-6ym" secondAttribute="top" id="oac-Ne-2iY"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="150" height="38"/>
                                         <connections>
-                                            <outlet property="tagNameLabel" destination="OrK-k7-nk6" id="iCP-ch-aAY"/>
+                                            <outlet property="tagNameLabel" destination="LF7-He-lXy" id="Ihs-ML-R9S"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KH0-9j-8yb">
                                 <rect key="frame" x="16" y="199.66666666666666" width="358" height="21.666666666666657"/>
-                                <fontDescription key="fontDescription" name="Urbanist-Bold" family="Urbanist" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="Urbanist-SemiBold" family="Urbanist" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RUq-bp-ciQ">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RUq-bp-ciQ" customClass="MultiSlider" customModule="MultiSlider">
                                 <rect key="frame" x="16" y="237.33333333333337" width="358" height="50"/>
-                                <color key="backgroundColor" name="Primary500"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="imS-VX-Kgc"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minimumValue">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maximumValue">
+                                        <real key="value" value="25000"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isContinuous" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="snapStepSize">
+                                        <real key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHapticSnap" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="thumbCount">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isVertical" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="valueLabelColor">
+                                        <color key="value" name="Primary500"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="thumbTintColor">
+                                        <color key="value" name="Primary500"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="trackWidth">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="outerTrackColor">
+                                        <color key="value" name="Grey300"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="distanceBetweenThumbs">
+                                        <real key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XxV-7q-Xad">
                                 <rect key="frame" x="16" y="303.33333333333331" width="358" height="21.666666666666686"/>
-                                <fontDescription key="fontDescription" name="Urbanist-Bold" family="Urbanist" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="Urbanist-SemiBold" family="Urbanist" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -2517,42 +2540,54 @@ a phone call</string>
                                     <inset key="sectionInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryCVCell" id="xWz-vF-JHP" customClass="CategoryCVCell" customModule="EduTune" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryCVCell" id="3Wy-Df-CVC" customClass="CategoryCVCell" customModule="EduTune" customModuleProvider="target">
                                         <rect key="frame" x="16" y="0.0" width="150" height="38"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ZJn-lZ-BwI">
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="UF1-2Y-mn9">
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="38"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ALL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKq-Q5-Sl6">
-                                                    <rect key="frame" x="44" y="0.0" width="106" height="38"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ALL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Upd-ah-57x">
+                                                    <rect key="frame" x="40" y="0.0" width="110" height="38"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="22" id="PaL-rZ-QDU"/>
+                                                        <constraint firstAttribute="height" constant="22" id="Kop-Fa-3Si"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Urbanist-SemiBold" family="Urbanist" pointSize="16"/>
                                                     <color key="textColor" name="Primary500"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_star_blue" translatesAutoresizingMaskIntoConstraints="NO" id="Xse-Pa-ylR">
-                                                    <rect key="frame" x="16" y="9" width="20" height="20"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_star_blue" translatesAutoresizingMaskIntoConstraints="NO" id="9vE-VF-ubm">
+                                                    <rect key="frame" x="16" y="11" width="16" height="16"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="EsS-aq-NIj"/>
-                                                        <constraint firstAttribute="width" constant="20" id="W5F-4S-IGg"/>
+                                                        <constraint firstAttribute="height" constant="16" id="Igl-Ua-lbs"/>
+                                                        <constraint firstAttribute="width" constant="16" id="QVS-iy-KZ5"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="NKq-Q5-Sl6" firstAttribute="top" secondItem="ZJn-lZ-BwI" secondAttribute="top" id="6w7-ol-g8E"/>
-                                                <constraint firstAttribute="trailing" secondItem="NKq-Q5-Sl6" secondAttribute="trailing" id="Ig7-FV-drJ"/>
-                                                <constraint firstItem="NKq-Q5-Sl6" firstAttribute="centerY" secondItem="Xse-Pa-ylR" secondAttribute="centerY" id="Jx9-eH-MhU"/>
-                                                <constraint firstItem="NKq-Q5-Sl6" firstAttribute="leading" secondItem="Xse-Pa-ylR" secondAttribute="trailing" constant="8" id="W0m-Xe-XJj"/>
-                                                <constraint firstAttribute="bottom" secondItem="NKq-Q5-Sl6" secondAttribute="bottom" id="tQv-I4-eRk"/>
-                                                <constraint firstItem="Xse-Pa-ylR" firstAttribute="leading" secondItem="ZJn-lZ-BwI" secondAttribute="leading" constant="16" id="zwN-uu-79d"/>
+                                                <constraint firstAttribute="trailing" secondItem="Upd-ah-57x" secondAttribute="trailing" id="CAL-1q-dml"/>
+                                                <constraint firstItem="Upd-ah-57x" firstAttribute="leading" secondItem="9vE-VF-ubm" secondAttribute="trailing" constant="8" id="DOm-O8-7xg"/>
+                                                <constraint firstItem="Upd-ah-57x" firstAttribute="top" secondItem="UF1-2Y-mn9" secondAttribute="top" id="Fh5-UD-jCl"/>
+                                                <constraint firstItem="Upd-ah-57x" firstAttribute="centerY" secondItem="9vE-VF-ubm" secondAttribute="centerY" id="Oj9-oW-Ivw"/>
+                                                <constraint firstItem="9vE-VF-ubm" firstAttribute="leading" secondItem="UF1-2Y-mn9" secondAttribute="leading" constant="16" id="tZW-VQ-CRb"/>
+                                                <constraint firstAttribute="bottom" secondItem="Upd-ah-57x" secondAttribute="bottom" id="wOk-vv-6BU"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="150" height="38"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="19"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" name="Primary500"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <outlet property="tagNameLabel" destination="NKq-Q5-Sl6" id="fuc-UE-m4a"/>
+                                            <outlet property="iconImageView" destination="9vE-VF-ubm" id="L1N-Ew-fgd"/>
+                                            <outlet property="tagNameLabel" destination="Upd-ah-57x" id="APt-gx-qky"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -2585,10 +2620,16 @@ a phone call</string>
                             <constraint firstItem="XxV-7q-Xad" firstAttribute="trailing" secondItem="KH0-9j-8yb" secondAttribute="trailing" id="nKh-yY-Rbp"/>
                             <constraint firstItem="OJf-Jf-zHI" firstAttribute="top" secondItem="InB-5t-4Fm" secondAttribute="bottom" constant="16" id="qkx-gi-HBm"/>
                             <constraint firstItem="iYw-1T-dMX" firstAttribute="top" secondItem="lLa-tD-X2l" secondAttribute="bottom" id="sGy-ix-rb2"/>
+                            <constraint firstItem="erc-B6-Z0O" firstAttribute="top" secondItem="4No-i5-VgD" secondAttribute="bottom" constant="30" id="sdn-ez-i4K"/>
                             <constraint firstItem="InB-5t-4Fm" firstAttribute="leading" secondItem="f8B-ki-R2Z" secondAttribute="leading" constant="16" id="vvz-OP-gpf"/>
                             <constraint firstItem="lLa-tD-X2l" firstAttribute="leading" secondItem="Wde-Kn-2uo" secondAttribute="leading" id="wIS-rG-fiC"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="categoryCV" destination="OJf-Jf-zHI" id="d9e-uF-HhI"/>
+                        <outlet property="priceSliderView" destination="RUq-bp-ciQ" id="ugP-zc-AOS"/>
+                        <outlet property="ratingCV" destination="4No-i5-VgD" id="UeL-bI-Gg1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ddf-wI-Hmb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3290,6 +3331,11 @@ who’s in the room ! </string>
             <point key="canvasLocation" x="1542" y="4"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="RUq-bp-ciQ">
+            <size key="intrinsicContentSize" width="-1" height="63"/>
+        </designable>
+    </designables>
     <resources>
         <image name="ic_back" width="28" height="28"/>
         <image name="ic_bookmark" width="24" height="24"/>
@@ -3308,6 +3354,9 @@ who’s in the room ! </string>
         <image name="ic_user_blue" width="52" height="52"/>
         <namedColor name="Grey200">
             <color red="0.93300002813339233" green="0.93300002813339233" blue="0.93300002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Grey300">
+            <color red="0.87800002098083496" green="0.87800002098083496" blue="0.87800002098083496" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Grey600">
             <color red="0.45899999141693115" green="0.45899999141693115" blue="0.45899999141693115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

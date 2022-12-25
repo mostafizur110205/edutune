@@ -49,7 +49,6 @@ class SocialLoginVC: UIViewController {
     
     func signUp(_ email: String, socialId: String, name: String?) {
         
-        
         var params = [String: Any]()
         params["email"] = email
         params["social_id"] = socialId
