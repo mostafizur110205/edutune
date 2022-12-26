@@ -80,7 +80,10 @@ extension PaymentPaidVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if let viewC: InvoiceVC = UIStoryboard(name: "Other", bundle: nil).instantiateViewController(withIdentifier: "InvoiceVC") as? InvoiceVC {
+            viewC.invoice = invoices[indexPath.row]
+            self.navigationController?.pushViewController(viewC, animated: true)
+        }
     }
     
 }

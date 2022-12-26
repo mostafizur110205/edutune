@@ -96,4 +96,21 @@ extension APIService {
         }
     }
     
+    func getInvoice(params: [String: Any], completion: @escaping (String) -> Void) {
+        APIRequest.shared.getRequest(url: APIEndpoints.INVOICE, parameters:  params) { (JSON, error) in
+            DispatchQueue.main.async {
+                if error == nil {
+                    if let json = JSON {
+                        if json["error"].boolValue == false {
+                            let invoice = json["print_html"].stringValue
+                            completion(invoice)
+                        } else {
+                            MakeToast.shared.makeNormalToast(json["message"].stringValue)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
 }

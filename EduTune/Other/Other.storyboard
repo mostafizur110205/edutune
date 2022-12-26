@@ -1713,7 +1713,7 @@ Code</string>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Urbanist-Bold" family="Urbanist" pointSize="18"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Add new problem">
+                                <state key="normal" title="Export">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -1721,23 +1721,37 @@ Code</string>
                                         <real key="value" value="29"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onExportButtonTap:" destination="DUU-ZO-aXI" eventType="touchUpInside" id="S7x-LA-YmJ"/>
+                                </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ap3-ei-jEV">
+                                <rect key="frame" x="16" y="107" width="358" height="613"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RRT-KH-fwA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="HDZ-Z5-YRE" firstAttribute="leading" secondItem="RRT-KH-fwA" secondAttribute="leading" id="1Zm-oo-oX7"/>
                             <constraint firstItem="HDZ-Z5-YRE" firstAttribute="top" secondItem="RRT-KH-fwA" secondAttribute="top" id="83o-UP-cRU"/>
+                            <constraint firstItem="GhB-Mu-NVq" firstAttribute="top" secondItem="ap3-ei-jEV" secondAttribute="bottom" constant="16" id="Ajm-bS-unc"/>
+                            <constraint firstAttribute="trailing" secondItem="ap3-ei-jEV" secondAttribute="trailing" constant="16" id="GHT-AQ-Bs7"/>
                             <constraint firstItem="GhB-Mu-NVq" firstAttribute="leading" secondItem="RRT-KH-fwA" secondAttribute="leading" constant="16" id="VFm-rU-wop"/>
+                            <constraint firstItem="ap3-ei-jEV" firstAttribute="top" secondItem="HDZ-Z5-YRE" secondAttribute="bottom" constant="16" id="W1t-XL-C2c"/>
+                            <constraint firstItem="ap3-ei-jEV" firstAttribute="leading" secondItem="RRT-KH-fwA" secondAttribute="leading" constant="16" id="gh1-ZT-j8a"/>
                             <constraint firstItem="RRT-KH-fwA" firstAttribute="bottom" secondItem="GhB-Mu-NVq" secondAttribute="bottom" constant="16" id="kvc-dd-f35"/>
                             <constraint firstItem="RRT-KH-fwA" firstAttribute="trailing" secondItem="GhB-Mu-NVq" secondAttribute="trailing" constant="16" id="pSS-Ww-bbU"/>
                             <constraint firstItem="RRT-KH-fwA" firstAttribute="trailing" secondItem="HDZ-Z5-YRE" secondAttribute="trailing" id="yaI-iX-EeB"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="contentView" destination="ap3-ei-jEV" id="bB2-OV-Nhk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="02B-zA-gyp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5158" y="136"/>
+            <point key="canvasLocation" x="5156.9230769230771" y="135.781990521327"/>
         </scene>
         <!--Payment DueVC-->
         <scene sceneID="9OW-kp-FwU">
