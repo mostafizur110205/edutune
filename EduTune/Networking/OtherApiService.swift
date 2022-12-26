@@ -130,5 +130,42 @@ extension APIService {
         }
     }
     
+    func getProblems(page: Int, params: [String: Any], completion: @escaping ([Problem], ProblemType, Int, Int) -> Void) {
+        APIRequest.shared.getRequest(url: APIEndpoints.PROBLEM+"\(page)", parameters:  params) { (JSON, error) in
+            DispatchQueue.main.async {
+                if error == nil {
+                    if let json = JSON {
+                        if json["error"].boolValue == false {
+                            let problems = json["data"]["tickets"]["data"].arrayValue.map { Problem($0) }
+                            let problemType = ProblemType(json["data"]["problem_types"])
+                            let currentPage = json["data"]["tickets"]["current_page"].intValue
+                            let lastPage = json["data"]["tickets"]["last_page"].intValue
+                            completion(problems, problemType, currentPage, lastPage)
+                        } else {
+                            MakeToast.shared.makeNormalToast(json["message"].stringValue)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func addProblems(params: [String: Any], completion: @escaping (Problem) -> Void) {
+        APIRequest.shared.getRequest(url: APIEndpoints.PROBLEM, parameters:  params) { (JSON, error) in
+            DispatchQueue.main.async {
+                if error == nil {
+                    if let json = JSON {
+                        if json["error"].boolValue == false {
+                            let problem = Problem(json)
+                            completion(problem)
+                        } else {
+                            MakeToast.shared.makeNormalToast(json["message"].stringValue)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     
 }

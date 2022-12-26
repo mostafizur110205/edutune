@@ -93,6 +93,8 @@
 		BE486A0928DEF6D3003040AD /* OTPTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE486A0828DEF6D3003040AD /* OTPTextView.swift */; };
 		BE70C4FB295A19B400B803E4 /* ChooseClassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE70C4FA295A19B400B803E4 /* ChooseClassVC.swift */; };
 		BE70C4FD295A19CB00B803E4 /* ChooseGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE70C4FC295A19CB00B803E4 /* ChooseGroupVC.swift */; };
+		BE70C4FF295A2CCE00B803E4 /* Problem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE70C4FE295A2CCE00B803E4 /* Problem.swift */; };
+		BE70C504295A2F5F00B803E4 /* ProblemDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE70C503295A2F5F00B803E4 /* ProblemDetailsVC.swift */; };
 		BE980F572920F9170078C7BD /* SSLCommerzSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE980F562920F9170078C7BD /* SSLCommerzSDK.framework */; };
 		BE980F582920F9170078C7BD /* SSLCommerzSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE980F562920F9170078C7BD /* SSLCommerzSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE9BC6BC2958873A00ED0AE4 /* Certificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BC6BA2958873A00ED0AE4 /* Certificate.swift */; };
@@ -120,16 +122,13 @@
 		BEB83B9D290E662600860770 /* AddRemoveBookmarkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB83B9C290E662600860770 /* AddRemoveBookmarkVC.swift */; };
 		BEB83B9F290E669A00860770 /* SyllabusVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB83B9E290E669A00860770 /* SyllabusVC.swift */; };
 		BEB83BA1290E66B500860770 /* ReferralVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB83BA0290E66B500860770 /* ReferralVC.swift */; };
-		BEB83BA3290E66CF00860770 /* SubmitProblemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB83BA2290E66CF00860770 /* SubmitProblemVC.swift */; };
+		BEB83BA3290E66CF00860770 /* ProblemsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB83BA2290E66CF00860770 /* ProblemsVC.swift */; };
 		BEB83BA5290E66E600860770 /* AddProblemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB83BA4290E66E600860770 /* AddProblemVC.swift */; };
 		BEB83BA7290E678E00860770 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB83BA6290E678E00860770 /* ProfileVC.swift */; };
-		BEB83BA9290E67BE00860770 /* MyPointsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB83BA8290E67BE00860770 /* MyPointsVC.swift */; };
 		BEB83BAB290E67E600860770 /* PaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB83BAA290E67E600860770 /* PaymentVC.swift */; };
 		BEB83BAD290E680D00860770 /* SetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB83BAC290E680D00860770 /* SetPasswordVC.swift */; };
-		BEB83BAF290E682700860770 /* LanguageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB83BAE290E682700860770 /* LanguageVC.swift */; };
 		BEB83BB1290E685D00860770 /* HelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB83BB0290E685D00860770 /* HelpVC.swift */; };
 		BEB83BB3290E687400860770 /* WebviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB83BB2290E687400860770 /* WebviewVC.swift */; };
-		BEB83BB5290E687E00860770 /* LogoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB83BB4290E687E00860770 /* LogoutVC.swift */; };
 		BECAFF6C290385AE00E7C8B9 /* MentorProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECAFF6B290385AE00E7C8B9 /* MentorProfileVC.swift */; };
 		BECAFF6E290385C000E7C8B9 /* ClassDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECAFF6D290385C000E7C8B9 /* ClassDetailsVC.swift */; };
 		BECAFF702903860A00E7C8B9 /* ClassDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECAFF6F2903860A00E7C8B9 /* ClassDetail.swift */; };
@@ -309,6 +308,8 @@
 		BE486A0828DEF6D3003040AD /* OTPTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPTextView.swift; sourceTree = "<group>"; };
 		BE70C4FA295A19B400B803E4 /* ChooseClassVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseClassVC.swift; sourceTree = "<group>"; };
 		BE70C4FC295A19CB00B803E4 /* ChooseGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseGroupVC.swift; sourceTree = "<group>"; };
+		BE70C4FE295A2CCE00B803E4 /* Problem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Problem.swift; sourceTree = "<group>"; };
+		BE70C503295A2F5F00B803E4 /* ProblemDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemDetailsVC.swift; sourceTree = "<group>"; };
 		BE980F562920F9170078C7BD /* SSLCommerzSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SSLCommerzSDK.framework; sourceTree = "<group>"; };
 		BE9BC6BA2958873A00ED0AE4 /* Certificate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Certificate.swift; sourceTree = "<group>"; };
 		BE9BC6BB2958873A00ED0AE4 /* Syllabus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Syllabus.swift; sourceTree = "<group>"; };
@@ -335,16 +336,13 @@
 		BEB83B9C290E662600860770 /* AddRemoveBookmarkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRemoveBookmarkVC.swift; sourceTree = "<group>"; };
 		BEB83B9E290E669A00860770 /* SyllabusVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyllabusVC.swift; sourceTree = "<group>"; };
 		BEB83BA0290E66B500860770 /* ReferralVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferralVC.swift; sourceTree = "<group>"; };
-		BEB83BA2290E66CF00860770 /* SubmitProblemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitProblemVC.swift; sourceTree = "<group>"; };
+		BEB83BA2290E66CF00860770 /* ProblemsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemsVC.swift; sourceTree = "<group>"; };
 		BEB83BA4290E66E600860770 /* AddProblemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProblemVC.swift; sourceTree = "<group>"; };
 		BEB83BA6290E678E00860770 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
-		BEB83BA8290E67BE00860770 /* MyPointsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPointsVC.swift; sourceTree = "<group>"; };
 		BEB83BAA290E67E600860770 /* PaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentVC.swift; sourceTree = "<group>"; };
 		BEB83BAC290E680D00860770 /* SetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPasswordVC.swift; sourceTree = "<group>"; };
-		BEB83BAE290E682700860770 /* LanguageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageVC.swift; sourceTree = "<group>"; };
 		BEB83BB0290E685D00860770 /* HelpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpVC.swift; sourceTree = "<group>"; };
 		BEB83BB2290E687400860770 /* WebviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebviewVC.swift; sourceTree = "<group>"; };
-		BEB83BB4290E687E00860770 /* LogoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutVC.swift; sourceTree = "<group>"; };
 		BECAFF6B290385AE00E7C8B9 /* MentorProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorProfileVC.swift; sourceTree = "<group>"; };
 		BECAFF6D290385C000E7C8B9 /* ClassDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailsVC.swift; sourceTree = "<group>"; };
 		BECAFF6F2903860A00E7C8B9 /* ClassDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassDetail.swift; sourceTree = "<group>"; };
@@ -467,22 +465,11 @@
 			children = (
 				BEB83B96290E5EC000860770 /* MoreVC.swift */,
 				BED916A52958347C006C1FD3 /* CertificatesVC.swift */,
-				BEB83B9E290E669A00860770 /* SyllabusVC.swift */,
-				BE70C4FA295A19B400B803E4 /* ChooseClassVC.swift */,
-				BE70C4FC295A19CB00B803E4 /* ChooseGroupVC.swift */,
-				BEB83BA2290E66CF00860770 /* SubmitProblemVC.swift */,
-				BEB83BA4290E66E600860770 /* AddProblemVC.swift */,
-				BEB83BAA290E67E600860770 /* PaymentVC.swift */,
-				BEABD5722959762600F28CE5 /* PaymentDueVC.swift */,
-				BEABD5742959763400F28CE5 /* PaymentPaidVC.swift */,
-				BED916AF295881FA006C1FD3 /* InvoiceVC.swift */,
 				BEB83BB2290E687400860770 /* WebviewVC.swift */,
-				BEB83BB0290E685D00860770 /* HelpVC.swift */,
-				BED916A9295868F5006C1FD3 /* HelpFaqVC.swift */,
-				BED916AB29586901006C1FD3 /* HelpLinksVC.swift */,
-				BEB83BB4290E687E00860770 /* LogoutVC.swift */,
-				BEB83BA8290E67BE00860770 /* MyPointsVC.swift */,
-				BEB83BAE290E682700860770 /* LanguageVC.swift */,
+				BE70C502295A2F2C00B803E4 /* Payment */,
+				BE70C500295A2F0F00B803E4 /* Syllabus */,
+				BE70C505295A2F6A00B803E4 /* Problem */,
+				BE70C501295A2F1C00B803E4 /* Help */,
 				BEB83BA0290E66B500860770 /* ReferralVC.swift */,
 			);
 			path = Controller;
@@ -508,6 +495,7 @@
 				BE9BC6BA2958873A00ED0AE4 /* Certificate.swift */,
 				BE9BC6BB2958873A00ED0AE4 /* Syllabus.swift */,
 				BEABD57629597D2900F28CE5 /* Payment.swift */,
+				BE70C4FE295A2CCE00B803E4 /* Problem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -744,6 +732,47 @@
 				BEFE791F29266F2900062986 /* ProfileTVCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		BE70C500295A2F0F00B803E4 /* Syllabus */ = {
+			isa = PBXGroup;
+			children = (
+				BEB83B9E290E669A00860770 /* SyllabusVC.swift */,
+				BE70C4FA295A19B400B803E4 /* ChooseClassVC.swift */,
+				BE70C4FC295A19CB00B803E4 /* ChooseGroupVC.swift */,
+			);
+			path = Syllabus;
+			sourceTree = "<group>";
+		};
+		BE70C501295A2F1C00B803E4 /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				BEB83BB0290E685D00860770 /* HelpVC.swift */,
+				BED916A9295868F5006C1FD3 /* HelpFaqVC.swift */,
+				BED916AB29586901006C1FD3 /* HelpLinksVC.swift */,
+			);
+			path = Help;
+			sourceTree = "<group>";
+		};
+		BE70C502295A2F2C00B803E4 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				BEB83BAA290E67E600860770 /* PaymentVC.swift */,
+				BEABD5722959762600F28CE5 /* PaymentDueVC.swift */,
+				BEABD5742959763400F28CE5 /* PaymentPaidVC.swift */,
+				BED916AF295881FA006C1FD3 /* InvoiceVC.swift */,
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
+		BE70C505295A2F6A00B803E4 /* Problem */ = {
+			isa = PBXGroup;
+			children = (
+				BEB83BA2290E66CF00860770 /* ProblemsVC.swift */,
+				BE70C503295A2F5F00B803E4 /* ProblemDetailsVC.swift */,
+				BEB83BA4290E66E600860770 /* AddProblemVC.swift */,
+			);
+			path = Problem;
 			sourceTree = "<group>";
 		};
 		BEA432F32904E50900B3291E /* Course */ = {
@@ -1193,7 +1222,6 @@
 				BE304D1328F85C8E0062C48A /* ExtensionFont.swift in Sources */,
 				BBC290832927EFBC00FAC25E /* Referral.swift in Sources */,
 				BB89C6C5292125CD00BA5B7A /* DueAssignments.swift in Sources */,
-				BEB83BAF290E682700860770 /* LanguageVC.swift in Sources */,
 				BECF68B62940917800F5004E /* CustomUIViewController.swift in Sources */,
 				BB340C492923FC48006C3816 /* MyCourseDetailsListVC.swift in Sources */,
 				BE304D0528F847390062C48A /* CategoryCVCell.swift in Sources */,
@@ -1269,9 +1297,9 @@
 				E31E18F92945AF66009E44DE /* BottomSheetViewModel.swift in Sources */,
 				BEB83B9F290E669A00860770 /* SyllabusVC.swift in Sources */,
 				BE02837B290423DB006FCD52 /* ClassHeaderTVCell.swift in Sources */,
-				BEB83BA9290E67BE00860770 /* MyPointsVC.swift in Sources */,
 				BEABD57729597D2900F28CE5 /* Payment.swift in Sources */,
 				BE70C4FB295A19B400B803E4 /* ChooseClassVC.swift in Sources */,
+				BE70C4FF295A2CCE00B803E4 /* Problem.swift in Sources */,
 				BEA433072905386500B3291E /* BlogListVC.swift in Sources */,
 				BE02837F2904240C006FCD52 /* ClassCertificateTVCell.swift in Sources */,
 				BE70C4FD295A19CB00B803E4 /* ChooseGroupVC.swift in Sources */,
@@ -1285,15 +1313,15 @@
 				E3221E9F294866D9001FEE53 /* AssignmentsCoordinator.swift in Sources */,
 				BEB83BB3290E687400860770 /* WebviewVC.swift in Sources */,
 				BEB83BA1290E66B500860770 /* ReferralVC.swift in Sources */,
-				BEB83BA3290E66CF00860770 /* SubmitProblemVC.swift in Sources */,
+				BEB83BA3290E66CF00860770 /* ProblemsVC.swift in Sources */,
 				E3FF8060294ED62C00F3D9A3 /* QuestionFourTVC.swift in Sources */,
 				E3221E9C294847DD001FEE53 /* AssignmentsViewModel.swift in Sources */,
 				BED3864F293F04D00034ACC8 /* ExamTypePreviewVC.swift in Sources */,
+				BE70C504295A2F5F00B803E4 /* ProblemDetailsVC.swift in Sources */,
 				BECAFF722903876100E7C8B9 /* Review.swift in Sources */,
 				BE9BC6BF2958889100ED0AE4 /* MyCertificateCVCell.swift in Sources */,
 				BE44ECAF2925309E00AD0DCA /* Coupon.swift in Sources */,
 				BEF803F328F8059A00CB3AE5 /* APIService.swift in Sources */,
-				BEB83BB5290E687E00860770 /* LogoutVC.swift in Sources */,
 				BE9BC6BD2958873A00ED0AE4 /* Syllabus.swift in Sources */,
 				E30FA8EE294CE9CC0052D9A1 /* QuestionOneTVC.swift in Sources */,
 				BEF803F628F8059A00CB3AE5 /* APIRequest.swift in Sources */,

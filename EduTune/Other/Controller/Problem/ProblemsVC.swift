@@ -1,5 +1,5 @@
 //
-//  SubmitProblemVC.swift
+//  ProblemsVC.swift
 //  EduTune
 //
 //  Created by Mostafizur Rahman on 30/10/22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SubmitProblemVC: UIViewController {
+class ProblemsVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
