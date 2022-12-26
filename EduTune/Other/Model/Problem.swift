@@ -9,6 +9,7 @@ import SwiftyJSON
 
 struct Problem {
 
+    var id: Int?
     var problem_module: String?
 	var problem_type: String?
     var mobile: String?
@@ -20,6 +21,7 @@ struct Problem {
     var image: String?
 
 	init(_ json: JSON) {
+        id = json["id"].int
         problem_module = json["problem_module"].string
         problem_type = json["problem_type"].string
         mobile = json["mobile"].string

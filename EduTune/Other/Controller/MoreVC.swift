@@ -122,7 +122,7 @@ extension MoreVC: UITableViewDelegate, UITableViewDataSource {
                 }
                 break
             case 1:
-                if let viewC: SubmitProblemVC = UIStoryboard(name: "Other", bundle: nil).instantiateViewController(withIdentifier: "SubmitProblemVC") as? SubmitProblemVC {
+                if let viewC: ProblemsVC = UIStoryboard(name: "Other", bundle: nil).instantiateViewController(withIdentifier: "ProblemsVC") as? ProblemsVC {
                     self.navigationController?.pushViewController(viewC, animated: true)
                 }
                 break

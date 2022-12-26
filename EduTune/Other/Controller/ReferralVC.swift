@@ -50,9 +50,9 @@ class ReferralVC: UIViewController {
     }
     
     @IBAction func topRightButtonAction(_ sender: Any) {
-        if let viewC: MyPointsVC = UIStoryboard(name: "Other", bundle: nil).instantiateViewController(withIdentifier: "MyPointsVC") as? MyPointsVC {
-            self.navigationController?.pushViewController(viewC, animated: true)
-        }
+//        if let viewC: MyPointsVC = UIStoryboard(name: "Other", bundle: nil).instantiateViewController(withIdentifier: "MyPointsVC") as? MyPointsVC {
+//            self.navigationController?.pushViewController(viewC, animated: true)
+//        }
     }
     
     @IBAction func shareButtonAction(_ sender: Any) {

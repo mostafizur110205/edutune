@@ -131,7 +131,7 @@ extension APIService {
     }
     
     func getProblems(page: Int, params: [String: Any], completion: @escaping ([Problem], ProblemType, Int, Int) -> Void) {
-        APIRequest.shared.getRequest(url: APIEndpoints.PROBLEM+"\(page)", parameters:  params) { (JSON, error) in
+        APIRequest.shared.postRequest(url: APIEndpoints.PROBLEM+"\(page)", parameters:  params) { (JSON, error) in
             DispatchQueue.main.async {
                 if error == nil {
                     if let json = JSON {
@@ -151,7 +151,7 @@ extension APIService {
     }
     
     func addProblems(params: [String: Any], completion: @escaping (Problem) -> Void) {
-        APIRequest.shared.getRequest(url: APIEndpoints.PROBLEM, parameters:  params) { (JSON, error) in
+        APIRequest.shared.postRequest(url: APIEndpoints.PROBLEM, parameters:  params) { (JSON, error) in
             DispatchQueue.main.async {
                 if error == nil {
                     if let json = JSON {

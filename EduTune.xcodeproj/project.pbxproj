@@ -95,6 +95,7 @@
 		BE70C4FD295A19CB00B803E4 /* ChooseGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE70C4FC295A19CB00B803E4 /* ChooseGroupVC.swift */; };
 		BE70C4FF295A2CCE00B803E4 /* Problem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE70C4FE295A2CCE00B803E4 /* Problem.swift */; };
 		BE70C504295A2F5F00B803E4 /* ProblemDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE70C503295A2F5F00B803E4 /* ProblemDetailsVC.swift */; };
+		BE70C507295A344200B803E4 /* ProblemTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE70C506295A344200B803E4 /* ProblemTVCell.swift */; };
 		BE980F572920F9170078C7BD /* SSLCommerzSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE980F562920F9170078C7BD /* SSLCommerzSDK.framework */; };
 		BE980F582920F9170078C7BD /* SSLCommerzSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE980F562920F9170078C7BD /* SSLCommerzSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE9BC6BC2958873A00ED0AE4 /* Certificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BC6BA2958873A00ED0AE4 /* Certificate.swift */; };
@@ -310,6 +311,7 @@
 		BE70C4FC295A19CB00B803E4 /* ChooseGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseGroupVC.swift; sourceTree = "<group>"; };
 		BE70C4FE295A2CCE00B803E4 /* Problem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Problem.swift; sourceTree = "<group>"; };
 		BE70C503295A2F5F00B803E4 /* ProblemDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemDetailsVC.swift; sourceTree = "<group>"; };
+		BE70C506295A344200B803E4 /* ProblemTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProblemTVCell.swift; sourceTree = "<group>"; };
 		BE980F562920F9170078C7BD /* SSLCommerzSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SSLCommerzSDK.framework; sourceTree = "<group>"; };
 		BE9BC6BA2958873A00ED0AE4 /* Certificate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Certificate.swift; sourceTree = "<group>"; };
 		BE9BC6BB2958873A00ED0AE4 /* Syllabus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Syllabus.swift; sourceTree = "<group>"; };
@@ -483,6 +485,7 @@
 				BEB83B9A290E610200860770 /* MoreTVCell.swift */,
 				BE9BC6BE2958889100ED0AE4 /* MyCertificateCVCell.swift */,
 				BEABD57829597F9F00F28CE5 /* InvoiceTVCell.swift */,
+				BE70C506295A344200B803E4 /* ProblemTVCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1315,6 +1318,7 @@
 				BEB83BA1290E66B500860770 /* ReferralVC.swift in Sources */,
 				BEB83BA3290E66CF00860770 /* ProblemsVC.swift in Sources */,
 				E3FF8060294ED62C00F3D9A3 /* QuestionFourTVC.swift in Sources */,
+				BE70C507295A344200B803E4 /* ProblemTVCell.swift in Sources */,
 				E3221E9C294847DD001FEE53 /* AssignmentsViewModel.swift in Sources */,
 				BED3864F293F04D00034ACC8 /* ExamTypePreviewVC.swift in Sources */,
 				BE70C504295A2F5F00B803E4 /* ProblemDetailsVC.swift in Sources */,

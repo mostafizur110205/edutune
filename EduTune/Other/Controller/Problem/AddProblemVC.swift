@@ -14,5 +14,13 @@ class AddProblemVC: UIViewController {
 
     }
     
+    @IBAction func onBackButtonTap(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
 
+    @IBAction func onSubmitButtonTap(_ sender: Any) {
+
+    }
+    
+    
 }
