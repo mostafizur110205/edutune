@@ -91,6 +91,8 @@
 		BE486A0528DEF673003040AD /* SocialLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE486A0428DEF673003040AD /* SocialLoginVC.swift */; };
 		BE486A0728DEF698003040AD /* IntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE486A0628DEF698003040AD /* IntroVC.swift */; };
 		BE486A0928DEF6D3003040AD /* OTPTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE486A0828DEF6D3003040AD /* OTPTextView.swift */; };
+		BE70C4FB295A19B400B803E4 /* ChooseClassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE70C4FA295A19B400B803E4 /* ChooseClassVC.swift */; };
+		BE70C4FD295A19CB00B803E4 /* ChooseGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE70C4FC295A19CB00B803E4 /* ChooseGroupVC.swift */; };
 		BE980F572920F9170078C7BD /* SSLCommerzSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE980F562920F9170078C7BD /* SSLCommerzSDK.framework */; };
 		BE980F582920F9170078C7BD /* SSLCommerzSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE980F562920F9170078C7BD /* SSLCommerzSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE9BC6BC2958873A00ED0AE4 /* Certificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BC6BA2958873A00ED0AE4 /* Certificate.swift */; };
@@ -305,6 +307,8 @@
 		BE486A0428DEF673003040AD /* SocialLoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialLoginVC.swift; sourceTree = "<group>"; };
 		BE486A0628DEF698003040AD /* IntroVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroVC.swift; sourceTree = "<group>"; };
 		BE486A0828DEF6D3003040AD /* OTPTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPTextView.swift; sourceTree = "<group>"; };
+		BE70C4FA295A19B400B803E4 /* ChooseClassVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseClassVC.swift; sourceTree = "<group>"; };
+		BE70C4FC295A19CB00B803E4 /* ChooseGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseGroupVC.swift; sourceTree = "<group>"; };
 		BE980F562920F9170078C7BD /* SSLCommerzSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SSLCommerzSDK.framework; sourceTree = "<group>"; };
 		BE9BC6BA2958873A00ED0AE4 /* Certificate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Certificate.swift; sourceTree = "<group>"; };
 		BE9BC6BB2958873A00ED0AE4 /* Syllabus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Syllabus.swift; sourceTree = "<group>"; };
@@ -464,6 +468,8 @@
 				BEB83B96290E5EC000860770 /* MoreVC.swift */,
 				BED916A52958347C006C1FD3 /* CertificatesVC.swift */,
 				BEB83B9E290E669A00860770 /* SyllabusVC.swift */,
+				BE70C4FA295A19B400B803E4 /* ChooseClassVC.swift */,
+				BE70C4FC295A19CB00B803E4 /* ChooseGroupVC.swift */,
 				BEB83BA2290E66CF00860770 /* SubmitProblemVC.swift */,
 				BEB83BA4290E66E600860770 /* AddProblemVC.swift */,
 				BEB83BAA290E67E600860770 /* PaymentVC.swift */,
@@ -1265,8 +1271,10 @@
 				BE02837B290423DB006FCD52 /* ClassHeaderTVCell.swift in Sources */,
 				BEB83BA9290E67BE00860770 /* MyPointsVC.swift in Sources */,
 				BEABD57729597D2900F28CE5 /* Payment.swift in Sources */,
+				BE70C4FB295A19B400B803E4 /* ChooseClassVC.swift in Sources */,
 				BEA433072905386500B3291E /* BlogListVC.swift in Sources */,
 				BE02837F2904240C006FCD52 /* ClassCertificateTVCell.swift in Sources */,
+				BE70C4FD295A19CB00B803E4 /* ChooseGroupVC.swift in Sources */,
 				BEABD5752959763500F28CE5 /* PaymentPaidVC.swift in Sources */,
 				BEB83BA7290E678E00860770 /* ProfileVC.swift in Sources */,
 				E30FA8F6294D1E360052D9A1 /* QuestionTwoTVC.swift in Sources */,

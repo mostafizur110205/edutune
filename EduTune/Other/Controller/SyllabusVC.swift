@@ -23,7 +23,14 @@ class SyllabusVC: UIViewController {
        
         mainContentView.isHidden = true
         addShadow()
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         getUserGoals()
+
     }
     
     func getUserGoals() {
@@ -63,7 +70,12 @@ class SyllabusVC: UIViewController {
     }
 
     @IBAction func onChangeButtonTap(_ sender: Any) {
-   
+        if let viewC: ChooseClassVC = UIStoryboard(name: "Other", bundle: nil).instantiateViewController(withIdentifier: "ChooseClassVC") as? ChooseClassVC {
+            viewC.classData = syllabus?.default_goals ?? []
+            viewC.selectedClassId = syllabus?.goal_class_id
+            viewC.selectedGroupId = syllabus?.goal_group_id
+            self.navigationController?.pushViewController(viewC, animated: true)
+        }
     }
     
 }
