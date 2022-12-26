@@ -24,7 +24,7 @@ class PaymentDueVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.isHidden = true
         getDueFees()
 
     }
@@ -32,6 +32,7 @@ class PaymentDueVC: UIViewController {
     func getDueFees() {
         let params = ["user_id": AppUserDefault.getUserId()]
         APIService.shared.getDuePayment(params: params, completion: { dueFees in
+            self.tableView.isHidden = false
             self.dueFees = dueFees
             self.updateUI()
         })
@@ -53,4 +54,3 @@ class PaymentDueVC: UIViewController {
     }
     
 }
-

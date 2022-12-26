@@ -46,5 +46,6 @@ open class APIEndpoints: NSObject {
     public static let DUE_FEES: String = BASE_URL+"due-fees"
     public static let PAID_FEES: String = BASE_URL+"student-paid-fees?page="
     public static let INVOICE: String = BASE_URL+"invoice"    
+    public static let USER_GOAL: String = BASE_URL+"olv2/user-goals"
 
 }

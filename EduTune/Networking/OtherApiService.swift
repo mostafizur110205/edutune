@@ -113,4 +113,22 @@ extension APIService {
         }
     }
     
+    func getSetUserGoals(params: [String: Any], completion: @escaping (Syllabus) -> Void) {
+        APIRequest.shared.getRequest(url: APIEndpoints.USER_GOAL, parameters:  params) { (JSON, error) in
+            DispatchQueue.main.async {
+                if error == nil {
+                    if let json = JSON {
+                        if json["error"].boolValue == false {
+                            let syllabus = Syllabus(json)
+                            completion(syllabus)
+                        } else {
+                            MakeToast.shared.makeNormalToast(json["message"].stringValue)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    
 }
