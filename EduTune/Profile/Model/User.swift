@@ -24,7 +24,8 @@ class User: NSObject {
     var institution_url: String?
     var institution_logo: String?
     var institution_name: String?
-
+    var goal: UserGoal?
+    var group: UserGoal?
 
     required init(json: JSON) {
         user_id = json["user_id"].int

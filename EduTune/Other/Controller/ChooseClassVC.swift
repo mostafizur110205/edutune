@@ -37,10 +37,17 @@ class ChooseClassVC: UIViewController {
         var params = ["user_id": AppUserDefault.getUserId(), "type": "set", "goal_class_id": selectedClassId ?? -1] as [String: Any]
         
         if let groupId = selectedGroupId {
-            params["goal_group_id"] = selectedGroupId
+            params["goal_group_id"] = groupId
         }
         
         APIService.shared.getSetUserGoals(params: params, completion: { syllabus in
+            if let userClass = self.classData.first(where: { $0.id == self.selectedClassId }) {
+                AppDelegate.shared().user?.goal = userClass
+                if let userGroup = userClass.group.first(where: { $0.id == self.selectedGroupId }) {
+                    AppDelegate.shared().user?.group = userGroup
+                }
+            }
+           
             self.navigationController?.popViewController(animated: true)
         })
     }

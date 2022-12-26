@@ -52,6 +52,10 @@ extension APIService {
                     if let json = JSON {
                         if json["error"].boolValue == false {
                             let user = User(json: json)
+                            let default_goal_list = json["default_goal_list"].arrayValue.map { UserGoal($0) }
+                            let goal = default_goal_list.first(where: { $0.id == json["goal_class_id"].int })
+                            user.goal = goal
+                            user.group = goal?.group.first(where: { $0.id == json["goal_group_id"].int })
                             AppDelegate.shared().user = user
                             completion(user)
                         } else {

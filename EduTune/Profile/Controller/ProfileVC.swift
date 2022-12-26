@@ -33,14 +33,27 @@ class ProfileVC: UIViewController {
         
         self.tabBarController?.tabBar.isHidden = true
         
-        nameLabel.text = AppDelegate.shared().user?.username
-        emailOrPhoneLabel.text = AppDelegate.shared().user?.email ?? AppDelegate.shared().user?.phone
-        userImageView.sd_setImage(with: URL(string: AppDelegate.shared().user?.photo ?? "" ), placeholderImage: UIImage(named: "ic_user_placeholder"))
-        
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         userImageView.addGestureRecognizer(tap)
         userImageView.isUserInteractionEnabled = true
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        nameLabel.text = AppDelegate.shared().user?.username
+        userImageView.sd_setImage(with: URL(string: AppDelegate.shared().user?.photo ?? "" ), placeholderImage: UIImage(named: "ic_user_placeholder"))
+        
+        var goalText = ""
+        if let goal = AppDelegate.shared().user?.goal?.name {
+            goalText = goal
+        }
+        if let group = AppDelegate.shared().user?.group?.name {
+            goalText = goalText+" | \(group)"
+        }
+        emailOrPhoneLabel.text = goalText
+
     }
     
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
