@@ -37,7 +37,6 @@ class CertificatesVC: UIViewController {
                 self.exportButton.setTitle(self.certificates[self.currentIndex].certificate_message, for: .normal)
                 self.exportButton.backgroundColor = UIColor(named: (self.certificates[self.currentIndex].certificate_status ?? 0) == 1 ? "Primary500" : "Grey500")
             }
-            
         })
     }
     

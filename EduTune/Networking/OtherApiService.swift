@@ -60,4 +60,40 @@ extension APIService {
         }
     }
     
+    func getDuePayment(params: [String: Any], completion: @escaping ([DueFees]) -> Void) {
+        APIRequest.shared.getRequest(url: APIEndpoints.DUE_FEES, parameters:  params) { (JSON, error) in
+            DispatchQueue.main.async {
+                if error == nil {
+                    if let json = JSON {
+                        if json["error"].boolValue == false {
+                            completion(json["student_data"]["fees_heads"].arrayValue.map({ DueFees($0) }))
+                        } else {
+                            completion([])
+                            MakeToast.shared.makeNormalToast(json["message"].stringValue)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func getPaidPayment(page: Int, params: [String: Any], completion: @escaping ([Invoice], Int, Int) -> Void) {
+        APIRequest.shared.getRequest(url: APIEndpoints.PAID_FEES+"\(page)", parameters:  params) { (JSON, error) in
+            DispatchQueue.main.async {
+                if error == nil {
+                    if let json = JSON {
+                        if json["error"].boolValue == false {
+                            let invoices = json["invoices"]["data"].arrayValue.map { Invoice($0) }
+                            let currentPage = json["invoices"]["current_page"].intValue
+                            let lastPage = json["invoices"]["last_page"].intValue
+                            completion(invoices, currentPage, lastPage)
+                        } else {
+                            MakeToast.shared.makeNormalToast(json["message"].stringValue)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
 }

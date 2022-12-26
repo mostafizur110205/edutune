@@ -108,6 +108,10 @@
 		BEA433092905387200B3291E /* BlogBookmarksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA433082905387200B3291E /* BlogBookmarksVC.swift */; };
 		BEA4330B2905388100B3291E /* BlogDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA4330A2905388100B3291E /* BlogDetailsVC.swift */; };
 		BEA4330D2905451000B3291E /* BlogCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA4330C2905451000B3291E /* BlogCVCell.swift */; };
+		BEABD5732959762600F28CE5 /* PaymentDueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEABD5722959762600F28CE5 /* PaymentDueVC.swift */; };
+		BEABD5752959763500F28CE5 /* PaymentPaidVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEABD5742959763400F28CE5 /* PaymentPaidVC.swift */; };
+		BEABD57729597D2900F28CE5 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEABD57629597D2900F28CE5 /* Payment.swift */; };
+		BEABD57929597F9F00F28CE5 /* InvoiceTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEABD57829597F9F00F28CE5 /* InvoiceTVCell.swift */; };
 		BEB83B97290E5EC000860770 /* MoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB83B96290E5EC000860770 /* MoreVC.swift */; };
 		BEB83B99290E60F200860770 /* MoreSectionTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB83B98290E60F200860770 /* MoreSectionTVCell.swift */; };
 		BEB83B9B290E610200860770 /* MoreTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB83B9A290E610200860770 /* MoreTVCell.swift */; };
@@ -317,6 +321,10 @@
 		BEA433082905387200B3291E /* BlogBookmarksVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogBookmarksVC.swift; sourceTree = "<group>"; };
 		BEA4330A2905388100B3291E /* BlogDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogDetailsVC.swift; sourceTree = "<group>"; };
 		BEA4330C2905451000B3291E /* BlogCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogCVCell.swift; sourceTree = "<group>"; };
+		BEABD5722959762600F28CE5 /* PaymentDueVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDueVC.swift; sourceTree = "<group>"; };
+		BEABD5742959763400F28CE5 /* PaymentPaidVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPaidVC.swift; sourceTree = "<group>"; };
+		BEABD57629597D2900F28CE5 /* Payment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
+		BEABD57829597F9F00F28CE5 /* InvoiceTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceTVCell.swift; sourceTree = "<group>"; };
 		BEB83B96290E5EC000860770 /* MoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreVC.swift; sourceTree = "<group>"; };
 		BEB83B98290E60F200860770 /* MoreSectionTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreSectionTVCell.swift; sourceTree = "<group>"; };
 		BEB83B9A290E610200860770 /* MoreTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTVCell.swift; sourceTree = "<group>"; };
@@ -459,6 +467,8 @@
 				BEB83BA2290E66CF00860770 /* SubmitProblemVC.swift */,
 				BEB83BA4290E66E600860770 /* AddProblemVC.swift */,
 				BEB83BAA290E67E600860770 /* PaymentVC.swift */,
+				BEABD5722959762600F28CE5 /* PaymentDueVC.swift */,
+				BEABD5742959763400F28CE5 /* PaymentPaidVC.swift */,
 				BED916AF295881FA006C1FD3 /* InvoiceVC.swift */,
 				BEB83BB2290E687400860770 /* WebviewVC.swift */,
 				BEB83BB0290E685D00860770 /* HelpVC.swift */,
@@ -479,6 +489,7 @@
 				BEB83B98290E60F200860770 /* MoreSectionTVCell.swift */,
 				BEB83B9A290E610200860770 /* MoreTVCell.swift */,
 				BE9BC6BE2958889100ED0AE4 /* MyCertificateCVCell.swift */,
+				BEABD57829597F9F00F28CE5 /* InvoiceTVCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -490,6 +501,7 @@
 				BED916A729585BCC006C1FD3 /* Help.swift */,
 				BE9BC6BA2958873A00ED0AE4 /* Certificate.swift */,
 				BE9BC6BB2958873A00ED0AE4 /* Syllabus.swift */,
+				BEABD57629597D2900F28CE5 /* Payment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1139,6 +1151,7 @@
 				BED916AE29586B23006C1FD3 /* FAQCells.swift in Sources */,
 				BEE78F7228F6D30600A4B3B1 /* HomeVC.swift in Sources */,
 				BEA432FC2904EB0100B3291E /* AllReviewsVC.swift in Sources */,
+				BEABD5732959762600F28CE5 /* PaymentDueVC.swift in Sources */,
 				BE14710528F579F100726625 /* LetsInVC.swift in Sources */,
 				BEF8040528F826A500CB3AE5 /* Teacher.swift in Sources */,
 				BBB9F809292169AF005C82E2 /* OngoingClassTVCell.swift in Sources */,
@@ -1251,8 +1264,10 @@
 				BEB83B9F290E669A00860770 /* SyllabusVC.swift in Sources */,
 				BE02837B290423DB006FCD52 /* ClassHeaderTVCell.swift in Sources */,
 				BEB83BA9290E67BE00860770 /* MyPointsVC.swift in Sources */,
+				BEABD57729597D2900F28CE5 /* Payment.swift in Sources */,
 				BEA433072905386500B3291E /* BlogListVC.swift in Sources */,
 				BE02837F2904240C006FCD52 /* ClassCertificateTVCell.swift in Sources */,
+				BEABD5752959763500F28CE5 /* PaymentPaidVC.swift in Sources */,
 				BEB83BA7290E678E00860770 /* ProfileVC.swift in Sources */,
 				E30FA8F6294D1E360052D9A1 /* QuestionTwoTVC.swift in Sources */,
 				BE486A0928DEF6D3003040AD /* OTPTextView.swift in Sources */,
@@ -1279,6 +1294,7 @@
 				BEA433032905370200B3291E /* BlogType.swift in Sources */,
 				BECAFF7829038AAC00E7C8B9 /* ClassContent.swift in Sources */,
 				BE9BC6BC2958873A00ED0AE4 /* Certificate.swift in Sources */,
+				BEABD57929597F9F00F28CE5 /* InvoiceTVCell.swift in Sources */,
 				BE44ECA929252F7700AD0DCA /* HomeAPIService.swift in Sources */,
 				BE304D0B28F8479C0062C48A /* MostPopularCoursesVC.swift in Sources */,
 			);

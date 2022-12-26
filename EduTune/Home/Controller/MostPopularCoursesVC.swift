@@ -112,7 +112,6 @@ extension MostPopularCoursesVC: UICollectionViewDataSource, UICollectionViewDele
     
 }
 
-
 extension MostPopularCoursesVC: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {

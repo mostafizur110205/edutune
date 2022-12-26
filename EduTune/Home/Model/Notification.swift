@@ -36,6 +36,5 @@ class Notification: NSObject {
         }else{
             return dateTime
         }
-        
     }
 }
