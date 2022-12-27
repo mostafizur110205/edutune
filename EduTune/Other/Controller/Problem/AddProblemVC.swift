@@ -9,6 +9,8 @@ import UIKit
 
 class AddProblemVC: UIViewController {
 
+    var problemType: ProblemType?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

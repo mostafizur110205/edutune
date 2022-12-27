@@ -97,6 +97,7 @@ extension ProblemsVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let viewC: ProblemDetailsVC = UIStoryboard(name: "Other", bundle: nil).instantiateViewController(withIdentifier: "ProblemDetailsVC") as? ProblemDetailsVC {
+            viewC.problem = problems[indexPath.row]
             self.navigationController?.pushViewController(viewC, animated: true)
         }
     }

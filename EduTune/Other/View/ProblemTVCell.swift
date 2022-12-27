@@ -11,6 +11,7 @@ class ProblemTVCell: UITableViewCell {
 
     @IBOutlet weak var mainContentView: UIView!
     @IBOutlet weak var invoiceLabel: UILabel!
+    @IBOutlet weak var mobileLabel: UILabel?
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var detailsLabel: UILabel!
     @IBOutlet weak var errorTypeLabel: UILabel!
@@ -40,6 +41,16 @@ class ProblemTVCell: UITableViewCell {
             invoiceLabel.text = "Ticket # \(problem?.id ?? 0)"
             dateLabel.text = getDateTime(problem?.created_at)
             detailsLabel.text = problem?.problem_description
+            mobileLabel?.text = "Mobile: \(problem?.mobile ?? "")"
+            
+            let (problemText, problemColor) = getProblemColor(problem?.problem_type ?? "")
+            errorTypeLabel.text = "  \(problemText)  "
+            errorTypeLabel.backgroundColor = UIColor.init(hex: problemColor, alpha: 1)
+            
+            let (statusText, statusColor) = getStatusColor(problem?.status ?? 0)
+            statusLabel.text = "  \(statusText)  "
+            statusLabel.backgroundColor = UIColor.init(hex: statusColor, alpha: 1)
+            
         }
     }
     
@@ -51,6 +62,34 @@ class ProblemTVCell: UITableViewCell {
             return date.dateStringWithFormat(format: "H:mm a dd/M/yyyy")
         }else{
             return dateTime
+        }
+    }
+    
+    func getProblemColor(_ problem: String) -> (String, String) {
+        switch problem {
+        case "new_idea":
+            return ("New Idea", "#03A9F4")
+        case "error":
+            return ("Error", "#f05050")
+        case "suggestion":
+            return ("Suggestion", "#78A943")
+        default:
+            return ("New Idea", "#03A9F4")
+        }
+    }
+    
+    func getStatusColor(_ status: Int) -> (String, String) {
+        switch status {
+        case 1:
+            return ("New", "#78A943")
+        case 2:
+            return ("Processing", "#FF9800")
+        case 3:
+            return ("Resolved", "#9E9E9E")
+        case 4:
+            return ("No problem found", "#004e9e")
+        default:
+            return ("New", "#78A943")
         }
     }
     
