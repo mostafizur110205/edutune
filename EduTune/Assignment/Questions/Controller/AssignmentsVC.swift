@@ -8,6 +8,9 @@
 import Foundation
 import UIKit
 
+protocol AssignmentsDelegate: AnyObject {
+    func updateUploadedImages()
+}
 
 class AssignmentsVC: UIViewController {
     
@@ -19,6 +22,7 @@ class AssignmentsVC: UIViewController {
     
     var viewModel: AssignmentsViewModel?
     var questionCVCell: QuestionCVC?
+    weak var deleagte: AssignmentsDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +31,7 @@ class AssignmentsVC: UIViewController {
     }
     
     @IBAction func onReportQuestion(_ sender: Any) {
-   
+        
     }
     
     @IBAction func onBack(_ sender: Any) {
@@ -65,7 +69,12 @@ class AssignmentsVC: UIViewController {
         collectionView.setCollectionViewLayout(layout, animated: true)
         collectionView.reloadData()
     }
-    
 }
+
+
+
+
+
+
 
 

@@ -65,7 +65,6 @@ class QuestionSevenTVC: UITableViewCell {
         
         stackView.leftAnchor.constraint(lessThanOrEqualTo: leftAnchor, constant: 20).isActive = true
         stackView.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
-        //stackView.rightAnchor.constraint(equalTo: rightAnchor, constant:-20).isActive = true
         stackView.widthAnchor.constraint(equalToConstant: frame.width).isActive = true
         stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant:-10).isActive = true
         

@@ -27,6 +27,9 @@ class QuestionCVC: UICollectionViewCell {
             tableView.reloadData()
         }
     }
+    
+    var viewModel: AssignmentsViewModel?
+    var viewController: AssignmentsVC?
 
     let marksLabel: UILabel = {
         let label = UILabel()

@@ -14,8 +14,15 @@ extension QuestionCVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        guard questionItem?.questionType == .shortAnswer else {return 80}
-        return UITableView.automaticDimension
+      
+        switch questionItem?.questionType {
+        case .shortAnswer:
+            return UITableView.automaticDimension
+        case .fileResponse:
+            return frame.height/1.4
+        default:
+            return 80
+        }
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -65,6 +72,8 @@ extension QuestionCVC: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionNineTVC") as? QuestionNineTVC
             else {return UITableViewCell()}
             cell.selectionStyle = .none
+            cell.viewModel = viewModel
+            cell.viewController = viewController
             return cell
             
         case .shortAnswer:

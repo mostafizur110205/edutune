@@ -1548,3 +1548,24 @@ extension Bundle {
         objc_setAssociatedObject(Bundle.main, &bundleKey,    Bundle.main.path(forResource: language, ofType: "lproj"), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
     }
 }
+
+extension Date {
+    static var currentTimeStamp: Int {
+        return Int(Date().timeIntervalSince1970 * 1000)
+    }
+}
+
+
+extension UICollectionView {
+    
+    func getVisibleCellIndex() -> Int {
+        
+        var visibleRect = CGRect()
+        visibleRect.origin = self.contentOffset
+        visibleRect.size = self.bounds.size
+        
+        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
+        guard let indexPath = self.indexPathForItem(at: visiblePoint) else { return 0}
+        return indexPath.row
+    }
+}
