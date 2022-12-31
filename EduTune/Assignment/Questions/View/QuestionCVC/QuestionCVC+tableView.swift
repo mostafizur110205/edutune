@@ -18,7 +18,7 @@ extension QuestionCVC: UITableViewDelegate, UITableViewDataSource {
         switch questionItem?.questionType {
         case .shortAnswer:
             return UITableView.automaticDimension
-        case .fileResponse:
+        case .fileResponse, .essay:
             return frame.height/1.4
         default:
             return 80
@@ -56,6 +56,8 @@ extension QuestionCVC: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionFourTVC") as? QuestionFourTVC
             else {return UITableViewCell()}
             cell.selectionStyle = .none
+            cell.viewModel = viewModel
+            cell.viewController = viewController
             return cell
             
         case .filInTheBlanks:
@@ -106,6 +108,7 @@ extension QuestionCVC: UITableViewDelegate, UITableViewDataSource {
             questionItem?.questionOptions?[indexPath.row].isSelected = !isSelected
             
         case .none, .essay, .shortAnswer, .filInTheBlanks, .fileResponse:
+            
             print("none")
         }
         tableView.reloadData()

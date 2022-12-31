@@ -201,6 +201,10 @@
 		E37CDAA9295FBA88007F88A6 /* AssignmentsVC+ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37CDAA8295FBA88007F88A6 /* AssignmentsVC+ImagePicker.swift */; };
 		E37CDAAB295FBB07007F88A6 /* AnswerImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37CDAAA295FBB07007F88A6 /* AnswerImageModel.swift */; };
 		E37CDAAD295FBBD0007F88A6 /* QuestionNineTVC+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37CDAAC295FBBD0007F88A6 /* QuestionNineTVC+CollectionView.swift */; };
+		E37CDAAF29601828007F88A6 /* FileNameTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37CDAAE29601827007F88A6 /* FileNameTVC.swift */; };
+		E37CDAB12960253A007F88A6 /* SelectFileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37CDAB02960253A007F88A6 /* SelectFileHeaderView.swift */; };
+		E37CDAB32960B56B007F88A6 /* QuestionFourTVC+tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37CDAB22960B56A007F88A6 /* QuestionFourTVC+tableView.swift */; };
+		E37CDAB52960B5D0007F88A6 /* InnerTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37CDAB42960B5D0007F88A6 /* InnerTableView.swift */; };
 		E3DF867B29507E9C00AEA9E2 /* QuestionCVC+cellHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DF867A29507E9C00AEA9E2 /* QuestionCVC+cellHeight.swift */; };
 		E3FF805C294ED58800F3D9A3 /* QuestionNineTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FF805B294ED58800F3D9A3 /* QuestionNineTVC.swift */; };
 		E3FF805E294ED59B00F3D9A3 /* QuestionElevenTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FF805D294ED59B00F3D9A3 /* QuestionElevenTVC.swift */; };
@@ -420,6 +424,10 @@
 		E37CDAA8295FBA88007F88A6 /* AssignmentsVC+ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AssignmentsVC+ImagePicker.swift"; sourceTree = "<group>"; };
 		E37CDAAA295FBB07007F88A6 /* AnswerImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerImageModel.swift; sourceTree = "<group>"; };
 		E37CDAAC295FBBD0007F88A6 /* QuestionNineTVC+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuestionNineTVC+CollectionView.swift"; sourceTree = "<group>"; };
+		E37CDAAE29601827007F88A6 /* FileNameTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileNameTVC.swift; sourceTree = "<group>"; };
+		E37CDAB02960253A007F88A6 /* SelectFileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFileHeaderView.swift; sourceTree = "<group>"; };
+		E37CDAB22960B56A007F88A6 /* QuestionFourTVC+tableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuestionFourTVC+tableView.swift"; sourceTree = "<group>"; };
+		E37CDAB42960B5D0007F88A6 /* InnerTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerTableView.swift; sourceTree = "<group>"; };
 		E3DF867A29507E9C00AEA9E2 /* QuestionCVC+cellHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuestionCVC+cellHeight.swift"; sourceTree = "<group>"; };
 		E3FF805B294ED58800F3D9A3 /* QuestionNineTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionNineTVC.swift; sourceTree = "<group>"; };
 		E3FF805D294ED59B00F3D9A3 /* QuestionElevenTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionElevenTVC.swift; sourceTree = "<group>"; };
@@ -522,6 +530,7 @@
 				BE486A0828DEF6D3003040AD /* OTPTextView.swift */,
 				BE304D1228F85C8E0062C48A /* ExtensionFont.swift */,
 				BE304D1428F864530062C48A /* CenteredCVLayout.swift */,
+				E37CDAB42960B5D0007F88A6 /* InnerTableView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -987,18 +996,13 @@
 		E3221E8F29471253001FEE53 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E3221E6D29463650001FEE53 /* QuestionCVC.swift */,
-				E30FA8FB294D4D510052D9A1 /* QuestionCVC+tableView.swift */,
-				E3DF867A29507E9C00AEA9E2 /* QuestionCVC+cellHeight.swift */,
-				E30FA8ED294CE9CC0052D9A1 /* QuestionOneTVC.swift */,
-				E30FA8F5294D1E360052D9A1 /* QuestionTwoTVC.swift */,
-				E3FF805F294ED62C00F3D9A3 /* QuestionFourTVC.swift */,
-				E30FA8F9294D1E590052D9A1 /* QuestionSevenTVC.swift */,
-				E3FF805B294ED58800F3D9A3 /* QuestionNineTVC.swift */,
-				E37CDAAC295FBBD0007F88A6 /* QuestionNineTVC+CollectionView.swift */,
-				E37CDAA6295F19EE007F88A6 /* AnswerImageCVC.swift */,
-				E3FF805D294ED59B00F3D9A3 /* QuestionElevenTVC.swift */,
-				E30FA8EF294CEF790052D9A1 /* QuestionHeaderView.swift */,
+				E37CDAB72960B64B007F88A6 /* QuestionOne */,
+				E37CDAB82960B662007F88A6 /* QuestionTwo */,
+				E37CDABA2960B675007F88A6 /* QuestionFour */,
+				E37CDABB2960B67E007F88A6 /* QuestionSeven */,
+				E37CDABC2960B687007F88A6 /* QuestionNine */,
+				E37CDABD2960B68F007F88A6 /* QuestionEleven */,
+				E37CDAB62960B622007F88A6 /* QuestionCVC */,
 				E31E19062945EB4A009E44DE /* Assignments.storyboard */,
 			);
 			path = View;
@@ -1036,6 +1040,70 @@
 				E3221E9E294866D9001FEE53 /* AssignmentsCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		E37CDAB62960B622007F88A6 /* QuestionCVC */ = {
+			isa = PBXGroup;
+			children = (
+				E3221E6D29463650001FEE53 /* QuestionCVC.swift */,
+				E30FA8FB294D4D510052D9A1 /* QuestionCVC+tableView.swift */,
+				E3DF867A29507E9C00AEA9E2 /* QuestionCVC+cellHeight.swift */,
+				E30FA8EF294CEF790052D9A1 /* QuestionHeaderView.swift */,
+			);
+			path = QuestionCVC;
+			sourceTree = "<group>";
+		};
+		E37CDAB72960B64B007F88A6 /* QuestionOne */ = {
+			isa = PBXGroup;
+			children = (
+				E30FA8ED294CE9CC0052D9A1 /* QuestionOneTVC.swift */,
+			);
+			path = QuestionOne;
+			sourceTree = "<group>";
+		};
+		E37CDAB82960B662007F88A6 /* QuestionTwo */ = {
+			isa = PBXGroup;
+			children = (
+				E30FA8F5294D1E360052D9A1 /* QuestionTwoTVC.swift */,
+			);
+			path = QuestionTwo;
+			sourceTree = "<group>";
+		};
+		E37CDABA2960B675007F88A6 /* QuestionFour */ = {
+			isa = PBXGroup;
+			children = (
+				E3FF805F294ED62C00F3D9A3 /* QuestionFourTVC.swift */,
+				E37CDAB22960B56A007F88A6 /* QuestionFourTVC+tableView.swift */,
+				E37CDAB02960253A007F88A6 /* SelectFileHeaderView.swift */,
+				E37CDAAE29601827007F88A6 /* FileNameTVC.swift */,
+			);
+			path = QuestionFour;
+			sourceTree = "<group>";
+		};
+		E37CDABB2960B67E007F88A6 /* QuestionSeven */ = {
+			isa = PBXGroup;
+			children = (
+				E30FA8F9294D1E590052D9A1 /* QuestionSevenTVC.swift */,
+			);
+			path = QuestionSeven;
+			sourceTree = "<group>";
+		};
+		E37CDABC2960B687007F88A6 /* QuestionNine */ = {
+			isa = PBXGroup;
+			children = (
+				E3FF805B294ED58800F3D9A3 /* QuestionNineTVC.swift */,
+				E37CDAAC295FBBD0007F88A6 /* QuestionNineTVC+CollectionView.swift */,
+				E37CDAA6295F19EE007F88A6 /* AnswerImageCVC.swift */,
+			);
+			path = QuestionNine;
+			sourceTree = "<group>";
+		};
+		E37CDABD2960B68F007F88A6 /* QuestionEleven */ = {
+			isa = PBXGroup;
+			children = (
+				E3FF805D294ED59B00F3D9A3 /* QuestionElevenTVC.swift */,
+			);
+			path = QuestionEleven;
 			sourceTree = "<group>";
 		};
 		EC5ACE55AC49EBBDC88E0AB0 /* Pods */ = {
@@ -1195,6 +1263,7 @@
 			files = (
 				BEF803F428F8059A00CB3AE5 /* APIEndpoints.swift in Sources */,
 				BECAFF7C29038CC400E7C8B9 /* ClassLessonsVC.swift in Sources */,
+				E37CDAB52960B5D0007F88A6 /* InnerTableView.swift in Sources */,
 				BE486A0128DEF624003040AD /* RPicker.swift in Sources */,
 				BEB83BA5290E66E600860770 /* AddProblemVC.swift in Sources */,
 				BED916B0295881FA006C1FD3 /* InvoiceVC.swift in Sources */,
@@ -1252,9 +1321,11 @@
 				BEB83B97290E5EC000860770 /* MoreVC.swift in Sources */,
 				BB2302DE2926B48400A88C97 /* OtherApiService.swift in Sources */,
 				BE304D1128F84B7F0062C48A /* LoginTVCell.swift in Sources */,
+				E37CDAB12960253A007F88A6 /* SelectFileHeaderView.swift in Sources */,
 				BE14711328F57AC300726625 /* CreateNewPassVC.swift in Sources */,
 				E3DF867B29507E9C00AEA9E2 /* QuestionCVC+cellHeight.swift in Sources */,
 				BEDD168A2904E3D000C90051 /* ReviewTVCell.swift in Sources */,
+				E37CDAAF29601828007F88A6 /* FileNameTVC.swift in Sources */,
 				BE4869FF28DEF5B8003040AD /* Extensions.swift in Sources */,
 				BED38653293F31B10034ACC8 /* VideoContent.swift in Sources */,
 				BB89C6C72921268000BA5B7A /* LiveClass.swift in Sources */,
@@ -1337,6 +1408,7 @@
 				BE70C504295A2F5F00B803E4 /* ProblemDetailsVC.swift in Sources */,
 				E37CDAA9295FBA88007F88A6 /* AssignmentsVC+ImagePicker.swift in Sources */,
 				BECAFF722903876100E7C8B9 /* Review.swift in Sources */,
+				E37CDAB32960B56B007F88A6 /* QuestionFourTVC+tableView.swift in Sources */,
 				BE9BC6BF2958889100ED0AE4 /* MyCertificateCVCell.swift in Sources */,
 				BE44ECAF2925309E00AD0DCA /* Coupon.swift in Sources */,
 				BEF803F328F8059A00CB3AE5 /* APIService.swift in Sources */,

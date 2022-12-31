@@ -10,14 +10,14 @@ import UIKit
 extension QuestionNineTVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel?.answerImages.count ?? 0
+        return viewModel?.fileAnswerImages.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "AnswerImageCVC", for: indexPath) as? AnswerImageCVC else {return UICollectionViewCell()}
         
-        cell.imageModel = viewModel?.answerImages[indexPath.row]
+        cell.imageModel = viewModel?.fileAnswerImages[indexPath.row]
         cell.countLabel.text = "\(indexPath.row + 1)"
         headerLabel.isHidden = false
    

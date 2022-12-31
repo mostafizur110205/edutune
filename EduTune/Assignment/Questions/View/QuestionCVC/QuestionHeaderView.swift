@@ -33,7 +33,7 @@ class QuestionHeaderView: UIView {
     
     private func setupLayout() {
         titleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 20).isActive = true
-        titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 0).isActive = true
         titleLabel.rightAnchor.constraint(equalTo: rightAnchor, constant:-20).isActive = true
         titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant:-20).isActive = true
     }

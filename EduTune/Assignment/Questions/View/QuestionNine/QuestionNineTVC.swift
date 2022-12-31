@@ -103,12 +103,14 @@ class QuestionNineTVC: UITableViewCell {
     
     @objc private func cameraAction() {
         guard let controller = viewController else {return}
+        viewModel?.currentQuestionType = .fileResponse
         controller.deleagte = self
         viewModel?.openCamera(controller: controller)
     }
     
     @objc private func galleryAction() {
         guard let controller = viewController else {return}
+        viewModel?.currentQuestionType = .fileResponse
         controller.deleagte = self
         viewModel?.openPhotoGallery(controller: controller)
     }
@@ -120,7 +122,7 @@ class QuestionNineTVC: UITableViewCell {
 
 
 extension QuestionNineTVC: AssignmentsDelegate {
-   
+    
     func updateUploadedImages() {
         collectionView.reloadData()
     }

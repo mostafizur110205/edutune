@@ -55,7 +55,7 @@ class AnswerImageCVC: UICollectionViewCell {
         activityView.translatesAutoresizingMaskIntoConstraints = false
         activityView.hidesWhenStopped = true
         activityView.cornerRadius = 10
-        activityView.color = .yellow
+        activityView.color = .white
         activityView.backgroundColor = UIColor.gray.withAlphaComponent(0.8)
         return activityView
     }()

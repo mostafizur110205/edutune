@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 extension AssignmentsVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -17,28 +18,68 @@ extension AssignmentsVC: UIImagePickerControllerDelegate, UINavigationController
         
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             
-            let model = AnswerImageModel(id: Date.currentTimeStamp, filePath: nil, image: image, isUploaded: false)
-            viewModel?.answerImages.append(model)
-            guard let delegate = self.deleagte else {return}
-            delegate.updateUploadedImages()
-            
-            viewModel?.uploadImage(imageModel: model, completion: {[weak self] imageModel in
-                
-                guard let model = self?.viewModel,
-                      let image = imageModel else {return}
-                
-                for (index, item)  in model.answerImages.enumerated() {
-                    if item.id == image.id {
-                        model.answerImages.remove(at: index)
-                        model.answerImages.insert(image, at: index)
-                    }
+            switch viewModel?.currentQuestionType {
+            case .essay:
+                var fileName: String
+                if let url = info[UIImagePickerController.InfoKey.imageURL] as? URL {
+                     fileName = url.lastPathComponent
+                } else {
+                    fileName = "\(Date.currentTimeStamp)"
                 }
-                self?.deleagte?.updateUploadedImages()
-            })
+                eassyImagePick(withImage: image, fileName: fileName)
+            case .fileResponse:
+                fileResponseImagePick(withImage: image)
+            default:
+                print("others question type")
+            }
             self.dismiss(animated: true, completion: nil)
             
         } else {
             print("Something went wrong")
         }
+    }
+    
+    private func fileResponseImagePick(withImage image: UIImage) {
+        
+        let model = AnswerImageModel(id: Date.currentTimeStamp, image: image, isUploaded: false)
+        viewModel?.fileAnswerImages.append(model)
+        guard let delegate = self.deleagte else {return}
+        delegate.updateUploadedImages()
+        
+        viewModel?.uploadFile(imageModel: model, completion: {[weak self] imageModel in
+            
+            guard let model = self?.viewModel,
+                  let image = imageModel else {return}
+            
+            for (index, item)  in model.fileAnswerImages.enumerated() {
+                if item.id == image.id {
+                    model.fileAnswerImages.remove(at: index)
+                    model.fileAnswerImages.insert(image, at: index)
+                }
+            }
+            self?.deleagte?.updateUploadedImages()
+        })
+    }
+    
+    private func eassyImagePick(withImage image: UIImage, fileName: String) {
+        
+        let model = AnswerImageModel(id: Date.currentTimeStamp, fileName: fileName, image: image, isUploaded: false)
+        viewModel?.eassyAnswerImages.append(model)
+        guard let delegate = self.deleagte else {return}
+        delegate.updateUploadedImages()
+        
+        viewModel?.uploadHtmlImage(imageModel: model, completion: {[weak self] imageModel in
+            
+            guard let model = self?.viewModel,
+                  let image = imageModel else {return}
+            
+            for (index, item)  in model.eassyAnswerImages.enumerated() {
+                if item.id == image.id {
+                    model.eassyAnswerImages.remove(at: index)
+                    model.eassyAnswerImages.insert(image, at: index)
+                }
+            }
+            self?.deleagte?.updateUploadedImages()
+        })
     }
 }
