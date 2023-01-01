@@ -150,16 +150,14 @@ extension APIService {
         }
     }
     
-    func addProblems(params: [String: Any], completion: @escaping (Problem) -> Void) {
-        APIRequest.shared.postRequest(url: APIEndpoints.PROBLEM, parameters:  params) { (JSON, error) in
+    func addProblem(params: [String: Any], completion: @escaping (Bool) -> Void) {
+        APIRequest.shared.postRequestJSON(url: APIEndpoints.PROBLEM, parameters:  params) { (JSON, error) in
             DispatchQueue.main.async {
                 if error == nil {
                     if let json = JSON {
+                        MakeToast.shared.makeNormalToast(json["message"].stringValue)
                         if json["error"].boolValue == false {
-                            let problem = Problem(json)
-                            completion(problem)
-                        } else {
-                            MakeToast.shared.makeNormalToast(json["message"].stringValue)
+                            completion(true)
                         }
                     }
                 }

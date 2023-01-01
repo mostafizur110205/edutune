@@ -67,7 +67,6 @@ extension APIService {
         }
     }
     
-    
     func updateProfileImage(params: [String: Any], completion: @escaping (String) -> Void) {
         APIRequest.shared.postRequestJSON(url: APIEndpoints.UPDATE_PROFILE_IMAGE, parameters: params) { (JSON, error) in
             DispatchQueue.main.async {

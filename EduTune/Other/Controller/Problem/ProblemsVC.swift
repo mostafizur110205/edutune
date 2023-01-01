@@ -25,9 +25,15 @@ class ProblemsVC: UIViewController {
 
         tableView.delegate = self
         tableView.dataSource = self
+                
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        currentPage = 1
         getProblems(page: currentPage)
-        
+
     }
     
     func getProblems(page: Int) {
@@ -58,6 +64,7 @@ class ProblemsVC: UIViewController {
     
     @IBAction func onAddProblemButtonTap(_ sender: Any) {
         if let viewC: AddProblemVC = UIStoryboard(name: "Other", bundle: nil).instantiateViewController(withIdentifier: "AddProblemVC") as? AddProblemVC {
+            viewC.problemType = self.problemType
             self.navigationController?.pushViewController(viewC, animated: true)
         }
     }
