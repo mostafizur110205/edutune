@@ -162,6 +162,8 @@
 		BED916AE29586B23006C1FD3 /* FAQCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED916AD29586B23006C1FD3 /* FAQCells.swift */; };
 		BED916B0295881FA006C1FD3 /* InvoiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED916AF295881FA006C1FD3 /* InvoiceVC.swift */; };
 		BEDD168A2904E3D000C90051 /* ReviewTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDD16892904E3D000C90051 /* ReviewTVCell.swift */; };
+		BEE0E877296194CC00E47071 /* UpdateEmailPhone1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE0E876296194CC00E47071 /* UpdateEmailPhone1VC.swift */; };
+		BEE0E879296194DF00E47071 /* UpdateEmailPhone2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE0E878296194DF00E47071 /* UpdateEmailPhone2VC.swift */; };
 		BEE33B7F29064449007C35B4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE33B7E29064449007C35B4 /* User.swift */; };
 		BEE78F7228F6D30600A4B3B1 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE78F7128F6D30600A4B3B1 /* HomeVC.swift */; };
 		BEE78F7428F6D44800A4B3B1 /* DVDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE78F7328F6D44800A4B3B1 /* DVDevice.swift */; };
@@ -377,6 +379,8 @@
 		BED916AD29586B23006C1FD3 /* FAQCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQCells.swift; sourceTree = "<group>"; };
 		BED916AF295881FA006C1FD3 /* InvoiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceVC.swift; sourceTree = "<group>"; };
 		BEDD16892904E3D000C90051 /* ReviewTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTVCell.swift; sourceTree = "<group>"; };
+		BEE0E876296194CC00E47071 /* UpdateEmailPhone1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateEmailPhone1VC.swift; sourceTree = "<group>"; };
+		BEE0E878296194DF00E47071 /* UpdateEmailPhone2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateEmailPhone2VC.swift; sourceTree = "<group>"; };
 		BEE33B7E29064449007C35B4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BEE78F7128F6D30600A4B3B1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		BEE78F7328F6D44800A4B3B1 /* DVDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DVDevice.swift; sourceTree = "<group>"; };
@@ -724,6 +728,8 @@
 				BE14711428F57AE400726625 /* PassResetSuccessVC.swift */,
 				BEB83BA6290E678E00860770 /* ProfileVC.swift */,
 				BE14710C28F57A5700726625 /* UpdateProfileVC.swift */,
+				BEE0E876296194CC00E47071 /* UpdateEmailPhone1VC.swift */,
+				BEE0E878296194DF00E47071 /* UpdateEmailPhone2VC.swift */,
 				BEB83BAC290E680D00860770 /* SetPasswordVC.swift */,
 			);
 			path = Controller;
@@ -1183,6 +1189,7 @@
 			files = (
 				BEF803F428F8059A00CB3AE5 /* APIEndpoints.swift in Sources */,
 				BECAFF7C29038CC400E7C8B9 /* ClassLessonsVC.swift in Sources */,
+				BEE0E877296194CC00E47071 /* UpdateEmailPhone1VC.swift in Sources */,
 				BE486A0128DEF624003040AD /* RPicker.swift in Sources */,
 				BEB83BA5290E66E600860770 /* AddProblemVC.swift in Sources */,
 				BED916B0295881FA006C1FD3 /* InvoiceVC.swift in Sources */,
@@ -1218,6 +1225,7 @@
 				BEFE792029266F2900062986 /* ProfileTVCell.swift in Sources */,
 				BEF803EA28F8029100CB3AE5 /* SplashVC.swift in Sources */,
 				BED916A829585BCC006C1FD3 /* Help.swift in Sources */,
+				BEE0E879296194DF00E47071 /* UpdateEmailPhone2VC.swift in Sources */,
 				BE1D520C28D887F300EC151A /* AppDelegate.swift in Sources */,
 				BE304D0728F8474E0062C48A /* ClassTVCell.swift in Sources */,
 				E3221E95294712C1001FEE53 /* QuestionItemModel.swift in Sources */,

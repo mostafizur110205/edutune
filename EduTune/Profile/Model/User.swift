@@ -47,6 +47,24 @@ class User: NSObject {
     }
 }
 
-//icon = "https://i.ibb.co/yqhQwCT/Group-22-2.png";
-//id = 1;
-//name = "Class 1";
+class UserProfile: NSObject {
+    
+    var student_id: Int?
+    var name: String?
+    var dob: String?
+    var email: String?
+    var mobile_number: String?
+    var guardian_name: String?
+    var guardian_mobile: String?
+
+    required init(json: JSON) {
+        student_id = json["student_id"].int
+        name = json["name"].stringValue
+        dob = json["dob"].string
+        email = json["email"].string
+        mobile_number = json["mobile_number"].string
+        guardian_name = json["guardian_name"].string
+        guardian_mobile = json["guardian_mobile"].string
+    
+    }
+}

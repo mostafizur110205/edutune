@@ -199,7 +199,7 @@ extension AddProblemVC: UITextFieldDelegate {
         if textField == problemTypeTextField {
             chooseProblemType()
             return false
-        } else  if textField == chooseFileTextField {
+        } else if textField == chooseFileTextField {
             chooseFile()
             return false
         }

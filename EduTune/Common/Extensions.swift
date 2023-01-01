@@ -1106,6 +1106,12 @@ extension Date{
         return dateFormatter.string(from: self)
     }
     
+    func formatDate(format: String) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        formatter.locale = Locale(identifier: "en_US")
+        return formatter.string(from: self)
+    }
     
     var timeAgoSinceDate: String {
         

@@ -22,6 +22,10 @@ open class APIEndpoints: NSObject {
     public static let AUTH2: String = BASE_URL+"online-class-registration-and-login-step2"
     public static let RELOGIN: String = BASE_URL+"online-class-login-inst-check"
     public static let UPDATE_PROFILE_IMAGE: String = BASE_URL+"profile-img-update"
+    public static let PROFILE: String = BASE_URL+"profile"
+    public static let UPDATE_PROFILE: String = BASE_URL+"profile-update"
+    public static let UPDATE_EMAIL_PHONE1: String = BASE_URL+"check-email-phone"
+    public static let UPDATE_EMAIL_PHONE2: String = BASE_URL+"email-phone-otp-check"
 
     public static let HOME_PUBLIC: String = BASE_URL+"olv2/public/home"
     public static let SEE_ALL: String = BASE_URL+"olv2/see-all?page="

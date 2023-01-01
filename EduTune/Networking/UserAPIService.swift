@@ -9,7 +9,7 @@ import UIKit
 import SwiftyJSON
 
 extension APIService {
-
+    
     func signupStep1(params: [String: Any], completion: @escaping (String) -> Void) {
         APIRequest.shared.postRequestJSON(url: APIEndpoints.AUTH1, parameters: params) { (JSON, error) in
             DispatchQueue.main.async {
@@ -82,6 +82,68 @@ extension APIService {
             }
         }
     }
-
-
+    
+    func getProfile(params: [String: Any], completion: @escaping (UserProfile?) -> Void) {
+        APIRequest.shared.postRequestJSON(url: APIEndpoints.PROFILE, parameters: params) { (JSON, error) in
+            DispatchQueue.main.async {
+                if error == nil {
+                    if let json = JSON {
+                        if json["error"].boolValue == false {
+                            let user = UserProfile(json: json["basic_information"])
+                            completion(user)
+                        } else {
+                            MakeToast.shared.makeNormalToast(json["message"].stringValue)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func updateProfile(params: [String: Any], completion: @escaping (Bool) -> Void) {
+        APIRequest.shared.postRequestJSON(url: APIEndpoints.UPDATE_PROFILE, parameters: params) { (JSON, error) in
+            DispatchQueue.main.async {
+                if error == nil {
+                    if let json = JSON {
+                        MakeToast.shared.makeNormalToast(json["message"].stringValue)
+                        if json["error"].boolValue == false {
+                            completion(true)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func sendOTP(params: [String: Any], completion: @escaping (Bool) -> Void) {
+        APIRequest.shared.postRequestJSON(url: APIEndpoints.UPDATE_EMAIL_PHONE1, parameters: params) { (JSON, error) in
+            DispatchQueue.main.async {
+                if error == nil {
+                    if let json = JSON {
+                        MakeToast.shared.makeNormalToast(json["message"].stringValue)
+                        if json["error"].boolValue == false {
+                            completion(true)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func updateEmailPhone(params: [String: Any], completion: @escaping (Bool) -> Void) {
+        APIRequest.shared.postRequestJSON(url: APIEndpoints.UPDATE_EMAIL_PHONE2, parameters: params) { (JSON, error) in
+            DispatchQueue.main.async {
+                if error == nil {
+                    if let json = JSON {
+                        MakeToast.shared.makeNormalToast(json["message"].stringValue)
+                        if json["error"].boolValue == false {
+                            completion(true)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    
 }
