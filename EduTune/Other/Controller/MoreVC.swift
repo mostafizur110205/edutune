@@ -92,23 +92,31 @@ extension MoreVC: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             switch indexPath.row {
             case 0:
-                if let viewC: CertificatesVC = UIStoryboard(name: "Other", bundle: nil).instantiateViewController(withIdentifier: "CertificatesVC") as? CertificatesVC {
-                    self.navigationController?.pushViewController(viewC, animated: true)
+                if AppDelegate.shared().checkAndShowLoginVC(navigationController: self.navigationController) {
+                    if let viewC: CertificatesVC = UIStoryboard(name: "Other", bundle: nil).instantiateViewController(withIdentifier: "CertificatesVC") as? CertificatesVC {
+                        self.navigationController?.pushViewController(viewC, animated: true)
+                    }
                 }
                 break
             case 1:
-                if let viewC: SyllabusVC = UIStoryboard(name: "Other", bundle: nil).instantiateViewController(withIdentifier: "SyllabusVC") as? SyllabusVC {
-                    self.navigationController?.pushViewController(viewC, animated: true)
+                if AppDelegate.shared().checkAndShowLoginVC(navigationController: self.navigationController) {
+                    if let viewC: SyllabusVC = UIStoryboard(name: "Other", bundle: nil).instantiateViewController(withIdentifier: "SyllabusVC") as? SyllabusVC {
+                        self.navigationController?.pushViewController(viewC, animated: true)
+                    }
                 }
                 break
             case 2:
-                if let viewC: BookmarksVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "BookmarksVC") as? BookmarksVC {
-                    self.navigationController?.pushViewController(viewC, animated: true)
+                if AppDelegate.shared().checkAndShowLoginVC(navigationController: self.navigationController) {
+                    if let viewC: BookmarksVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "BookmarksVC") as? BookmarksVC {
+                        self.navigationController?.pushViewController(viewC, animated: true)
+                    }
                 }
                 break
             case 3:
-                if let viewC: NotificationsVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "NotificationsVC") as? NotificationsVC {
-                    self.navigationController?.pushViewController(viewC, animated: true)
+                if AppDelegate.shared().checkAndShowLoginVC(navigationController: self.navigationController) {
+                    if let viewC: NotificationsVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "NotificationsVC") as? NotificationsVC {
+                        self.navigationController?.pushViewController(viewC, animated: true)
+                    }
                 }
                 break
             default:
@@ -117,13 +125,17 @@ extension MoreVC: UITableViewDelegate, UITableViewDataSource {
         } else if indexPath.section == 1 {
             switch indexPath.row {
             case 0:
-                if let viewC: ProfileVC = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "ProfileVC") as? ProfileVC {
-                    self.navigationController?.pushViewController(viewC, animated: true)
+                if AppDelegate.shared().checkAndShowLoginVC(navigationController: self.navigationController) {
+                    if let viewC: ProfileVC = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "ProfileVC") as? ProfileVC {
+                        self.navigationController?.pushViewController(viewC, animated: true)
+                    }
                 }
                 break
             case 1:
-                if let viewC: ProblemsVC = UIStoryboard(name: "Other", bundle: nil).instantiateViewController(withIdentifier: "ProblemsVC") as? ProblemsVC {
-                    self.navigationController?.pushViewController(viewC, animated: true)
+                if AppDelegate.shared().checkAndShowLoginVC(navigationController: self.navigationController) {
+                    if let viewC: ProblemsVC = UIStoryboard(name: "Other", bundle: nil).instantiateViewController(withIdentifier: "ProblemsVC") as? ProblemsVC {
+                        self.navigationController?.pushViewController(viewC, animated: true)
+                    }
                 }
                 break
             default:

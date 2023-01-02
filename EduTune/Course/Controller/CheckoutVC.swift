@@ -42,28 +42,29 @@ class CheckoutVC: UIViewController {
     }
     
     func applyPromo(_ code: String) {
-        let params = ["coupon": code, "user_id": AppUserDefault.getUserId(), "class_id": classDetail?.id ?? -1, "current_price": classDetail?.current_price ?? 0] as [String: Any]
-        APIService.shared.applyPromo(params: params) { coupon in
-           
-            if let coupon = coupon {
-                self.finalPrice = coupon.set_cart_amount ?? 0
-                self.couponCode = code
-                self.promoStackView.isHidden = false
-                self.promoLabel.text = coupon.discount_message
-                self.promoPriceLabel.text = "৳\(coupon.discount ?? 0)"
-                self.finalPriceLabel.text = "৳\(coupon.set_cart_amount ?? 0)"
-                self.applyPromoButton.setTitle("Promo Applied", for: .normal)
-            } else {
-                self.finalPrice = self.classDetail?.current_price ?? 0
-                self.couponCode = ""
-                self.promoStackView.isHidden = true
-                self.promoLabel.text = ""
-                self.promoPriceLabel.text = ""
-                self.finalPriceLabel.text = ""
-                self.applyPromoButton.setTitle("Apply promo", for: .normal)
+        if AppDelegate.shared().checkAndShowLoginVC(navigationController: self.navigationController) {
+            let params = ["coupon": code, "user_id": AppUserDefault.getUserId(), "class_id": classDetail?.id ?? -1, "current_price": classDetail?.current_price ?? 0] as [String: Any]
+            APIService.shared.applyPromo(params: params) { coupon in
+               
+                if let coupon = coupon {
+                    self.finalPrice = coupon.set_cart_amount ?? 0
+                    self.couponCode = code
+                    self.promoStackView.isHidden = false
+                    self.promoLabel.text = coupon.discount_message
+                    self.promoPriceLabel.text = "৳\(coupon.discount ?? 0)"
+                    self.finalPriceLabel.text = "৳\(coupon.set_cart_amount ?? 0)"
+                    self.applyPromoButton.setTitle("Promo Applied", for: .normal)
+                } else {
+                    self.finalPrice = self.classDetail?.current_price ?? 0
+                    self.couponCode = ""
+                    self.promoStackView.isHidden = true
+                    self.promoLabel.text = ""
+                    self.promoPriceLabel.text = ""
+                    self.finalPriceLabel.text = ""
+                    self.applyPromoButton.setTitle("Apply promo", for: .normal)
+                }
             }
-
-        }
+        }        
     }
     
     

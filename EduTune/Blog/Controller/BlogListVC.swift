@@ -41,7 +41,7 @@ class BlogListVC: UIViewController {
         if isAPICalling {
             return
         }
-        var params: [String: Any] = ["type": "list", "user_id": AppUserDefault.getUserId()]
+        var params: [String: Any] = ["type": "list"]
         
         if let category = types.first(where: { $0.type_name == categorySelected }) {
             params["type_id"] = category.id

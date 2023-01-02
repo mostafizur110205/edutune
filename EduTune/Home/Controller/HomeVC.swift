@@ -51,10 +51,12 @@ class HomeVC: UIViewController {
     }
     
     func getBookmarks() {
-        let params = ["type": "get", "user_id": AppUserDefault.getUserId()] as [String: Any]
-        APIService.shared.getBookmarks(params: params) { classes in
-            AppDelegate.shared().bookmarkIds = classes.map({ $0.class_book_mark_id ?? -1 })
-            self.updateUI()
+        if AppUserDefault.getIsLoggedIn() {
+            let params = ["type": "get", "user_id": AppUserDefault.getUserId()] as [String: Any]
+            APIService.shared.getBookmarks(params: params) { classes in
+                AppDelegate.shared().bookmarkIds = classes.map({ $0.class_book_mark_id ?? -1 })
+                self.updateUI()
+            }
         }
     }
     
@@ -145,12 +147,8 @@ class HomeVC: UIViewController {
     }
     
     @IBAction func onProfileButtonTap(_ sender: Any) {
-        if AppUserDefault.getIsLoggedIn() {
+        if AppDelegate.shared().checkAndShowLoginVC(navigationController: self.navigationController) {
             if let viewC: ProfileVC = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "ProfileVC") as? ProfileVC {
-                self.navigationController?.pushViewController(viewC, animated: true)
-            }
-        } else {
-            if let viewC: LetsInVC = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "LetsInVC") as? LetsInVC {
                 self.navigationController?.pushViewController(viewC, animated: true)
             }
         }
@@ -397,25 +395,28 @@ extension HomeVC: ClassTVCellDelegate {
 
 extension HomeVC: AddRemoveBookmarkVCDelegate {
     func didAddButtonTap(_ classId: Int?) {
-        let params = ["class_id": classId ?? -1, "user_id": AppUserDefault.getUserId(), "type": "set"] as [String: Any]
-        APIService.shared.addBookmark(params: params) { bookmark_id in
-            AppDelegate.shared().bookmarkIds.append(bookmark_id)
-            if let index = self.allClasses.firstIndex(where: { $0.id == classId }) {
-                let classData = self.allClasses[index]
-                classData.class_book_mark_id = bookmark_id
-                self.allClasses[index] = classData
+        if AppDelegate.shared().checkAndShowLoginVC(navigationController: self.navigationController) {
+            let params = ["class_id": classId ?? -1, "user_id": AppUserDefault.getUserId(), "type": "set"] as [String: Any]
+            APIService.shared.addBookmark(params: params) { bookmark_id in
+                AppDelegate.shared().bookmarkIds.append(bookmark_id)
+                if let index = self.allClasses.firstIndex(where: { $0.id == classId }) {
+                    let classData = self.allClasses[index]
+                    classData.class_book_mark_id = bookmark_id
+                    self.allClasses[index] = classData
+                }
+                self.tableView.reloadData()
             }
-            self.tableView.reloadData()
         }
     }
     
     func didRemoveButtonTap(_ bookmarkId: Int?) {
-        let params = ["book_mark_id": bookmarkId ?? -1, "user_id": AppUserDefault.getUserId(), "type": "remove"] as [String: Any]
-        
-        APIService.shared.removeBookmark(params: params) { success in
-            if let index = AppDelegate.shared().bookmarkIds.firstIndex(where: { $0 == bookmarkId }) {
-                AppDelegate.shared().bookmarkIds.remove(at: index)
-                self.tableView.reloadData()
+        if AppDelegate.shared().checkAndShowLoginVC(navigationController: self.navigationController) {
+            let params = ["book_mark_id": bookmarkId ?? -1, "user_id": AppUserDefault.getUserId(), "type": "remove"] as [String: Any]
+            APIService.shared.removeBookmark(params: params) { success in
+                if let index = AppDelegate.shared().bookmarkIds.firstIndex(where: { $0 == bookmarkId }) {
+                    AppDelegate.shared().bookmarkIds.remove(at: index)
+                    self.tableView.reloadData()
+                }
             }
         }
     }

@@ -231,27 +231,32 @@ extension SearchVC: ClassTVCellDelegate {
 
 extension SearchVC: AddRemoveBookmarkVCDelegate {
     func didAddButtonTap(_ classId: Int?) {
-        let params = ["class_id": classId ?? -1, "user_id": AppUserDefault.getUserId(), "type": "set"] as [String: Any]
-        APIService.shared.addBookmark(params: params) { bookmark_id in
-            AppDelegate.shared().bookmarkIds.append(bookmark_id)
-            if let index = self.allClasses.firstIndex(where: { $0.id == classId }) {
-                let classData = self.allClasses[index]
-                classData.class_book_mark_id = bookmark_id
-                self.allClasses[index] = classData
-            }
-            self.tableView.reloadData()
-        }
-    }
-    
-    func didRemoveButtonTap(_ bookmarkId: Int?) {
-        let params = ["book_mark_id": bookmarkId ?? -1, "user_id": AppUserDefault.getUserId(), "type": "remove"] as [String: Any]
-        
-        APIService.shared.removeBookmark(params: params) { success in
-            if let index = AppDelegate.shared().bookmarkIds.firstIndex(where: { $0 == bookmarkId }) {
-                AppDelegate.shared().bookmarkIds.remove(at: index)
+        if AppDelegate.shared().checkAndShowLoginVC(navigationController: self.navigationController) {
+            let params = ["class_id": classId ?? -1, "user_id": AppUserDefault.getUserId(), "type": "set"] as [String: Any]
+            APIService.shared.addBookmark(params: params) { bookmark_id in
+                AppDelegate.shared().bookmarkIds.append(bookmark_id)
+                if let index = self.allClasses.firstIndex(where: { $0.id == classId }) {
+                    let classData = self.allClasses[index]
+                    classData.class_book_mark_id = bookmark_id
+                    self.allClasses[index] = classData
+                }
                 self.tableView.reloadData()
             }
         }
+        
+    }
+    
+    func didRemoveButtonTap(_ bookmarkId: Int?) {
+        if AppDelegate.shared().checkAndShowLoginVC(navigationController: self.navigationController) {
+            let params = ["book_mark_id": bookmarkId ?? -1, "user_id": AppUserDefault.getUserId(), "type": "remove"] as [String: Any]
+            APIService.shared.removeBookmark(params: params) { success in
+                if let index = AppDelegate.shared().bookmarkIds.firstIndex(where: { $0 == bookmarkId }) {
+                    AppDelegate.shared().bookmarkIds.remove(at: index)
+                    self.tableView.reloadData()
+                }
+            }
+        }
+        
     }
     
 }

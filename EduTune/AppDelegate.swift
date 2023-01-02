@@ -86,14 +86,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    func checkAndShowLoginVC(navigationController: UINavigationController?) -> Bool {
+        if AppUserDefault.getIsLoggedIn() {
+            return true
+        } else {
+            if let viewC: LetsInVC = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "LetsInVC") as? LetsInVC {
+                navigationController?.pushViewController(viewC, animated: true)
+            }
+            return false
+        }
+    }
+    
     func getCategoryNameIcon(_ type: Int) -> (String, String) {
         switch type {
-        case MODEL_TEST_TYPE, QUIZ_TYPE, ASSESSMENT_TYPE:
-            return ("Assignment", "ic_activity")
+        case MODEL_TEST_TYPE, ASSESSMENT_TYPE:
+            return ("Assignment", "ic_message")
+        case QUIZ_TYPE:
+            return ("Quiz", "ic_email_blue")
         case VIDEO_TYPE:
+            return ("Video", "ic_play")
+        case LIVE_TYPE:
             return ("Live", "ic_video")
-        case LIVE_TYPE, AUDIO_BOOK_TYPE, TRANSCRIPT_TYPE, NOTE_TYPE, PDF_BOOK_TYPE, LECTURE_SHEET_TYPE, SOLVE_CLASS_TYPE:
+        case AUDIO_BOOK_TYPE, TRANSCRIPT_TYPE, NOTE_TYPE, PDF_BOOK_TYPE, SOLVE_CLASS_TYPE:
             return ("Document", "ic_document")
+        case LECTURE_SHEET_TYPE:
+            return ("Lecture Sheet", "ic_download")
+        case SOLVE_CLASS_TYPE:
+            return ("Solve Class", "ic_star_blue")
         default:
             return ("", "")
         }

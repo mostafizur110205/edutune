@@ -129,20 +129,26 @@ extension BlogDetailsVC: UITableViewDelegate, UITableViewDataSource {
 
 extension BlogDetailsVC: AddRemoveBookmarkVCDelegate {
     func didRemoveButtonTap(_ bookmarkId: Int?) {
-        let params = ["blog_user_bookmark_id": blog?.book_mark_id ?? -1, "user_id": AppUserDefault.getUserId(), "type": "remove_bookmark"] as [String: Any]
-        
-        APIService.shared.removeBlogBookmark(params: params) { success in
-            self.blog?.book_mark_id = nil
-            self.bookMarkButton.setImage(UIImage(named: "ic_bookmark"), for: .normal)
+        if AppDelegate.shared().checkAndShowLoginVC(navigationController: self.navigationController) {
+            let params = ["blog_user_bookmark_id": blog?.book_mark_id ?? -1, "user_id": AppUserDefault.getUserId(), "type": "remove_bookmark"] as [String: Any]
+            
+            APIService.shared.removeBlogBookmark(params: params) { success in
+                self.blog?.book_mark_id = nil
+                self.bookMarkButton.setImage(UIImage(named: "ic_bookmark"), for: .normal)
+            }
         }
+        
     }
     
     func didAddButtonTap(_ classId: Int?) {
-        let params = ["blog_id": blog?.id ?? -1, "user_id": AppUserDefault.getUserId(), "type": "set_bookmark"] as [String: Any]
-        APIService.shared.addBlogBookmark(params: params) { bookmark_id in
-            self.blog?.book_mark_id = bookmark_id
-            self.bookMarkButton.setImage(UIImage(named: "ic_bookmarked"), for: .normal)
+        if AppDelegate.shared().checkAndShowLoginVC(navigationController: self.navigationController) {
+            let params = ["blog_id": blog?.id ?? -1, "user_id": AppUserDefault.getUserId(), "type": "set_bookmark"] as [String: Any]
+            APIService.shared.addBlogBookmark(params: params) { bookmark_id in
+                self.blog?.book_mark_id = bookmark_id
+                self.bookMarkButton.setImage(UIImage(named: "ic_bookmarked"), for: .normal)
+            }
         }
+       
     }
     
     

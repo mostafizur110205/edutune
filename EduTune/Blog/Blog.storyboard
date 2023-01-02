@@ -418,13 +418,13 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All You Need To Know About Corporate Networking" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iuL-wW-W5J">
-                                            <rect key="frame" x="16" y="269.66666666666669" width="257" height="86.666666666666686"/>
-                                            <fontDescription key="fontDescription" name="Urbanist-Bold" family="Urbanist" pointSize="24"/>
+                                            <rect key="frame" x="16" y="269.66666666666669" width="257" height="90"/>
+                                            <fontDescription key="fontDescription" name="Urbanist-Bold" family="Urbanist" pointSize="25"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="OhJ-AO-lzK">
-                                            <rect key="frame" x="278" y="291" width="96" height="44"/>
+                                            <rect key="frame" x="278" y="292.66666666666669" width="96" height="44"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4or-9Z-HdV">
                                                     <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
@@ -453,7 +453,7 @@
                                             </subviews>
                                         </stackView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UI/UX Design" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72R-6L-SDo" userLabel="Good">
-                                            <rect key="frame" x="16" y="376.33333333333331" width="65.333333333333329" height="22"/>
+                                            <rect key="frame" x="16" y="379.66666666666669" width="65.333333333333329" height="22"/>
                                             <color key="backgroundColor" red="0.21960784310000001" green="0.34599998589999997" blue="0.96899998190000003" alpha="0.080000000000000002" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="22" id="0ac-Ba-M75"/>

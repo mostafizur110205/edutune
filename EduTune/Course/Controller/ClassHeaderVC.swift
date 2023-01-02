@@ -78,7 +78,7 @@ class ClassHeaderVC: UIViewController {
    
     }
     
-    func getCategoryNameIcon(_ type: String) -> String {
+    func getCategoryIcon(_ type: String) -> String {
         switch type {
         case "fa fa-calendar", "fa fa-clock", "fa fa-code", "fa fa-bell", "fa fa-bullseye", "fa fa-check-circle":
             return "ic_clock"
@@ -115,9 +115,8 @@ extension ClassHeaderVC: UICollectionViewDataSource, UICollectionViewDelegate, U
         guard let cell: CategoryCVCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCVCell", for: indexPath) as? CategoryCVCell else {return UICollectionViewCell()}
         let category = (features[indexPath.item].name ?? "") + ": " + (features[indexPath.item].value ?? "")
         cell.tagNameLabel.text = category
-        let icon = getCategoryNameIcon(features[indexPath.item].icon ?? "")
+        let icon = getCategoryIcon(features[indexPath.item].icon ?? "")
         cell.iconImageView?.image = UIImage(named: icon)
-        print(features[indexPath.item].icon)
         return cell
     }
     

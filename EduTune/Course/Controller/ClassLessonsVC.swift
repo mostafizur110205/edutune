@@ -77,8 +77,10 @@ extension ClassLessonsVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "LessonTVCell") as? LessonTVCell else {return UITableViewCell()}
         let content = classDetail?.get_class_contents[indexPath.section].get_lectures[indexPath.row]
-        cell.titleLabel.text = content?.title
-        
+        let (type, icon) = AppDelegate.shared().getCategoryNameIcon(content?.type ?? 0)
+        cell.titleLabel.text = "\(type): \(content?.title ?? "")"
+        cell.iconImageView?.image = UIImage(named: icon)
+    
         var rowNumber = indexPath.row
         for i in 0..<indexPath.section {
             rowNumber += self.tableView.numberOfRows(inSection: i)
