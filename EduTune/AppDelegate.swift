@@ -77,7 +77,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let date = dateFormatter.date(from: dateString) ?? Date()
         
         let isDuePassed = date>Date()
-        dateFormatter.dateFormat = "d MMM, HH:mm a"
+        dateFormatter.dateFormat = "d MMM, hh:mm a"
         return (dateFormatter.string(from: date), isDuePassed)
     }
     

@@ -119,17 +119,17 @@ class HomeVC: UIViewController {
     
     func getStatusText() -> String {
         let hour = Calendar.current.component(.hour, from: Date())
-        var timeString = ""
-        if hour >= 0 && hour <= 11 {
-            timeString = "morning"
-        } else if hour > 11 && hour <= 17 {
-            timeString = "day"
-        } else if hour > 17 && hour <= 22 {
-            timeString = "evening"
-        } else {
-            timeString = "night"
+        var timeString = "Happy night"
+        if hour < 5 {
+            timeString = "Happy night"
+        } else if hour < 12 {
+            timeString = "Good morning"
+        } else if hour < 17 {
+            timeString = "Good afternoon"
+        } else if hour < 21 {
+            timeString = "Good evening"
         }
-        return "Good \(timeString)"
+        return timeString
     }
     
     @IBAction func mentorsSeeAllButtonTap(_ sender: Any) {
