@@ -163,7 +163,7 @@ class AssignmentsViewModel: AssignmentsViewModelProtocol {
                     answerValue = ["answer_text" : item.answer]
                 }
 
-                let params = ["question_id": item.questionType == .filInTheBlanks ? 147670 : 147671,
+                let params = ["question_id": item.id ?? 0,
                               "question_type": item.questionType?.rawValue ?? 0,
                               "answer": answerValue
                 ] as [String:Any]
@@ -183,16 +183,13 @@ class AssignmentsViewModel: AssignmentsViewModelProtocol {
             for (_,item) in items.enumerated() {
 
                 let files = item.assignmentFiles.map{$0.filePath}
-                var params = ["question_id": item.questionType == .essay ? 147672 : 147673,
+                let params = ["question_id": item.id ?? 0,
                               "question_type": item.questionType?.rawValue ?? 0,
                               "answer": [
-                                "answer_file_path" : files
+                                "answer_file_path" : files,
+                                "answer_text" : ""
                               ]
                 ] as [String:Any]
-                
-                if item.questionType == .essay {
-                    params["answer_text"] = ""
-                }
 
                 questionAnswer.append(params)
             }
