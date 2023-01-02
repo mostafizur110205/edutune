@@ -27,6 +27,9 @@ class QuestionCVC: UICollectionViewCell {
             tableView.reloadData()
         }
     }
+    
+    var viewModel: AssignmentsViewModel?
+    var viewController: AssignmentsVC?
 
     let marksLabel: UILabel = {
         let label = UILabel()
@@ -38,10 +41,11 @@ class QuestionCVC: UICollectionViewCell {
     }()
     
     let tableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .plain)
+        let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
+        tableView.backgroundColor = .white
         return tableView
     }()
 
@@ -49,6 +53,7 @@ class QuestionCVC: UICollectionViewCell {
         super.init(frame: frame)
         
         translatesAutoresizingMaskIntoConstraints = false
+        tableView.delaysContentTouches = false
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -68,7 +73,7 @@ class QuestionCVC: UICollectionViewCell {
     private func setUpViews(){
         
         addSubview(marksLabel)
-        addSubview(tableView)
+        contentView.addSubview(tableView)
     }
     
     private func setupLayouts() {
@@ -78,7 +83,7 @@ class QuestionCVC: UICollectionViewCell {
         marksLabel.rightAnchor.constraint(equalTo: rightAnchor, constant:-20).isActive = true
         marksLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
-        tableView.topAnchor.constraint(equalTo: marksLabel.bottomAnchor).isActive = true
+        tableView.topAnchor.constraint(equalTo: marksLabel.bottomAnchor, constant: 20).isActive = true
         tableView.leftAnchor.constraint(equalTo: leftAnchor, constant: 0).isActive = true
         tableView.rightAnchor.constraint(equalTo: rightAnchor, constant: 0).isActive = true
         tableView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true

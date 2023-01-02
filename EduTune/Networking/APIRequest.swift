@@ -35,11 +35,11 @@ class APIRequest: NSObject {
         parameters["institution_id"] = 206
         
         print(parameters)
-
+        
         let escapedString = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? url
         
         SVProgressHUD.show()
-
+        
         AF.request(URL(string: escapedString)!, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: APIRequest.header, interceptor: nil).responseDecodable(of: JSON.self, queue: self.networkQueue) {
             response in
             
@@ -78,7 +78,7 @@ class APIRequest: NSObject {
             print("\(statusCode) -- \(requestURL)")
             print(response)
             SVProgressHUD.dismiss()
-
+            
             switch response.result {
             case .success(let value):
                 completion(value, nil)
@@ -96,7 +96,7 @@ class APIRequest: NSObject {
         parameters["institution_id"] = 206
         
         print(parameters)
-
+        
         let escapedString = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? url
         
         SVProgressHUD.show()
@@ -117,4 +117,53 @@ class APIRequest: NSObject {
             }
         }
     }
+    
+    public func uploadImage(url: String, image:UIImage, parameters: [String: Any]?, completion: @escaping (_ JSON: JSON?, _ error: NSError?) -> Void) {
+        
+        var params = parameters ?? [String: Any]()
+        params["user_type"] = 2
+        params["institution_url"] = "https://edutune.com"
+        params["institution_id"] = 206
+        
+        let parameterS: Parameters = params
+        
+        AF.upload(
+            multipartFormData: { multipartFormData in
+                for (key, value) in parameterS {
+                    if let temp = value as? String {
+                        multipartFormData.append(temp.data(using: .utf8)!, withName: key)
+                    }
+                    if let temp = value as? Int {
+                        multipartFormData.append("\(temp)".data(using: .utf8)!, withName: key)
+                    }
+                    if let temp = value as? NSArray {
+                        temp.forEach({ element in
+                            let keyObj = key + "[]"
+                            if let string = element as? String {
+                                multipartFormData.append(string.data(using: .utf8)!, withName: keyObj)
+                            } else
+                            if let num = element as? Int {
+                                let value = "\(num)"
+                                multipartFormData.append(value.data(using: .utf8)!, withName: keyObj)
+                            }
+                        })
+                    }
+                }
+                multipartFormData.append(image.jpegData(compressionQuality: 0.3)!, withName: "image" , fileName: "file.jpeg", mimeType: "image/jpeg")
+            },
+            to: url, method: .post , headers: APIRequest.header)
+        .validate(statusCode: 200..<300)
+        .response { response in
+            switch response.result {
+            case .success(let value):
+                guard let json = (try? JSON(data: value!)) else {completion(nil,nil); return}
+                print("********** File Uploaded *************")
+                completion(json, nil)
+            case .failure(let error):
+                completion(nil, error as NSError)
+            }
+        }
+    }
+    
+
 }

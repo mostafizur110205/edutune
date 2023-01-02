@@ -15,6 +15,7 @@ class QuestionSevenTVC: UITableViewCell {
             titleLabel.text = model.title
         }
     }
+    var viewModel: AssignmentsViewModel?
     
     let titleLabel: UILabel = {
         let label = UILabel()
@@ -47,6 +48,8 @@ class QuestionSevenTVC: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        backgroundColor = UIColor.white
+        
         setUpViews()
         setupLayouts()
        
@@ -54,7 +57,6 @@ class QuestionSevenTVC: UITableViewCell {
     }
     
     private func setUpViews(){
-        backgroundColor = UIColor.white
         
         addSubview(stackView)
         stackView.addArrangedSubview(titleLabel)
@@ -65,7 +67,6 @@ class QuestionSevenTVC: UITableViewCell {
         
         stackView.leftAnchor.constraint(lessThanOrEqualTo: leftAnchor, constant: 20).isActive = true
         stackView.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
-        //stackView.rightAnchor.constraint(equalTo: rightAnchor, constant:-20).isActive = true
         stackView.widthAnchor.constraint(equalToConstant: frame.width).isActive = true
         stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant:-10).isActive = true
         
@@ -80,28 +81,13 @@ class QuestionSevenTVC: UITableViewCell {
 
 extension QuestionSevenTVC: UITextFieldDelegate {
 
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        return true
-    }
-
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-    }
-
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        return true
-    }
-
-    func textFieldDidEndEditing(_ textField: UITextField) {
-    }
-
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if let model = viewModel {
+            model.questionsModel?.questionItems?[model.questionIndex].answer = textField.text ?? ""
+        }
         return true
+        
     }
-
-    func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        return true
-    }
-
- 
 
 }

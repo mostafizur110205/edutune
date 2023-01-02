@@ -16,6 +16,10 @@
 	</array>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>whatsapp</string>
+	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -25,9 +29,5 @@
 	<array>
 		<string>audio</string>
 	</array>
-    <key>LSApplicationQueriesSchemes</key>
-     <array>
-        <string>whatsapp</string>
-     </array>
 </dict>
 </plist>

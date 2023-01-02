@@ -10,7 +10,8 @@ import UIKit
 extension AssignmentsVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel?.questionsModel?.questionItems?.count ?? 0
+        guard let questionModel = viewModel?.questionsModel else {return 0}
+        return questionModel.questionItems?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -18,12 +19,15 @@ extension AssignmentsVC: UICollectionViewDataSource, UICollectionViewDelegate, U
         guard let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "QuestionCVC", for: indexPath) as? QuestionCVC else {return UICollectionViewCell()}
 
         cell.questionItem = viewModel?.questionsModel?.questionItems?[indexPath.row]
-        
+        cell.viewModel = viewModel
+        cell.viewController = self
     
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+        viewModel?.setCurrentQuestion(collectionViewCellIndex: indexPath.row)
         updateProgressBar(withValue: indexPath.row)
     }
     
@@ -36,16 +40,3 @@ extension AssignmentsVC: UICollectionViewDataSource, UICollectionViewDelegate, U
  
 }
 
-extension UICollectionView {
-    
-    func getVisibleCellIndex() -> Int {
-        
-        var visibleRect = CGRect()
-        visibleRect.origin = self.contentOffset
-        visibleRect.size = self.bounds.size
-        
-        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
-        guard let indexPath = self.indexPathForItem(at: visiblePoint) else { return 0}
-        return indexPath.row
-    }
-}

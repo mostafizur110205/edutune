@@ -14,8 +14,15 @@ extension QuestionCVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        guard questionItem?.questionType == .shortAnswer else {return 80}
-        return UITableView.automaticDimension
+        
+        switch questionItem?.questionType {
+        case .shortAnswer:
+            return UITableView.automaticDimension
+        case .fileResponse, .essay:
+            return frame.height/1.4
+        default:
+            return 80
+        }
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -49,6 +56,8 @@ extension QuestionCVC: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionFourTVC") as? QuestionFourTVC
             else {return UITableViewCell()}
             cell.selectionStyle = .none
+            cell.viewModel = viewModel
+            cell.viewController = viewController
             return cell
             
         case .filInTheBlanks:
@@ -57,6 +66,7 @@ extension QuestionCVC: UITableViewDelegate, UITableViewDataSource {
             else {return UITableViewCell()}
             cell.selectionStyle = .none
             cell.contentView.isUserInteractionEnabled = false
+            cell.viewModel = viewModel
             cell.questionItem = questionItem
             return cell
             
@@ -65,6 +75,8 @@ extension QuestionCVC: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionNineTVC") as? QuestionNineTVC
             else {return UITableViewCell()}
             cell.selectionStyle = .none
+            cell.viewModel = viewModel
+            cell.viewController = viewController
             return cell
             
         case .shortAnswer:
@@ -73,6 +85,7 @@ extension QuestionCVC: UITableViewDelegate, UITableViewDataSource {
             else {return UITableViewCell()}
             cell.selectionStyle = .none
             cell.contentView.isUserInteractionEnabled = false
+            cell.viewModel = viewModel
             cell.delegate = self
             return cell
             
@@ -86,17 +99,29 @@ extension QuestionCVC: UITableViewDelegate, UITableViewDataSource {
         switch questionItem?.questionType {
         case .multipleChoice, .trueFalse:
             
-            guard let id = questionItem?.questionOptions?[indexPath.row].id else {return}
+            guard let id = questionItem?.questionOptions?[indexPath.row].id,
+                  let model = viewModel else {return}
+            
+            /* append selected option id to the anserId list */
+            viewModel?.questionsModel?.questionItems?[model.questionIndex].answerOptionIds = [id]
             
             questionItem?.questionOptions?[indexPath.row].isSelected = true
             let _ = (questionItem?.questionOptions?.filter {$0.id != id}.map {$0.isSelected = false})
             
         case .multipleAnswer:
             
-            guard let isSelected = questionItem?.questionOptions?[indexPath.row].isSelected else {return}
+            guard let isSelected = questionItem?.questionOptions?[indexPath.row].isSelected,
+                  let model = viewModel else {return}
+            
             questionItem?.questionOptions?[indexPath.row].isSelected = !isSelected
             
+            if let selectedOption = questionItem?.questionOptions?.filter({$0.isSelected == true}).map({$0.id ?? 0}) {
+                /* append selected option id to the anserId list */
+                viewModel?.questionsModel?.questionItems?[model.questionIndex].answerOptionIds = selectedOption
+            }
+            
         case .none, .essay, .shortAnswer, .filInTheBlanks, .fileResponse:
+            
             print("none")
         }
         tableView.reloadData()
