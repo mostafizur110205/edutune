@@ -996,13 +996,13 @@
 		E3221E8F29471253001FEE53 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E37CDAB62960B622007F88A6 /* QuestionCVC */,
 				E37CDAB72960B64B007F88A6 /* QuestionOne */,
 				E37CDAB82960B662007F88A6 /* QuestionTwo */,
 				E37CDABA2960B675007F88A6 /* QuestionFour */,
 				E37CDABB2960B67E007F88A6 /* QuestionSeven */,
 				E37CDABC2960B687007F88A6 /* QuestionNine */,
 				E37CDABD2960B68F007F88A6 /* QuestionEleven */,
-				E37CDAB62960B622007F88A6 /* QuestionCVC */,
 				E31E19062945EB4A009E44DE /* Assignments.storyboard */,
 			);
 			path = View;
@@ -1653,7 +1653,7 @@
 					"\"AuthenticationServices\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mostafizur.EduTune01;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mostafizur.EduTune;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1751,7 +1751,7 @@
 					"\"AuthenticationServices\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mostafizur.EduTune01;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mostafizur.EduTune;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

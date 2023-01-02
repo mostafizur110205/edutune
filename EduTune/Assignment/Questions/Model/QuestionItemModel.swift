@@ -29,6 +29,10 @@ struct QuestionItemModel : Codable {
 	let createdAt : String?
 	let updatedAt : String?
     var questionOptions : [QuestionOptionsModel]?
+    
+    var answer = ""
+    var assignmentFiles = [AnswerImageModel]()
+    var answerOptionIds = [Int]()
 
 	enum CodingKeys: String, CodingKey {
 		case id = "id"

@@ -29,6 +29,7 @@ class QuestionElevenTVC: UITableViewCell {
         return view
     }()
     
+    var viewModel: AssignmentsViewModel?
     weak var delegate: UpdateCellHeightProtocol?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -58,6 +59,10 @@ class QuestionElevenTVC: UITableViewCell {
 extension QuestionElevenTVC: UITextViewDelegate {
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool{
+        
+        if let model = viewModel {
+            model.questionsModel?.questionItems?[model.questionIndex].answer = textView.text ?? ""
+        }
         return true
     }
     

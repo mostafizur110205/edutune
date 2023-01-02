@@ -14,7 +14,7 @@ extension QuestionCVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-      
+        
         switch questionItem?.questionType {
         case .shortAnswer:
             return UITableView.automaticDimension
@@ -66,6 +66,7 @@ extension QuestionCVC: UITableViewDelegate, UITableViewDataSource {
             else {return UITableViewCell()}
             cell.selectionStyle = .none
             cell.contentView.isUserInteractionEnabled = false
+            cell.viewModel = viewModel
             cell.questionItem = questionItem
             return cell
             
@@ -84,6 +85,7 @@ extension QuestionCVC: UITableViewDelegate, UITableViewDataSource {
             else {return UITableViewCell()}
             cell.selectionStyle = .none
             cell.contentView.isUserInteractionEnabled = false
+            cell.viewModel = viewModel
             cell.delegate = self
             return cell
             
@@ -97,15 +99,26 @@ extension QuestionCVC: UITableViewDelegate, UITableViewDataSource {
         switch questionItem?.questionType {
         case .multipleChoice, .trueFalse:
             
-            guard let id = questionItem?.questionOptions?[indexPath.row].id else {return}
+            guard let id = questionItem?.questionOptions?[indexPath.row].id,
+                  let model = viewModel else {return}
+            
+            /* append selected option id to the anserId list */
+            viewModel?.questionsModel?.questionItems?[model.questionIndex].answerOptionIds = [id]
             
             questionItem?.questionOptions?[indexPath.row].isSelected = true
             let _ = (questionItem?.questionOptions?.filter {$0.id != id}.map {$0.isSelected = false})
             
         case .multipleAnswer:
             
-            guard let isSelected = questionItem?.questionOptions?[indexPath.row].isSelected else {return}
+            guard let isSelected = questionItem?.questionOptions?[indexPath.row].isSelected,
+                  let model = viewModel else {return}
+            
             questionItem?.questionOptions?[indexPath.row].isSelected = !isSelected
+            
+            if let selectedOption = questionItem?.questionOptions?.filter({$0.isSelected == true}).map({$0.id ?? 0}) {
+                /* append selected option id to the anserId list */
+                viewModel?.questionsModel?.questionItems?[model.questionIndex].answerOptionIds = selectedOption
+            }
             
         case .none, .essay, .shortAnswer, .filInTheBlanks, .fileResponse:
             

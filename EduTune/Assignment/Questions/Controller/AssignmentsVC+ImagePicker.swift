@@ -42,19 +42,22 @@ extension AssignmentsVC: UIImagePickerControllerDelegate, UINavigationController
     private func fileResponseImagePick(withImage image: UIImage) {
         
         let model = AnswerImageModel(id: Date.currentTimeStamp, image: image, isUploaded: false)
-        viewModel?.fileAnswerImages.append(model)
-        guard let delegate = self.deleagte else {return}
+        
+        guard let _viewModel = viewModel,
+              let delegate = self.deleagte else {return}
+        
+        _viewModel.questionsModel?.questionItems?[_viewModel.questionIndex].assignmentFiles.append(model)
         delegate.updateUploadedImages()
         
-        viewModel?.uploadFile(imageModel: model, completion: {[weak self] imageModel in
+        _viewModel.uploadFile(imageModel: model, completion: {[weak self] imageModel in
             
-            guard let model = self?.viewModel,
-                  let image = imageModel else {return}
+            guard let image = imageModel,
+                  let assignmentFiles = _viewModel.questionsModel?.questionItems?[_viewModel.questionIndex].assignmentFiles else {return}
             
-            for (index, item)  in model.fileAnswerImages.enumerated() {
+            for (index, item)  in assignmentFiles.enumerated() {
                 if item.id == image.id {
-                    model.fileAnswerImages.remove(at: index)
-                    model.fileAnswerImages.insert(image, at: index)
+                    _viewModel.questionsModel?.questionItems?[_viewModel.questionIndex].assignmentFiles.remove(at: index)
+                    _viewModel.questionsModel?.questionItems?[_viewModel.questionIndex].assignmentFiles.insert(image, at: index)
                 }
             }
             self?.deleagte?.updateUploadedImages()
@@ -64,19 +67,22 @@ extension AssignmentsVC: UIImagePickerControllerDelegate, UINavigationController
     private func eassyImagePick(withImage image: UIImage, fileName: String) {
         
         let model = AnswerImageModel(id: Date.currentTimeStamp, fileName: fileName, image: image, isUploaded: false)
-        viewModel?.eassyAnswerImages.append(model)
-        guard let delegate = self.deleagte else {return}
+     
+        guard let _viewModel = viewModel,
+              let delegate = self.deleagte else {return}
+        
+        _viewModel.questionsModel?.questionItems?[_viewModel.questionIndex].assignmentFiles.append(model)
         delegate.updateUploadedImages()
         
         viewModel?.uploadHtmlImage(imageModel: model, completion: {[weak self] imageModel in
             
-            guard let model = self?.viewModel,
-                  let image = imageModel else {return}
+            guard let image = imageModel,
+                  let assignmentFiles = _viewModel.questionsModel?.questionItems?[_viewModel.questionIndex].assignmentFiles else {return}
             
-            for (index, item)  in model.eassyAnswerImages.enumerated() {
+            for (index, item)  in assignmentFiles.enumerated() {
                 if item.id == image.id {
-                    model.eassyAnswerImages.remove(at: index)
-                    model.eassyAnswerImages.insert(image, at: index)
+                    _viewModel.questionsModel?.questionItems?[_viewModel.questionIndex].assignmentFiles.remove(at: index)
+                    _viewModel.questionsModel?.questionItems?[_viewModel.questionIndex].assignmentFiles.insert(image, at: index)
                 }
             }
             self?.deleagte?.updateUploadedImages()

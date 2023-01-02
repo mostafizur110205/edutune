@@ -7,6 +7,7 @@
 
 
 import UIKit
+import SwiftUI
 
 class FileNameTVC: UITableViewCell {
     
@@ -20,10 +21,14 @@ class FileNameTVC: UITableViewCell {
             guard model.isUploaded else {
                 deleteButton.isHidden = true
                 indicator.startAnimating()
+                viewController?.nextButton.isEnabled = false
+                viewController?.nextButton.backgroundColor = .lightGray
                 return
             }
             deleteButton.isHidden = false
             indicator.stopAnimating()
+            viewController?.nextButton.isEnabled = true
+            viewController?.nextButton.backgroundColor = UIColor(named: "Primary500")
         }
     }
     
@@ -85,7 +90,7 @@ class FileNameTVC: UITableViewCell {
     }
     
     private func setUpViews(){
-      
+        
         addSubview(backView)
         backView.addSubview(uploadImageView)
         backView.addSubview(titleLabel)
@@ -124,7 +129,7 @@ class FileNameTVC: UITableViewCell {
     
     @objc private func selectFileAction() {
         guard let controller = viewController,
-        let model = imageModel else {return}
+              let model = imageModel else {return}
         viewModel?.deleteFile(imageModel: model, controller: controller)
     }
     

@@ -12,6 +12,7 @@ protocol AssignmentApiServiceProtocol {
     func getAssignmentQuestions(params: [String: Any], completion: @escaping (QuestionsModel?) -> Void)
     func uploadHtmlEditorImage(params: [String: Any], imageModel: AnswerImageModel, completion: @escaping (AnswerImageModel?) -> Void)
     func uploadFiles(params: [String: Any], imageModel: AnswerImageModel, completion: @escaping (AnswerImageModel?) -> Void)
+    func submitAssignment(withAnswers params: [String: Any], completion: @escaping (Bool) -> Void) 
 }
 
 final class AssignmentApiService: AssignmentApiServiceProtocol {
@@ -42,7 +43,7 @@ final class AssignmentApiService: AssignmentApiServiceProtocol {
                 if error == nil {
                     if let json = JSON {
                         if json["error"].boolValue == false {
-                            let imageUrl = json["uploaded_files"].string
+                            let imageUrl = json["uploaded_files"].array?.first?.stringValue
                             imageModel.filePath = imageUrl
                             imageModel.isUploaded = true
                             completion(imageModel)
@@ -59,10 +60,28 @@ final class AssignmentApiService: AssignmentApiServiceProtocol {
                 if error == nil {
                     if let json = JSON {
                         if json["error"].boolValue == false {
-                            let imageUrl = json["uploaded_files"].string
+                            let imageUrl = json["uploaded_files"].array?.first?.stringValue
                             imageModel.filePath = imageUrl
                             imageModel.isUploaded = true
                             completion(imageModel)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func submitAssignment(withAnswers params: [String: Any], completion: @escaping (Bool) -> Void) {
+        APIRequest.shared.postRequest(url: APIEndpoints.MY_COURSE_ASSIGNMENTS_SUBMIT, parameters: params) { (JSON, error) in
+            DispatchQueue.main.async {
+                if error == nil {
+                    if let json = JSON {
+                        if json["error"].boolValue == false {
+                            completion(true)
+                            MakeToast.shared.makeNormalToast(json["message"].stringValue)
+                        } else {
+                            completion(false)
+                            MakeToast.shared.makeNormalToast(json["message"].stringValue)
                         }
                     }
                 }

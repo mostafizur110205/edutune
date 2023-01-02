@@ -19,12 +19,18 @@ class AnswerImageCVC: UICollectionViewCell {
             guard model.isUploaded else {
                 countLabel.isHidden = true
                 indicator.startAnimating()
+                viewController?.nextButton.isEnabled = false
+                viewController?.nextButton.backgroundColor = .lightGray
                 return
             }
             countLabel.isHidden = false
             indicator.stopAnimating()
+            viewController?.nextButton.isEnabled = true
+            viewController?.nextButton.backgroundColor = UIColor(named: "Primary500")
         }
     }
+    
+    var viewController: AssignmentsVC?
 
     let countLabel: UILabel = {
         let label = UILabel()

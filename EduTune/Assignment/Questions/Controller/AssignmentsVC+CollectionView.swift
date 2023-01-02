@@ -10,7 +10,8 @@ import UIKit
 extension AssignmentsVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel?.questionsModel?.questionItems?.count ?? 0
+        guard let questionModel = viewModel?.questionsModel else {return 0}
+        return questionModel.questionItems?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -25,6 +26,8 @@ extension AssignmentsVC: UICollectionViewDataSource, UICollectionViewDelegate, U
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+        viewModel?.setCurrentQuestion(collectionViewCellIndex: indexPath.row)
         updateProgressBar(withValue: indexPath.row)
     }
     

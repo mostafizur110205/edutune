@@ -6,7 +6,7 @@ struct QuestionsModel : Codable {
     let error : Bool?
     let test_id : Int?
     let finish_date : String?
-    let questionItems : [QuestionItemModel]?
+    var questionItems : [QuestionItemModel]?
 
     enum CodingKeys: String, CodingKey {
         case error = "error"
