@@ -47,7 +47,7 @@ class ClassTVCell: UITableViewCell {
             cellImageView.sd_setImage(with: URL(string: classData?.photo ?? "" ), placeholderImage: nil)
             categoryLabel.text = "  \(classData?.program_name ?? "")  "
             titleLabel.text = classData?.name
-            priceLabel.text = "৳\(classData?.current_price ?? 0)"
+            priceLabel.text = AppDelegate.shared().formatPrice(classData?.current_price)
             statusLabel.text = classData?.mode == 1 ? "Batch" : "Course"
             
             if classData?.original_price ?? 0 == 0 {

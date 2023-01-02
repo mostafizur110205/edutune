@@ -18,7 +18,7 @@ protocol AssignmentApiServiceProtocol {
 final class AssignmentApiService: AssignmentApiServiceProtocol {
     
     func getAssignmentQuestions(params: [String : Any], completion: @escaping (QuestionsModel?) -> Void) {
-        APIRequest.shared.postRequest(url: APIEndpoints.MY_COURSE_ASSIGNMENTS_BEGIN, parameters: params) { (JSON, error) in
+        APIRequest.shared.postRequest(url: APIEndpoints.MY_COURSE_ASSIGNMENT_BEGIN, parameters: params) { (JSON, error) in
             DispatchQueue.main.async {
                 if error == nil {
                     if let json = JSON {
@@ -38,7 +38,7 @@ final class AssignmentApiService: AssignmentApiServiceProtocol {
     }
     
     func uploadHtmlEditorImage(params: [String: Any], imageModel: AnswerImageModel, completion: @escaping (AnswerImageModel?) -> Void) {
-        APIRequest.shared.uploadImage(url: APIEndpoints.MY_COURSE_ASSIGNMENTS_HTML_EDITOR_IMAGE_UPLOAD, image: imageModel.image, parameters: params) { JSON, error in
+        APIRequest.shared.uploadImage(url: APIEndpoints.MY_COURSE_ASSIGNMENT_HTML_EDITOR_IMAGE_UPLOAD, image: imageModel.image, parameters: params) { JSON, error in
             DispatchQueue.main.async {
                 if error == nil {
                     if let json = JSON {
@@ -55,7 +55,7 @@ final class AssignmentApiService: AssignmentApiServiceProtocol {
     }
     
     func uploadFiles(params: [String: Any], imageModel: AnswerImageModel, completion: @escaping (AnswerImageModel?) -> Void) {
-        APIRequest.shared.uploadImage(url: APIEndpoints.MY_COURSE_ASSIGNMENTS_FILE_UPLOAD, image: imageModel.image, parameters: params) { JSON, error in
+        APIRequest.shared.uploadImage(url: APIEndpoints.MY_COURSE_ASSIGNMENT_FILE_UPLOAD, image: imageModel.image, parameters: params) { JSON, error in
             DispatchQueue.main.async {
                 if error == nil {
                     if let json = JSON {
@@ -72,7 +72,7 @@ final class AssignmentApiService: AssignmentApiServiceProtocol {
     }
     
     func submitAssignment(withAnswers params: [String: Any], completion: @escaping (Bool) -> Void) {
-        APIRequest.shared.postRequestJSON(url: APIEndpoints.MY_COURSE_ASSIGNMENTS_SUBMIT, parameters: params) { (JSON, error) in
+        APIRequest.shared.postRequestJSON(url: APIEndpoints.MY_COURSE_ASSIGNMENT_SUBMIT, parameters: params) { (JSON, error) in
             DispatchQueue.main.async {
                 if error == nil {
                     if let json = JSON {

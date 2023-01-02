@@ -91,6 +91,7 @@
 		BE486A0528DEF673003040AD /* SocialLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE486A0428DEF673003040AD /* SocialLoginVC.swift */; };
 		BE486A0728DEF698003040AD /* IntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE486A0628DEF698003040AD /* IntroVC.swift */; };
 		BE486A0928DEF6D3003040AD /* OTPTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE486A0828DEF6D3003040AD /* OTPTextView.swift */; };
+		BE5B693C2962EA1100F74CA7 /* DueFeesTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5B693B2962EA1100F74CA7 /* DueFeesTVCell.swift */; };
 		BE70C4FB295A19B400B803E4 /* ChooseClassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE70C4FA295A19B400B803E4 /* ChooseClassVC.swift */; };
 		BE70C4FD295A19CB00B803E4 /* ChooseGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE70C4FC295A19CB00B803E4 /* ChooseGroupVC.swift */; };
 		BE70C4FF295A2CCE00B803E4 /* Problem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE70C4FE295A2CCE00B803E4 /* Problem.swift */; };
@@ -317,6 +318,7 @@
 		BE486A0428DEF673003040AD /* SocialLoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialLoginVC.swift; sourceTree = "<group>"; };
 		BE486A0628DEF698003040AD /* IntroVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroVC.swift; sourceTree = "<group>"; };
 		BE486A0828DEF6D3003040AD /* OTPTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPTextView.swift; sourceTree = "<group>"; };
+		BE5B693B2962EA1100F74CA7 /* DueFeesTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DueFeesTVCell.swift; sourceTree = "<group>"; };
 		BE70C4FA295A19B400B803E4 /* ChooseClassVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseClassVC.swift; sourceTree = "<group>"; };
 		BE70C4FC295A19CB00B803E4 /* ChooseGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseGroupVC.swift; sourceTree = "<group>"; };
 		BE70C4FE295A2CCE00B803E4 /* Problem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Problem.swift; sourceTree = "<group>"; };
@@ -504,6 +506,7 @@
 				BEB83B98290E60F200860770 /* MoreSectionTVCell.swift */,
 				BEB83B9A290E610200860770 /* MoreTVCell.swift */,
 				BE9BC6BE2958889100ED0AE4 /* MyCertificateCVCell.swift */,
+				BE5B693B2962EA1100F74CA7 /* DueFeesTVCell.swift */,
 				BEABD57829597F9F00F28CE5 /* InvoiceTVCell.swift */,
 				BE70C506295A344200B803E4 /* ProblemTVCell.swift */,
 			);
@@ -567,7 +570,7 @@
 				BEF803FC28F80CFA00CB3AE5 /* TabBarVC.swift */,
 				BE14711828F57C2400726625 /* Common */,
 				BE4869D928DEF4D7003040AD /* Font */,
-				BEF803EB28F8059A00CB3AE5 /* Networking */,
+				BEF803EB28F8059A00CB3AE5 /* APIService */,
 				BE4869D728DECDDE003040AD /* Intro */,
 				BE4869D828DECDF4003040AD /* Profile */,
 				BE4869D228DECDA8003040AD /* Home */,
@@ -931,7 +934,7 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		BEF803EB28F8059A00CB3AE5 /* Networking */ = {
+		BEF803EB28F8059A00CB3AE5 /* APIService */ = {
 			isa = PBXGroup;
 			children = (
 				BEF803EE28F8059A00CB3AE5 /* APIEndpoints.swift */,
@@ -944,7 +947,7 @@
 				BE44ECAC29252F9100AD0DCA /* BlogAPIService.swift */,
 				BB2302DD2926B48400A88C97 /* OtherApiService.swift */,
 			);
-			path = Networking;
+			path = APIService;
 			sourceTree = "<group>";
 		};
 		E31E18F52945AE1E009E44DE /* Assignment */ = {
@@ -1383,6 +1386,7 @@
 				E31E18F92945AF66009E44DE /* BottomSheetViewModel.swift in Sources */,
 				BEB83B9F290E669A00860770 /* SyllabusVC.swift in Sources */,
 				BE02837B290423DB006FCD52 /* ClassHeaderTVCell.swift in Sources */,
+				BE5B693C2962EA1100F74CA7 /* DueFeesTVCell.swift in Sources */,
 				BEABD57729597D2900F28CE5 /* Payment.swift in Sources */,
 				BE70C4FB295A19B400B803E4 /* ChooseClassVC.swift in Sources */,
 				BE70C4FF295A2CCE00B803E4 /* Problem.swift in Sources */,

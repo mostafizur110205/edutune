@@ -60,7 +60,7 @@ class ClassHeaderVC: UIViewController {
             ratingLabel.text = "\(String(format: "%.2f", review)) (\(classDetail?.total_reviews ?? 0) reviews)"
         }
         
-        priceLabel.text = "৳\(classDetail?.current_price ?? 0)"
+        priceLabel.text = AppDelegate.shared().formatPrice(classDetail?.current_price)
 
         if classDetail?.original_price ?? 0 == 0 {
             oldPriceLabel.text = ""
@@ -76,6 +76,27 @@ class ClassHeaderVC: UIViewController {
 
     @IBAction func onBookmarkButtonTap(_ sender: Any) {
    
+    }
+    
+    func getCategoryNameIcon(_ type: String) -> String {
+        switch type {
+        case "fa fa-calendar", "fa fa-clock", "fa fa-code", "fa fa-bell", "fa fa-bullseye", "fa fa-check-circle":
+            return "ic_clock"
+        case "fa fa-film", "fa fa-wifi":
+            return "ic_video"
+        case "fa fa-book", "fa fa-briefcase", "fa fa-star", "fa fa-check":
+            return "ic_document"
+        case "fa fa-check-square":
+            return "ic_email_blue"
+        case "fa fa-cube", "fa fa-credit-card":
+            return "ic_tab_profile_selected"
+        case "fa fa-certificate":
+            return "ic_certificate"
+        case "fa fa-bookmark":
+            return "ic_bookmarked"
+        default:
+            return "ic_student"
+        }
     }
     
 }
@@ -94,6 +115,9 @@ extension ClassHeaderVC: UICollectionViewDataSource, UICollectionViewDelegate, U
         guard let cell: CategoryCVCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCVCell", for: indexPath) as? CategoryCVCell else {return UICollectionViewCell()}
         let category = (features[indexPath.item].name ?? "") + ": " + (features[indexPath.item].value ?? "")
         cell.tagNameLabel.text = category
+        let icon = getCategoryNameIcon(features[indexPath.item].icon ?? "")
+        cell.iconImageView?.image = UIImage(named: icon)
+        print(features[indexPath.item].icon)
         return cell
     }
     

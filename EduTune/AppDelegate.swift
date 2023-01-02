@@ -59,14 +59,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func registerRemoteNotification() {
-        
         let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
         UNUserNotificationCenter.current().requestAuthorization(
             options: authOptions,
             completionHandler: {_, _ in })
         
         UIApplication.shared.registerForRemoteNotifications()
-        
     }
     
     func getDueDate(_ dateStringValue: String?) -> (String, Bool) {
@@ -81,23 +79,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return (dateFormatter.string(from: date), isDuePassed)
     }
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-        SVProgressHUD.setDefaultMaskType(.custom)
-        SVProgressHUD.setDefaultStyle(.light)
-        IQKeyboardManager.shared.enable = true
-        
-        window?.overrideUserInterfaceStyle = .light
-
-        return true
-    }
-    
-    
     func openMentorProfileVC(navigationController: UINavigationController?, mentor: Teacher) {
         if let viewC: MentorProfileVC = UIStoryboard(name: "Course", bundle: nil).instantiateViewController(withIdentifier: "MentorProfileVC") as? MentorProfileVC {
             viewC.teacher_id = mentor.id
             navigationController?.pushViewController(viewC, animated: true)
         }
+    }
+    
+    func getCategoryNameIcon(_ type: Int) -> (String, String) {
+        switch type {
+        case MODEL_TEST_TYPE, QUIZ_TYPE, ASSESSMENT_TYPE:
+            return ("Assignment", "ic_activity")
+        case VIDEO_TYPE:
+            return ("Live", "ic_video")
+        case LIVE_TYPE, AUDIO_BOOK_TYPE, TRANSCRIPT_TYPE, NOTE_TYPE, PDF_BOOK_TYPE, LECTURE_SHEET_TYPE, SOLVE_CLASS_TYPE:
+            return ("Document", "ic_document")
+        default:
+            return ("", "")
+        }
+    }
+    
+    func formatPrice(_ current_price: Int?) -> String {
+        let price = current_price ?? 0
+        return price == 0 ? "Free" : "৳\(price)"
+    }
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        SVProgressHUD.setDefaultMaskType(.custom)
+        SVProgressHUD.setDefaultStyle(.light)
+        IQKeyboardManager.shared.enable = true
+        
+        window?.overrideUserInterfaceStyle = .light
+        
+        return true
     }
     
     func applicationWillTerminate(_ application: UIApplication) {

@@ -37,7 +37,7 @@ class CheckoutVC: UIViewController {
     func updateUI() {
         finalPrice = classDetail?.current_price ?? 0
         courseNameLabel.text = classDetail?.name
-        coursePriceLabel.text = "৳\(classDetail?.current_price ?? 0)"
+        coursePriceLabel.text = AppDelegate.shared().formatPrice(classDetail?.current_price)
         promoStackView.isHidden = true
     }
     

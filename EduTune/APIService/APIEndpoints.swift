@@ -43,11 +43,13 @@ open class APIEndpoints: NSObject {
     
     public static let MY_COURSE: String = BASE_URL+"olv2/my-course"
     public static let MY_COURSE_WISE_LESSONS: String = BASE_URL+"olv2/my-course-wise-lessons"
-    public static let MY_COURSE_ASSIGNMENTS_BEGIN: String = BASE_URL+"assignment-begin"
-    public static let MY_COURSE_ASSIGNMENTS_HTML_EDITOR_IMAGE_UPLOAD: String = BASE_URL+"html-editor-image-upload"
-    public static let MY_COURSE_ASSIGNMENTS_FILE_UPLOAD: String = BASE_URL+"assignment-upload-file"
-    public static let MY_COURSE_ASSIGNMENTS_SUBMIT: String = BASE_URL+"assignment-submit"
-    
+    public static let MY_COURSE_ASSIGNMENT_BEGIN: String = BASE_URL+"assignment-begin"
+    public static let MY_COURSE_ASSIGNMENT_HTML_EDITOR_IMAGE_UPLOAD: String = BASE_URL+"html-editor-image-upload"
+    public static let MY_COURSE_ASSIGNMENT_FILE_UPLOAD: String = BASE_URL+"assignment-upload-file"
+    public static let MY_COURSE_ASSIGNMENT_SUBMIT: String = BASE_URL+"assignment-submit"
+    public static let MY_COURSE_ASSIGNMENT_SUBMISSION: String = BASE_URL+"submission-list-by-assignment"
+    public static let MY_COURSE_ASSIGNMENT_SUBMISSION_ANSWERS: String = BASE_URL+"student-assignment-test-answer"
+
     public static let HELP_DATA: String = BASE_URL+"olv2/profile-data"
     public static let MY_CERTIFICATES: String = BASE_URL+"olv2/certificate"
     public static let DUE_FEES: String = BASE_URL+"due-fees"

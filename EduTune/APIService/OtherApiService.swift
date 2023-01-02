@@ -60,15 +60,15 @@ extension APIService {
         }
     }
     
-    func getDuePayment(params: [String: Any], completion: @escaping ([DueFees]) -> Void) {
+    func getDuePayment(params: [String: Any], completion: @escaping (DueFees?) -> Void) {
         APIRequest.shared.getRequest(url: APIEndpoints.DUE_FEES, parameters:  params) { (JSON, error) in
             DispatchQueue.main.async {
                 if error == nil {
                     if let json = JSON {
                         if json["error"].boolValue == false {
-                            completion(json["student_data"]["fees_heads"].arrayValue.map({ DueFees($0) }))
+                            completion(DueFees(json["student_data"]))
                         } else {
-                            completion([])
+                            completion(nil)
                             MakeToast.shared.makeNormalToast(json["message"].stringValue)
                         }
                     }

@@ -400,6 +400,7 @@
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YET-MO-M5Z">
                                             <rect key="frame" x="10" y="10" width="44" height="44"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="44" id="vlk-vi-O0g"/>
                                                 <constraint firstAttribute="width" constant="44" id="z51-IP-gbg"/>
@@ -407,6 +408,11 @@
                                             <color key="tintColor" name="Grey900"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                             <state key="normal" image="ic_back"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="22"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <action selector="onBackButtonTap:" destination="ozk-zA-tEx" eventType="touchUpInside" id="Ux9-PU-5XA"/>
                                             </connections>

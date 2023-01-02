@@ -92,4 +92,20 @@ extension APIService {
         }
     }
     
+    func getMyAssignmentSubmission(params: [String: Any], completion: @escaping ([Lecture]) -> Void) {
+        APIRequest.shared.getRequest(url: APIEndpoints.MY_COURSE_WISE_LESSONS, parameters: params) { (JSON, error) in
+            DispatchQueue.main.async {
+                if error == nil {
+                    if let json = JSON {
+                        if json["error"].boolValue == false {
+                            let lecture = json["content"].arrayValue.map { Lecture(json: $0) }
+                            completion(lecture)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    
 }
