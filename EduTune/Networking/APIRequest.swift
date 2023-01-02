@@ -149,14 +149,14 @@ class APIRequest: NSObject {
                         })
                     }
                 }
-                multipartFormData.append(image.jpegData(compressionQuality: 0.3)!, withName: "image" , fileName: "file.jpeg", mimeType: "image/jpeg")
+                multipartFormData.append(image.jpegData(compressionQuality: 0.7)!, withName: "image" , fileName: "file.jpeg", mimeType: "image/jpeg")
             },
             to: url, method: .post , headers: APIRequest.header)
         .validate(statusCode: 200..<300)
         .response { response in
             switch response.result {
             case .success(let value):
-                guard let json = (try? JSON(data: value!)) else {completion(nil,nil); return}
+                guard let json = (try? JSON(data: value!)) else {completion(nil, nil); return}
                 print("********** File Uploaded *************")
                 completion(json, nil)
             case .failure(let error):

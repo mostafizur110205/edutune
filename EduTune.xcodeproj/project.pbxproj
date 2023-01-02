@@ -939,6 +939,7 @@
 				BEF803ED28F8059A00CB3AE5 /* APIService.swift */,
 				BE44ECA629252F2200AD0DCA /* UserAPIService.swift */,
 				BE44ECA829252F7700AD0DCA /* HomeAPIService.swift */,
+				E3221E9929484000001FEE53 /* AssignmentApiService.swift */,
 				BE44ECAA29252F8400AD0DCA /* MyCourseAPIService.swift */,
 				BE44ECAC29252F9100AD0DCA /* BlogAPIService.swift */,
 				BB2302DD2926B48400A88C97 /* OtherApiService.swift */,
@@ -950,7 +951,6 @@
 			isa = PBXGroup;
 			children = (
 				E3221E9D294866AD001FEE53 /* Coordinator */,
-				E3221E9829483FAE001FEE53 /* ApiService */,
 				E3221E8D29471235001FEE53 /* Questions */,
 				E31E19002945DB54009E44DE /* BottomSheet */,
 				E31E19012945DB62009E44DE /* Instructions */,
@@ -1030,14 +1030,6 @@
 				E37CDAA8295FBA88007F88A6 /* AssignmentsVC+ImagePicker.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		E3221E9829483FAE001FEE53 /* ApiService */ = {
-			isa = PBXGroup;
-			children = (
-				E3221E9929484000001FEE53 /* AssignmentApiService.swift */,
-			);
-			path = ApiService;
 			sourceTree = "<group>";
 		};
 		E3221E9D294866AD001FEE53 /* Coordinator */ = {
@@ -1582,7 +1574,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Z5BQBFA4M2;
+				DEVELOPMENT_TEAM = C88TF32R63;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1680,7 +1672,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Z5BQBFA4M2;
+				DEVELOPMENT_TEAM = C88TF32R63;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

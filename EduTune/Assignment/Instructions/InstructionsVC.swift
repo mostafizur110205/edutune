@@ -15,6 +15,7 @@ class InstructionsVC: UIViewController {
     var bottomSheetVC: BottomSheetVC?
     var superView: UIViewController?
     var viewModel: AssignmentsViewModel
+    var assignment: DueAssignments?
 
     init(viewModel: AssignmentsViewModel) {
         self.viewModel = viewModel
@@ -36,13 +37,14 @@ class InstructionsVC: UIViewController {
     
     @objc func addInstructions() {
 
+        let (date, _) = AppDelegate.shared().getDueDate(assignment?.dueDate)
         let bullet = "•  "
         var strings = [String]()
-        strings.append("Time: This assignment has a time of 40 minutes")
+        strings.append("Time: This assignment has a time of \(assignment?.examTime ?? 0) minutes")
         strings.append("Timer Settings: This assignment will save and automatically when the time expires.")
         strings.append("This assignment can be saved and resumed at any point until time has expired. The timer will continue to run if you leave the assignment.")
-        strings.append("Due Date: This assignment due on Monday 5th of December 2022 11:59:00 PM")
-        strings.append("Click Yes to start: Monthly Exam 01. Click No to go back.")
+        strings.append("Due Date: This assignment due on \(date.replacingOccurrences(of: "00:00 AM", with: "12:00 AM"))")
+        strings.append("Click Yes to start: \(assignment?.name ?? ""). Click No to go back.")
         strings = strings.map { return bullet + $0 }
         
         var attributes = [NSAttributedString.Key: Any]()
@@ -66,9 +68,9 @@ class InstructionsVC: UIViewController {
         bottomSheetVC?.dismissViewController()
         
         let params = ["user_id": AppUserDefault.getUserId(),
-                      "assignment_id": 26605,
+                      "assignment_id": assignment?.id ?? -1,
                       "language":"en",
-        ] as [String:Any]
+        ] as [String: Any]
         
         viewModel.getAssignmentQuestions(params: params, completion: {[weak self] in
             
@@ -77,7 +79,7 @@ class InstructionsVC: UIViewController {
             guard (_self.viewModel.questionsModel) != nil,
             let controller = _self.superView else {return}
             
-            let coordinator = AssignmentsCoordinator(controller: controller, viewModel: _self.viewModel)
+            let coordinator = AssignmentsCoordinator(controller: controller, viewModel: _self.viewModel, assignment: _self.assignment)
             coordinator.openController()
         })
     }

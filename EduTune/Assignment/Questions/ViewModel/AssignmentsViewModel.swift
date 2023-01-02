@@ -26,7 +26,7 @@ protocol AssignmentsViewModelProtocol {
 class AssignmentsViewModel: AssignmentsViewModelProtocol {
     
     var apiService: AssignmentApiServiceProtocol
-    var questionsModel :QuestionsModel?
+    var questionsModel: QuestionsModel?
     
     /* this is question item collection view current/visible cell index number */
     private(set) var questionIndex: Int
@@ -34,7 +34,6 @@ class AssignmentsViewModel: AssignmentsViewModelProtocol {
     //var fileAnswerImages = [AnswerImageModel]()
     //var eassyAnswerImages = [AnswerImageModel]()
     var currentQuestionType: QuestionType?
-    
     
     init(apiService: AssignmentApiServiceProtocol) {
         self.apiService = apiService
@@ -184,12 +183,16 @@ class AssignmentsViewModel: AssignmentsViewModelProtocol {
             for (_,item) in items.enumerated() {
 
                 let files = item.assignmentFiles.map{$0.filePath}
-                let params = ["question_id": item.questionType == .essay ? 147672 : 147673,
+                var params = ["question_id": item.questionType == .essay ? 147672 : 147673,
                               "question_type": item.questionType?.rawValue ?? 0,
                               "answer": [
                                 "answer_file_path" : files
                               ]
                 ] as [String:Any]
+                
+                if item.questionType == .essay {
+                    params["answer_text"] = ""
+                }
 
                 questionAnswer.append(params)
             }

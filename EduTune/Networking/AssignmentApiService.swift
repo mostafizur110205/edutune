@@ -72,7 +72,7 @@ final class AssignmentApiService: AssignmentApiServiceProtocol {
     }
     
     func submitAssignment(withAnswers params: [String: Any], completion: @escaping (Bool) -> Void) {
-        APIRequest.shared.postRequest(url: APIEndpoints.MY_COURSE_ASSIGNMENTS_SUBMIT, parameters: params) { (JSON, error) in
+        APIRequest.shared.postRequestJSON(url: APIEndpoints.MY_COURSE_ASSIGNMENTS_SUBMIT, parameters: params) { (JSON, error) in
             DispatchQueue.main.async {
                 if error == nil {
                     if let json = JSON {

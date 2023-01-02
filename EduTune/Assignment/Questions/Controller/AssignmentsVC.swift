@@ -25,13 +25,14 @@ class AssignmentsVC: UIViewController {
     var viewModel: AssignmentsViewModel?
     var questionCVCell: QuestionCVC?
     weak var deleagte: AssignmentsDelegate?
-    
-    var totalSecond = 2400
-    var timer:Timer?
+    var assignment: DueAssignments?
+
+    var totalSecond = 0
+    var timer: Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        totalSecond = (assignment?.examTime ?? 0)*60
         startTimer()
         setupViews()
     }
@@ -86,7 +87,6 @@ class AssignmentsVC: UIViewController {
             // last indexpath of collectionview
         }
         
-        
         if nextButton.titleLabel?.text == "Submit" {
             
             let alert = UIAlertController(title: "Confirmation", message: "Do you really want to submit your answer?", preferredStyle: .alert)
@@ -126,7 +126,7 @@ class AssignmentsVC: UIViewController {
         
         reportButton.setTitle("", for: .normal)
         reportButton.setImage(UIImage(named: "ic_problem")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        reportButton.tintColor = UIColor.lightGray
+        reportButton.tintColor = UIColor.darkGray
         
         QuestionCVC.register(for: collectionView)
         

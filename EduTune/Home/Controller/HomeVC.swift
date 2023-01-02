@@ -119,15 +119,15 @@ class HomeVC: UIViewController {
     
     func getStatusText() -> String {
         let hour = Calendar.current.component(.hour, from: Date())
-        var timeString = "Happy night"
+        var timeString = "Happy night 🌙"
         if hour < 5 {
-            timeString = "Happy night"
+            timeString = "Happy night 🌙"
         } else if hour < 12 {
-            timeString = "Good morning"
+            timeString = "Good morning ☀️"
         } else if hour < 17 {
-            timeString = "Good afternoon"
+            timeString = "Good afternoon ☀️"
         } else if hour < 21 {
-            timeString = "Good evening"
+            timeString = "Good evening 🌇"
         }
         return timeString
     }

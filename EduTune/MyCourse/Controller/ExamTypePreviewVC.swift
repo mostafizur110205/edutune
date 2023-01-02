@@ -41,6 +41,7 @@ class ExamTypePreviewVC: UIViewController {
     }
     
     @IBAction func onViewSubmissionButtonTap(_ sender: Any) {
+ // view submission
     }
   
     @IBAction func onStartAssignment(_ sender: Any) {
@@ -61,6 +62,8 @@ class ExamTypePreviewVC: UIViewController {
         )
         instructionsVC.bottomSheetVC = bottomSheetVC
         instructionsVC.superView = self
+        instructionsVC.assignment = classData
+
         presentBottomSheet(bottomSheetVC, completion: nil)
     }
     @IBAction func onBackButtonTap(_ sender: Any) {
