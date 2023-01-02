@@ -9,10 +9,16 @@ import UIKit
 
 class LetsInVC: UIViewController {
     
+    @IBOutlet weak var backButton: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.tabBarController?.tabBar.isHidden = true
+        
+        print(self.navigationController?.viewControllers.count)
+        backButton.isHidden = self.navigationController?.viewControllers.count ?? 0 < 2
+        
     }
     
     

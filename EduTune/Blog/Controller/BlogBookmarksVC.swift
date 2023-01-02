@@ -30,13 +30,12 @@ class BlogBookmarksVC: UIViewController {
     }
     
     func getBlogs() {
-        if AppDelegate.shared().checkAndShowLoginVC(navigationController: self.navigationController) {
+        if AppUserDefault.getIsLoggedIn() {
             let params: [String: Any] = ["type": "bookmark_list", "user_id": AppUserDefault.getUserId()]
                     
             APIService.shared.getBlogBookmarks(params: params) { blogs in
                 self.allBlogs = blogs
                 self.blogCV.reloadData()
-
             }
         }
         

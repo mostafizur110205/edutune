@@ -114,7 +114,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         case SOLVE_CLASS_TYPE:
             return ("Solve Class", "ic_star_blue")
         default:
-            return ("", "")
+            return ("Assignment", "ic_message")
         }
     }
     

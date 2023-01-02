@@ -25,7 +25,7 @@ class HomeVC: UIViewController {
     var allClasses = [Class]()
     var editorsChoiceClasses = [Class]()
 
-    var isLoggedIn = AppUserDefault.getIsLoggedIn()
+    var isLoggedIn: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -201,7 +201,13 @@ class ProfileVC: UIViewController {
         alertController.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
         
         alertController.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { _ in
-            
+            AppUserDefault.clearAll()
+            if let viewC: LetsInVC = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "LetsInVC") as? LetsInVC {
+                let navVC = UINavigationController(rootViewController: viewC)
+                navVC.isNavigationBarHidden = true
+                UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController = navVC
+                UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.makeKeyAndVisible()
+            }
         }))
         self.present(alertController, animated: true, completion: nil)
     }
@@ -211,7 +217,13 @@ class ProfileVC: UIViewController {
         alertController.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
         
         alertController.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { _ in
-            
+            AppUserDefault.setIsLoggedIn(false)
+            if let viewC: LetsInVC = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "LetsInVC") as? LetsInVC {
+                let navVC = UINavigationController(rootViewController: viewC)
+                navVC.isNavigationBarHidden = true
+                UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController = navVC
+                UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.makeKeyAndVisible()
+            }
         }))
         self.present(alertController, animated: true, completion: nil)
     }
