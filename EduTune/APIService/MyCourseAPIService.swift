@@ -92,8 +92,23 @@ extension APIService {
         }
     }
     
-    func getMyAssignmentSubmission(params: [String: Any], completion: @escaping ([Lecture]) -> Void) {
-        APIRequest.shared.getRequest(url: APIEndpoints.MY_COURSE_WISE_LESSONS, parameters: params) { (JSON, error) in
+    func getMyAssignmentSubmission(params: [String: Any], completion: @escaping ([Submission]) -> Void) {
+        APIRequest.shared.getRequest(url: APIEndpoints.MY_COURSE_ASSIGNMENT_SUBMISSION, parameters: params) { (JSON, error) in
+            DispatchQueue.main.async {
+                if error == nil {
+                    if let json = JSON {
+                        if json["error"].boolValue == false {
+                            let submissions = json["submissions"].arrayValue.map { Submission($0) }
+                            completion(submissions)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func getMyAssignmentSubmissionAnswers(params: [String: Any], completion: @escaping ([Lecture]) -> Void) {
+        APIRequest.shared.getRequest(url: APIEndpoints.MY_COURSE_ASSIGNMENT_SUBMISSION_ANSWERS, parameters: params) { (JSON, error) in
             DispatchQueue.main.async {
                 if error == nil {
                     if let json = JSON {

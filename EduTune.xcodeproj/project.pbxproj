@@ -97,6 +97,9 @@
 		BE70C4FF295A2CCE00B803E4 /* Problem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE70C4FE295A2CCE00B803E4 /* Problem.swift */; };
 		BE70C504295A2F5F00B803E4 /* ProblemDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE70C503295A2F5F00B803E4 /* ProblemDetailsVC.swift */; };
 		BE70C507295A344200B803E4 /* ProblemTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE70C506295A344200B803E4 /* ProblemTVCell.swift */; };
+		BE80681E2963DD18002AA424 /* ViewSubmissionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE80681D2963DD18002AA424 /* ViewSubmissionVC.swift */; };
+		BE8068202963DD35002AA424 /* SubmissionTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE80681F2963DD35002AA424 /* SubmissionTVCell.swift */; };
+		BE8068222963E4AB002AA424 /* Submission.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8068212963E4AB002AA424 /* Submission.swift */; };
 		BE980F572920F9170078C7BD /* SSLCommerzSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE980F562920F9170078C7BD /* SSLCommerzSDK.framework */; };
 		BE980F582920F9170078C7BD /* SSLCommerzSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE980F562920F9170078C7BD /* SSLCommerzSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE9BC6BC2958873A00ED0AE4 /* Certificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9BC6BA2958873A00ED0AE4 /* Certificate.swift */; };
@@ -324,6 +327,9 @@
 		BE70C4FE295A2CCE00B803E4 /* Problem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Problem.swift; sourceTree = "<group>"; };
 		BE70C503295A2F5F00B803E4 /* ProblemDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemDetailsVC.swift; sourceTree = "<group>"; };
 		BE70C506295A344200B803E4 /* ProblemTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProblemTVCell.swift; sourceTree = "<group>"; };
+		BE80681D2963DD18002AA424 /* ViewSubmissionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSubmissionVC.swift; sourceTree = "<group>"; };
+		BE80681F2963DD35002AA424 /* SubmissionTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmissionTVCell.swift; sourceTree = "<group>"; };
+		BE8068212963E4AB002AA424 /* Submission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Submission.swift; sourceTree = "<group>"; };
 		BE980F562920F9170078C7BD /* SSLCommerzSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SSLCommerzSDK.framework; sourceTree = "<group>"; };
 		BE9BC6BA2958873A00ED0AE4 /* Certificate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Certificate.swift; sourceTree = "<group>"; };
 		BE9BC6BB2958873A00ED0AE4 /* Syllabus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Syllabus.swift; sourceTree = "<group>"; };
@@ -470,6 +476,7 @@
 				BB89C6C62921268000BA5B7A /* LiveClass.swift */,
 				BB89C6C4292125CD00BA5B7A /* DueAssignments.swift */,
 				BB89C6D029214B0200BA5B7A /* OngoingClass.swift */,
+				BE8068212963E4AB002AA424 /* Submission.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -480,6 +487,7 @@
 				BBB9F806292169AF005C82E2 /* LiveClassTVCell.swift */,
 				BBB9F80429215E0F005C82E2 /* DueAssignmentsTVCell.swift */,
 				BBB9F807292169AF005C82E2 /* OngoingClassTVCell.swift */,
+				BE80681F2963DD35002AA424 /* SubmissionTVCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -595,6 +603,7 @@
 				BB340C482923FC48006C3816 /* MyCourseDetailsListVC.swift */,
 				BED3864E293F04D00034ACC8 /* ExamTypePreviewVC.swift */,
 				BED3864C293F04B00034ACC8 /* LectureTypePreviewVC.swift */,
+				BE80681D2963DD18002AA424 /* ViewSubmissionVC.swift */,
 				BED38650293F04E90034ACC8 /* VideoTypePreviewVC.swift */,
 				BECF68B129406B0300F5004E /* ZoomCallVC.swift */,
 				BECF68B52940917800F5004E /* CustomUIViewController.swift */,
@@ -1299,6 +1308,7 @@
 				BE469833291C28060026EEA5 /* MyCourseVC.swift in Sources */,
 				BE14710128F5733A00726625 /* IntroCVCell.swift in Sources */,
 				BEFE792029266F2900062986 /* ProfileTVCell.swift in Sources */,
+				BE8068202963DD35002AA424 /* SubmissionTVCell.swift in Sources */,
 				BEF803EA28F8029100CB3AE5 /* SplashVC.swift in Sources */,
 				BED916A829585BCC006C1FD3 /* Help.swift in Sources */,
 				BEE0E879296194DF00E47071 /* UpdateEmailPhone2VC.swift in Sources */,
@@ -1326,6 +1336,7 @@
 				BE304D1128F84B7F0062C48A /* LoginTVCell.swift in Sources */,
 				E37CDAB12960253A007F88A6 /* SelectFileHeaderView.swift in Sources */,
 				BE14711328F57AC300726625 /* CreateNewPassVC.swift in Sources */,
+				BE8068222963E4AB002AA424 /* Submission.swift in Sources */,
 				E3DF867B29507E9C00AEA9E2 /* QuestionCVC+cellHeight.swift in Sources */,
 				BEDD168A2904E3D000C90051 /* ReviewTVCell.swift in Sources */,
 				E37CDAAF29601828007F88A6 /* FileNameTVC.swift in Sources */,
@@ -1359,6 +1370,7 @@
 				BE14711128F57AAD00726625 /* ForgotPassVerifyVC.swift in Sources */,
 				BED916AC29586901006C1FD3 /* HelpLinksVC.swift in Sources */,
 				BE9BC6C12958ADA900ED0AE4 /* HomeHeaderTVCell.swift in Sources */,
+				BE80681E2963DD18002AA424 /* ViewSubmissionVC.swift in Sources */,
 				BEF803FF28F81E0D00CB3AE5 /* HomeData.swift in Sources */,
 				BED6540D28F9B1E200737B78 /* MentorTVCell.swift in Sources */,
 				BEB83B99290E60F200860770 /* MoreSectionTVCell.swift in Sources */,

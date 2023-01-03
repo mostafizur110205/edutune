@@ -41,7 +41,10 @@ class ExamTypePreviewVC: UIViewController {
     }
     
     @IBAction func onViewSubmissionButtonTap(_ sender: Any) {
- // view submission
+        if let viewC: ViewSubmissionVC = self.storyboard?.instantiateViewController(withIdentifier: "ViewSubmissionVC") as? ViewSubmissionVC {
+            viewC.classData = classData
+            navigationController?.pushViewController(viewC, animated: true)
+        }
     }
   
     @IBAction func onStartAssignment(_ sender: Any) {
