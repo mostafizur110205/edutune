@@ -2,7 +2,7 @@
 //  DueAssismentTVCell.swift
 //  EduTune
 //
-//  Created by Machtonis on 11/13/22.
+//  Created by Mostafizur Rahman on 11/13/22.
 //
 import UIKit
 

@@ -2,7 +2,7 @@
 //  AnswerImageCVC.swift
 //  EduTune
 //
-//  Created by DH on 30/12/22.
+//  Created by Mostafizur Rahman on 30/12/22.
 //
 
 import Foundation

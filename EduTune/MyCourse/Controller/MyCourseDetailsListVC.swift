@@ -2,7 +2,7 @@
 //  MyCourseDetailsListVC.swift
 //  EduTune
 //
-//  Created by Machtonis on 11/15/22.
+//  Created by Mostafizur Rahman on 11/15/22.
 //
 
 import Foundation

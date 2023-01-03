@@ -19,12 +19,14 @@ class MyCourseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getMyCourses()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.tabBarController?.tabBar.isHidden = false
+        
+        getMyCourses()
+
     }
     
     @IBAction func onSearchButtonTap(_ sender: Any) {
@@ -96,6 +98,19 @@ class MyCourseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return 50
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //let sectionKey = Array(self.sections.keys)[section]
+        let sectionKey = self.sections[section]
+        if sectionKey == MyCourseType.live {
+            return self.liveClasses.count
+        } else if sectionKey == MyCourseType.due {
+            return self.dueAssignments.count
+        } else if sectionKey == MyCourseType.onGoing {
+            return self.ongoingClasses.count
+        }
+        else{return 0}
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let sectionKey = self.sections[indexPath.section]
@@ -118,24 +133,23 @@ class MyCourseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return UITableViewCell()
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //let sectionKey = Array(self.sections.keys)[section]
-        let sectionKey = self.sections[section]
-        if sectionKey == MyCourseType.live {
-            return self.liveClasses.count
-        } else if sectionKey == MyCourseType.due {
-            return self.dueAssignments.count
-        } else if sectionKey == MyCourseType.onGoing {
-            return self.ongoingClasses.count
-        }
-        else{return 0}
-    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let sectionKey = self.sections[indexPath.section]
         if sectionKey == MyCourseType.live {
-// open zoom call
+            let liveClass = self.liveClasses[indexPath.row]
+
+            if liveClass.status == .live {
+                if let viewC: ZoomCallVC = self.storyboard?.instantiateViewController(withIdentifier: "ZoomCallVC") as? ZoomCallVC {
+                    let liveClass = self.liveClasses[indexPath.row]
+                    viewC.host_link = liveClass.hostLink
+                    viewC.host_name = liveClass.hostName
+                    viewC.zoom_sdk_app_key = liveClass.zoom_sdk_app_key
+                    viewC.zoom_sdk_app_secret = liveClass.zoom_sdk_app_secret
+
+                    navigationController?.pushViewController(viewC, animated: true)
+                }
+            }
         } else if sectionKey == MyCourseType.due {
             if let viewC: ExamTypePreviewVC = self.storyboard?.instantiateViewController(withIdentifier: "ExamTypePreviewVC") as? ExamTypePreviewVC {
                 viewC.classData = self.dueAssignments[indexPath.row]

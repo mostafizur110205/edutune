@@ -2,7 +2,7 @@
 //  DueAssismentTVCell.swift
 //  EduTune
 //
-//  Created by Machtonis on 11/13/22.
+//  Created by Mostafizur Rahman on 11/13/22.
 //
 import UIKit
 
@@ -34,7 +34,11 @@ class LiveClassTVCell: UITableViewCell {
     var classData: LiveClass? {
         didSet {
             cellImageView.sd_setImage(with: URL(string: classData?.image ?? "" ), placeholderImage: nil)
-            categoryLabel.text = "  By \(classData?.teacherFullStr ?? "")  "
+            if classData?.teachers.count ?? 0>2 {
+                categoryLabel.text = "  By \(classData?.teachers.first?.name ?? "") & \((classData?.teachers.count ?? 0)-1) others  "
+            } else {
+                categoryLabel.text = "  By \(classData?.teacherFullStr ?? "")  "
+            }
             titleLabel.text = classData?.className
             priceLabel.text = "\(Extensions.getTimeFrom24Time(timeStr: classData?.startTime)) - \(Extensions.getTimeFrom24Time(timeStr: classData?.endTime))"
           

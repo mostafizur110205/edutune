@@ -30,6 +30,8 @@ struct LiveClass {
 	var className: String?
 	var hostLink: String?
 	var hostName: String?
+    var zoom_sdk_app_key: String?
+    var zoom_sdk_app_secret: String?
 	var zoomJwtApiKey: String?
 	var zoomJwtSecretKey: String?
 	var zoomHostMode: Int?
@@ -40,7 +42,7 @@ struct LiveClass {
 	var startDateTime: Int?
 	var endDateTime: Int?
 	//var courses: [Courses]?
-	//var teachers: [Teachers]?
+	var teachers = [Teacher]()
 	var teacherStr: String?
 	var teacherFullStr: String?
 	//var getOfferedCourse: GetOfferedCourse?
@@ -67,6 +69,8 @@ struct LiveClass {
 		updatedAt = json["updated_at"].stringValue
 		className = json["class_name"].stringValue
 		hostLink = json["host_link"].stringValue
+        zoom_sdk_app_key = json["zoom_sdk_app_key"].string
+        zoom_sdk_app_secret = json["zoom_sdk_app_secret"].string
 		hostName = json["host_name"].stringValue
 		zoomJwtApiKey = json["zoom_jwt_api_key"].stringValue
 		zoomJwtSecretKey = json["zoom_jwt_secret_key"].stringValue
@@ -83,10 +87,12 @@ struct LiveClass {
         self.startDateTime = startDateTime
         self.endDateTime = endDateTime
 		//courses = json["courses"].arrayValue.map { Courses($0) }
-		//teachers = json["teachers"].arrayValue.map { Teachers($0) }
+        teachers = json["teachers"].arrayValue.map { Teacher(json: $0) }
 		teacherStr = json["teacher_str"].stringValue
 		teacherFullStr = json["teacher_full_str"].stringValue
 		//getOfferedCourse = GetOfferedCourse(json["get_offered_course"])
+        
+
         
         let currentSeconds = Int64(Date().timeIntervalSince1970)
 

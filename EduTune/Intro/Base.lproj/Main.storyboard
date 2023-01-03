@@ -111,31 +111,23 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_onboarding_bg" translatesAutoresizingMaskIntoConstraints="NO" id="EoG-gv-cmt">
-                                                    <rect key="frame" x="16" y="0.0" width="359" height="367"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dga-r3-eRw">
-                                                    <rect key="frame" x="32" y="16" width="327" height="351"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="391" height="411"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We provide the best learning courses &amp; great mentors!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="82c-3j-E0R">
-                                                    <rect key="frame" x="16" y="387" width="359" height="144"/>
+                                                    <rect key="frame" x="16" y="411" width="359" height="120"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="144" id="gcx-zd-GA6"/>
+                                                        <constraint firstAttribute="height" constant="120" id="gcx-zd-GA6"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Urbanist-Bold" family="Urbanist" pointSize="34"/>
+                                                    <fontDescription key="fontDescription" name="Urbanist-Bold" family="Urbanist" pointSize="28"/>
                                                     <color key="textColor" name="Grey900"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="82c-3j-E0R" firstAttribute="top" secondItem="EoG-gv-cmt" secondAttribute="bottom" constant="20" id="Cj4-DU-ylp"/>
-                                                <constraint firstItem="dga-r3-eRw" firstAttribute="trailing" secondItem="EoG-gv-cmt" secondAttribute="trailing" constant="-16" id="EPG-0J-2sg"/>
-                                                <constraint firstItem="EoG-gv-cmt" firstAttribute="leading" secondItem="OVr-Xa-iTQ" secondAttribute="leading" constant="16" id="Eir-A7-wUt"/>
-                                                <constraint firstItem="dga-r3-eRw" firstAttribute="bottom" secondItem="EoG-gv-cmt" secondAttribute="bottom" id="Qmi-yu-2Af"/>
-                                                <constraint firstItem="dga-r3-eRw" firstAttribute="top" secondItem="EoG-gv-cmt" secondAttribute="top" constant="16" id="VjZ-s9-5DN"/>
-                                                <constraint firstAttribute="trailing" secondItem="EoG-gv-cmt" secondAttribute="trailing" constant="16" id="bXW-gv-Obb"/>
-                                                <constraint firstItem="dga-r3-eRw" firstAttribute="leading" secondItem="EoG-gv-cmt" secondAttribute="leading" constant="16" id="blm-4r-K1r"/>
+                                                <constraint firstItem="82c-3j-E0R" firstAttribute="top" secondItem="EoG-gv-cmt" secondAttribute="bottom" id="Cj4-DU-ylp"/>
+                                                <constraint firstItem="EoG-gv-cmt" firstAttribute="leading" secondItem="OVr-Xa-iTQ" secondAttribute="leading" id="Eir-A7-wUt"/>
+                                                <constraint firstAttribute="trailing" secondItem="EoG-gv-cmt" secondAttribute="trailing" id="bXW-gv-Obb"/>
                                                 <constraint firstItem="EoG-gv-cmt" firstAttribute="top" secondItem="OVr-Xa-iTQ" secondAttribute="top" id="gWG-nh-sGF"/>
                                                 <constraint firstItem="82c-3j-E0R" firstAttribute="leading" secondItem="OVr-Xa-iTQ" secondAttribute="leading" constant="16" id="jIQ-Ar-jC1"/>
                                                 <constraint firstAttribute="trailing" secondItem="82c-3j-E0R" secondAttribute="trailing" constant="16" id="m3A-S8-6n6"/>
@@ -144,7 +136,7 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="391" height="551"/>
                                         <connections>
-                                            <outlet property="cellImageView" destination="dga-r3-eRw" id="Gru-5E-Yd5"/>
+                                            <outlet property="cellImageView" destination="EoG-gv-cmt" id="3IB-DE-85P"/>
                                             <outlet property="titleLabel" destination="82c-3j-E0R" id="81J-sE-WTh"/>
                                         </connections>
                                     </collectionViewCell>

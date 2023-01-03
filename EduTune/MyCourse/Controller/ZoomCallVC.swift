@@ -9,8 +9,8 @@ import UIKit
 import MobileRTC
 
 class ZoomCallVC: UIViewController {
-        @IBOutlet weak var statusLabel: UILabel!
-
+    @IBOutlet weak var statusLabel: UILabel!
+    
     var host_link: String?
     var host_name: String?
     var zoom_sdk_app_key: String?
@@ -18,8 +18,6 @@ class ZoomCallVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                host_link = "https://us04web.zoom.us/j/72847824469?pwd=u1sHOPpSTUEjsta1uwuc9bMLuvYg4U.1"
-
         // The Zoom SDK requires a UINavigationController to update the UI for us. Here we supplied the SDK with the ViewControllers navigationController.
         MobileRTC.shared().setMobileRTCRootController(self.navigationController)
         
@@ -52,7 +50,7 @@ class ZoomCallVC: UIViewController {
         MobileRTC.shared().getMeetingSettings()?.meetingInviteHidden = true
         MobileRTC.shared().getMeetingSettings()?.meetingPasswordHidden = true
         MobileRTC.shared().getMeetingSettings()?.topBarHidden = true
-
+        
         if let meetingService = MobileRTC.shared().getMeetingService() {
             
             // Set the ViewController to be the MobileRTCMeetingServiceDelegate
@@ -65,7 +63,7 @@ class ZoomCallVC: UIViewController {
             joinMeetingParameters.password = meetingPassword
             joinMeetingParameters.noVideo = true
             joinMeetingParameters.noAudio = true
-
+            
             // Call the joinMeeting function in MobileRTCMeetingService. The Zoom SDK will handle the UI for you, unless told otherwise.
             // If the meeting number and meeting password are valid, the user will be put into the meeting. A waiting room UI will be presented or the meeting UI will be presented.
             meetingService.joinMeeting(with: joinMeetingParameters)
