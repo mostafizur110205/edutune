@@ -20,5 +20,6 @@ target 'EduTune' do
   pod 'PhoneNumberKit', '~> 3.1'
   pod 'CropViewController'
   pod 'MultiSlider'
+pod 'WordPress-Aztec-iOS'
 
 end

@@ -122,7 +122,6 @@ class QuestionNineTVC: UITableViewCell {
 
 
 extension QuestionNineTVC: AssignmentsDelegate {
-    
     func updateUploadedImages() {
         collectionView.reloadData()
     }

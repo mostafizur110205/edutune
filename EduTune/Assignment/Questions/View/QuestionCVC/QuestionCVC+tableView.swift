@@ -18,8 +18,10 @@ extension QuestionCVC: UITableViewDelegate, UITableViewDataSource {
         switch questionItem?.questionType {
         case .shortAnswer:
             return UITableView.automaticDimension
-        case .fileResponse, .essay:
+        case .fileResponse:
             return frame.height/1.4
+        case .essay:
+            return frame.height * 1.1
         default:
             return 80
         }

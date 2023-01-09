@@ -207,6 +207,13 @@
 		E37CDAB12960253A007F88A6 /* SelectFileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37CDAB02960253A007F88A6 /* SelectFileHeaderView.swift */; };
 		E37CDAB32960B56B007F88A6 /* QuestionFourTVC+tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37CDAB22960B56A007F88A6 /* QuestionFourTVC+tableView.swift */; };
 		E37CDAB52960B5D0007F88A6 /* InnerTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37CDAB42960B5D0007F88A6 /* InnerTableView.swift */; };
+		E3912E89296C9DA200F2ECCD /* QuestionFourTVC+textView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3912E88296C9DA200F2ECCD /* QuestionFourTVC+textView.swift */; };
+		E3912E8B296C9ECB00F2ECCD /* QuestionFourTVC+editActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3912E8A296C9ECB00F2ECCD /* QuestionFourTVC+editActions.swift */; };
+		E3912E8D296CA08500F2ECCD /* QuestionFourTVC+identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3912E8C296CA08500F2ECCD /* QuestionFourTVC+identifier.swift */; };
+		E3912E8F296CA12900F2ECCD /* OptionsTablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3912E8E296CA12900F2ECCD /* OptionsTablePresenter.swift */; };
+		E3912E92296CA18F00F2ECCD /* OptionsTableViewOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3912E91296CA18F00F2ECCD /* OptionsTableViewOption.swift */; };
+		E3912E94296CA1B400F2ECCD /* OptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3912E93296CA1B400F2ECCD /* OptionsTableViewController.swift */; };
+		E3912E96296CA24500F2ECCD /* OptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3912E95296CA24500F2ECCD /* OptionsTableViewCell.swift */; };
 		E3DF867B29507E9C00AEA9E2 /* QuestionCVC+cellHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DF867A29507E9C00AEA9E2 /* QuestionCVC+cellHeight.swift */; };
 		E3FF805C294ED58800F3D9A3 /* QuestionNineTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FF805B294ED58800F3D9A3 /* QuestionNineTVC.swift */; };
 		E3FF805E294ED59B00F3D9A3 /* QuestionElevenTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FF805D294ED59B00F3D9A3 /* QuestionElevenTVC.swift */; };
@@ -432,6 +439,13 @@
 		E37CDAB02960253A007F88A6 /* SelectFileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFileHeaderView.swift; sourceTree = "<group>"; };
 		E37CDAB22960B56A007F88A6 /* QuestionFourTVC+tableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuestionFourTVC+tableView.swift"; sourceTree = "<group>"; };
 		E37CDAB42960B5D0007F88A6 /* InnerTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerTableView.swift; sourceTree = "<group>"; };
+		E3912E88296C9DA200F2ECCD /* QuestionFourTVC+textView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuestionFourTVC+textView.swift"; sourceTree = "<group>"; };
+		E3912E8A296C9ECB00F2ECCD /* QuestionFourTVC+editActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuestionFourTVC+editActions.swift"; sourceTree = "<group>"; };
+		E3912E8C296CA08500F2ECCD /* QuestionFourTVC+identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuestionFourTVC+identifier.swift"; sourceTree = "<group>"; };
+		E3912E8E296CA12900F2ECCD /* OptionsTablePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsTablePresenter.swift; sourceTree = "<group>"; };
+		E3912E91296CA18F00F2ECCD /* OptionsTableViewOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsTableViewOption.swift; sourceTree = "<group>"; };
+		E3912E93296CA1B400F2ECCD /* OptionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsTableViewController.swift; sourceTree = "<group>"; };
+		E3912E95296CA24500F2ECCD /* OptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsTableViewCell.swift; sourceTree = "<group>"; };
 		E3DF867A29507E9C00AEA9E2 /* QuestionCVC+cellHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuestionCVC+cellHeight.swift"; sourceTree = "<group>"; };
 		E3FF805B294ED58800F3D9A3 /* QuestionNineTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionNineTVC.swift; sourceTree = "<group>"; };
 		E3FF805D294ED59B00F3D9A3 /* QuestionElevenTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionElevenTVC.swift; sourceTree = "<group>"; };
@@ -1072,8 +1086,12 @@
 			children = (
 				E3FF805F294ED62C00F3D9A3 /* QuestionFourTVC.swift */,
 				E37CDAB22960B56A007F88A6 /* QuestionFourTVC+tableView.swift */,
+				E3912E88296C9DA200F2ECCD /* QuestionFourTVC+textView.swift */,
+				E3912E8A296C9ECB00F2ECCD /* QuestionFourTVC+editActions.swift */,
+				E3912E8C296CA08500F2ECCD /* QuestionFourTVC+identifier.swift */,
 				E37CDAB02960253A007F88A6 /* SelectFileHeaderView.swift */,
 				E37CDAAE29601827007F88A6 /* FileNameTVC.swift */,
+				E3912E90296CA16300F2ECCD /* OptionTableView */,
 			);
 			path = QuestionFour;
 			sourceTree = "<group>";
@@ -1102,6 +1120,17 @@
 				E3FF805D294ED59B00F3D9A3 /* QuestionElevenTVC.swift */,
 			);
 			path = QuestionEleven;
+			sourceTree = "<group>";
+		};
+		E3912E90296CA16300F2ECCD /* OptionTableView */ = {
+			isa = PBXGroup;
+			children = (
+				E3912E8E296CA12900F2ECCD /* OptionsTablePresenter.swift */,
+				E3912E91296CA18F00F2ECCD /* OptionsTableViewOption.swift */,
+				E3912E93296CA1B400F2ECCD /* OptionsTableViewController.swift */,
+				E3912E95296CA24500F2ECCD /* OptionsTableViewCell.swift */,
+			);
+			path = OptionTableView;
 			sourceTree = "<group>";
 		};
 		EC5ACE55AC49EBBDC88E0AB0 /* Pods */ = {
@@ -1268,10 +1297,12 @@
 				BED916B0295881FA006C1FD3 /* InvoiceVC.swift in Sources */,
 				BED916AE29586B23006C1FD3 /* FAQCells.swift in Sources */,
 				BEE78F7228F6D30600A4B3B1 /* HomeVC.swift in Sources */,
+				E3912E8D296CA08500F2ECCD /* QuestionFourTVC+identifier.swift in Sources */,
 				BEA432FC2904EB0100B3291E /* AllReviewsVC.swift in Sources */,
 				BEABD5732959762600F28CE5 /* PaymentDueVC.swift in Sources */,
 				BE14710528F579F100726625 /* LetsInVC.swift in Sources */,
 				BEF8040528F826A500CB3AE5 /* Teacher.swift in Sources */,
+				E3912E8F296CA12900F2ECCD /* OptionsTablePresenter.swift in Sources */,
 				BBB9F809292169AF005C82E2 /* OngoingClassTVCell.swift in Sources */,
 				E3221E6E29463650001FEE53 /* QuestionCVC.swift in Sources */,
 				BEA432FA2904EAE600B3291E /* AllLessonsVC.swift in Sources */,
@@ -1288,6 +1319,7 @@
 				E30FA8FC294D4D510052D9A1 /* QuestionCVC+tableView.swift in Sources */,
 				BEF803FB28F8074F00CB3AE5 /* OnboardData.swift in Sources */,
 				BE028385290439C4006FCD52 /* LessonTVCell.swift in Sources */,
+				E3912E89296C9DA200F2ECCD /* QuestionFourTVC+textView.swift in Sources */,
 				BEA4330B2905388100B3291E /* BlogDetailsVC.swift in Sources */,
 				BE44ECB329254EB700AD0DCA /* Notification.swift in Sources */,
 				BEB83B9B290E610200860770 /* MoreTVCell.swift in Sources */,
@@ -1319,6 +1351,7 @@
 				BEA433052905385600B3291E /* BlogVC.swift in Sources */,
 				BE304D0928F847870062C48A /* TopMentorsVC.swift in Sources */,
 				BEB83B97290E5EC000860770 /* MoreVC.swift in Sources */,
+				E3912E8B296C9ECB00F2ECCD /* QuestionFourTVC+editActions.swift in Sources */,
 				BB2302DE2926B48400A88C97 /* OtherApiService.swift in Sources */,
 				BE304D1128F84B7F0062C48A /* LoginTVCell.swift in Sources */,
 				E37CDAB12960253A007F88A6 /* SelectFileHeaderView.swift in Sources */,
@@ -1341,6 +1374,7 @@
 				BECAFF6C290385AE00E7C8B9 /* MentorProfileVC.swift in Sources */,
 				BED38651293F04E90034ACC8 /* VideoTypePreviewVC.swift in Sources */,
 				BEA433092905387200B3291E /* BlogBookmarksVC.swift in Sources */,
+				E3912E92296CA18F00F2ECCD /* OptionsTableViewOption.swift in Sources */,
 				BED916A4295821C9006C1FD3 /* NotificationDetailsVC.swift in Sources */,
 				BBB9F808292169AF005C82E2 /* LiveClassTVCell.swift in Sources */,
 				BBB9F80529215E0F005C82E2 /* DueAssignmentsTVCell.swift in Sources */,
@@ -1348,6 +1382,7 @@
 				BE14711728F57C1F00726625 /* MakeToast.swift in Sources */,
 				BE44ECAD29252F9100AD0DCA /* BlogAPIService.swift in Sources */,
 				BECAFF76290389A200E7C8B9 /* Lecture.swift in Sources */,
+				E3912E96296CA24500F2ECCD /* OptionsTableViewCell.swift in Sources */,
 				BEB83B9D290E662600860770 /* AddRemoveBookmarkVC.swift in Sources */,
 				BE486A0328DEF62C003040AD /* FormValidation.swift in Sources */,
 				BE44ECAB29252F8400AD0DCA /* MyCourseAPIService.swift in Sources */,
@@ -1362,6 +1397,7 @@
 				BE14710F28F57A8300726625 /* ForgotPassVC.swift in Sources */,
 				BE486A0728DEF698003040AD /* IntroVC.swift in Sources */,
 				BE02837D290423FA006FCD52 /* ClassAboutTVCell.swift in Sources */,
+				E3912E94296CA1B400F2ECCD /* OptionsTableViewController.swift in Sources */,
 				BE0AF0962905886D00FCEFAA /* NotificationsVC.swift in Sources */,
 				BECAFF702903860A00E7C8B9 /* ClassDetail.swift in Sources */,
 				BEB83BAD290E680D00860770 /* SetPasswordVC.swift in Sources */,
@@ -1574,7 +1610,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = C88TF32R63;
+				DEVELOPMENT_TEAM = Z5BQBFA4M2;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1672,7 +1708,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = C88TF32R63;
+				DEVELOPMENT_TEAM = Z5BQBFA4M2;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

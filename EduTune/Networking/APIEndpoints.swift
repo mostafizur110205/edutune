@@ -13,7 +13,7 @@ open class APIEndpoints: NSObject {
     public static let ACCESS_TOKEN: String = "8oH-ja7he957KSqViw3adw_8UALqe0ClLUmd4Oio8U6BGGk6SfvRJB4GJWH2AAApAd8dBw:APA91bFA0JJ-1TOmMfL3-eoOaKvHfh-vuPgIIDTxBq7_FA0JJ-1TOmMfcwdwou38"
     public static let S3_URL: String = "https://amadereshkul.s3-ap-southeast-1.amazonaws.com/4394ac/"
 
-    public static let BASE_URL: String = "https://amadereshkul.com/mobile-app/"
+    public static let BASE_URL: String = "https://api.edutune.com/mobile-app/"
 
     public static let APP_VERSION: String = BASE_URL+"app-versions"
     
