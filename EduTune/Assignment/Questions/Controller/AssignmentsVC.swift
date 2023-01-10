@@ -9,8 +9,14 @@ import Foundation
 import UIKit
 import SVProgressHUD
 
+
 protocol AssignmentsDelegate: AnyObject {
     func updateUploadedImages()
+    func setHtmlTextAsAnswer()
+}
+
+extension AssignmentsDelegate {
+    func setHtmlTextAsAnswer() {}
 }
 
 class AssignmentsVC: UIViewController {
@@ -26,9 +32,10 @@ class AssignmentsVC: UIViewController {
     var questionCVCell: QuestionCVC?
     weak var deleagte: AssignmentsDelegate?
     var assignment: DueAssignments?
-
+    
     var totalSecond = 0
     var timer: Timer?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,10 +90,17 @@ class AssignmentsVC: UIViewController {
         
         collectionView.scrollRectToVisible(CGRect(x: contentOffset.x + cellSize.width + 10, y: contentOffset.y, width: cellSize.width, height: cellSize.height), animated: true)
         
+        /*
+         for eassy type question
+         get html text from rich textview and set as answer in model
+         */
+        if (viewModel?.questionsModel?.questionItems?[collectionView.getVisibleCellIndex()].questionType == .essay) {
+            deleagte?.setHtmlTextAsAnswer()
+        }
+        
         if Int(contentOffset.x) == (Int(cellSize.width) + 10) * (viewModel?.questionsModel?.questionItems?.count ?? 0) {
             // last indexpath of collectionview
         }
-        
         if nextButton.titleLabel?.text == "Submit" {
             
             let alert = UIAlertController(title: "Confirmation", message: "Do you really want to submit your answer?", preferredStyle: .alert)
@@ -101,6 +115,8 @@ class AssignmentsVC: UIViewController {
             present(alert, animated: true, completion: nil)
         }
     }
+    
+    
     
     private func submitAssignment() {
         
@@ -138,11 +154,3 @@ class AssignmentsVC: UIViewController {
         collectionView.reloadData()
     }
 }
-
-
-
-
-
-
-
-

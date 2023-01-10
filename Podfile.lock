@@ -39,6 +39,7 @@ PODS:
   - SwiftyJSON (5.0.1)
   - Toast-Swift (5.0.1)
   - UICollectionViewLeftAlignedLayout (1.0.2)
+  - WordPress-Aztec-iOS (1.19.8)
 
 DEPENDENCIES:
   - Alamofire
@@ -57,6 +58,7 @@ DEPENDENCIES:
   - SwiftyJSON
   - Toast-Swift
   - UICollectionViewLeftAlignedLayout
+  - WordPress-Aztec-iOS
 
 SPEC REPOS:
   trunk:
@@ -81,6 +83,7 @@ SPEC REPOS:
     - SwiftyJSON
     - Toast-Swift
     - UICollectionViewLeftAlignedLayout
+    - WordPress-Aztec-iOS
 
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
@@ -104,7 +107,8 @@ SPEC CHECKSUMS:
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
   UICollectionViewLeftAlignedLayout: 830bf6fa5bab9f9b464f62e3384f9d2e00b3c0f6
+  WordPress-Aztec-iOS: 7d11d598f14c82c727c08b56bd35fbeb7dafb504
 
-PODFILE CHECKSUM: 77056eed5007818790455840579b1f1b8c8d2eae
+PODFILE CHECKSUM: 58b60b6c52817b29f146ed161e9e80dcadae33df
 
 COCOAPODS: 1.11.3

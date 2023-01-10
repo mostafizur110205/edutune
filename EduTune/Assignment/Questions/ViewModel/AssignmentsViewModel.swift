@@ -30,9 +30,6 @@ class AssignmentsViewModel: AssignmentsViewModelProtocol {
     
     /* this is question item collection view current/visible cell index number */
     private(set) var questionIndex: Int
-    
-    //var fileAnswerImages = [AnswerImageModel]()
-    //var eassyAnswerImages = [AnswerImageModel]()
     var currentQuestionType: QuestionType?
     
     init(apiService: AssignmentApiServiceProtocol) {
@@ -95,6 +92,14 @@ class AssignmentsViewModel: AssignmentsViewModelProtocol {
             }
         }
         controller.deleagte?.updateUploadedImages()
+    }
+    
+    func getHtmlTextFrom(richText text: String) -> String {
+        // Remove spaces between HTML tags.
+        let regex = try! NSRegularExpression(pattern: ">\\s+?<", options: .caseInsensitive)
+        let range = NSMakeRange(0, text.count)
+        let htmlFormText = regex.stringByReplacingMatches(in: text, options: .reportCompletion, range: range, withTemplate: "><")
+        return htmlFormText
     }
     
     func uploadHtmlImage(imageModel: AnswerImageModel, completion: @escaping (AnswerImageModel?) -> Void) {
@@ -187,7 +192,7 @@ class AssignmentsViewModel: AssignmentsViewModelProtocol {
                               "question_type": item.questionType?.rawValue ?? 0,
                               "answer": [
                                 "answer_file_path" : files,
-                                "answer_text" : ""
+                                "answer_text" : item.answer
                               ]
                 ] as [String:Any]
 
